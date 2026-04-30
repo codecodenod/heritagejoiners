@@ -24,7 +24,7 @@ export const siteConfig = {
     street: 'TODO',
     city: 'TODO',
     postcode: 'TODO',
-    full: 'TODO', // e.g. '123 High Street, Bristol BS1 1AA'
+    full: 'TODO', // e.g. '123 High Street, Pontefract WF8 1AA'
   },
 
   // NAP (Name, Address, Phone) for schema
@@ -36,7 +36,7 @@ export const siteConfig = {
   addressFull: 'TODO', // use address.full
 
   // Service area
-  serviceArea: ['Bristol', 'Bath', 'South West England'],
+  serviceArea: ['Yorkshire'],
 
   // Social
   social: {

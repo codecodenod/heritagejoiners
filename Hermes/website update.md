@@ -62,7 +62,7 @@ No JS console errors found during this review pass.
   - **Meta description**:
     - `Heritage Joiners - specialist timber window and door services across Yorkshire. Repair-first work for listed and period properties.`
   - **Intro paragraph**:
-    - `We specialize in timber window and door repair, restoration, and selective replacement for listed and period properties across Yorkshire.`
+    - `We specialise in timber window and door repair, restoration, and selective replacement for listed and period properties across Yorkshire.`
 
 ---
 
@@ -107,16 +107,12 @@ No JS console errors found during this review pass.
 - Current:
   - Multiple `Bristol` references in meta description, hero text, overview paragraph, and project location.
 
-- Replace with one of these two options:
+- Replace with (confirmed location: Pontefract, West Yorkshire):
 
-**Option A (safe now):** location-neutral until verified
-- Meta: `A complete restoration project by Heritage Joiners - case study.`
-- Hero: `A complete timber window and door restoration project delivered for a historic building.`
-- Body: `The Counting House required comprehensive timber window and door restoration work.`
-- Project overview location: `Yorkshire` or `Location available on request`
-
-**Option B (if confirmed Yorkshire location exists):**
-- Use exact town/city in Yorkshire for all instances.
+- Meta: `A complete restoration project by Heritage Joiners - Pontefract, West Yorkshire.`
+- Hero: `A complete timber window and door restoration project delivered for a historic building in Pontefract.`
+- Body: `The Counting House in Pontefract required comprehensive timber window and door restoration work.`
+- Project overview location: `Pontefract, West Yorkshire`
 
 ---
 
