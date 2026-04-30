@@ -55,53 +55,54 @@ const { phone } = siteConfig;
       </button>
     </div>
   </div>
+</header>
 
-  <!-- Mobile nav menu (hidden by default) -->
-  <div
-    id="mobile-menu"
-    class="lg:hidden hidden fixed inset-0 z-50 bg-bone"
-  >
-    <div class="flex flex-col h-full p-4">
-      <div class="flex items-center justify-between mb-8">
-        <a href="/" class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-ink text-bone flex items-center justify-center">
-            <span class="font-display text-xl">HJ</span>
-          </div>
-          <span class="font-display text-xl text-ink">Heritage Joiners</span>
-        </a>
-        <button
-          class="p-2 text-ink"
-          aria-label="Close menu"
-          id="mobile-menu-close"
+<!-- Mobile nav panel — MUST be outside <header> so backdrop-filter doesn't trap fixed positioning -->
+<div
+  id="mobile-menu"
+  class="lg:hidden hidden fixed inset-0 z-[9999] mobile-nav-panel"
+>
+  <div class="flex flex-col h-full p-6 relative" style="z-index:1">
+    <div class="flex items-center justify-between mb-6">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-ink text-bone flex items-center justify-center">
+          <span class="font-display text-xl">HJ</span>
+        </div>
+        <span class="font-display text-xl text-ink">Heritage Joiners</span>
+      </a>
+      <button
+        class="p-2 text-ink"
+        aria-label="Close menu"
+        id="mobile-menu-close"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-      </div>
-      <Nav mobile />
-      <div class="mt-auto pb-8">
-        <PhoneLink
-          phone={phone.tel}
-          display={phone.display}
-          variant="primary"
-          class="w-full justify-center"
-        />
-      </div>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="h-px bg-gradient-to-r from-transparent via-oak/40 to-transparent mb-6"></div>
+    <Nav mobile />
+    <div class="mt-auto pb-8">
+      <PhoneLink
+        phone={phone.tel}
+        display={phone.display}
+        variant="primary"
+        class="w-full justify-center"
+      />
     </div>
   </div>
-</header>
+</div>
 
 <script>
   const mobileMenuOpen = document.getElementById('mobile-menu-open');
