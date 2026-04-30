@@ -211,3 +211,42 @@ Source copy reviewed:
 ## Recommendation for next pass
 
 Once you approve this copy direction, next action is a **text-only implementation commit** replacing all Bristol/South West legacy strings and placeholder-facing words in public sections.
+
+
+---
+
+## Double-check addendum (SEO + business-plan alignment)
+
+This pass confirms the site messaging should be aligned to three fixed pillars on every core page:
+
+1. **Geographic focus:** Yorkshire-wide coverage (not Bristol/South West language)
+2. **Service stance:** repair-first, preservation-first, not repair-at-any-cost
+3. **Audience signal:** listed and period buildings/properties
+
+### Mandatory implementation checklist
+
+- Ensure each core page has one natural mention of **Yorkshire** in title/description/body:
+  - Home, About, Services, each service page, Contact, Case Studies index
+- Ensure each service page states the decision rule:
+  - repair where viable; replace when retention is too low for sound repair
+- Remove all user-facing placeholders before launch:
+  - `TODO`, `Address pending`, `Email pending`
+- Keep CTA hierarchy consistent sitewide:
+  - WhatsApp first, phone second
+- Keep proof language specific:
+  - before/during/after outcomes, not vague claims
+
+### SEO execution priorities (in order)
+
+1. Fix all geography mismatches (Bristol/South West -> Yorkshire)
+2. Standardise meta descriptions with service + region + listed/period intent
+3. Tighten case-study location references to real/verified locations only
+4. Complete NAP fields in `site.ts` to eliminate weak placeholder signals
+5. Publish final case-study copy blocks to strengthen topical authority
+
+### Final quality gate before public push
+
+- [ ] No legacy location strings remain
+- [ ] No `TODO`/`pending` visible anywhere
+- [ ] Each page has one clear keyword intent + one clear CTA
+- [ ] All core pages match business plan positioning (Yorkshire + listed/period + repair-first)
