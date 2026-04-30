@@ -1,0 +1,31 @@
+---
+/**
+ * FAQPage schema
+ */
+interface Props {
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+const props = Astro.props;
+
+const faqEntries = props.faqs.map((faq, index) => ({
+  '@type': 'Question',
+  name: faq.question,
+  acceptedAnswer: {
+    '@type': 'Answer',
+    text: faq.answer,
+  },
+  position: index + 1,
+}));
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqEntries,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,40 @@
+---
+/**
+ * LocalBusiness schema
+ */
+import { siteConfig } from '../../config/site';
+
+interface Props {
+  name?: string;
+}
+
+const { name, telephone, email, address, url, serviceArea, hours } = siteConfig;
+
+const props = Astro.props;
+const bizName = props.name || name;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${url}/#localbusiness`,
+  name: bizName,
+  telephone: telephone,
+  email: email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'TODO', // TODO: parse address.street
+    addressLocality: address.city,
+    postalCode: address.postcode,
+    addressRegion: 'England',
+    addressCountry: 'GB',
+  },
+  areaServed: serviceArea,
+  openingHoursSpecification: [
+    // TODO: generate from siteConfig.hours
+  ],
+  priceRange: '££',
+  image: `${url}/images/logo-og.png`,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,375 @@
+---
+/**
+ * Homepage
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import PhoneLink from '../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../components/ui/WhatsAppCTA';
+import RepairVsReplacement from '../components/sections/RepairVsReplacement.astro';
+import { siteConfig } from '../config/site';
+import { Phone } from 'lucide-react';
+
+const { phone } = siteConfig;
+---
+
+<BaseLayout title="Home">
+  <!-- Hero -->
+  <section class="relative py-20 lg:py-32 bg-cover bg-center" style="background-image: url('/images/homepage/hero.webp')">
+    <div class="absolute inset-0 bg-gradient-to-r from-bone via-bone/80 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="font-display text-4xl lg:text-6xl text-ink mb-6">
+          Listed & Period Timber Repairs Across Yorkshire
+        </h1>
+        <p class="text-lg lg:text-xl text-ink mb-6 max-w-2xl">
+          We preserve as much original wood as possible through skilled on-site repair. If timber retention is too low for a sound repair, we recommend selective or full replacement — honestly and clearly.
+        </p>
+        <p class="text-sm lg:text-base text-ink/80 mb-8 font-display uppercase tracking-wide">
+          35+ years | Apprenticeship-trained bench joiner & site carpenter | Listed-building specialist
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink
+            phone={phone.tel}
+            display={phone.display}
+            variant="secondary"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <section class="py-14 lg:py-20 bg-ink">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 text-center lg:text-left">
+        <div class="text-bone">
+          <p class="font-display text-2xl lg:text-3xl mb-2">35+ years hands-on</p>
+          <p class="text-bone/60 text-sm">joinery & site carpentry</p>
+        </div>
+        <div class="text-bone">
+          <p class="font-display text-2xl lg:text-3xl mb-2">Repair-first</p>
+          <p class="text-bone/60 text-sm">for listed and period buildings</p>
+        </div>
+        <div class="text-bone">
+          <p class="font-display text-2xl lg:text-3xl mb-2">Yorkshire-wide</p>
+          <p class="text-bone/60 text-sm">serving the whole region</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Repair vs Replace Decision Framework -->
+  <section class="py-14 lg:py-28 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-16 max-w-2xl mx-auto text-center lg:text-left">
+        <div class="accent-line mx-auto lg:mx-0 mb-6"></div>
+        <h2 class="font-display text-4xl lg:text-5xl text-ink mb-6">
+          Repair First. Replace Only When Necessary.
+        </h2>
+        <p class="text-lg text-ink/70">
+          Our default is to retain original timber wherever feasible. We assess structural soundness, decay depth, and retention percentage before recommending work.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- We repair when -->
+        <div>
+          <h3 class="font-display text-2xl text-ink mb-6 pb-3 border-b-2 border-oak">
+            We repair when:
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex gap-4">
+              <span class="text-oak font-display text-xl flex-shrink-0">✓</span>
+              <span class="text-ink/80">Timber is still structurally sound in core sections</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-oak font-display text-xl flex-shrink-0">✓</span>
+              <span class="text-ink/80">Decay is localised and can be cut out/spliced</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-oak font-display text-xl flex-shrink-0">✓</span>
+              <span class="text-ink/80">Joints can be consolidated without compromising performance</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-oak font-display text-xl flex-shrink-0">✓</span>
+              <span class="text-ink/80">Original character can be preserved effectively</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- We recommend replacement when -->
+        <div>
+          <h3 class="font-display text-2xl text-ink mb-6 pb-3 border-b-2 border-rust">
+            We recommend replacement when:
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex gap-4">
+              <span class="text-rust font-display text-xl flex-shrink-0">→</span>
+              <span class="text-ink/80">Remaining sound timber is too low for a durable repair</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-rust font-display text-xl flex-shrink-0">→</span>
+              <span class="text-ink/80">Decay is extensive through critical load-bearing zones</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-rust font-display text-xl flex-shrink-0">→</span>
+              <span class="text-ink/80">Previous failed repairs make another repair unreliable</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-rust font-display text-xl flex-shrink-0">→</span>
+              <span class="text-ink/80">A repair would be short-lived and poor value for you</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 p-8 bg-paper rounded-lg border border-ink/10 text-center">
+        <p class="text-lg text-ink font-display">
+          You get a straight recommendation: preserve original where viable, replace only where necessary.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services snapshot -->
+  <section class="py-14 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div class="accent-line mx-auto mb-6"></div>
+        <h2 class="font-display text-4xl lg:text-5xl text-ink">What we do</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <a href="/services/timber-window-repair" class="service-card group block relative">
+          <div class="service-card-image" style="background-image: url('/images/homepage/service-windows.webp')"></div>
+          <div class="service-card-content">
+            <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
+              Timber Window Repair
+            </h3>
+            <p class="text-ink/70 text-sm mb-4 leading-relaxed">
+              Restore performance and appearance while keeping original fabric. Sash windows, casements, and period windows skillfully repaired.
+            </p>
+            <span class="text-oak font-display text-xs">Learn more &rarr;</span>
+          </div>
+        </a>
+        <a href="/services/doors-and-frames" class="service-card group block relative">
+          <div class="service-card-image" style="background-image: url('/images/homepage/service-doors.webp')"></div>
+          <div class="service-card-content">
+            <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
+              Doors & Frames
+            </h3>
+            <p class="text-ink/70 text-sm mb-4 leading-relaxed">
+              Preserve period character while improving function. External and internal doors, frames, and door furniture restored to working order.
+            </p>
+            <span class="text-oak font-display text-xs">Learn more &rarr;</span>
+          </div>
+        </a>
+        <a href="/services/rot-and-splice" class="service-card group block relative">
+          <div class="service-card-image" style="background-image: url('/images/homepage/service-rot.webp')"></div>
+          <div class="service-card-content">
+            <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
+              Rot Cut-Out & Splice Repairs
+            </h3>
+            <p class="text-ink/70 text-sm mb-4 leading-relaxed">
+              Targeted repair that saves original timber. Splice repairs for windows, doors, and structural timber where replacement isn't necessary.
+            </p>
+            <span class="text-oak font-display text-xs">Learn more &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case proof -->
+  <section class="py-14 lg:py-28 bg-ink">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div class="accent-line mx-auto mb-6" style="background-color: rgba(244, 239, 230, 0.3)"></div>
+        <h2 class="font-display text-4xl lg:text-5xl text-bone mb-6">
+          What Proper Timber Repair Looks Like
+        </h2>
+        <p class="text-lg text-bone/70 max-w-2xl mx-auto">
+          From decayed sections to structurally sound, visually sympathetic repairs — without unnecessary full replacement.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+        <div class="rounded-lg overflow-hidden border border-bone/20">
+          <div class="aspect-square bg-cover bg-center" style="background-image: url('/images/case-studies/sash-before.webp')"></div>
+          <div class="p-4 bg-bone/10 text-center">
+            <p class="text-bone font-display uppercase text-sm tracking-wide">Before</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden border border-bone/20">
+          <div class="aspect-square bg-cover bg-center" style="background-image: url('/images/case-studies/sash-during.webp')"></div>
+          <div class="p-4 bg-bone/10 text-center">
+            <p class="text-bone font-display uppercase text-sm tracking-wide">During</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden border border-bone/20">
+          <div class="aspect-square bg-cover bg-center" style="background-image: url('/images/case-studies/sash-after.webp')"></div>
+          <div class="p-4 bg-bone/10 text-center">
+            <p class="text-bone font-display uppercase text-sm tracking-wide">After</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="/case-studies/counting-house" class="inline-block px-8 py-3 bg-patina text-ink font-display rounded-md hover:bg-patina/90 transition-colors">
+          View Full Case Study
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process section -->
+  <section class="py-14 lg:py-28 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div class="accent-line mx-auto mb-6"></div>
+        <h2 class="font-display text-4xl lg:text-5xl text-ink mb-6">
+          How to Get Started
+        </h2>
+        <p class="text-lg text-ink/70 max-w-2xl mx-auto">
+          From initial assessment to completed repair, here's what to expect.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-oak text-bone font-display text-2xl flex items-center justify-center mb-6">
+            1
+          </div>
+          <h3 class="font-display text-xl text-ink mb-3">Send photos on WhatsApp</h3>
+          <p class="text-ink/70">Share clear photos of the damaged area. No formal survey needed yet.</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-oak text-bone font-display text-2xl flex items-center justify-center mb-6">
+            2
+          </div>
+          <h3 class="font-display text-xl text-ink mb-3">We assess repair viability</h3>
+          <p class="text-ink/70">Initial assessment of whether repair or replacement makes sense.</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-oak text-bone font-display text-2xl flex items-center justify-center mb-6">
+            3
+          </div>
+          <h3 class="font-display text-xl text-ink mb-3">Site visit & survey</h3>
+          <p class="text-ink/70">Detailed on-site inspection of condition and structural integrity.</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-oak text-bone font-display text-2xl flex items-center justify-center mb-6">
+            4
+          </div>
+          <h3 class="font-display text-xl text-ink mb-3">Clear recommendation & quote</h3>
+          <p class="text-ink/70">Honest advice on repair vs replacement, with pricing for both options.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service area -->
+  <section class="py-14 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <div class="accent-line mx-auto mb-6"></div>
+        <h2 class="font-display text-4xl lg:text-5xl text-ink mb-6">Yorkshire Coverage</h2>
+        <p class="text-lg text-ink/70 max-w-2xl mx-auto">
+          We work across Yorkshire on listed and period properties, including York, Leeds, Wakefield, Harrogate, Sheffield, and surrounding areas. If you're unsure whether we cover your location, send photos and we'll let you know.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why repair matters (keeping the 6-benefit section) -->
+  <RepairVsReplacement />
+
+  <!-- FAQ section -->
+  <section class="py-14 lg:py-28 bg-bone">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div class="accent-line mx-auto mb-6"></div>
+        <h2 class="font-display text-4xl lg:text-5xl text-ink">
+          Common questions
+        </h2>
+      </div>
+
+      <div class="space-y-8">
+        <details class="group border-b border-ink/10 pb-6 cursor-pointer">
+          <summary class="flex justify-between items-center font-display text-lg text-ink hover:text-oak transition-colors">
+            <span>Can listed building timber always be repaired?</span>
+            <span class="text-2xl group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-ink/70 mt-4">
+            Not always, but most of the time. If decay is too extensive or structural integrity is too compromised, replacement is the better option. We assess each case individually and give honest advice.
+          </p>
+        </details>
+
+        <details class="group border-b border-ink/10 pb-6 cursor-pointer">
+          <summary class="flex justify-between items-center font-display text-lg text-ink hover:text-oak transition-colors">
+            <span>When do you advise replacement instead?</span>
+            <span class="text-2xl group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-ink/70 mt-4">
+            When remaining sound timber is too low for a durable repair, decay is extensive through load-bearing zones, previous repairs have failed, or repair would be poor long-term value. We explain the reasoning clearly.
+          </p>
+        </details>
+
+        <details class="group border-b border-ink/10 pb-6 cursor-pointer">
+          <summary class="flex justify-between items-center font-display text-lg text-ink hover:text-oak transition-colors">
+            <span>Do repairs usually need listed building consent?</span>
+            <span class="text-2xl group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-ink/70 mt-4">
+            Not usually. Repair and restoration of existing fabric typically doesn't require consent. Replacement does. This is one reason repair is often the better option for listed buildings.
+          </p>
+        </details>
+
+        <details class="group border-b border-ink/10 pb-6 cursor-pointer">
+          <summary class="flex justify-between items-center font-display text-lg text-ink hover:text-oak transition-colors">
+            <span>Can I get a rough opinion from photos first?</span>
+            <span class="text-2xl group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-ink/70 mt-4">
+            Yes. Send clear photos on WhatsApp and we'll give you an initial assessment of whether repair looks viable. For a final recommendation and quote, we'll need to see it in person.
+          </p>
+        </details>
+
+        <details class="group border-b border-ink/10 pb-6 cursor-pointer">
+          <summary class="flex justify-between items-center font-display text-lg text-ink hover:text-oak transition-colors">
+            <span>Is repair usually cheaper than replacement?</span>
+            <span class="text-2xl group-open:rotate-180 transition-transform">+</span>
+          </summary>
+          <p class="text-ink/70 mt-4">
+            Yes. Repair typically costs 60–80% less than replacement. For example, a sash window repair costs £350–£800 vs £2,500–£4,000 for replacement. Plus, repair saves on planning consent, architect sign-off, and disruption.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-14 lg:py-28 bg-paper">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="accent-line mx-auto mb-6"></div>
+      <h2 class="font-display text-4xl lg:text-5xl text-ink mb-6">
+        Not Sure If It Can Be Saved?
+      </h2>
+      <p class="text-lg text-ink/70 mb-12 max-w-2xl mx-auto">
+        Send photos first. We'll tell you honestly whether repair is viable, or if replacement is the better long-term option.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink
+          phone={phone.tel}
+          display={phone.display}
+          variant="secondary"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

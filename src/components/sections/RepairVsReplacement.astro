@@ -1,0 +1,99 @@
+---
+/**
+ * RepairVsReplacement - 6-point selling argument for repair
+ */
+
+const benefits = [
+  {
+    title: "Cheaper than replacement",
+    description: "A sash window replacement costs £2,000–£4,000. Expert repair: £300–£800. Same with doors and frames — repair saves 60–80%.",
+    image: "/images/benefits/01-cost-savings.png",
+    angle: "price-conscious"
+  },
+  {
+    title: "Preserving historic identity",
+    description: "Original timber from 200 years ago is irreplaceable. Once removed, it's gone forever. A sympathetic repair preserves your building's story.",
+    image: "/images/benefits/02-listed-building.png",
+    angle: "listed-building"
+  },
+  {
+    title: "Looks more natural",
+    description: "New timber in an old building always looks wrong. A skilled repair blends so perfectly it becomes invisible — that's the 35 years of craft.",
+    image: "/images/benefits/03-craftsmanship.png",
+    angle: "architect"
+  },
+  {
+    title: "Listed building compliance",
+    description: "Replacing windows on a listed building without consent is a criminal offence. Repair usually requires no consent. We solve the legal headache.",
+    image: "/images/benefits/04-compliance.png",
+    angle: "listed-building"
+  },
+  {
+    title: "Sustainability",
+    description: "The embodied carbon in original timber is preserved when you repair. Ripping it out for replacement is environmentally wasteful. True green building.",
+    image: "/images/benefits/05-sustainability.png",
+    angle: "conservation"
+  },
+  {
+    title: "Maintains property value",
+    description: "Original features add value. Inappropriate replacements remove it. Buyers notice. Keeping original timber is a smart investment.",
+    image: "/images/benefits/06-property-value.png",
+    angle: "selling-property"
+  }
+];
+---
+
+<section class="py-14 lg:py-28 bg-bone">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="mb-16 text-center max-w-3xl mx-auto">
+      <div class="accent-line mx-auto mb-6"></div>
+      <h2 class="font-display text-4xl lg:text-5xl text-ink mb-6">
+        Repair isn't the compromise. Replacement is.
+      </h2>
+      <p class="text-lg text-ink/70">
+        Six reasons why fixing original timber makes more sense than replacing it.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {benefits.map((benefit) => (
+        <div class="service-card group p-8 relative">
+          <!-- Image Icon -->
+          <div class="mb-6 h-24 w-24">
+            <img src={benefit.image} alt={benefit.title} class="w-full h-full object-cover rounded" />
+          </div>
+
+          <!-- Title -->
+          <h3 class="font-display text-xl text-ink mb-3">
+            {benefit.title}
+          </h3>
+
+          <!-- Description -->
+          <p class="text-ink/70 text-sm leading-relaxed mb-4">
+            {benefit.description}
+          </p>
+
+          <!-- Angle tag (subtle) -->
+          <p class="text-xs text-oak/60 font-display uppercase tracking-wide">
+            {benefit.angle.replace(/-/g, " ")}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 text-center">
+      <p class="text-lg text-ink/70 mb-6">
+        Not sure if your windows or doors can be saved?
+      </p>
+      <a
+        href="/contact"
+        class="inline-block px-8 py-4 bg-rust text-bone font-display rounded-md hover:bg-rust/90 transition-colors"
+      >
+        Send photos for honest advice
+      </a>
+    </div>
+  </div>
+</section>

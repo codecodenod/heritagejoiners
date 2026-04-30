@@ -1,0 +1,72 @@
+---
+/**
+ * Contact page
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhoneLink from '../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../components/ui/WhatsAppCTA';
+import { siteConfig } from '../config/site';
+
+const { name, phone, whatsapp, address, email, hours } = siteConfig;
+---
+
+<BaseLayout title="Contact Us" description="Get in touch with Heritage Joiners - Bristol's timber window and door specialists.">
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">
+          Contact us
+        </h1>
+        <p class="text-lg text-ink/70 mb-12">
+          Get in touch to discuss your timber window or door project.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <!-- Phone -->
+          <div class="p-6 bg-bone rounded-lg">
+            <h2 class="font-display text-lg text-ink mb-2">Phone</h2>
+            <PhoneLink
+              phone={phone.tel}
+              display={phone.display}
+              variant="primary"
+              class="w-full justify-center"
+            />
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="p-6 bg-bone rounded-lg">
+            <h2 class="font-display text-lg text-ink mb-2">WhatsApp</h2>
+            <WhatsAppCTA client:load />
+          </div>
+        </div>
+
+        <!-- Office hours -->
+        <div class="p-6 bg-bone rounded-lg mb-12">
+          <h2 class="font-display text-lg text-ink mb-4">Office hours</h2>
+          <dl class="space-y-2">
+            <div class="flex justify-between">
+              <dt class="text-ink/70">Monday - Friday</dt>
+              <dd class="text-ink">{hours.monday}</dd>
+            </div>
+            <div class="flex justify-between">
+              <dt class="text-ink/70">Saturday</dt>
+              <dd class="text-ink">{hours.saturday}</dd>
+            </div>
+            <div class="flex justify-between">
+              <dt class="text-ink/70">Sunday</dt>
+              <dd class="text-ink">{hours.sunday}</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Address -->
+        <div class="p-6 bg-bone rounded-lg">
+          <h2 class="font-display text-lg text-ink mb-2">Our workshop</h2>
+          <p class="text-ink/70">
+            {address.full !== 'TODO' ? address.full : 'Address pending'}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

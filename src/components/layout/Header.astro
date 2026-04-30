@@ -1,0 +1,120 @@
+---
+/**
+ * Header - site header with logo and nav
+ */
+import Nav from './Nav.astro';
+import PhoneLink from '../ui/PhoneLink.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone } = siteConfig;
+---
+
+<header class="sticky top-0 z-50 bg-bone/95 backdrop-blur-sm border-b border-ink/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3" aria-label="Heritage Joiners - Home">
+        <div class="w-10 h-10 lg:w-12 lg:h-12 bg-ink text-bone flex items-center justify-center">
+          <span class="font-display text-xl lg:text-2xl">HJ</span>
+        </div>
+        <span class="font-display text-xl lg:text-2xl text-ink hidden sm:block">
+          Heritage Joiners
+        </span>
+      </a>
+
+      <!-- Desktop nav + phone -->
+      <div class="hidden lg:flex items-center gap-8">
+        <Nav />
+        <PhoneLink
+          phone={phone.tel}
+          display={phone.display}
+          variant="secondary"
+        />
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        class="lg:hidden p-2 text-ink"
+        aria-label="Open menu"
+        id="mobile-menu-open"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav menu (hidden by default) -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden hidden fixed inset-0 z-50 bg-bone"
+  >
+    <div class="flex flex-col h-full p-4">
+      <div class="flex items-center justify-between mb-8">
+        <a href="/" class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-ink text-bone flex items-center justify-center">
+            <span class="font-display text-xl">HJ</span>
+          </div>
+          <span class="font-display text-xl text-ink">Heritage Joiners</span>
+        </a>
+        <button
+          class="p-2 text-ink"
+          aria-label="Close menu"
+          id="mobile-menu-close"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <Nav mobile />
+      <div class="mt-auto pb-8">
+        <PhoneLink
+          phone={phone.tel}
+          display={phone.display}
+          variant="primary"
+          class="w-full justify-center"
+        />
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileMenuOpen = document.getElementById('mobile-menu-open');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuOpen?.addEventListener('click', () => {
+    mobileMenu?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  });
+
+  mobileMenuClose?.addEventListener('click', () => {
+    mobileMenu?.classList.add('hidden');
+    document.body.style.overflow = '';
+  });
+</script>

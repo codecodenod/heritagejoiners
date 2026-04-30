@@ -1,0 +1,46 @@
+---
+/**
+ * Case Studies overview
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const caseStudies = [
+  {
+    href: '/case-studies/counting-house/',
+    title: 'The Counting House',
+    description: 'A complete restoration of this historic Bristol building.',
+    category: 'Commercial',
+  },
+];
+---
+
+<BaseLayout title="Case Studies" description="See our past timber window and door projects - Heritage Joiners.">
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Case studies</h1>
+      <p class="text-lg text-ink/70 mb-12 max-w-2xl">
+        Browse our past projects to see the quality of our work on period properties.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {caseStudies.map((study) => (
+          <a
+            href={study.href}
+            class="group block bg-bone rounded-lg overflow-hidden border border-ink/10 hover:border-oak transition-colors"
+          >
+            <div class="aspect-video bg-ink/10 flex items-center justify-center">
+              <span class="font-display text-bone/30 text-4xl">{study.title.charAt(0)}</span>
+            </div>
+            <div class="p-6">
+              <p class="text-xs text-oak uppercase tracking-wide mb-2">{study.category}</p>
+              <h2 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">
+                {study.title}
+              </h2>
+              <p class="text-ink/70">{study.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

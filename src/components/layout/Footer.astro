@@ -1,0 +1,112 @@
+---
+/**
+ * Footer - site footer
+ */
+import PhoneLink from '../ui/PhoneLink.astro';
+import WhatsAppCTA from '../ui/WhatsAppCTA';
+import { siteConfig } from '../../config/site';
+
+const { name, phone, whatsapp, address, email, serviceArea, hours, social } = siteConfig;
+const currentYear = new Date().getFullYear();
+
+const primaryLinks = [
+  { href: '/services', label: 'Services' },
+  { href: '/about', label: 'About' },
+  { href: '/case-studies', label: 'Case Studies' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const serviceLinks = [
+  { href: '/services/timber-window-repair', label: 'Timber Window Repair' },
+  { href: '/services/doors-and-frames', label: 'Doors & Frames' },
+  { href: '/services/rot-and-splice', label: 'Rot & Splice Repair' },
+];
+---
+
+<footer class="bg-ink text-bone mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <!-- Main footer grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <!-- Brand + contact -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 bg-bone text-ink flex items-center justify-center">
+            <span class="font-display text-xl">HJ</span>
+          </div>
+          <span class="font-display text-2xl text-bone">{name}</span>
+        </div>
+
+        <p class="text-bone/70 mb-6 max-w-md">
+          Specialist timber window and door craftsmen serving West Yorkshire.
+          Repair, restoration, and period-accurate replacement.
+        </p>
+
+        <div class="space-y-2 text-bone/80">
+          <p>{address.full !== 'TODO' ? address.full : 'Address pending'}</p>
+          <p>
+            <PhoneLink
+              phone={phone.tel}
+              display={phone.display}
+              class="text-brass hover:text-bone"
+            />
+          </p>
+          <p>
+            <a href={`mailto:${email}`} class="text-brass hover:text-bone transition-colors">
+              {email !== 'TODO' ? email : 'Email pending'}
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Primary nav -->
+      <div>
+        <h3 class="font-display text-lg text-bone mb-4">Navigation</h3>
+        <ul class="space-y-3">
+          {primaryLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-bone/70 hover:text-brass transition-colors"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h3 class="font-display text-lg text-bone mb-4">Services</h3>
+        <ul class="space-y-3">
+          {serviceLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-bone/70 hover:text-brass transition-colors"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-12 pt-8 border-t border-bone/20">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div class="text-bone/50 text-sm">
+          <p>&copy; {currentYear} {name}. All rights reserved.</p>
+          <p class="mt-1">
+            Registered in England. VAT {siteConfig.company.vatNumber !== 'TODO' ? siteConfig.company.vatNumber : 'pending'}.
+          </p>
+        </div>
+
+        <div class="flex gap-4">
+          {/* TODO: Add social links when available */}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

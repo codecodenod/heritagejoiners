@@ -1,0 +1,33 @@
+---
+/**
+ * The Counting House - Timber Matching
+ */
+import CaseStudyLayout from '../../../layouts/CaseStudyLayout.astro';
+import { siteConfig } from '../../../config/site';
+
+const { url } = siteConfig;
+
+const breadcrumbs = [
+  { name: 'The Counting House', url: `${url}/case-studies/counting-house/` },
+  { name: 'Timber Matching', url: `${url}/case-studies/counting-house/timber-matching/` },
+];
+---
+
+<CaseStudyLayout
+  title="Timber Matching - The Counting House"
+  description="Period-accurate timber matching at The Counting House - Heritage Joiners case study."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-oak uppercase tracking-wide mb-4">The Counting House</p>
+      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Timber Matching</h1>
+      <p class="text-xl text-bone/70 max-w-2xl">
+        Period-accurate timber matching at The Counting House.
+      </p>
+      <p class="text-bone/80 mt-8">
+        [Details to be added - awaiting copy from Rob]
+      </p>
+    </div>
+  </section>
+</CaseStudyLayout>

@@ -1,0 +1,53 @@
+---
+/**
+ * Services overview page
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    href: '/services/timber-window-repair/',
+    title: 'Timber Window Repair',
+    description: 'Sash windows, casements, and period windows skillfully repaired. We replace broken cords, rotten sections, and failing hardware.',
+  },
+  {
+    href: '/services/doors-and-frames/',
+    title: 'Doors & Frames',
+    description: 'External and internal doors, frames, and door furniture. Period-accurate replacements and comprehensive repairs.',
+  },
+  {
+    href: '/services/rot-and-splice/',
+    title: 'Rot & Splice Repair',
+    description: 'Targeted timber repair saving windows that others would replace. We splice in new timber to replace only the damaged sections.',
+  },
+];
+---
+
+<BaseLayout title="Our Services" description="Heritage Joiners - specialist timber window and door services in Bristol. Repair, restoration, and period-accurate replacement.">
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Our services</h1>
+      <p class="text-lg text-ink/70 mb-12 max-w-2xl">
+        We specialize in timber window and door repair, restoration, and period-accurate replacement
+        for period properties across Bristol and the South West.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {services.map((service) => (
+          <a
+            href={service.href}
+            class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors"
+          >
+            <h2 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">
+              {service.title}
+            </h2>
+            <p class="text-ink/70">{service.description}</p>
+            <span class="inline-block mt-4 text-oak font-display text-sm">
+              Learn more &rarr;
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

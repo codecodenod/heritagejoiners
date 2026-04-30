@@ -1,0 +1,24 @@
+---
+/**
+ * Organization schema
+ */
+import { siteConfig } from '../../config/site';
+
+interface Props {
+  name?: string;
+}
+
+const { name: configName, url } = siteConfig;
+const props = Astro.props;
+const orgName = props.name || configName;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${url}/#organization`,
+  name: orgName,
+  url: url,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

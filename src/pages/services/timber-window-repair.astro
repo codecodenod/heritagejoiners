@@ -1,0 +1,87 @@
+---
+/**
+ * Timber Window Repair service page
+ */
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Timber Window Repair', url: `${url}/services/timber-window-repair/` }];
+const schemaProps = {
+  description: 'Specialist timber window repair in Bristol. Sash windows, casements, and period windows skillfully repaired.',
+  url: `${url}/services/timber-window-repair/`,
+  priceRange: '££',
+};
+---
+
+<ServiceLayout
+  title="Timber Window Repair"
+  description="Specialist timber window repair in Bristol. Sash windows, casements, and period windows skillfully repaired."
+  serviceName="Timber Window Repair"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">
+          Timber Window Repair
+        </h1>
+        <p class="text-lg text-ink/70 mb-8">
+          We repair all types of timber windows — sashes, casements, hung lights,
+          and period windows. Our repair-first approach often saves windows that
+          others would replace.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink
+            phone={phone.tel}
+            display={phone.display}
+            variant="secondary"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What's included</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <ul class="space-y-3 text-ink">
+          <li>• Sash cord replacement</li>
+          <li>• Sash pulley repair</li>
+          <li>• Window hardware replacement</li>
+          <li>• Putty and glazing repairs</li>
+        </ul>
+        <ul class="space-y-3 text-ink">
+          <li>• Draught-proofing</li>
+          <li>• Paint preparation and finish</li>
+          <li>• Rotten section repair</li>
+          <li>• Full restoration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need a quote?</h2>
+      <p class="text-ink/70 mb-8">We'd be happy to assess your windows.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink
+          phone={phone.tel}
+          display={phone.display}
+          variant="secondary"
+        />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

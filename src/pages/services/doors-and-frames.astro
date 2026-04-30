@@ -1,0 +1,87 @@
+---
+/**
+ * Doors and Frames service page
+ */
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Doors & Frames', url: `${url}/services/doors-and-frames/` }];
+const schemaProps = {
+  description: 'Timber doors and frames in Bristol. External doors, internal doors, frames, and door furniture repaired and replaced.',
+  url: `${url}/services/doors-and-frames/`,
+  priceRange: '££',
+};
+---
+
+<ServiceLayout
+  title="Doors & Frames"
+  description="Timber doors and frames in Bristol. External doors, internal doors, frames, and door furniture repaired and replaced."
+  serviceName="Doors & Frames"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">
+          Doors & Frames
+        </h1>
+        <p class="text-lg text-ink/70 mb-8">
+          We repair and replace timber doors and frames — external doors, internal doors,
+          door frames, and door furniture. When replacement is needed, we source or
+          manufacture period-accurate alternatives.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink
+            phone={phone.tel}
+            display={phone.display}
+            variant="secondary"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What's included</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <ul class="space-y-3 text-ink">
+          <li>• External door repair</li>
+          <li>• Door frame repair</li>
+          <li>• Door furniture replacement</li>
+          <li>• Weatherstripping</li>
+        </ul>
+        <ul class="space-y-3 text-ink">
+          <li>• Internal door adjustment</li>
+          <li>• Period door sourcing</li>
+          <li>• Custom door manufacture</li>
+          <li>• Ironmongery</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need a quote?</h2>
+      <p class="text-ink/70 mb-8">We'd be happy to assess your doors.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink
+          phone={phone.tel}
+          display={phone.display}
+          variant="secondary"
+        />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

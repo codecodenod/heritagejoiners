@@ -1,0 +1,45 @@
+---
+/**
+ * Nav - primary navigation
+ */
+import { siteConfig } from '../../config/site';
+
+interface Props {
+  mobile?: boolean;
+}
+
+const props = Astro.props;
+const isMobile = props.mobile || false;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/about', label: 'About' },
+  { href: '/case-studies', label: 'Case Studies' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+{isMobile ? (
+  <nav class="flex flex-col gap-2 text-lg">
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="font-display text-ink hover:text-oak transition-colors py-3 border-b border-ink/10"
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
+) : (
+  <nav class="hidden lg:flex items-center gap-6">
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="font-display text-sm text-ink hover:text-oak transition-colors"
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
+)}

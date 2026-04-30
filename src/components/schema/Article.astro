@@ -1,0 +1,45 @@
+---
+/**
+ * Article schema
+ */
+import { siteConfig } from '../../config/site';
+
+interface Props {
+  headline: string;
+  description: string;
+  url: string;
+  image?: string;
+  datePublished?: string;
+  dateModified?: string;
+  author?: {
+    name: string;
+    url?: string;
+  };
+}
+
+const props = Astro.props;
+const { url, name: siteName } = siteConfig;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: props.headline,
+  description: props.description,
+  url: props.url,
+  image: props.image || `${url}/images/articles/default.jpg`,
+  datePublished: props.datePublished,
+  dateModified: props.dateModified,
+  author: props.author || {
+    '@type': 'Organization',
+    name: siteName,
+    url: url,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: siteName,
+    url: url,
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

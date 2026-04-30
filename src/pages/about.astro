@@ -1,0 +1,76 @@
+---
+/**
+ * About page
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/site';
+
+const { name, phone, address } = siteConfig;
+---
+
+<BaseLayout title="About Us" description="Learn about Heritage Joiners - Bristol's timber window and door specialists.">
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-8">
+          About {name}
+        </h1>
+        <div class="prose prose-lg text-ink">
+          <p>
+            Heritage Joiners was established to provide Bristol and the surrounding
+            area with specialist timber window and door craftsmen.
+          </p>
+          <p>
+            We believe in repair before replacement. Where possible, we restore
+            existing timber windows and doors rather than replacing them with modern
+            uPVC alternatives. This preserves the character of period properties
+            and is often the more sustainable choice.
+          </p>
+          <p>
+            Our team has decades of combined experience working on listed buildings,
+            conservation areas, and period properties across the South West.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials -->
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Our approach</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-6 bg-paper rounded-lg">
+          <h3 class="font-display text-lg text-ink mb-2">Timber-first philosophy</h3>
+          <p class="text-ink/70">
+            We always explore repair options first. Many windows can be restored with
+            targeted work, avoiding the cost and disruption of full replacement.
+          </p>
+        </div>
+        <div class="p-6 bg-paper rounded-lg">
+          <h3 class="font-display text-lg text-ink mb-2">Period-accurate crafts</h3>
+          <p class="text-ink/70">
+            When replacement is necessary, we source or manufacture timber windows
+            and doors that match the original period and character of your property.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact info -->
+  <section class="py-16 bg-ink text-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl mb-8">Get in touch</h2>
+      <div class="prose prose-lg">
+        <p>
+          Based in Bristol, we work across the South West including Bath,
+         Keynsham, Clevedon, and the surrounding area.
+        </p>
+        <p>
+          {address.full !== 'TODO' ? address.full : 'Address pending'}
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

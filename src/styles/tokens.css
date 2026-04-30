@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  /* Neutrals: 80% of visual weight */
+  --color-ink: #1C1A17;
+  --color-bone: #F4EFE6;
+  --color-paper: #FAF7F1;
+
+  /* Primary Accent: Oak (20% of visual weight) */
+  --color-oak: #8A6B44;
+
+  /* Secondary Accents: use sparingly only */
+  --color-patina: #4B5A4E;
+  --color-brass: #B08A3E;
+  --color-rust: #A04A2A;
+
+  /* Typography */
+  --font-display: 'Fraunces Variable', serif;
+  --font-body: 'Source Serif 4', serif;
+  --font-ui: 'Inter', sans-serif;
+
+  /* Spacing System */
+  --spacing-section-lg: 7rem; /* py-28 */
+  --spacing-section-md: 5rem; /* py-20 */
+  --spacing-section-sm: 3.5rem; /* py-14 */
+  --spacing-heading-bottom: 1.5rem; /* mb-6 */
+  --spacing-cards-gap: 2rem; /* gap-8 */
+}

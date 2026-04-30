@@ -1,0 +1,63 @@
+@import "@fontsource-variable/fraunces";
+@import "@fontsource/source-serif-4";
+@import "@fontsource/inter/500.css";
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bone);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Typography Hierarchy */
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  line-height: 1.35;
+  margin-bottom: 1rem;
+}
+
+h4, h5, h6 {
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+/* Body text styling */
+p {
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+/* Long-form copy should be calmer, narrower */
+.prose, article p {
+  font-size: 1rem;
+  max-width: 55ch;
+}
+
+.font-ui {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+

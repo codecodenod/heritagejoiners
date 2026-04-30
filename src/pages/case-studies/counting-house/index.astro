@@ -1,0 +1,125 @@
+---
+/**
+ * The Counting House - parent case study
+ */
+import CaseStudyLayout from '../../../layouts/CaseStudyLayout.astro';
+import WhatsAppCTA from '../../../components/ui/WhatsAppCTA';
+import PhoneLink from '../../../components/ui/PhoneLink.astro';
+import { siteConfig } from '../../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [
+  { name: 'The Counting House', url: `${url}/case-studies/counting-house/` },
+];
+
+const articleProps = {
+  headline: 'The Counting House - Heritage Joiners Case Study',
+  url: `${url}/case-studies/counting-house/`,
+  datePublished: '2024-01-01',
+};
+---
+
+<CaseStudyLayout
+  title="The Counting House"
+  description="A complete restoration of this historic Bristol building - Heritage Joiners case study."
+  breadcrumbs={breadcrumbs}
+  articleProps={articleProps}
+>
+  <article>
+    <!-- Hero -->
+    <section class="py-16 lg:py-24 bg-paper">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-oak uppercase tracking-wide mb-4">Case Study</p>
+        <h1 class="font-display text-4xl lg:text-6xl text-ink mb-6">
+          The Counting House
+        </h1>
+        <p class="text-xl text-bone/70 max-w-2xl">
+          A complete timber window and door restoration of this historic Bristol building.
+        </p>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="py-16 bg-bone">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 prose prose-lg text-bone/80">
+            <p>
+              The Counting House is a historic building in Bristol requiring comprehensive
+              timber window and door restoration work.
+            </p>
+            <p>
+              [Project details to be added - awaiting copy from Rob]
+            </p>
+          </div>
+          <div class="space-y-6">
+            <div class="p-6 bg-paper rounded-lg">
+              <h3 class="font-display text-lg text-ink mb-4">Project overview</h3>
+              <dl class="space-y-3 text-sm">
+                <div class="flex justify-between">
+                  <dt class="text-bone/60">Location</dt>
+                  <dd class="text-ink">Bristol</dd>
+                </div>
+                <div class="flex justify-between">
+                  <dt class="text-bone/60">Type</dt>
+                  <dd class="text-ink">Commercial</dd>
+                </div>
+                <div class="flex justify-between">
+                  <dt class="text-bone/60">Services</dt>
+                  <dd class="text-ink">Windows, Doors</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sub-pages -->
+    <section class="py-16 bg-paper">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl text-ink mb-8">Related pages</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a
+            href="/case-studies/counting-house/timber-doors/"
+            class="block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors"
+          >
+            <h3 class="font-display text-lg text-ink mb-2">Timber Doors</h3>
+            <p class="text-bone/70 text-sm">Door restoration and replacement.</p>
+          </a>
+          <a
+            href="/case-studies/counting-house/sash-windows/"
+            class="block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors"
+          >
+            <h3 class="font-display text-lg text-ink mb-2">Sash Windows</h3>
+            <p class="text-bone/70 text-sm">Sash window restoration.</p>
+          </a>
+          <a
+            href="/case-studies/counting-house/timber-matching/"
+            class="block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors"
+          >
+            <h3 class="font-display text-lg text-ink mb-2">Timber Matching</h3>
+            <p class="text-bone/70 text-sm">Period-accurate timber matching.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-ink text-bone">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="font-display text-3xl mb-4">Need a similar project?</h2>
+        <p class="text-bone/70 mb-8">We'd be happy to discuss your needs.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink
+            phone={phone.tel}
+            display={phone.display}
+            variant="secondary"
+          />
+        </div>
+      </div>
+    </section>
+  </article>
+</CaseStudyLayout>

@@ -1,0 +1,99 @@
+---
+/**
+ * BaseLayout - foundation for all pages
+ */
+import '../styles/tokens.css';
+import '../styles/typography.css';
+import '../styles/components.css';
+import { siteConfig } from '../config/site';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import OrganizationSchema from '../components/schema/Organization.astro';
+import LocalBusinessSchema from '../components/schema/LocalBusiness.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  noindex?: boolean;
+  schema?: 'organization' | 'localbusiness' | 'none';
+}
+
+const props = Astro.props;
+
+const {
+  title,
+  description = 'Heritage Joiners — specialist timber window and door repair for listed and period properties across Yorkshire. 35+ years listed-building expertise. Repair-first approach.',
+  canonical,
+  noindex = false,
+  schema = 'localbusiness',
+} = props;
+
+const siteTitle = title ? `${title} | Heritage Joiners` : 'Heritage Joiners';
+const { url, plausible } = siteConfig;
+const fullCanonical = canonical || url;
+
+// OG image
+const ogImage = `${url}/images/og/default.png`;
+const twitterCard = 'summary_large_image';
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={fullCanonical} />
+
+    <!-- Title -->
+    <title>{siteTitle}</title>
+
+    <!-- Description -->
+    <meta name="description" content={description} />
+
+    <!-- Robots -->
+    {noindex ? (
+      <meta name="robots" content="noindex, nofollow" />
+    ) : (
+      <meta name="robots" content="index, follow" />
+    )}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={fullCanonical} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content={twitterCard} />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Plausible analytics -->
+    {plausible.domain !== 'TODO' && (
+      <script
+        defer
+        data-domain={plausible.domain}
+        src={`https://plausible.io/js/script.js`}
+      ></script>
+    )}
+
+    <!-- Schema -->
+    {schema === 'organization' && <OrganizationSchema />}
+    {schema === 'localbusiness' && <LocalBusinessSchema />}
+  </head>
+  <body class="min-h-screen flex flex-col bg-bone text-ink">
+    <Header />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

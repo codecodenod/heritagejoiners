@@ -1,0 +1,87 @@
+---
+/**
+ * Rot and Splice Repair service page
+ */
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Rot & Splice Repair', url: `${url}/services/rot-and-splice/` }];
+const schemaProps = {
+  description: 'Timber rot repair using splice method. Save windows that others would replace.',
+  url: `${url}/services/rot-and-splice/`,
+  priceRange: '££',
+};
+---
+
+<ServiceLayout
+  title="Rot & Splice Repair"
+  description="Timber rot repair using splice method. Save windows that others would replace."
+  serviceName="Rot & Splice Repair"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">
+          Rot &amp; Splice Repair
+        </h1>
+        <p class="text-lg text-ink/70 mb-8">
+          We specialize in rot repair using the splice method — replacing only the damaged
+          timber sections while preserving the original frame. This targeted approach often
+          saves windows that others would recommend replacing.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink
+            phone={phone.tel}
+            display={phone.display}
+            variant="secondary"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 shash:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What's included</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <ul class="space-y-3 text-ink">
+          <li>• Rot assessment</li>
+          <li>• Section replacement</li>
+          <li>• Timber splicing</li>
+          <li>• Epoxy repair</li>
+        </ul>
+        <ul class="space-y-3 text-ink">
+          <li>• Partial frame rebuild</li>
+          <li>• Chemical rot treatment</li>
+          <li>• Decay prevention</li>
+          <li>• Complete restoration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need a quote?</h2>
+      <p class="text-ink/70 mb-8">We'd be happy to assess your windows.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink
+          phone={phone.tel}
+          display={phone.display}
+          variant="secondary"
+        />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

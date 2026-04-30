@@ -1,0 +1,55 @@
+---
+/**
+ * Button - primary/secondary/tertiary variants
+ */
+import { siteConfig } from '../../config/site';
+
+interface Props {
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  variant?: 'primary' | 'secondary' | 'tertiary';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+  [key: string]: unknown;
+}
+
+const {
+  href,
+  type = 'button',
+  variant = 'primary',
+  size = 'md',
+  class: className,
+  ...rest
+} = Astro.props;
+
+// Base styles
+const baseStyles = 'inline-flex items-center justify-center font-display transition-colors disabled:opacity-50 disabled:cursor-not-allowed';
+
+// Variant styles
+const variantStyles = {
+  primary: 'bg-ink text-bone hover:bg-oak focus:ring-2 focus:ring-oak focus:ring-offset-2 focus:ring-offset-bone',
+  secondary: 'bg-bone text-ink border border-ink hover:bg-paper focus:ring-2 focus:ring-ink focus:ring-offset-2 focus:ring-offset-bone',
+  tertiary: 'text-ink hover:text-oak underline-offset-4 hover:underline',
+};
+
+// Size styles
+const sizeStyles = {
+  sm: 'px-4 py-2 text-sm rounded',
+  md: 'px-6 py-3 text-base rounded-md',
+  lg: 'px-8 py-4 text-lg rounded-md',
+};
+
+const combinedStyles = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className || ''}`;
+
+const Tag = href ? 'a' : type === 'button' || type === 'submit' || type === 'reset' ? 'button' : 'span';
+---
+
+{href ? (
+  <a href={href} class={combinedStyles}>
+    <slot />
+  </a>
+) : (
+  <button type={type === 'button' ? 'button' : type} class={combinedStyles} {...rest}>
+    <slot />
+  </button>
+)}
