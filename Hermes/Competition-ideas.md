@@ -302,3 +302,283 @@ Threat level: HIGH brand recognition, but functions more as a conversion ally
 - Three-tier product structure: Standard, Consult, Plus — clear pricing ladder.
 - Trustpilot presence with hundreds of reviews; BritainReviews 21 reviews, 100% would-buy-again, 8.2/10 pricing score.
 - National coverage with a recognisable brand and proprietary VPSS sealing system.
+
+---
+
+## Appendix A — Site audit & full page plan (added 2026-05-03)
+
+This appendix is calibrated to the live site at heritagejoiners.pages.dev as of 2026-05-03. It covers only what we do and where we do it. Contact details, phone numbers, addresses, and analytics are out of scope.
+
+---
+
+### A1. Current site state — what's live
+
+Pages currently live:
+
+- / (Home)
+- /services (Services overview)
+- /services/timber-window-repair
+- /services/doors-and-frames
+- /services/rot-and-splice
+- /about
+- /case-studies
+- /case-studies/counting-house
+- /contact
+
+What's already strong on the live site:
+
+- The "We repair when / We recommend replacement when" decision logic is on the homepage. Bones of the preservation-first framework already exist.
+- The Ventrolla anchor pricing (£2,000–£4,000 replacement vs £300–£800 repair) is in the benefits grid.
+- WhatsApp photo-first triage is the primary CTA across pages.
+- The 4-step process flow (photos → assess → site visit → recommendation) is implemented.
+- Counting House is set up as the primary case study.
+- "Repair-first" language is consistent across home, about, and service pages.
+
+What's missing on the live site (in scope: what/where only):
+
+- The fourth headline service from the business plan (integrated listed/period property timber repairs).
+- A dedicated repair-vs-replace decision page that the service pages can link into.
+- Service page depth — each page is currently a two-column bullet list.
+- WF-first geographic positioning. Pontefract, Castleford, and Featherstone are not mentioned anywhere on the homepage or About page.
+- Any location pages at all (no /pontefract/, /wakefield/, etc.).
+- A founder-led About page (Rob, 35+ years, apprenticeship background, listed-buildings track record).
+- Internal geographic anchoring — currently brand voice swings between "Yorkshire-wide" and a generic regional list.
+
+---
+
+### A2. Geographic positioning fix — top of every page
+
+Problem: Hero says "Listed & Period Timber Repairs Across Yorkshire." Coverage paragraph lists "York, Leeds, Wakefield, Harrogate, Sheffield" — Harrogate (NY Sash territory) before Wakefield, no mention of Pontefract, Castleford, or Featherstone.
+
+Fix: Reorder coverage everywhere on the site to lead with the uncontested WF postcode area.
+
+Hero line (Home):
+> Listed & Period Timber Repairs in Pontefract, Wakefield & Across Yorkshire
+
+Coverage paragraph (Home, About, footer-adjacent):
+> Based in Pontefract. We work on listed and period properties across West Yorkshire — Pontefract, Wakefield, Castleford, Featherstone, Knottingley, Normanton — and travel further across Yorkshire for Leeds, York, and selected heritage projects.
+
+Brand anchor (footer descriptor and About):
+> Heritage Joiners — Pontefract-based specialist timber repair for listed and period properties across Yorkshire.
+
+What to remove or demote in current copy:
+
+- Drop "Harrogate" from primary coverage lists. Heritage Joiners has no advantage there and three strong competitors live there (NY Sash, Sash Window Restoration, The Sash Man).
+- Drop "Sheffield" from primary coverage lists. It's outside the realistic travel patch and dilutes the WY identity.
+- Replace "Yorkshire-wide" framing with "Pontefract-based, Yorkshire-covering" framing. The local anchor is the differentiator.
+
+---
+
+### A3. Service architecture — what we do
+
+#### A3.1. Add the missing fourth service
+
+Business plan specifies four headline services. Live site has three. The missing one is the highest-value:
+
+New page: /services/listed-and-period-property-repairs/
+Page title: Listed & Period Property Timber Repairs
+Purpose: The integrated full-property service that wins the listed-home owner with multiple problems (sash + door + frame + rot in one project). This is the page that converts the highest job values and the architect referrals.
+
+Page content brief:
+- Headline: "Whole-property timber repair for listed and period homes"
+- Opening paragraph: Frame the integrated offer — windows, doors, frames, rot and splice repairs, timber matching, sympathetic finishing, all delivered by one specialist on one project. Explain why this matters for listed and period buildings (consistency of repair quality, single point of accountability, conservation-aware judgement applied across the whole property).
+- What's included: Sash window repair · door and frame repair · rot and splice repairs · timber matching, blending, and ageing · sympathetic finishing (oils, waxes, stains) · structural and semi-structural timber repair · selective replacement where genuinely required · liaison with conservation officers, architects, and surveyors where needed.
+- Why a single specialist matters: Plain-English explanation that mixing trades on a listed building creates visible mismatch and risks consent issues. One craftsman, one judgement, one finish — that's how period buildings should be repaired.
+- Repair-first decision logic: Mini version of the framework with a link out to the full /repair-or-replace/ page (see A3.2).
+- Counting House cross-link: "See how this approach was applied to The Counting House, Pontefract."
+- Ventrolla anchor (whole-property scale): Frame the savings at the whole-property level — six listed sash windows replaced through a national firm runs £15,000–£24,000. Repaired through Heritage Joiners typically £3,000–£5,400. Plus retention of original timber and avoidance of consent risk.
+- Who this is for: Listed building owners · period property owners · conservation area homeowners · architects managing heritage projects · surveyors needing a specialist for a defects-driven brief.
+- Coverage: Pontefract-based, working across Yorkshire on listed and period property projects.
+- CTA: WhatsApp photos for an initial assessment of the whole project.
+
+#### A3.2. Add the preservation-first framework page
+
+New page: /repair-or-replace/
+Page title: Repair or Replace? How We Decide
+Purpose: The single most defensible content asset in the niche. No competitor has this. It anchors every service page and converts buyers who are still deciding between repair and replacement.
+
+Page content brief:
+
+- Headline: "Repair or replace? Our four-stage assessment"
+- Opening paragraph: Honest framing — most period timber can be repaired, but not all of it should be. Heritage Joiners works through a four-stage assessment before recommending work. This page shows how that decision gets made.
+- The four stages, with photo examples and trigger points for each:
+  1. Retain — timber is structurally sound, character intact. Action: minor adjustment, draught-proofing, easing and finishing. Trigger points (typical signs the timber is in this state). Typical cost band.
+  2. Selective splice — localised decay that can be cut out and spliced with new timber. Original character preserved. Trigger points. Typical cost band.
+  3. Partial replacement — one section of the window or door beyond reliable repair, the rest sound. Replace the section, retain everything else. Trigger points. Typical cost band.
+  4. Full replacement — remaining sound timber too low for a durable repair, decay through critical load-bearing zones, or previous failed repairs make another repair unreliable. We say so plainly, and we manufacture or source period-accurate replacements. Trigger points. Typical cost band.
+- What we look at: Decay depth · structural retention percentage · joint condition · previous repair history · expected service life of any proposed repair · listed building consent implications.
+- The honest position: Plain-English statement that we don't repair-at-any-cost. Where replacement is the better long-term answer, we say so. This is what makes the repair recommendations on every other page trustworthy.
+- Ventrolla anchor framed as the comparison: A national replacement firm starts at full replacement by default. Our default is the lowest viable stage on this scale. That's the difference.
+- Cross-links to all four service pages.
+- CTA: WhatsApp photos and we'll tell you which stage your timber is at.
+
+#### A3.3. Deepen the three existing service pages
+
+Each of the live service pages is currently a two-column bullet list. Yoursashwindows runs 8+ deep silo pages. Even NY Sash beats Heritage Joiners on per-service depth. Each existing page needs to expand to a consistent structure:
+
+Standard service page structure (apply to all four service pages):
+
+1. Headline + opening paragraph — what the service is, who it's for, repair-first stance for this specific service.
+2. What we do — the bullet list that's already there, retained.
+3. How we decide repair vs replacement for this service — mini version of the framework with a link to the full /repair-or-replace/ page.
+4. Typical cost bands for this service — published price ranges from the business plan (site assessment £80–£150, small repairs £180–£350, standard jobs £350–£900, complex above £900). Tailored to this service.
+5. Ventrolla comparison localised to this service — for windows, the £2,500–£4,000 replacement vs £350–£900 repair. For doors, the equivalent. For rot/splice, framed as "saving the window/door entirely."
+6. Counting House cross-link — show the relevant section of the case study for this specific service type.
+7. Coverage — Pontefract-based, Yorkshire-wide, with WF postcodes named first.
+8. CTA — WhatsApp photos.
+
+#### A3.4. Service-specific copy fixes
+
+**/services/timber-window-repair:**
+
+- Current opening is fine. Add a section: "Sash, casement, hung lights — what we repair on each." Period properties have multiple window types and a buyer needs to know whether their specific window is in scope.
+- Add a "When repair isn't viable" section linking to /repair-or-replace/. Currently the page implies all windows can be repaired, which weakens the honest-recommendation positioning.
+- Spelling: ensure "specialise" not "specialize" anywhere on this page.
+
+**/services/doors-and-frames:**
+
+- Current opening reads: "We repair and replace timber doors and frames." This treats repair and replacement as equals and weakens the repair-first stance. Rewrite: "We repair timber doors and frames wherever the original timber can carry a sound repair. Where replacement is genuinely the right answer, we source or manufacture period-accurate alternatives."
+- Add the four-stage decision logic specific to doors (different trigger points to windows — door stiles and lower rails fail differently from sash boxes).
+- Add specific door types covered: external Georgian/Victorian/Edwardian doors · cottage doors · frame and lining repair · architraves · door furniture and ironmongery.
+
+**/services/rot-and-splice:**
+
+- Spelling fix: "We specialize" → "We specialise." Brand voice is Yorkshire-local; American spelling undercuts it.
+- Strong opening already — "saves windows that others would recommend replacing." Keep.
+- Add a visual section explaining the splice method itself with a step-by-step from a real Counting House (or other) repair: identify decay, cut back to sound timber, scarf the joint, splice in new timber, blend the finish. This is the page where the craft is most visible and most defensible against competitors.
+- Add the explicit comparison: "A full replacement frame costs £X. A splice repair on the affected section typically costs £Y. The rest of the original window stays."
+
+#### A3.5. Update the /services overview page
+
+Currently lists three services. Update to four, with the new integrated listed/period property repairs page as the lead card (it's the highest-value entry point):
+
+1. Listed & Period Property Timber Repairs (new — integrated full-property service)
+2. Timber Window Repair
+3. Doors & Frames
+4. Rot & Splice Repair
+Add an intro paragraph above the cards stating the repair-first stance and linking to /repair-or-replace/ for the decision framework.
+
+---
+
+### A4. Where we do it — location pages
+
+No location pages currently exist on the site. Yoursashwindows.com already has live /leeds/ and /york/ pages. The strategic priority from the business plan and competitor research stands:
+
+Phase 1 location pages — uncontested WF territory (build first):
+
+1. /areas/pontefract/
+2. /areas/wakefield/
+3. /areas/castleford/
+4. /areas/featherstone/
+
+Phase 2 location pages — contested but valuable (build second, after Phase 1 ranking):
+
+5. /areas/leeds/
+6. /areas/york/
+
+Optional Phase 3:
+
+7. /areas/knottingley/
+8. /areas/normanton/
+
+Do not build:
+
+- Harrogate — three strong competitors live there. No Heritage Joiners advantage.
+- Sheffield — outside realistic travel patch.
+- Whitby — Heritage Joinery Whitby brand-collision risk.
+
+#### A4.1. Standard location page structure
+
+Each location page follows the same template. Local depth is what beats Yoursashwindows' templated location content:
+
+1. Headline: "Listed & Period Timber Repair in [Town]"
+2. Opening paragraph: Heritage Joiners is based in Pontefract and works regularly on listed and period properties in [Town]. Reference the specific period housing stock in that town (Georgian, Victorian, Edwardian, weavers' cottages, mill terraces, etc.) — this is what a real local specialist knows and a national operator doesn't.
+3. What we do in [Town]: Cross-link to all four services framed for the local context.
+4. Local property types we work on: Specific paragraph on the period property mix in that town. For Pontefract: Georgian townhouses, Victorian terraces, the Counting House and similar listed commercial buildings. For Wakefield: Georgian houses around the cathedral quarter, Victorian terraces, listed civic buildings. For Castleford: Victorian terraces, post-industrial conversions. For Featherstone: Victorian and Edwardian terraces, miners' cottages. Each paragraph reads as written by someone who actually works in that town.
+5. Conservation areas and listed building context: Note the relevant conservation areas and the council jurisdiction (Wakefield Council for all four Phase 1 towns). Reference the consent landscape briefly. Link to /repair-or-replace/.
+6. Local case study reference: For Pontefract, the Counting House anchor. For others, reference the closest case study and note "more local examples coming as we document them."
+7. Repair-first stance: One paragraph repeating the core position with a link to /repair-or-replace/.
+8. Coverage detail: Specific neighbourhoods, postcodes covered (e.g. Pontefract page: WF7, WF8, WF9 plus surrounding villages).
+9. CTA: WhatsApp photos for an assessment of a [Town] property.
+
+#### A4.2. Pontefract page — primary location anchor
+
+This is the most important location page. It carries the home-base authority and the Counting House proof asset.
+
+**Distinctive content for /areas/pontefract/:**
+
+- Lead paragraph names Pontefract as the home base, not just a coverage area.
+- Reference Counting House Pontefract prominently. This is the only page where the case study is a local-credibility asset, not just a portfolio item.
+- Reference the specific conservation areas in Pontefract.
+- Postcodes covered: WF7, WF8, WF9 explicitly listed.
+- Surrounding villages named: Ackworth, Darrington, East Hardwick, Carleton, Tanshelf, etc.
+
+#### A4.3. Wakefield page — credentialling anchor
+
+This is the page where the Wakefield Council conservation approval pursuit (from the business plan) lives.
+
+**Distinctive content for /areas/wakefield/:**
+
+- Reference Wakefield Council jurisdiction explicitly. This positions Heritage Joiners as the local specialist working within the local conservation framework.
+- Once Wakefield Council conservation approval is achieved, this page is where it's announced first.
+- Specific Wakefield conservation areas named (Cathedral Quarter, etc.).
+- Postcodes WF1, WF2, WF3, WF4 listed.
+- Position as the natural choice for Wakefield district listed buildings.
+
+#### A4.4. Castleford and Featherstone pages
+
+Lower search volume than Pontefract and Wakefield, but zero specialist competition and high buyer-intent for the rare period properties in those areas.
+
+Castleford-specific notes:
+
+- Reference The Window Doctor (Castleford) as a UPVC-replacement neighbour, NOT a competitor. Position Heritage Joiners as the timber-specific specialist in WF10.
+- Postcode WF10 explicitly.
+
+Featherstone-specific notes:
+
+- StyleHaus Windows is the local general-window company. Position Heritage Joiners as the specialist timber-only alternative.
+- Postcode WF7.
+
+#### A4.5. Leeds and York pages — Phase 2
+
+Build only after Phase 1 pages are live and indexing.
+
+Leeds page: Frame as travel-from-Pontefract specialist for listed and period work. Reference the period housing stock specifically (Headingley Victorian terraces, Roundhay Edwardian semis, central Georgian, etc.). Acknowledge that Leeds has more competitors and lean harder on the personal craftsman story and Counting House proof.
+
+York page: Frame as travel-from-Pontefract specialist for listed and period work. Reference the conservation density in York (one of the most listed-building-dense cities in England). City of York Council listed building consent landscape mentioned. Lean on the integrated listed/period property service — this is where that fourth service page converts highest.
+
+---
+
+### A5. About page rewrite — what we do, who does it
+
+The About page is currently generic ("Our team has decades of hands-on experience"). Every comparable competitor wins on personal brand here — NY Sash names Rob, Sash Window Restoration names Stephen Westerman, The Sash Man names James Lonsdale. Heritage Joiners' 35+ years and apprenticeship background are stronger than any of them, but the About page has to actually say so.
+
+Restructured About page brief:
+
+- Headline: "35+ years of timber repair on listed and period buildings"
+- Founder paragraph: Lead with the founder's name, apprenticeship-trained bench joiner and site carpenter, listed-building track record. Explain the route into specialist heritage timber work. This is the page that beats every personal-brand competitor.
+- Why repair-first: Personal explanation, not corporate. "I work this way because…" reads more credibly than "Heritage Joiners works this way."
+- Where we work: Pontefract-based, Yorkshire-covering. Same coverage order as the home page.
+- Notable projects: Counting House Pontefract as the anchor. "Award-winning building project exposure" referenced. As more case studies land in year one, they get added here.
+- Approach to listed and period work: Reference the four-stage decision framework (link to /repair-or-replace/). Reference timber matching, finishing, conservation awareness.
+- What we don't do: Brief honest list — kitchens, decking, general handyman work, painting-led projects. Tells the listed-property buyer they're in the right place.
+- Coverage detail: Pontefract, Wakefield, Castleford, Featherstone first. Then Leeds, York, wider Yorkshire.
+
+---
+
+### A6. Case Studies hub — what we've done, where we've done it
+
+Currently one project visible (Counting House). Single-point-of-proof risk acknowledged in the business plan.
+
+**Case Studies index page (/case-studies/):**
+
+- Filter or tag projects by service type (window / door / rot-splice / integrated listed-property) and by location.
+- Counting House Pontefract as the anchor.
+- Placeholder structure ready for the 3–4 additional year-one case studies the business plan calls for. Each new project gets a slug under /case-studies/[project-name]/.
+
+**Counting House page deepening (/case-studies/counting-house/):**
+- Already live. Expand with sub-sections cross-linked from each service page:
+  - Timber door work section (linked from /services/doors-and-frames/)
+  - Window repair section (linked from /services/timber-window-repair/)
+  - Rot-and-splice section (linked from /services/rot-and-splice/)
+  - Integrated listed-property section (linked from /services/listed-and-period-property-repairs/)
