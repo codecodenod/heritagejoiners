@@ -3,73 +3,104 @@
  * About page
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PhoneLink from '../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../components/ui/WhatsAppCTA';
 import { siteConfig } from '../config/site';
 
-const { name, phone, address } = siteConfig;
+const { name, phone } = siteConfig;
 ---
 
-<BaseLayout title="About Us" description="Learn about Heritage Joiners - Yorkshire timber repair specialists for listed and period buildings.">
+<BaseLayout title="About Rob" description="About Heritage Joiners - 35+ years of repair-first timber joinery for listed and period buildings across Pontefract, Wakefield, and Yorkshire.">
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">{name}</p>
         <h1 class="font-display text-4xl lg:text-5xl text-ink mb-8">
-          About {name}
+          35+ years of timber repair on listed and period buildings
         </h1>
         <div class="prose prose-lg text-ink">
           <p>
-            Heritage Joiners was established to provide Yorkshire with specialist
-            timber repair and joinery craftsmanship for listed and period buildings.
+            Heritage Joiners is led by Rob, a fully qualified, apprenticeship-trained bench joiner and site carpenter with more than 35 years of hands-on experience across new builds and refurbishments.
           </p>
           <p>
-            We believe in repair before replacement. Where possible, we restore
-            existing timber windows and doors rather than replacing them with modern
-            uPVC alternatives. This preserves the character of period properties
-            and is often the more sustainable choice.
+            That work has run from new-build site carpentry through to specialist attention on listed buildings, oak-framed buildings, and barn conversions. Today the focus is firmly on listed and period property renovation: timber windows, doors, frames, sills, rot and splice repairs, and sympathetic timber matching.
           </p>
           <p>
-            Our team has decades of hands-on experience working on listed buildings,
-            conservation areas, and period properties across Yorkshire.
+            I work this way because original timber deserves a proper assessment before anyone talks about ripping it out. A lot of period windows, doors, frames, and sills can be repaired soundly with the right judgement, timber matching, and splice work.
+          </p>
+          <p>
+            That does not mean repair-at-any-cost. If the remaining sound timber is too low for a durable repair, I will say so clearly and explain the replacement or partial replacement route.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Credentials -->
   <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Why repair-first</h2>
+        <p class="text-ink/70">
+          Listed and period buildings are strongest when the original fabric is respected. Repair can often preserve character, reduce disruption, avoid unnecessary consent routes, and keep the building's historic detail intact.
+        </p>
+        <a href="/repair-or-replace/" class="inline-block mt-6 text-oak font-display">Read the four-stage framework &rarr;</a>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Where we work</h2>
+        <p class="text-ink/70">
+          Based in Pontefract. We work on listed and period properties across West Yorkshire — Pontefract, Wakefield, Castleford, Featherstone, Knottingley, Normanton — and travel further across Yorkshire for Leeds, York, and selected heritage projects.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Our approach</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="p-6 bg-paper rounded-lg">
-          <h3 class="font-display text-lg text-ink mb-2">Timber-first philosophy</h3>
-          <p class="text-ink/70">
-            We always explore repair options first. Many windows can be restored with
-            targeted work, avoiding the cost and disruption of full replacement.
-          </p>
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Approach to listed and period work</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 bg-paper rounded-lg border border-ink/10">
+          <h3 class="font-display text-xl text-ink mb-3">Assess first</h3>
+          <p class="text-ink/70">Decay depth, sound timber percentage, joint condition, and previous repairs all shape the recommendation.</p>
         </div>
-        <div class="p-6 bg-paper rounded-lg">
-          <h3 class="font-display text-lg text-ink mb-2">Period-accurate crafts</h3>
-          <p class="text-ink/70">
-            When replacement is necessary, we source or manufacture timber windows
-            and doors that match the original period and character of your property.
-          </p>
+        <div class="p-6 bg-paper rounded-lg border border-ink/10">
+          <h3 class="font-display text-xl text-ink mb-3">Match carefully</h3>
+          <p class="text-ink/70">Where new timber is needed, the aim is sympathetic repair, profile retention, and a finish that settles into the building.</p>
+        </div>
+        <div class="p-6 bg-paper rounded-lg border border-ink/10">
+          <h3 class="font-display text-xl text-ink mb-3">Keep it honest</h3>
+          <p class="text-ink/70">Some timber should be retained, some sections should be replaced, and sometimes a full replacement is the correct answer.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact info -->
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Notable project</h2>
+        <p class="text-ink/70 mb-6">
+          The Counting House in Pontefract is the current anchor case study for the site, covering period timber restoration across windows, doors, and timber matching.
+        </p>
+        <a href="/case-studies/counting-house/" class="text-oak font-display">View Counting House &rarr;</a>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">What we do not lead with</h2>
+        <p class="text-ink/70">
+          We are not a kitchen, decking, or painting-led contractor. The focus is repair-first timber work for historic windows, doors, frames, sills, rot, and splice repairs.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="py-16 bg-ink text-bone">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl lg:text-3xl mb-8">Get in touch</h2>
-      <div class="prose prose-lg">
-        <p>
-          Based in Yorkshire, we work across the region including York, Leeds,
-          Wakefield, Harrogate, Sheffield, and surrounding areas.
-        </p>
-        <p>
-          {address.full !== 'TODO' ? address.full : 'Address pending'}
-        </p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl mb-4">Get in touch</h2>
+      <p class="text-bone/70 mb-8 mx-auto">
+        Send photos first and Rob can usually give an initial view on whether repair looks viable.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>
   </section>

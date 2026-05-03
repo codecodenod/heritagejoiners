@@ -33,7 +33,7 @@ const breadcrumbItems = [
 
 <BaseLayout title={title} description={description}>
   <slot name="schema">
-    {schemaProps && <ServiceSchema {...schemaProps} />}
+    {schemaProps && <ServiceSchema name={serviceName} {...schemaProps} />}
   </slot>
   <BreadcrumbSchema items={breadcrumbItems} />
   <slot />

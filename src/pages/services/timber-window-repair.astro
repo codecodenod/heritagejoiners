@@ -3,7 +3,6 @@
  * Timber Window Repair service page
  */
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
-import Button from '../../components/ui/Button.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
 import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
 import { siteConfig } from '../../config/site';
@@ -12,15 +11,26 @@ const { phone, url } = siteConfig;
 
 const breadcrumbs = [{ name: 'Timber Window Repair', url: `${url}/services/timber-window-repair/` }];
 const schemaProps = {
-  description: 'Specialist timber window repair across Yorkshire. Sash windows, casements, and period windows skillfully repaired.',
+  description: 'Repair-first timber window repair across Pontefract, Wakefield, and Yorkshire for sash windows, casements, hung lights, and period windows.',
   url: `${url}/services/timber-window-repair/`,
   priceRange: '££',
 };
+
+const repairItems = [
+  'Sash cord replacement and rebalancing',
+  'Sash pulley repair and renewal',
+  'Casement and hung-light easing',
+  'Rot cut-out and local timber splice repairs',
+  'Putty, glazing-bed, and bead repairs',
+  'Draught-proofing and weather-seal upgrades',
+  'Hardware replacement and adjustment',
+  'Full timber window restoration where viable',
+];
 ---
 
 <ServiceLayout
-  title="Timber Window Repair"
-  description="Specialist timber window repair across Yorkshire. Sash windows, casements, and period windows skillfully repaired."
+  title="Timber Window Repair in Pontefract & Wakefield"
+  description="Repair-first timber window repair across Pontefract, Wakefield, and Yorkshire. Sash windows, casements, hung lights, and period windows repaired before replacement is considered."
   serviceName="Timber Window Repair"
   breadcrumbs={breadcrumbs}
   schemaProps={schemaProps}
@@ -28,59 +38,96 @@ const schemaProps = {
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Repair-first window work</p>
         <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">
           Timber Window Repair
         </h1>
         <p class="text-lg text-ink/70 mb-8">
-          We repair all types of timber windows — sashes, casements, hung lights,
-          and period windows. Our repair-first approach often saves windows that
-          others would replace.
+          We repair sash windows, casements, hung lights, and period timber windows wherever the original fabric can carry a sound repair. Replacement is only recommended when the remaining timber is too weak for durable work.
         </p>
         <div class="flex flex-wrap gap-4">
           <WhatsAppCTA client:load />
-          <PhoneLink
-            phone={phone.tel}
-            display={phone.display}
-            variant="secondary"
-          />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- What's included -->
   <section class="py-16 bg-bone">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What's included</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <ul class="space-y-3 text-ink">
-          <li>• Sash cord replacement</li>
-          <li>• Sash pulley repair</li>
-          <li>• Window hardware replacement</li>
-          <li>• Putty and glazing repairs</li>
-        </ul>
-        <ul class="space-y-3 text-ink">
-          <li>• Draught-proofing</li>
-          <li>• Paint preparation and finish</li>
-          <li>• Rotten section repair</li>
-          <li>• Full restoration</li>
-        </ul>
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we repair</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {repairItems.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Sash, casement, hung lights</h2>
+        <p class="text-ink/70">
+          Period properties rarely have one neat window type. We assess each opening on its own merits: sash boxes and cords, casement joints and hinges, hung-light operation, glazing bars, sills, and frame condition.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">When repair is not viable</h2>
+        <p class="text-ink/70">
+          If decay runs through critical joints, the sill or box has lost too much sound timber, or previous repairs have failed, selective or full replacement may be better value. <a href="/repair-or-replace/" class="text-oak underline">Read the repair-or-replace framework</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Typical cost bands</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£80-£150</p><p class="text-sm text-ink/70">Site assessment</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£180-£350</p><p class="text-sm text-ink/70">Small repairs</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£350-£900</p><p class="text-sm text-ink/70">Standard window repair</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£900+</p><p class="text-sm text-ink/70">Complex work</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-ink text-bone">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl mb-4">Before full replacement</h2>
+      <p class="text-bone/70 mx-auto">
+        National replacement pricing can reach £2,500-£4,000 per sash-window equivalent. A viable repair is often in the £350-£900 band, with original fabric retained and less disruption.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Counting House proof</h2>
+      <p class="text-ink/70 mb-6">
+        The Counting House project anchors the kind of period timber work this service is built for.
+      </p>
+      <a href="/case-studies/counting-house/sash-windows/" class="text-oak font-display">View sash window case study &rarr;</a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Pontefract-based, working first across WF postcodes: <a href="/areas/pontefract/" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield/" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford/" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone/" class="text-oak underline">Featherstone</a>, Knottingley, and Normanton. We also travel further across Yorkshire for Leeds, York, and selected listed or period projects.
+      </p>
+    </div>
+  </section>
+
   <section class="py-16 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-display text-3xl text-ink mb-4">Need a quote?</h2>
-      <p class="text-ink/70 mb-8">We'd be happy to assess your windows.</p>
+      <h2 class="font-display text-3xl text-ink mb-4">Need a window assessed?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos first and we will give you an honest first view on repair viability.</p>
       <div class="flex flex-wrap justify-center gap-4">
         <WhatsAppCTA client:load />
-        <PhoneLink
-          phone={phone.tel}
-          display={phone.display}
-          variant="secondary"
-        />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>
   </section>

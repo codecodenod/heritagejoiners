@@ -34,7 +34,7 @@ const { url, plausible } = siteConfig;
 const fullCanonical = canonical || url;
 
 // OG image
-const ogImage = `${url}/images/og/default.png`;
+const ogImage = `${url}/images/homepage/hero.webp`;
 const twitterCard = 'summary_large_image';
 ---
 
@@ -77,7 +77,7 @@ const twitterCard = 'summary_large_image';
     <meta name="twitter:image" content={ogImage} />
 
     <!-- Plausible analytics -->
-    {plausible.domain !== 'TODO' && (
+    {plausible.domain && (
       <script
         defer
         data-domain={plausible.domain}

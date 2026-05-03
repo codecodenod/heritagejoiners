@@ -63,7 +63,7 @@ const { name, phone, whatsapp, address, email, hours } = siteConfig;
         <div class="p-6 bg-bone rounded-lg">
           <h2 class="font-display text-lg text-ink mb-2">Our workshop</h2>
           <p class="text-ink/70">
-            {address.full !== 'TODO' ? address.full : 'Address pending'}
+            {address.full || 'Address pending'}
           </p>
         </div>
       </div>

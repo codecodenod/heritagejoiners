@@ -1,0 +1,225 @@
+---
+/**
+ * Repair or Replace - strategic decision framework
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleSchema from '../components/schema/Article.astro';
+import WhatsAppCTA from '../components/ui/WhatsAppCTA';
+import PhoneLink from '../components/ui/PhoneLink.astro';
+import { siteConfig } from '../config/site';
+
+const { phone, url } = siteConfig;
+
+const stages = [
+  {
+    title: '1. Retain',
+    image: '/images/case-studies/sash-after.webp',
+    trigger: 'Sound timber, minor movement, local wear, failed putty, loose beads, stiff operation, or small areas that do not affect structure.',
+    cost: 'Assessment usually £80-£150. Easing, finishing, or minor works are usually in the low hundreds.',
+    link: '/services/timber-window-repair/',
+  },
+  {
+    title: '2. Selective splice',
+    image: '/images/case-studies/sash-during.webp',
+    trigger: 'Decay is localised and can be cut back to sound timber while retaining the original member, profile, and surrounding fabric.',
+    cost: 'Small splice repairs are typically £180-£350 depending on access, profile, and finish.',
+    link: '/services/rot-and-splice/',
+  },
+  {
+    title: '3. Partial replacement',
+    image: '/images/homepage/service-rot.webp',
+    trigger: 'A rail, stile, sill, frame section, or door component is too far gone, but the wider window or door can still be retained.',
+    cost: 'Standard repair jobs are commonly £350-£900 depending on condition and number of affected sections.',
+    link: '/services/doors-and-frames/',
+  },
+  {
+    title: '4. Full replacement',
+    image: '/images/homepage/service-windows.webp',
+    trigger: 'Remaining sound timber is too low for a durable repair, critical zones have failed, or earlier repairs make another repair poor value.',
+    cost: 'Complex repairs can exceed £900. Full replacement can reach £2,500-£4,000 per sash-window equivalent.',
+    link: '/services/listed-and-period-property-repairs/',
+  },
+];
+
+const checks = [
+  'Decay depth and whether the moisture cause has been solved',
+  'Percentage of sound timber left in structural sections',
+  'Joint condition, movement, and load path',
+  'Previous repair history and whether earlier work has failed',
+  'Expected service life after repair compared with replacement',
+  'Listed building consent and conservation implications',
+];
+
+const serviceLinks = [
+  { href: '/services/listed-and-period-property-repairs/', title: 'Listed & Period Property Repairs' },
+  { href: '/services/timber-window-repair/', title: 'Timber Window Repair' },
+  { href: '/services/doors-and-frames/', title: 'Doors & Frames' },
+  { href: '/services/rot-and-splice/', title: 'Rot & Splice Repair' },
+];
+
+const description = 'A four-stage repair-or-replace assessment for listed and period timber windows, doors, frames, and splice repairs across Pontefract, Wakefield, and Yorkshire.';
+---
+
+<BaseLayout
+  title="Repair or Replace?"
+  description={description}
+  canonical={`${url}/repair-or-replace/`}
+>
+  <ArticleSchema
+    headline="Repair or replace? Our four-stage timber assessment"
+    description={description}
+    url={`${url}/repair-or-replace/`}
+    image={`${url}/images/case-studies/sash-during.webp`}
+  />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Repair-first framework</p>
+        <h1 class="font-display text-4xl lg:text-6xl text-ink mb-6">
+          Repair or replace? Our four-stage assessment
+        </h1>
+        <p class="text-lg lg:text-xl text-ink/75 mb-8">
+          Most period timber can often be repaired, but not all timber should be repaired at any cost. We preserve what can be soundly retained and recommend selective or full replacement only when timber viability is too low for a durable result.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 lg:py-28 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 max-w-2xl">
+        <div class="accent-line mx-0 mb-6"></div>
+        <h2 class="font-display text-3xl lg:text-5xl text-ink mb-4">
+          The four stages
+        </h2>
+        <p class="text-ink/70">
+          We start with the lowest sensible intervention and move up only when the timber condition justifies it.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {stages.map((stage) => (
+          <article class="service-card bg-paper overflow-hidden">
+            <img src={stage.image} alt="" class="w-full h-56 object-cover" loading="lazy" />
+            <div class="p-6">
+              <h3 class="font-display text-2xl text-ink mb-3">{stage.title}</h3>
+              <p class="text-ink/70 mb-4">{stage.trigger}</p>
+              <p class="text-sm text-ink/80 mb-5">
+                <strong class="text-ink">Typical band:</strong> {stage.cost}
+              </p>
+              <a href={stage.link} class="text-oak font-display text-sm">Related service &rarr;</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <div class="accent-line mx-0 mb-6"></div>
+        <h2 class="font-display text-3xl lg:text-5xl text-ink mb-6">What we look at</h2>
+        <p class="text-ink/70 mb-8">
+          A good recommendation comes from condition, not sales preference. These are the practical checks behind the advice.
+        </p>
+      </div>
+      <ul class="space-y-4">
+        {checks.map((check) => (
+          <li class="flex gap-4 text-ink/80">
+            <span class="text-oak font-display">✓</span>
+            <span>{check}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-14 lg:py-28 bg-ink text-bone">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="accent-line-light mx-auto mb-6"></div>
+      <h2 class="font-display text-3xl lg:text-5xl mb-6">The honest position</h2>
+      <p class="text-lg text-bone/75 mx-auto">
+        Repair-first does not mean repair-at-any-cost. It means preserve original timber where it can be retained soundly, and replace only the parts, or the full unit, when that is the better long-term answer.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-14 lg:py-28 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 max-w-2xl">
+        <div class="accent-line mx-0 mb-6"></div>
+        <h2 class="font-display text-3xl lg:text-5xl text-ink mb-4">Why repair usually wins</h2>
+        <p class="text-ink/70">
+          Where the timber is viable, repair usually protects more value than a full replacement route.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div class="p-6 bg-bone rounded-lg">
+          <h3 class="font-display text-xl text-ink mb-3">Cost</h3>
+          <p class="text-sm text-ink/70">Repair typically avoids much of the cost of full manufacture, removal, making-good, disposal, and redecoration.</p>
+        </div>
+        <div class="p-6 bg-bone rounded-lg">
+          <h3 class="font-display text-xl text-ink mb-3">Consent</h3>
+          <p class="text-sm text-ink/70">Repair to existing fabric usually avoids the consent routes often triggered by listed-building replacement.</p>
+        </div>
+        <div class="p-6 bg-bone rounded-lg">
+          <h3 class="font-display text-xl text-ink mb-3">Character</h3>
+          <p class="text-sm text-ink/70">Original timber, glass, tooling marks, and ironmongery carry age and authenticity that new joinery struggles to reproduce.</p>
+        </div>
+        <div class="p-6 bg-bone rounded-lg">
+          <h3 class="font-display text-xl text-ink mb-3">Thermal</h3>
+          <p class="text-sm text-ink/70">Draught-proofing, careful repair, and suitable secondary or slim-profile upgrades can often improve comfort while retaining fabric.</p>
+        </div>
+        <div class="p-6 bg-bone rounded-lg">
+          <h3 class="font-display text-xl text-ink mb-3">Sustainability</h3>
+          <p class="text-sm text-ink/70">Retaining sound timber keeps embodied carbon in place and avoids unnecessary manufacturing, transport, and waste.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 lg:py-28 bg-bone">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="accent-line mx-auto mb-6"></div>
+      <h2 class="font-display text-3xl lg:text-5xl text-ink mb-6">How this differs from replacement-first firms</h2>
+      <p class="text-lg text-ink/70 mx-auto">
+        A national replacement firm often starts with the new unit as the answer. We start with the lowest viable stage: retain, selective splice, partial replacement, then full replacement only when the evidence points there.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-14 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl lg:text-5xl text-ink mb-8">Related services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {serviceLinks.map((service) => (
+          <a href={service.href} class="block p-6 bg-paper rounded-lg border border-ink/10 hover:border-oak transition-colors">
+            <h3 class="font-display text-xl text-ink group-hover:text-oak">{service.title}</h3>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 lg:py-28 bg-paper">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="accent-line mx-auto mb-6"></div>
+      <h2 class="font-display text-3xl lg:text-5xl text-ink mb-6">
+        Send photos before you decide
+      </h2>
+      <p class="text-lg text-ink/70 mb-10 mx-auto">
+        Clear photos are often enough for a first view on whether repair is likely to be viable. A final recommendation still needs site inspection.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

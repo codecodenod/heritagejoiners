@@ -22,18 +22,26 @@ const schema = {
   email: email,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'TODO', // TODO: parse address.street
+    streetAddress: address.street,
     addressLocality: address.city,
     postalCode: address.postcode,
     addressRegion: 'England',
     addressCountry: 'GB',
   },
   areaServed: serviceArea,
-  openingHoursSpecification: [
-    // TODO: generate from siteConfig.hours
-  ],
+  openingHoursSpecification: Object.entries(hours)
+    .filter(([, value]) => value !== 'Closed')
+    .map(([day, value]) => {
+      const [opens, closes] = value.split(' - ');
+      return {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: day.charAt(0).toUpperCase() + day.slice(1),
+        opens,
+        closes,
+      };
+    }),
   priceRange: '££',
-  image: `${url}/images/logo-og.png`,
+  image: `${url}/images/homepage/hero.webp`,
 };
 ---
 

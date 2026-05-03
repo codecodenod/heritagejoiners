@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+const breadcrumbs = [
+  { name: 'Home', url: `${url}/` },
+  { name: 'Areas', url: `${url}/areas/wakefield/` },
+  { name: 'Wakefield', url: `${url}/areas/wakefield/` },
+];
+---
+
+<BaseLayout title="Timber Repairs in Wakefield" description="Repair-first timber window, door, frame, rot, and splice repairs for listed and period properties in Wakefield, WF1, WF2, WF3, and WF4.">
+  <BreadcrumbSchema items={breadcrumbs} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Wakefield WF1-WF4</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Timber repairs for listed and period properties in Wakefield</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Repair-first timber work for Wakefield period homes, conservation-area properties, and historic buildings, covering windows, doors, frames, rot, and splice repairs.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Wakefield repair context</h2>
+        <p class="text-ink/70">
+          Wakefield has listed buildings, Victorian and Edwardian streets, and conservation-sensitive areas where repair can often preserve more value than unnecessary replacement.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Council and conservation awareness</h2>
+        <p class="text-ink/70">
+          Where listed-building or conservation questions arise, we keep recommendations repair-led and evidence-based so owners can make clear decisions before formal consent routes are triggered.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Services in Wakefield</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <a href="/services/listed-and-period-property-repairs/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink">Listed & period repairs</a>
+        <a href="/services/timber-window-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink">Timber window repair</a>
+        <a href="/services/doors-and-frames/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink">Doors & frames</a>
+        <a href="/services/rot-and-splice/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink">Rot & splice repair</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need timber repair in Wakefield?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos first for an initial repair viability view.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

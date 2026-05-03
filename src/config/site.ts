@@ -1,6 +1,7 @@
 /**
  * Site configuration
- * TODO: Fill in missing values before launch
+ * Site-wide business details.
+ * Empty strings are intentionally used for details still awaiting confirmation.
  */
 
 export const siteConfig = {
@@ -8,49 +9,48 @@ export const siteConfig = {
   domain: 'heritagejoiners.com',
   url: 'https://heritagejoiners.com',
 
-  // Business contact - TODO: fill in
+  // Business contact
   phone: {
-    display: 'TODO', // e.g. '0117 205 0129'
-    tel: 'TODO', // e.g. '+441172050129'
+    display: '',
+    tel: '',
   },
   whatsapp: {
-    display: 'TODO', // e.g. '+447700900000'
-    link: 'TODO', // e.g. '+447700900000'
+    display: '',
+    link: '',
   },
-  email: 'TODO',
+  email: '',
 
-  // Address - TODO: fill in
+  // Address
   address: {
-    street: 'TODO',
-    city: 'TODO',
-    postcode: 'TODO',
-    full: 'TODO', // e.g. '123 High Street, Pontefract WF8 1AA'
+    street: '',
+    city: 'Pontefract',
+    postcode: '',
+    full: '',
   },
 
   // NAP (Name, Address, Phone) for schema
   name: 'Heritage Joiners',
-  telephone: 'TODO', // use phone.tel
+  telephone: '',
   // Note: email is above under business contact
 
   // Full address for schema
-  addressFull: 'TODO', // use address.full
+  addressFull: '',
 
   // Service area
   serviceArea: ['Yorkshire'],
 
   // Social
   social: {
-    // TODO: fill in
-    linkedin: 'TODO',
-    instagram: 'TODO',
+    linkedin: '',
+    instagram: '',
   },
 
   // Analytics
   plausible: {
-    domain: 'TODO', // e.g. 'heritagejoiners.com'
+    domain: '',
   },
 
-  // Business hours - TODO: fill in
+  // Business hours
   hours: {
     monday: '08:00 - 17:00',
     tuesday: '08:00 - 17:00',
@@ -63,9 +63,8 @@ export const siteConfig = {
 
   // Company info
   company: {
-    // TODO: fill in
-    registrationNumber: 'TODO',
-    vatNumber: 'TODO',
+    registrationNumber: '',
+    vatNumber: '',
   },
 } as const;
 

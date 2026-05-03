@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const areas = [
+  { href: '/areas/pontefract/', title: 'Pontefract', description: 'Primary local area: WF7, WF8, WF9, and surrounding villages.' },
+  { href: '/areas/wakefield/', title: 'Wakefield', description: 'WF1-WF4 timber repairs for period and conservation-sensitive properties.' },
+  { href: '/areas/castleford/', title: 'Castleford', description: 'WF10 repair-first timber window, door, frame, rot, and splice work.' },
+  { href: '/areas/featherstone/', title: 'Featherstone', description: 'WF7 period timber repair with the original fabric assessed first.' },
+];
+---
+
+<BaseLayout title="Areas We Cover" description="Heritage Joiners covers Pontefract, Wakefield, Castleford, Featherstone, and selected listed or period projects across Yorkshire.">
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Areas we cover</h1>
+        <p class="text-lg text-ink/70">
+          Pontefract-based timber repair for listed and period properties, with WF postcodes first.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {areas.map((area) => (
+          <a href={area.href} class="block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
+            <h2 class="font-display text-xl text-ink mb-3">{area.title}</h2>
+            <p class="text-ink/70">{area.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

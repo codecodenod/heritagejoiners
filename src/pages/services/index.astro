@@ -6,19 +6,24 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const services = [
   {
+    href: '/services/listed-and-period-property-repairs/',
+    title: 'Listed & Period Property Repairs',
+    description: 'Whole-property timber repair for listed and period buildings: windows, doors, frames, rot, splice work, and timber matching by one specialist.',
+  },
+  {
     href: '/services/timber-window-repair/',
     title: 'Timber Window Repair',
-    description: 'Sash windows, casements, and period windows skillfully repaired. We replace broken cords, rotten sections, and failing hardware.',
+    description: 'Sash windows, casements, hung lights, and period windows repaired before replacement is considered.',
   },
   {
     href: '/services/doors-and-frames/',
     title: 'Doors & Frames',
-    description: 'External and internal doors, frames, and door furniture. Period-accurate replacements and comprehensive repairs.',
+    description: 'Period timber doors, external doors, frames, linings, thresholds, and ironmongery repaired wherever sound.',
   },
   {
     href: '/services/rot-and-splice/',
     title: 'Rot & Splice Repair',
-    description: 'Targeted timber repair saving windows that others would replace. We splice in new timber to replace only the damaged sections.',
+    description: 'Targeted rot cut-out and splice repairs that replace only failed timber sections where the surrounding fabric is sound.',
   },
 ];
 ---
@@ -28,11 +33,10 @@ const services = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Our services</h1>
       <p class="text-lg text-ink/70 mb-12 max-w-2xl">
-        We specialise in timber window and door repair, restoration, and selective replacement
-        for listed and period properties across Yorkshire.
+        We specialise in repair-first timber work for listed and period properties. We assess whether original fabric can be retained before recommending selective or full replacement. <a href="/repair-or-replace/" class="text-oak underline">Read the repair-or-replace framework</a>.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((service) => (
           <a
             href={service.href}

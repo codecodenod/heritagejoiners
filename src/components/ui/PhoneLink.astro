@@ -23,11 +23,12 @@ const variantStyles = {
 const combinedStyles = variantStyles[variant];
 
 // Format display phone
-const displayPhone = display || phone.replace('+44', '0').replace(/^44/, '0');
+const displayPhone = display || (phone ? phone.replace('+44', '0').replace(/^44/, '0') : 'Phone pending');
+const href = phone ? `tel:${phone}` : '/contact';
 ---
 
 <a
-  href={`tel:${phone}`}
+  href={href}
   class:list={[combinedStyles, className]}
   data-plausible-event="phone-click"
 >

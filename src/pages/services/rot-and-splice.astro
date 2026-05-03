@@ -3,7 +3,6 @@
  * Rot and Splice Repair service page
  */
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
-import Button from '../../components/ui/Button.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
 import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
 import { siteConfig } from '../../config/site';
@@ -12,15 +11,32 @@ const { phone, url } = siteConfig;
 
 const breadcrumbs = [{ name: 'Rot & Splice Repair', url: `${url}/services/rot-and-splice/` }];
 const schemaProps = {
-  description: 'Timber rot repair using splice method. Save windows that others would replace.',
+  description: 'Timber rot repair using splice methods across Pontefract, Wakefield, and Yorkshire. Preserve original windows, doors, and frames where repair is sound.',
   url: `${url}/services/rot-and-splice/`,
   priceRange: '££',
 };
+
+const steps = [
+  'Identify decay and moisture cause',
+  'Cut back to sound timber',
+  'Scarf the joint where load or length requires it',
+  'Splice in matched new timber',
+  'Blend, finish, and protect the repair',
+];
+
+const techniques = [
+  'Splice repairs to decayed sections',
+  'Scarf joints for longer linear repairs',
+  'Dutchman repairs for localised losses',
+  'Epoxy consolidation where appropriate',
+  'Timber matching and profile retention',
+  'Putty and glazing-bed repair after timber work',
+];
 ---
 
 <ServiceLayout
-  title="Rot & Splice Repair"
-  description="Timber rot repair using splice method. Save windows that others would replace."
+  title="Rot & Splice Repair in Pontefract & Wakefield"
+  description="Timber rot and splice repair across Pontefract, Wakefield, and Yorkshire. Targeted repair for listed and period windows, doors, frames, and sills."
   serviceName="Rot & Splice Repair"
   breadcrumbs={breadcrumbs}
   schemaProps={schemaProps}
@@ -28,59 +44,94 @@ const schemaProps = {
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Targeted timber repair</p>
         <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">
           Rot &amp; Splice Repair
         </h1>
         <p class="text-lg text-ink/70 mb-8">
-          We specialize in rot repair using the splice method — replacing only the damaged
-          timber sections while preserving the original frame. This targeted approach often
-          saves windows that others would recommend replacing.
+          We repair timber rot by removing the failed section and splicing in sound timber while preserving the original frame, sash, door, or sill wherever that gives a durable result.
         </p>
         <div class="flex flex-wrap gap-4">
           <WhatsAppCTA client:load />
-          <PhoneLink
-            phone={phone.tel}
-            display={phone.display}
-            variant="secondary"
-          />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- What's included -->
   <section class="py-16 bg-bone">
-    <div class="max-w-7xl mx-auto px-4 shash:px-6 lg:px-8">
-      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What's included</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <ul class="space-y-3 text-ink">
-          <li>• Rot assessment</li>
-          <li>• Section replacement</li>
-          <li>• Timber splicing</li>
-          <li>• Epoxy repair</li>
-        </ul>
-        <ul class="space-y-3 text-ink">
-          <li>• Partial frame rebuild</li>
-          <li>• Chemical rot treatment</li>
-          <li>• Decay prevention</li>
-          <li>• Complete restoration</li>
-        </ul>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What is included</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {techniques.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">The splice method</h2>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        {steps.map((step, index) => (
+          <div class="p-5 bg-paper rounded-lg border border-ink/10">
+            <p class="font-display text-oak text-2xl mb-3">{index + 1}</p>
+            <p class="text-ink/80">{step}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-ink/70 mt-8">
+        A splice repair makes sense when the parent timber around the failed area is still sound. If too much of the frame or sash has failed, <a href="/repair-or-replace/" class="text-oak underline">we move up the repair-or-replace framework</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Typical cost bands</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£80-£150</p><p class="text-sm text-ink/70">Assessment</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£180-£350</p><p class="text-sm text-ink/70">Small splice</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£350-£900</p><p class="text-sm text-ink/70">Standard rot repair</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£900+</p><p class="text-sm text-ink/70">Multiple or complex sections</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-ink text-bone">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl mb-4">Replace only the failed section</h2>
+      <p class="text-bone/70 mx-auto">
+        A full replacement frame can run into the thousands. A splice repair on the affected section typically costs far less, and the rest of the original window, door, or frame stays in place.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Counting House proof</h2>
+      <p class="text-ink/70 mb-6">The Counting House is the current proof anchor for careful timber matching and restoration work.</p>
+      <a href="/case-studies/counting-house/timber-matching/" class="text-oak font-display">View timber matching case study &rarr;</a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Pontefract-based, working first across WF postcodes: <a href="/areas/pontefract/" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield/" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford/" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone/" class="text-oak underline">Featherstone</a>, Knottingley, and Normanton. We also travel further across Yorkshire for Leeds, York, and selected listed or period projects.
+      </p>
+    </div>
+  </section>
+
   <section class="py-16 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-display text-3xl text-ink mb-4">Need a quote?</h2>
-      <p class="text-ink/70 mb-8">We'd be happy to assess your windows.</p>
+      <h2 class="font-display text-3xl text-ink mb-4">Need rot assessed?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send close photos of the failed timber and the surrounding area.</p>
       <div class="flex flex-wrap justify-center gap-4">
         <WhatsAppCTA client:load />
-        <PhoneLink
-          phone={phone.tel}
-          display={phone.display}
-          variant="secondary"
-        />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>
   </section>
