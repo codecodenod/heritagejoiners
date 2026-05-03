@@ -61,3 +61,41 @@ Source: http://yoursashwindows.com/
   - /sash-windows/heritage-sash-windows/
   - /sash-windows/sliding-sash-windows/
 - Repeated CTA detected: “Request a Survey”
+
+---
+
+## 2) N Y Sash Windows
+Source: http://nysashwindows.co.uk/
+
+### What they’re doing well
+- **Clear niche positioning** around sash window restoration and draught-proofing for period homes.
+- **Local trust framing**: small family business, geographically rooted (Harrogate/Ripon area).
+- **Simple service clarity**: restoration + draught-proofing is easy to understand quickly.
+- **Clean contact route**: straightforward “Contact Us” CTA.
+
+### Weaknesses / gaps you can exploit
+- Limited content depth versus larger competitors (fewer service silos and less educational depth).
+- Fewer visible conversion layers (no obvious multi-step lead journey like guides/checklists/case-study funnels).
+- Less visible technical framework explaining when repair is viable vs when replacement becomes necessary.
+- Less obvious proof architecture (before/after technical evidence, retention metrics, intervention detail).
+
+### Heritage Joiners opportunities (Yorkshire domination strategy)
+1. **Out-educate with technical authority**
+   - Publish timber defect diagnostics, repair sequence logic, and viability thresholds.
+2. **Out-proof with measurable case studies**
+   - Include timber retained %, defects mapped, method used, and expected lifespan gain.
+3. **Out-convert with tiered CTAs**
+   - Survey booking + photo upload triage + downloadable listed-building repair guide.
+4. **Out-rank with Yorkshire-wide local pages**
+   - Build specific pages for key towns/cities + conservation context each area.
+5. **Reinforce your differentiation statement**
+   - Preservation-first, on-site repair where feasible, minimal disturbance, but transparent when replacement is structurally required.
+
+### Evidence captured from crawl (sample)
+- Homepage title: “North Yorkshire Sash Windows - Expert Restoration and Draught Proofing Services”
+- Core headings indicate focus on:
+  - Restoration
+  - Draught Proofing
+  - About / Contact
+- Primary CTA detected: “Contact Us”
+- Brand framing detected: family business serving Harrogate/surrounding area
