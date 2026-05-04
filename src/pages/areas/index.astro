@@ -1,28 +1,60 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
+import { siteConfig } from '../../config/site';
 
-const areas = [
-  { href: '/areas/pontefract/', title: 'Pontefract', description: 'Primary local area: WF7, WF8, WF9, and surrounding villages.' },
-  { href: '/areas/wakefield/', title: 'Wakefield', description: 'WF1-WF4 timber repairs for period and conservation-sensitive properties.' },
-  { href: '/areas/castleford/', title: 'Castleford', description: 'WF10 repair-first timber window, door, frame, rot, and splice work.' },
-  { href: '/areas/featherstone/', title: 'Featherstone', description: 'WF7 period timber repair with the original fabric assessed first.' },
+const { url } = siteConfig;
+const breadcrumbs = [
+  { name: 'Home', url: `${url}/` },
+  { name: 'Areas', url: `${url}/areas/` },
+];
+
+const localAreas = [
+  { href: '/areas/pontefract/', title: 'Pontefract', desc: 'Home base. WF7, WF8, WF9 and surrounding villages.' },
+  { href: '/areas/wakefield/', title: 'Wakefield', desc: 'WF1–WF4. Cathedral quarter and period housing.' },
+  { href: '/areas/castleford/', title: 'Castleford', desc: 'WF10. Victorian terraces and period stock.' },
+  { href: '/areas/featherstone/', title: 'Featherstone', desc: 'WF7. Miners\' cottages and period chapels.' },
+  { href: '/areas/knottingley/', title: 'Knottingley', desc: 'WF11. Victorian terraces and commercial period stock.' },
+  { href: '/areas/normanton/', title: 'Normanton', desc: 'WF6. Victorian and Edwardian housing.' },
+];
+
+const travelAreas = [
+  { href: '/areas/leeds/', title: 'Leeds', desc: 'Listed and period work. Headingley, Roundhay, central Georgian.' },
+  { href: '/areas/yorkshire/', title: 'Yorkshire (wider)', desc: 'Significant structural and listed building projects across the county.' },
 ];
 ---
 
-<BaseLayout title="Areas We Cover" description="Heritage Joiners covers Pontefract, Wakefield, Castleford, Featherstone, and selected listed or period projects across Yorkshire.">
+<BaseLayout
+  title="Areas We Cover | Heritage Joiners Pontefract"
+  description="Heritage Joiners covers Pontefract, Wakefield, Castleford, Featherstone, Knottingley, Normanton, Leeds, and selected listed or period projects across Yorkshire."
+>
+  <BreadcrumbSchema items={breadcrumbs} />
+
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mb-12">
         <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Areas we cover</h1>
         <p class="text-lg text-ink/70">
-          Pontefract-based timber repair for listed and period properties, with WF postcodes first.
+          Pontefract-based, covering WF postcodes as primary territory. We travel for listed and period timber work across the wider Yorkshire area.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {areas.map((area) => (
+
+      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Local — WF postcodes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {localAreas.map((area) => (
           <a href={area.href} class="block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
-            <h2 class="font-display text-xl text-ink mb-3">{area.title}</h2>
-            <p class="text-ink/70">{area.description}</p>
+            <h3 class="font-display text-xl text-ink mb-2">{area.title}</h3>
+            <p class="text-ink/70">{area.desc}</p>
+          </a>
+        ))}
+      </div>
+
+      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Travel — listed &amp; period work</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {travelAreas.map((area) => (
+          <a href={area.href} class="block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
+            <h3 class="font-display text-xl text-ink mb-2">{area.title}</h3>
+            <p class="text-ink/70">{area.desc}</p>
           </a>
         ))}
       </div>

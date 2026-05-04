@@ -3,23 +3,37 @@
  * Case Studies overview
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
+import { siteConfig } from '../../config/site';
+
+const { url } = siteConfig;
+const breadcrumbs = [
+  { name: 'Home', url: `${url}/` },
+  { name: 'Case Studies', url: `${url}/case-studies/` },
+];
 
 const caseStudies = [
   {
     href: '/case-studies/counting-house/',
     title: 'The Counting House',
-    description: 'A complete timber restoration project delivered by Heritage Joiners.',
-    category: 'Commercial',
+    description: 'Sash windows, timber doors, frames, rot and splice repairs, and timber matching across a listed period building in Pontefract.',
+    category: 'Listed Period Building',
+    location: 'Pontefract, WF8',
   },
 ];
 ---
 
-<BaseLayout title="Case Studies" description="Case studies from Heritage Joiners showing repair-first timber restoration outcomes for period and historic buildings.">
+<BaseLayout
+  title="Heritage Timber Repair Case Studies | Heritage Joiners Yorkshire"
+  description="Real listed and period timber repair projects across Yorkshire. See condition, decisions, repair method, and outcomes."
+>
+  <BreadcrumbSchema items={breadcrumbs} />
+
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Case studies</h1>
       <p class="text-lg text-ink/70 mb-12 max-w-2xl">
-        Browse our past projects to see the quality of our work on period properties.
+        Each case study shows the starting condition, the repair-or-replace decisions made on each element, the work carried out, and the outcome. Real projects, honest assessments.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -29,14 +43,18 @@ const caseStudies = [
             class="group block bg-bone rounded-lg overflow-hidden border border-ink/10 hover:border-oak transition-colors"
           >
             <div class="aspect-video bg-ink/10 flex items-center justify-center">
-              <span class="font-display text-bone/30 text-4xl">{study.title.charAt(0)}</span>
+              <span class="font-display text-ink/20 text-5xl">{study.title.charAt(0)}</span>
             </div>
             <div class="p-6">
-              <p class="text-xs text-oak uppercase tracking-wide mb-2">{study.category}</p>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs text-oak uppercase tracking-wide">{study.category}</span>
+                <span class="text-xs text-ink/40">{study.location}</span>
+              </div>
               <h2 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">
                 {study.title}
               </h2>
-              <p class="text-ink/70">{study.description}</p>
+              <p class="text-ink/70 text-sm">{study.description}</p>
+              <span class="inline-block mt-4 text-oak font-display text-sm">View case study &rarr;</span>
             </div>
           </a>
         ))}

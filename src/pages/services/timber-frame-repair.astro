@@ -1,0 +1,168 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Timber Frame Repair', url: `${url}/services/timber-frame-repair/` }];
+const schemaProps = {
+  description: 'Heritage timber frame repair specialists for listed and period properties across Yorkshire: oak frame members, mortice and tenon joints, pegs, sole plates, and infill panels.',
+  url: `${url}/services/timber-frame-repair/`,
+  priceRange: '£££',
+};
+
+const repairItems = [
+  'Oak post and beam repair — scarf and splice',
+  'Mortice and tenon joint consolidation and repair',
+  'Peg renewal — traditional draw-bored oak pegs',
+  'Sole plate decay — localised repair and replacement',
+  'Post foot decay at ground level',
+  'Brace and strut repair in exposed framing',
+  'Rail and stud decay in panel infill zones',
+  'Infill panel relationship repair — lath, plaster, brick nogging, lime render',
+  'Frame consolidation ahead of conservation works',
+  'Assessment and report for owners, architects, and surveyors',
+];
+
+const faqs = [
+  {
+    question: 'Can oak frame members be repaired rather than replaced?',
+    answer: 'In most cases, yes. Decay in oak frames is often localised — at the foot of a post, at the end of a beam, or around an infill panel that has held moisture. Scarf and splice repairs using new oak restore structural function while keeping the original frame geometry, jointing, and character intact. Full member replacement disrupts the frame geometry and is rarely necessary if repair is addressed promptly.',
+  },
+  {
+    question: 'What causes decay in timber framed buildings?',
+    answer: 'Moisture is the cause in almost every case. Common entry points include failed infill panels, poor detailing at eaves and verges, blocked gutters, and inadequate or absent ventilation at the sole plate. We identify and address the moisture route as the first step — a timber frame repair that leaves moisture active will not last.',
+  },
+  {
+    question: 'Do timber frame repairs require listed building consent?',
+    answer: 'Repair using like-for-like materials and methods typically does not. Replacement of principal structural members in a listed building usually does require consent. Where replacement is indicated, we advise the owner to engage the local conservation officer before work proceeds.',
+  },
+  {
+    question: 'Can you work alongside architects on listed timber frame buildings?',
+    answer: 'Yes. We are experienced in working within architect-led or surveyor-led conservation projects. We can provide a condition assessment and repair specification to inform a wider brief, or deliver the timber repair element of a coordinated project.',
+  },
+];
+---
+
+<ServiceLayout
+  title="Timber Frame Repair for Heritage Buildings in Yorkshire"
+  description="Heritage timber frame repair specialists for listed and period properties across Yorkshire, including oak frame members, joints and sole plates."
+  serviceName="Timber Frame Repair"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqs} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Oak frame &amp; structural jointing</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">
+          Timber Frame Repair for Heritage Buildings in Yorkshire
+        </h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Timber framed buildings — cruck frames, box frames, aisled halls, and later jettied structures — carry some of the most significant historic fabric in Yorkshire. Repairs to these buildings require a different approach to standard joinery: an understanding of load paths through the frame, respect for original jointing methods, and the skill to work in the same tradition as the original craftsmen. Heritage Joiners has the background and experience for this work.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we repair</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {repairItems.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Traditional jointing — repair in kind</h2>
+        <p class="text-ink/70 mb-3">
+          Mortice and tenon joints, draw-bored pegs, tusk tenons, and lap joints are the language of historic timber frames. Repairs made with metal connectors or modern adhesives can transfer loads in ways the frame was not designed for, and are often visible against the original fabric.
+        </p>
+        <p class="text-ink/70">
+          We repair joints in kind where possible — matching joint profiles, cutting new mortices accurately, fitting new pegs to traditional draw-bored dimensions. Where a joint has to be replaced rather than repaired, the replacement is detailed to sit within the frame's existing load path.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Infill panels and the frame relationship</h2>
+        <p class="text-ink/70 mb-3">
+          Infill panels — wattle and daub, brick nogging, or lime render on lath — must be compatible with the frame. Modern cement-based infills can trap moisture against the oak, accelerating decay at the frame edges. We advise on compatible infill repair and replacement, and work with lime-based systems appropriate to the building.
+        </p>
+        <p class="text-ink/70">
+          Where infill renewal is out of our scope, we can identify and recommend specialists for the related trades.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Typical cost bands</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£80–£150</p><p class="text-sm text-ink/70">Assessment</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£900+</p><p class="text-sm text-ink/70">Individual member repair</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">Survey-led</p><p class="text-sm text-ink/70">Frame consolidation programmes</p></div>
+      </div>
+      <p class="text-ink/70 text-sm">Timber frame repair costs are always survey-led for any substantial scope. The geometry, access, and conservation requirements of each frame are different.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Frequently asked questions</h2>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="border-b border-ink/10 pb-6">
+            <h3 class="font-display text-xl text-ink mb-2">{faq.question}</h3>
+            <p class="text-ink/70">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Pontefract-based, covering WF postcodes and travelling for historic timber frame work across <a href="/areas/yorkshire/" class="text-oak underline">Yorkshire</a>. We have worked on listed frames across West and North Yorkshire. <a href="/areas/pontefract/" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield/" class="text-oak underline">Wakefield</a>, <a href="/areas/featherstone/" class="text-oak underline">Featherstone</a>, and <a href="/areas/leeds/" class="text-oak underline">Leeds</a> area.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Related services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/services/oak-beam-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Oak Beam Repair</a>
+        <a href="/services/structural-timber-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Structural Timber Repair</a>
+        <a href="/services/listed-and-period-property-repairs/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Listed &amp; Period Property Repairs</a>
+        <a href="/repair-or-replace/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Repair or Replace? Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Working on a timber frame building?</h2>
+      <p class="text-ink/70 mb-8 max-w-2xl mx-auto">Send photos of the frame and affected members. For architect-led projects, we are happy to discuss a formal condition assessment and repair specification.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

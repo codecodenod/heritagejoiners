@@ -3,52 +3,131 @@
  * Services overview page
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
+import { siteConfig } from '../../config/site';
 
-const services = [
-  {
-    href: '/services/listed-and-period-property-repairs/',
-    title: 'Listed & Period Property Repairs',
-    description: 'Whole-property timber repair for listed and period buildings: windows, doors, frames, rot, splice work, and timber matching by one specialist.',
-  },
-  {
-    href: '/services/timber-window-repair/',
-    title: 'Timber Window Repair',
-    description: 'Sash windows, casements, hung lights, and period windows repaired before replacement is considered.',
-  },
-  {
-    href: '/services/doors-and-frames/',
-    title: 'Doors & Frames',
-    description: 'Period timber doors, external doors, frames, linings, thresholds, and ironmongery repaired wherever sound.',
-  },
-  {
-    href: '/services/rot-and-splice/',
-    title: 'Rot & Splice Repair',
-    description: 'Targeted rot cut-out and splice repairs that replace only failed timber sections where the surrounding fabric is sound.',
-  },
+const { url } = siteConfig;
+const breadcrumbs = [
+  { name: 'Home', url: `${url}/` },
+  { name: 'Services', url: `${url}/services/` },
+];
+
+const windowServices = [
+  { href: '/services/sash-window-repair/', title: 'Sash Window Repair', description: 'Cords, cills, draught-proofing, and splice repairs for sash windows in period and listed properties.' },
+  { href: '/services/timber-window-repair/', title: 'Timber Window Repair', description: 'Casements, hung lights, and fixed-light period windows repaired before replacement is considered.' },
+];
+
+const doorsServices = [
+  { href: '/services/doors-and-frames/', title: 'Doors & Frames', description: 'Period timber doors, external and internal, frames, linings, thresholds, and ironmongery repaired wherever sound.' },
+];
+
+const rotServices = [
+  { href: '/services/rot-and-splice/', title: 'Rot & Splice Repair', description: 'Targeted rot cut-out and scarf joints that replace only the failed timber section while the surrounding fabric is retained.' },
+];
+
+const structuralServices = [
+  { href: '/services/structural-timber-repair/', title: 'Structural Timber Repair', description: 'Hub page for beams, joists, roof timbers, and timber frame work on listed and period buildings.' },
+  { href: '/services/oak-beam-repair/', title: 'Oak Beam Repair', description: 'Scarf and splice repairs to oak beams and structural hardwood using traditional jointing methods.' },
+  { href: '/services/roof-timber-repair/', title: 'Roof Timber Repair', description: 'Rafter tails, purlins, ridge boards, and wall plates. Repair-first with clear replacement thresholds.' },
+  { href: '/services/floor-joist-and-floorboard-repair/', title: 'Floor Joist & Floorboard Repair', description: 'Sagging floors, joist end decay, and floorboard matching for period homes.' },
+  { href: '/services/timber-frame-repair/', title: 'Timber Frame Repair', description: 'Oak frame members, mortice and tenon joints, pegs, sole plates, and infill panel relationships.' },
+];
+
+const interiorServices = [
+  { href: '/services/heritage-wall-panelling-repair/', title: 'Heritage Wall Panelling Repair', description: 'Tudor, Georgian, Victorian, and Edwardian timber panelling repaired and refinished sympathetically.' },
+  { href: '/services/timber-colour-matching-and-finishing/', title: 'Timber Colour Matching & Finishing', description: 'Oils, waxes, stains, and distressing to make new timber disappear into old fabric.' },
+];
+
+const specialistServices = [
+  { href: '/services/listed-and-period-property-repairs/', title: 'Listed & Period Property Repairs', description: 'The whole-property service: windows, doors, structural timber, and interior joinery across a listed building by one specialist.' },
+  { href: '/services/when-repair-is-not-viable/', title: 'When Repair Is Not Viable', description: 'Honest guidance on when replacement is the right answer — and how it should be done on a listed building.' },
 ];
 ---
 
-<BaseLayout title="Our Services" description="Specialist timber window and door services across Yorkshire - repair-first restoration for listed and period properties.">
+<BaseLayout
+  title="Heritage Timber Repair Services Across Yorkshire | Heritage Joiners"
+  description="Explore specialist heritage timber repair services: sash windows, doors, rot and splice, structural beams, roof timbers, floor joists, oak frames, panelling and finishing."
+>
+  <BreadcrumbSchema items={breadcrumbs} />
+
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Our services</h1>
-      <p class="text-lg text-ink/70 mb-12 max-w-2xl">
-        We specialise in repair-first timber work for listed and period properties. We assess whether original fabric can be retained before recommending selective or full replacement. <a href="/repair-or-replace/" class="text-oak underline">Read the repair-or-replace framework</a>.
+      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Heritage Timber Repair Services Across Yorkshire</h1>
+      <p class="text-lg text-ink/70 mb-4 max-w-3xl">
+        From sash window cords to structural oak beams, Heritage Joiners covers the full range of timber repair work on listed and period buildings across Yorkshire. We assess repair viability on every element before recommending selective or full replacement.
+      </p>
+      <p class="text-ink/70 mb-12 max-w-3xl">
+        <a href="/repair-or-replace/" class="text-oak underline">Read the repair-or-replace framework</a> to understand how we make that decision.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {services.map((service) => (
-          <a
-            href={service.href}
-            class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors"
-          >
-            <h2 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">
-              {service.title}
-            </h2>
-            <p class="text-ink/70">{service.description}</p>
-            <span class="inline-block mt-4 text-oak font-display text-sm">
-              Learn more &rarr;
-            </span>
+      <!-- Windows -->
+      <h2 class="font-display text-2xl text-ink mb-4 mt-8 pb-2 border-b border-ink/10">Windows</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        {windowServices.map((s) => (
+          <a href={s.href} class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
+            <h3 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{s.title}</h3>
+            <p class="text-ink/70">{s.description}</p>
+            <span class="inline-block mt-4 text-oak font-display text-sm">Learn more &rarr;</span>
+          </a>
+        ))}
+      </div>
+
+      <!-- Doors -->
+      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Doors</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        {doorsServices.map((s) => (
+          <a href={s.href} class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
+            <h3 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{s.title}</h3>
+            <p class="text-ink/70">{s.description}</p>
+            <span class="inline-block mt-4 text-oak font-display text-sm">Learn more &rarr;</span>
+          </a>
+        ))}
+      </div>
+
+      <!-- Rot -->
+      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Rot Repair</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        {rotServices.map((s) => (
+          <a href={s.href} class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
+            <h3 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{s.title}</h3>
+            <p class="text-ink/70">{s.description}</p>
+            <span class="inline-block mt-4 text-oak font-display text-sm">Learn more &rarr;</span>
+          </a>
+        ))}
+      </div>
+
+      <!-- Structural -->
+      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Structural Timber</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        {structuralServices.map((s) => (
+          <a href={s.href} class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
+            <h3 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{s.title}</h3>
+            <p class="text-ink/70">{s.description}</p>
+            <span class="inline-block mt-4 text-oak font-display text-sm">Learn more &rarr;</span>
+          </a>
+        ))}
+      </div>
+
+      <!-- Interior & Finishing -->
+      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Interior Heritage &amp; Finishing</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        {interiorServices.map((s) => (
+          <a href={s.href} class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
+            <h3 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{s.title}</h3>
+            <p class="text-ink/70">{s.description}</p>
+            <span class="inline-block mt-4 text-oak font-display text-sm">Learn more &rarr;</span>
+          </a>
+        ))}
+      </div>
+
+      <!-- Specialist -->
+      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Whole-property &amp; Specialist</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {specialistServices.map((s) => (
+          <a href={s.href} class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
+            <h3 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{s.title}</h3>
+            <p class="text-ink/70">{s.description}</p>
+            <span class="inline-block mt-4 text-oak font-display text-sm">Learn more &rarr;</span>
           </a>
         ))}
       </div>

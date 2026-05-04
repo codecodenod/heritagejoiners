@@ -1,0 +1,169 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Roof Timber Repair', url: `${url}/services/roof-timber-repair/` }];
+const schemaProps = {
+  description: 'Roof timber repairs for period and listed buildings: rafters, purlins, ridge boards, wall plates, and rafter tails across Yorkshire.',
+  url: `${url}/services/roof-timber-repair/`,
+  priceRange: '£££',
+};
+
+const repairItems = [
+  'Rafter tail repair — decay at the eaves from gutter failure',
+  'Mid-span rafter splice where localised decay allows',
+  'Purlin end bearing repairs at gable and party walls',
+  'Ridge board repair and consolidation',
+  'Wall plate repair and replacement at eaves',
+  'Ceiling joist end repairs at bearing walls',
+  'Strut and brace repairs in cut and traditional roofs',
+  'New softwood or oak sourced to match existing section',
+  'Finish to match existing — painted, oiled, or raw',
+  'Coordination with roofing contractors for access',
+];
+
+const faqs = [
+  {
+    question: 'What causes rafter tail decay in period roofs?',
+    answer: 'Almost always a failed, blocked, or incorrectly fitted gutter. Water running down the fascia or backing up behind the gutter soaks the rafter tails repeatedly. Over years the end-grain saturates, fungal decay sets in, and the tail loses its structural capacity. The fix is to repair or replace the gutter and associated fascia first, then repair or splice the rafter tails.',
+  },
+  {
+    question: 'Do rafter repairs require a structural engineer?',
+    answer: 'For straightforward rafter tail repairs involving localised scarf work, an engineer is not usually needed. Where purlins are affected, where the roof structure is unusual, or where loading questions arise — particularly in listed buildings that have been altered — we recommend involving a structural engineer. We can work alongside one or help you identify an appropriate engineer.',
+  },
+  {
+    question: 'Can you repair roof timbers without removing the slates or tiles?',
+    answer: 'Sometimes. Rafter tail work may be possible by working from inside the roof void without disturbing the covering. Purlin and ridge work usually requires the covering to be stripped locally. We clarify what access is needed before any work starts and coordinate with a roofing contractor for the covering work where required.',
+  },
+  {
+    question: 'How much does rafter repair cost?',
+    answer: 'Rafter tail repairs on a straightforward terraced house with reasonable roof access typically fall in the £350–£900 band for the timber work. Wider programmes — multiple rafters, purlin work, or ridge repairs — are priced after a site assessment. Roof access and scaffolding needs significantly affect total project cost.',
+  },
+];
+---
+
+<ServiceLayout
+  title="Roof Timber Repair (Rafters & Purlins) in Yorkshire"
+  description="Repair-first roof timber services for period properties: rafter repairs, purlin repairs and decayed section replacement where required. Pontefract base, Yorkshire-wide."
+  serviceName="Roof Timber Repair"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqs} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Rafters, purlins &amp; roof structure</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">
+          Roof Timber Repair in Yorkshire
+        </h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Decayed roof timbers in period buildings are almost always caused by moisture — a failed gutter, a cracked ridge tile, or a compromised valley. We repair rafters, purlins, wall plates, and ridge boards using scarf and splice methods, retaining original structural timber where it is sound. Replacement of individual members is recommended only when the decay is too extensive for a durable repair.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we repair</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {repairItems.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Rafter tail repair — the most common job</h2>
+        <p class="text-ink/70 mb-3">
+          Rafter tails decay at the eaves when gutters fail. The repair sequence: confirm the moisture source is resolved, probe to establish the extent of sound timber, cut back to sound material, scarf in a new section of matching timber, and re-fix the fascia and soffit. Where the wall plate beneath the rafter is also affected, it is repaired or renewed at the same time.
+        </p>
+        <p class="text-ink/70">
+          Rafter tail repairs are usually possible from inside a roof void or with minimal eaves-level access, without disturbing the full roof covering.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Purlin and ridge work</h2>
+        <p class="text-ink/70 mb-3">
+          Purlins carry the mid-span load of rafters; ridge boards carry the apex. Decay in either requires the roof covering to be stripped locally for access. We work with a roofing contractor to sequence covering removal and replacement around the timber repair work.
+        </p>
+        <p class="text-ink/70">
+          Where a purlin end has decayed at a gable or party wall, a supported scarf repair restores load-bearing continuity without disturbing the full length of the beam.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Typical cost bands</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£80–£150</p><p class="text-sm text-ink/70">Site assessment</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£350–£900</p><p class="text-sm text-ink/70">Standard rafter repair</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£900+</p><p class="text-sm text-ink/70">Purlin, ridge, or multi-rafter</p></div>
+      </div>
+      <p class="text-ink/70 text-sm">Roof access and any scaffolding requirements are in addition to timber repair costs. Total project cost depends on the roofing contractor's scope as well as the timber work.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Frequently asked questions</h2>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="border-b border-ink/10 pb-6">
+            <h3 class="font-display text-xl text-ink mb-2">{faq.question}</h3>
+            <p class="text-ink/70">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Pontefract-based, covering WF postcodes: <a href="/areas/pontefract/" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield/" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford/" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone/" class="text-oak underline">Featherstone</a>. We travel for listed and period roof timber work across <a href="/areas/yorkshire/" class="text-oak underline">Yorkshire</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Related services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/services/structural-timber-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Structural Timber Repair</a>
+        <a href="/services/oak-beam-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Oak Beam Repair</a>
+        <a href="/services/rot-and-splice/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Rot &amp; Splice Repair</a>
+        <a href="/services/when-repair-is-not-viable/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">When Repair Is Not Viable</a>
+        <a href="/repair-or-replace/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Repair or Replace? Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Concerned about your roof timbers?</h2>
+      <p class="text-ink/70 mb-8 max-w-2xl mx-auto">Photos from inside the roof void showing the affected rafters or purlins — and of any related gutter or covering defects outside — help us assess severity before a site visit.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

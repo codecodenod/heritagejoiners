@@ -1,0 +1,165 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Timber Colour Matching & Finishing', url: `${url}/services/timber-colour-matching-and-finishing/` }];
+const schemaProps = {
+  description: 'Specialist timber colour matching, distressing, and heritage finishing across Yorkshire — oils, waxes, stains, and period-appropriate finish systems.',
+  url: `${url}/services/timber-colour-matching-and-finishing/`,
+  priceRange: '££',
+};
+
+const finishingSystems = [
+  { name: 'Linseed oil', desc: 'Raw or boiled. Traditional finish for exterior joinery — absorbs into the timber, feeds the surface, and is compatible with lime-based building materials. Slow drying; multiple coats needed.' },
+  { name: 'Danish oil', desc: 'A blend of oil and varnish. Faster drying than pure linseed, with moderate durability. Appropriate for interior joinery where a low-sheen natural finish is wanted.' },
+  { name: 'Hard wax oil', desc: 'Oil-wax combination giving a durable, hard-wearing surface with a natural appearance. Good for interior floors, panelling, and joinery in use. Repairable in-situ.' },
+  { name: 'Beeswax', desc: 'Traditional finish for interior oak, pine, and hardwood. Low sheen, penetrating, and reversible. Applied over a base of oil or directly to bare timber.' },
+  { name: 'Microcrystalline wax', desc: 'Fine conservation-grade wax for polished and sensitive surfaces. Used on antique timber and painted surfaces where a minimal, reversible treatment is needed.' },
+  { name: 'Water-based stains', desc: 'Transparent to semi-transparent colour across a wide range. Good for grain visibility and low odour. Used as a base layer before oils or waxes.' },
+  { name: 'Spirit-based stains', desc: 'Deeper, faster colour take-up than water-based. Used where a stronger colour shift is needed — dark oak tones, aged pine effects.' },
+  { name: 'French polish', desc: 'Shellac-based, applied by pad. Traditional high-gloss finish for formal furniture and interior joinery. Not appropriate for modern reproductions on old buildings.' },
+];
+
+const faqs = [
+  {
+    question: 'Can you make new timber look old?',
+    answer: 'We can close the visual gap significantly. New timber is lighter, cleaner in grain, and sharper in profile than timber that has been in place for decades. We use stains to shift the colour, oils to deepen the surface, and mechanical distressing — wire brushing, hand-planing, scraping — to soften profile edges and texture. The result is not a fake antique but a repair that reads as part of the building rather than an obvious insert.',
+  },
+  {
+    question: 'What finish do you use on exterior joinery?',
+    answer: 'It depends on the existing finish and substrate. On painted softwood or hardwood, we use a compatible primer and undercoat system and advise on compatible finish coats. On unpainted oak or hardwood, linseed oil or a compatible penetrating oil is the appropriate exterior treatment — not film-forming varnish or polyurethane, which trap moisture and peel on historic joinery.',
+  },
+  {
+    question: 'What should not be used on listed timber?',
+    answer: 'Modern polyurethane varnish is the most common problematic finish on heritage timber. It sits as a film on the surface, traps moisture beneath it, and peels and cracks over time — often within 3-5 years on exterior joinery. Once failed, it requires stripping before any sensible re-finishing. We do not use polyurethane on heritage or listed timber work.',
+  },
+  {
+    question: 'Can you match the colour of an existing repair that has aged?',
+    answer: 'We can usually get close. We work from test boards on the actual timber, adjusting stain concentrations, base oil, and wax layer until we have a match in natural light. It is not always exact on day one — timber finishes shift further over weeks and months as the material settles and the building atmosphere works on the surface.',
+  },
+];
+---
+
+<ServiceLayout
+  title="Timber Colour Matching, Distressing & Heritage Finishing in Yorkshire"
+  description="Specialist blend-in finishing: colour match, grain sympathy, stain/oil/wax systems, and distressing new timber to sit naturally in old fabric. Yorkshire-wide."
+  serviceName="Timber Colour Matching & Finishing"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqs} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">The invisible repair</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">
+          Timber Colour Matching, Distressing &amp; Heritage Finishing
+        </h1>
+        <p class="text-lg text-ink/70 mb-8">
+          A technically sound repair that reads as a bright new insert undermines the building and the work. The finish is the last stage of every repair and the one that determines whether the work is visible or not. We use oils, waxes, stains, and distressing techniques to blend new timber into old fabric — matching colour, sheen level, grain direction, and surface texture as closely as the materials allow.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The matching process</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="p-6 bg-paper rounded-lg">
+          <p class="font-display text-oak text-lg mb-2">1. Assess existing finish</p>
+          <p class="text-ink/70 text-sm">We identify what is on the existing timber — wax, oil, paint, French polish, bare — before selecting a compatible approach. Incompatible layers cause adhesion failure.</p>
+        </div>
+        <div class="p-6 bg-paper rounded-lg">
+          <p class="font-display text-oak text-lg mb-2">2. Test board matching</p>
+          <p class="text-ink/70 text-sm">We run test boards on the actual timber species and section, adjusting stain concentration, oil type, and wax tone until we have a credible match in natural light.</p>
+        </div>
+        <div class="p-6 bg-paper rounded-lg">
+          <p class="font-display text-oak text-lg mb-2">3. Surface preparation and distressing</p>
+          <p class="text-ink/70 text-sm">New timber edges are softened — wire-brushed, hand-planed, or scraped to remove the sharp freshness that distinguishes it from aged timber before finishing is applied.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Finishing systems we use</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {finishingSystems.map((sys) => (
+          <div class="border-b border-ink/10 pb-4">
+            <h3 class="font-display text-lg text-ink mb-1">{sys.name}</h3>
+            <p class="text-ink/70 text-sm">{sys.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-ink/60 text-sm mt-6">We do not use polyurethane varnish on heritage or listed timber joinery. It traps moisture, fails within years on exterior work, and is incompatible with the breathable character of period buildings.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Frequently asked questions</h2>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="border-b border-ink/10 pb-6">
+            <h3 class="font-display text-xl text-ink mb-2">{faq.question}</h3>
+            <p class="text-ink/70">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Counting House example</h2>
+      <p class="text-ink/70 mb-4">
+        The Counting House project in Pontefract includes timber matching work across window repairs, door repairs, and splice sections. The finishing approach is documented in the case study.
+      </p>
+      <a href="/case-studies/counting-house/timber-matching/" class="text-oak font-display">View timber matching case study &rarr;</a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Colour matching and finishing is part of every repair we carry out — not a separate service. It applies across <a href="/areas/pontefract/" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield/" class="text-oak underline">Wakefield</a>, <a href="/areas/leeds/" class="text-oak underline">Leeds</a>, and all projects across <a href="/areas/yorkshire/" class="text-oak underline">Yorkshire</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Related services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/services/doors-and-frames/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Doors &amp; Frames</a>
+        <a href="/services/heritage-wall-panelling-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Heritage Wall Panelling Repair</a>
+        <a href="/services/listed-and-period-property-repairs/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Listed &amp; Period Property Repairs</a>
+        <a href="/repair-or-replace/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Repair or Replace? Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need a repair that blends in?</h2>
+      <p class="text-ink/70 mb-8 max-w-2xl mx-auto">Photos of the existing timber and the repair area — showing the surrounding finish and colour — help us prepare a matching approach before starting work.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

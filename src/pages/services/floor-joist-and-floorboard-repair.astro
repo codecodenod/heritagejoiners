@@ -1,0 +1,168 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Floor Joist & Floorboard Repair', url: `${url}/services/floor-joist-and-floorboard-repair/` }];
+const schemaProps = {
+  description: 'Floor joist and floorboard repairs for listed and period buildings across Pontefract, Wakefield, and Yorkshire.',
+  url: `${url}/services/floor-joist-and-floorboard-repair/`,
+  priceRange: '£££',
+};
+
+const repairItems = [
+  'Joist end decay at bearing walls — splice back to sound timber',
+  'Sister joists alongside weakened members',
+  'Ceiling joist repairs from above or below',
+  'Rim joist and perimeter joist repair',
+  'Sagging floor stabilisation — blocking, bridging, strutting',
+  'Floorboard lifting, repair, and re-laying',
+  'Matching reclaimed boards — pitch pine, oak, softwood',
+  'Sub-floor ventilation assessment and improvement',
+  'New joists to match existing section and species',
+  'Finish to match — oiled, waxed, painted, or varnish-free',
+];
+
+const faqs = [
+  {
+    question: 'What causes floor joists to decay in period houses?',
+    answer: 'Joist end decay in older houses is almost always moisture entering at the bearing point in the external or party wall. Bridging or sleeper walls that have lost their ventilation, damp-proof courses that have broken down, or mortar haunching holding moisture against the timber end are the usual causes. We address the moisture path before or alongside the timber repair.',
+  },
+  {
+    question: 'Can floor joist repairs be done without lifting all the floorboards?',
+    answer: 'Often, yes. We lift boards locally to access affected joists, carry out the repair, and re-lay the boards. In some cases we can work from below if there is underfloor access. We aim to minimise the extent of boarding lifted and re-lay carefully so that the floor reads consistently afterwards.',
+  },
+  {
+    question: 'What do you do about springy or sagging floors?',
+    answer: 'We investigate the cause first — it may be a decayed joist, a joist that was undersized for its span, or mid-span movement through lack of strutting. Once the cause is established, we repair or sister the affected joists, add lateral restraint where needed, and re-lay the boards. We do not simply add sistering without understanding why the original timber failed.',
+  },
+  {
+    question: 'How do you match old floorboards?',
+    answer: 'Period houses often have pitch pine, wide softwood, or narrow oak boards that are difficult to match with new. We source reclaimed boards of the correct species, width, and thickness wherever possible. Where the match is imperfect, we advise on finishing treatments — stains, oils, waxes — that reduce the visual difference. A perfect match is not always achievable; an honest, sympathetic match usually is.',
+  },
+];
+---
+
+<ServiceLayout
+  title="Floor Joist & Floorboard Repair in Pontefract & Yorkshire"
+  description="Floor joist and floorboard repairs for listed and period buildings. Stabilise sagging floors while preserving original timber. Pontefract base, Yorkshire-wide."
+  serviceName="Floor Joist & Floorboard Repair"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqs} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Floors &amp; floor structure</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">
+          Floor Joist &amp; Floorboard Repair in Pontefract &amp; Yorkshire
+        </h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Springy floors, sagging floors, and rotten joist ends are common in period properties — and almost always repairable without full floor replacement. We stabilise floor structures by repairing or sistering affected joists, address the moisture cause, and re-lay boards to match the existing floor as closely as possible.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we repair</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {repairItems.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Joist repair vs full replacement</h2>
+        <p class="text-ink/70 mb-3">
+          Where decay is confined to the bearing end — the most common scenario in older houses — the decayed section is cut back to sound timber and a new section scarfed in at the wall. The majority of the original joist is retained, and the repair is typically more cost-effective than replacing the full span.
+        </p>
+        <p class="text-ink/70">
+          Where decay has run the length of the joist, or where the member was undersized for its span, full replacement with a matching section is the right answer. <a href="/repair-or-replace/" class="text-oak underline">Read our repair-or-replace framework</a>.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Sub-floor ventilation</h2>
+        <p class="text-ink/70 mb-3">
+          Suspended timber ground floors in older buildings depend on cross-ventilation through airbricks and sleeper walls. When ventilation is compromised — blocked airbricks, added paving, or sleeper walls without gaps — joist decay follows. We check ventilation as part of every ground-floor joist assessment and advise on improving it where needed.
+        </p>
+        <p class="text-ink/70">
+          Repairing joists without improving ventilation risks the same decay recurring. We address both together.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Typical cost bands</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£80–£150</p><p class="text-sm text-ink/70">Site assessment</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£350–£900</p><p class="text-sm text-ink/70">Standard joist repair</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£900+</p><p class="text-sm text-ink/70">Multi-joist or floor programme</p></div>
+      </div>
+      <p class="text-ink/70 text-sm">Cost varies with the number of joists affected, board-lifting extent, and whether reclaimed matching boards are needed. We give cost-band indications after the site assessment.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Frequently asked questions</h2>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="border-b border-ink/10 pb-6">
+            <h3 class="font-display text-xl text-ink mb-2">{faq.question}</h3>
+            <p class="text-ink/70">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Pontefract-based, working first across WF postcodes: <a href="/areas/pontefract/" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield/" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford/" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone/" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley/" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton/" class="text-oak underline">Normanton</a>. Yorkshire-wide for listed and period floor structure work.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Related services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/services/structural-timber-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Structural Timber Repair</a>
+        <a href="/services/rot-and-splice/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Rot &amp; Splice Repair</a>
+        <a href="/services/oak-beam-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Oak Beam Repair</a>
+        <a href="/repair-or-replace/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Repair or Replace? Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Springy or sagging floor?</h2>
+      <p class="text-ink/70 mb-8 max-w-2xl mx-auto">Photos of lifted boards showing the joists, any visible decay, and the sub-floor space give us a first view of what we are dealing with before a site visit.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

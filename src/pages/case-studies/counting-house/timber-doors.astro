@@ -1,33 +1,100 @@
 ---
-/**
- * The Counting House - Timber Doors
- */
 import CaseStudyLayout from '../../../layouts/CaseStudyLayout.astro';
+import PhoneLink from '../../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../../components/ui/WhatsAppCTA';
 import { siteConfig } from '../../../config/site';
 
-const { url } = siteConfig;
+const { phone, url } = siteConfig;
 
 const breadcrumbs = [
   { name: 'The Counting House', url: `${url}/case-studies/counting-house/` },
   { name: 'Timber Doors', url: `${url}/case-studies/counting-house/timber-doors/` },
 ];
+
+const articleProps = {
+  headline: 'The Counting House — Timber Door Restoration',
+  url: `${url}/case-studies/counting-house/timber-doors/`,
+  datePublished: '2024-01-01',
+};
 ---
 
 <CaseStudyLayout
-  title="Timber Doors - The Counting House"
-  description="Timber door restoration at The Counting House - Heritage Joiners case study."
+  title="Counting House Timber Door Restoration | Heritage Joiners"
+  description="Timber door and frame restoration at The Counting House: rotten lower rails, threshold work and ironmongery, original character preserved."
   breadcrumbs={breadcrumbs}
+  articleProps={articleProps}
 >
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-oak uppercase tracking-wide mb-4">The Counting House</p>
-      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Timber Doors</h1>
+      <p class="text-oak uppercase tracking-wide mb-4">The Counting House — Pontefract</p>
+      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Timber Door Restoration</h1>
       <p class="text-xl text-ink/70 max-w-2xl">
-        Door restoration and replacement work at The Counting House.
+        Rotten lower rails, threshold repair, ironmongery work, and frame repairs on the external period doors of a listed building.
       </p>
-      <p class="text-ink/80 mt-8">
-        Detailed timber door notes are being prepared. This page will document the repair decisions, replacement points, and hardware approach.
-      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The condition</h2>
+        <p class="text-ink/70 mb-3">
+          The external timber doors at The Counting House showed the most common failure pattern on period external joinery: decay in the lower rails and surrounding frame sections, driven by water sitting in the threshold zone and ingress at the weatherboard and cill detail.
+        </p>
+        <p class="text-ink/70">
+          The doors themselves — heavy, panelled, period-proportioned — were structurally and aesthetically intact above the affected zone. The upper rails, stiles, and panel details were sound. Replacement would have meant losing original doors for a fault confined to a repairable section.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Repair vs replacement decision</h2>
+        <p class="text-ink/70 mb-3">
+          Probe testing confirmed that the decay in the lower rails was confined to the bottom section. Sound timber was present above the decay line. The frame sections immediately adjacent — the door stops, the rebates — were intact. The repair scope was clearly defined: cut back to sound timber, splice in new sections, address the threshold detail, and match the finish.
+        </p>
+        <p class="text-ink/70">
+          Replacing the doors would have cost significantly more, required listed building consent, and resulted in the loss of original joinery that was performing correctly across the majority of its area.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The work</h2>
+        <p class="text-ink/70 mb-3">
+          Lower rail sections were cut back to sound timber at each door. Scarf cuts were made at a suitable angle for a well-seated, watertight joint. Profile-matched new timber — correctly sized and moulded to match the original rail section — was fitted, glued, and fixed. The joint was primed before assembly and detailed to shed water at the base.
+        </p>
+        <p class="text-ink/70 mb-3">
+          The threshold zone was re-detailed where the original arrangement had allowed water to pond against the rail. A correctly positioned weatherboard and a threshold plate that directs water away from the timber base is the long-term fix — without it, any lower rail repair will fail again.
+        </p>
+        <p class="text-ink/70">
+          Ironmongery was checked across all doors: hinges, latches, and mortice locks. Worn or loose ironmongery was adjusted, refixed, or replaced with matching hardware. Period-appropriate rim locks and latches were sourced where replacements were required.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The result</h2>
+        <p class="text-ink/70 mb-3">
+          The original doors are retained. The repair is not detectable in normal use — the section joins are in the lower rail zone, below the panel detail, and the finish matches the surrounding painted surface. The threshold is now correctly detailed to protect the lower rail from future water ponding.
+        </p>
+        <p class="text-ink/70">
+          Ironmongery operates correctly. The listed character of the building is unchanged.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-6 pt-4 border-t border-ink/10">
+        <a href="/case-studies/counting-house/" class="text-oak font-display">← Back to Counting House</a>
+        <a href="/services/doors-and-frames/" class="text-oak font-display">Doors &amp; Frames service →</a>
+        <a href="/repair-or-replace/" class="text-oak font-display">Repair or Replace? →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Period door or frame that needs attention?</h2>
+      <p class="text-ink/70 mb-8 max-w-2xl mx-auto">Send photos showing the affected area — lower rails, frame sections, threshold zone — and we will advise on viability.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
     </div>
   </section>
 </CaseStudyLayout>

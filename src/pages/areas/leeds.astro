@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+const breadcrumbs = [
+  { name: 'Home', url: `${url}/` },
+  { name: 'Areas', url: `${url}/areas/` },
+  { name: 'Leeds', url: `${url}/areas/leeds/` },
+];
+---
+
+<BaseLayout
+  title="Heritage Timber Repair in Leeds | Heritage Joiners"
+  description="Repair-first timber specialists for listed and period properties in Leeds. Sash windows, doors, structural timbers, beams and rot repairs. Pontefract-based, travelling for listed work."
+>
+  <BreadcrumbSchema items={breadcrumbs} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Leeds — listed &amp; period timber</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Heritage Timber Repair in Leeds</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Heritage Joiners travels from a Pontefract base to Leeds for listed building and period property timber repair. The Leeds market has more joiners competing for general work, which is why we focus specifically on what most cannot offer: repair-first specialist work on listed timber with 35 years of hands-on experience, honest viability assessments, and finish quality that makes the repair disappear into the original fabric.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Leeds period property stock</h2>
+        <p class="text-ink/70 mb-3">
+          Leeds has a substantial and varied period property stock — Headingley and Hyde Park Victorian terraces, Roundhay and Moortown Edwardian semis and villas, central Georgian commercial and civic buildings, Chapel Allerton character housing, and listed buildings across the city centre and inner suburbs.
+        </p>
+        <p class="text-ink/70">
+          Original sash windows, timber doors, panelling, and structural timber in these buildings repay careful repair over replacement. The character of the property and often its market value depends on retaining original fabric.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">What we take on in Leeds</h2>
+        <p class="text-ink/70 mb-3">
+          We travel to Leeds for listed building and period property timber work where the scope justifies the distance from Pontefract. This includes sash window programmes, structural timber repairs (beams, joists, roof timbers), timber frame work on listed buildings, heritage wall panelling, and whole-property repair programmes for owners doing comprehensive restoration.
+        </p>
+        <p class="text-ink/70">
+          We do not take on general joinery, handyman work, or small single-item jobs in Leeds unless there is a clear listed-building or heritage context.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Services available in Leeds</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/services/sash-window-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Sash Window Repair</a>
+        <a href="/services/timber-window-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Timber Window Repair</a>
+        <a href="/services/doors-and-frames/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Doors &amp; Frames</a>
+        <a href="/services/structural-timber-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Structural Timber Repair</a>
+        <a href="/services/oak-beam-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Oak Beam Repair</a>
+        <a href="/services/roof-timber-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Roof Timber Repair</a>
+        <a href="/services/heritage-wall-panelling-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Heritage Wall Panelling</a>
+        <a href="/services/timber-colour-matching-and-finishing/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Colour Matching &amp; Finishing</a>
+        <a href="/services/listed-and-period-property-repairs/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Listed &amp; Period Property Repairs</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Counting House proof</h2>
+      <p class="text-ink/70 mb-6">The Counting House in Pontefract is our anchor case study — a listed period building with sash windows, doors, and timber matching work across multiple elements. The same approach applies to listed and period work in Leeds.</p>
+      <a href="/case-studies/counting-house/" class="text-oak font-display">View Counting House case study &rarr;</a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Listed or period timber work in Leeds?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the timber and tell us about the property. We will advise whether it is within the scope of work we travel for.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

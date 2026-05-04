@@ -11,7 +11,7 @@
 Build Heritage Joiners into Yorkshire’s leading specialist for listed/period timber repair using a repair-first model, without pretending everything is repairable.
 
 ### Fixed positioning language (use exactly)
-**fully qualified apprentice trained bench hand joiner, time served**
+**fully qualified, time served, bench hand joiner and site carpenter**
 
 Use this phrase consistently across homepage/about/core trust blocks.
 
@@ -150,7 +150,7 @@ For structural pages (beam/joist/rafter/frame): emphasize survey-led variability
 Keep existing strong blocks, but rebalance the service signal:
 - Hero stays repair-first and Yorkshire-local.
 - Include trust language with the exact phrase:
-  - **fully qualified apprentice trained bench hand joiner, time served**
+  - **fully qualified, time served, bench hand joiner and site carpenter**
 - Replace legacy 3-service snapshot with 4 service silos:
   1. Windows & Doors
   2. Structural Timber
@@ -166,9 +166,8 @@ Keep existing strong blocks, but rebalance the service signal:
 
 Must no longer be generic. Include:
 - Personal craft authority and process.
-- Explicit phrase: **fully qualified apprentice trained bench hand joiner, time served**.
+- Explicit phrase: **fully qualified, time served, bench hand joiner and site carpenter**.
 - Broader work history references:
-  - site carpentry
   - oak-framed buildings
   - barn conversions
   - listed/period building background

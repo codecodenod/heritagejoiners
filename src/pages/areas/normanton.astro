@@ -8,21 +8,24 @@ import { siteConfig } from '../../config/site';
 const { phone, url } = siteConfig;
 const breadcrumbs = [
   { name: 'Home', url: `${url}/` },
-  { name: 'Areas', url: `${url}/areas/featherstone/` },
-  { name: 'Featherstone', url: `${url}/areas/featherstone/` },
+  { name: 'Areas', url: `${url}/areas/` },
+  { name: 'Normanton', url: `${url}/areas/normanton/` },
 ];
 ---
 
-<BaseLayout title="Timber Repairs in Featherstone" description="Repair-first timber window, door, frame, rot, and splice repairs for period properties in Featherstone and WF7.">
+<BaseLayout
+  title="Timber Repair in Normanton (WF6) | Heritage Joiners"
+  description="Repair-first timber specialists for listed and period properties in Normanton and WF6. Windows, doors, beams, rot and structural timber repairs."
+>
   <BreadcrumbSchema items={breadcrumbs} />
 
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <p class="text-oak uppercase tracking-wide mb-4">Featherstone WF7</p>
-        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Timber repairs for period properties in Featherstone</h1>
+        <p class="text-oak uppercase tracking-wide mb-4">Normanton WF6</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Heritage Timber Repair in Normanton</h1>
         <p class="text-lg text-ink/70 mb-8">
-          Repair-first timber window, door, frame, and rot repair for Featherstone homes where retaining original timber is often better than premature replacement.
+          Heritage Joiners works in Normanton and across WF6 for repair-first timber window, door, frame, and structural work on period and listed properties. We are Pontefract-based and cover Normanton as part of our local WF postcode territory.
         </p>
         <div class="flex flex-wrap gap-4">
           <WhatsAppCTA client:load />
@@ -35,15 +38,18 @@ const breadcrumbs = [
   <section class="py-16 bg-bone">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Local repair focus</h2>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Period stock in Normanton</h2>
+        <p class="text-ink/70 mb-3">
+          Normanton's Victorian and Edwardian terraces, miners' housing, and older commercial buildings include properties with original sash windows, timber doors, and period joinery. This is the working stock that benefits most from a repair-first approach rather than replacement.
+        </p>
         <p class="text-ink/70">
-          Featherstone sits inside Heritage Joiners' priority WF patch. We focus on original timber, not sales-led replacement, and advise honestly when repair is or is not viable.
+          We assess repair viability on each element before recommending any work. Door frames, rafter tails, floor joists, and window cills are the most common areas where decay is found on this age of building.
         </p>
       </div>
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">What we assess</h2>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">WF6 coverage</h2>
         <p class="text-ink/70">
-          Sills, lower rails, frames, door thresholds, glazing beds, and previous repairs are checked before we recommend splice repair, partial replacement, or full replacement.
+          We cover Normanton (WF6) and surrounding areas. For significant structural timber or listed building work, we travel across the wider West Yorkshire and Yorkshire area.
         </p>
       </div>
     </div>
@@ -51,13 +57,13 @@ const breadcrumbs = [
 
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Services in Featherstone</h2>
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Services in Normanton</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <a href="/services/sash-window-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Sash Window Repair</a>
         <a href="/services/timber-window-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Timber Window Repair</a>
         <a href="/services/doors-and-frames/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Doors &amp; Frames</a>
         <a href="/services/rot-and-splice/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Rot &amp; Splice Repair</a>
-        <a href="/services/timber-frame-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Timber Frame Repair</a>
+        <a href="/services/roof-timber-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Roof Timber Repair</a>
         <a href="/services/structural-timber-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Structural Timber Repair</a>
         <a href="/services/timber-colour-matching-and-finishing/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Colour Matching &amp; Finishing</a>
         <a href="/services/listed-and-period-property-repairs/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Listed &amp; Period Property Repairs</a>
@@ -65,9 +71,17 @@ const breadcrumbs = [
     </div>
   </section>
 
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Counting House proof</h2>
+      <p class="text-ink/70 mb-6">Our anchor project is The Counting House in Pontefract — a listed period building with comprehensive window, door, and timber matching work across multiple elements.</p>
+      <a href="/case-studies/counting-house/" class="text-oak font-display">View Counting House case study &rarr;</a>
+    </div>
+  </section>
+
   <section class="py-16 bg-paper">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-display text-3xl text-ink mb-4">Need timber repair in Featherstone?</h2>
+      <h2 class="font-display text-3xl text-ink mb-4">Need timber repair in Normanton?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send photos first for an initial repair viability view.</p>
       <div class="flex flex-wrap justify-center gap-4">
         <WhatsAppCTA client:load />

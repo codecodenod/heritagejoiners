@@ -1,0 +1,168 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Oak Beam Repair', url: `${url}/services/oak-beam-repair/` }];
+const schemaProps = {
+  description: 'Specialist oak beam and structural timber repair for listed and period buildings across Yorkshire.',
+  url: `${url}/services/oak-beam-repair/`,
+  priceRange: '£££',
+};
+
+const repairItems = [
+  'Localised decay at beam ends and bearing points',
+  'Scarf joints for linear repairs with load continuity',
+  'Face-halved and bridled joints for heavy sections',
+  'Beetle and worm damage consolidation and treatment',
+  'Exposed beam surface repair and blending',
+  'Beam end repairs at wall pockets — dry or damp',
+  'New oak sourced to match species, grain, and section',
+  'Finish left raw, oiled, waxed, or limewashed to match',
+  'Liaison with structural engineers on load path questions',
+];
+
+const faqs = [
+  {
+    question: 'Can a rotten oak beam end be repaired without replacing the whole beam?',
+    answer: 'In most cases, yes. Beam end decay — the most common failure point where timber sits in or near masonry — can be cut back to sound material and a new oak section scarfed in. The scarf joint is engineered to transfer the load appropriately. Whether this is viable depends on how far the decay has progressed into the span and whether the remaining section is structurally sound.',
+  },
+  {
+    question: 'What finish do repaired oak beams get?',
+    answer: 'That depends on the existing beam and the owner\'s preference. Where the beam is raw or lightly oiled, we match the finish with a compatible oil or wax. Where previous treatments have left a dark or limewashed surface, we work to blend the repair into the surrounding patina. We do not apply modern polyurethane or varnish to exposed heritage oak.',
+  },
+  {
+    question: 'How do you match old oak with new?',
+    answer: 'New oak needs time to settle and silver, so we use stains, oils, and surface treatment to close the visual gap on day one. We also source European or English oak, not fast-grown plantation oak, which has a coarser grain and different surface character. The match is rarely perfect immediately, but it improves as the new section weathers.',
+  },
+  {
+    question: 'Do oak beam repairs require listed building consent?',
+    answer: 'Repair using traditional methods and period-appropriate materials generally does not. Where we are replacing a significant structural member in a listed building, consent may be required — we advise checking with the local conservation officer before proceeding in those cases.',
+  },
+];
+---
+
+<ServiceLayout
+  title="Oak Beam Repair in Pontefract & Across Yorkshire"
+  description="Specialist oak beam and heavy timber repairs for listed and period buildings. Preserve original fabric where viable; replace only when necessary. Yorkshire-wide."
+  serviceName="Oak Beam Repair"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqs} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Oak &amp; structural timber</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">
+          Oak Beam Repair in Pontefract &amp; Across Yorkshire
+        </h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Oak is the dominant structural timber in Yorkshire's period buildings — farmhouses, barns, listed halls, and older urban properties. Original oak beams are often several hundred years old, denser and more stable than modern equivalents, and worth preserving. We repair oak beams and structural timber using traditional jointing methods, sourcing period-appropriate replacement sections only when repair is genuinely not viable.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we repair</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {repairItems.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Traditional jointing methods</h2>
+        <p class="text-ink/70 mb-3">
+          Scarf joints have been used for centuries to repair and extend structural timber. A correctly cut and proportioned scarf — face-halved, bridled, or splayed depending on the load and orientation — transfers forces effectively and does not introduce a weak point into the span.
+        </p>
+        <p class="text-ink/70">
+          We cut joints by hand where the geometry demands it. Machine-cut scarfs are accurate on regular sections; complex profiles and built-up beams require hand work to fit well.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Timber matching and finishing</h2>
+        <p class="text-ink/70 mb-3">
+          New oak next to old oak always looks new at first. We use oil and stain to close the colour gap and texture the cut surface to reduce the contrast. Over time — typically 12-24 months of seasonal movement — the distinction fades further.
+        </p>
+        <p class="text-ink/70">
+          We source European and English oak for structural work. Fast-grown plantation timber is not used on heritage repairs — the grain, hardness, and weathering characteristics are different. <a href="/services/timber-colour-matching-and-finishing/" class="text-oak underline">Read more about our finishing approach</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Typical cost bands</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£80–£150</p><p class="text-sm text-ink/70">Site assessment</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">£900+</p><p class="text-sm text-ink/70">Structural beam repair</p></div>
+        <div class="p-5 bg-bone rounded-lg"><p class="font-display text-xl text-ink">Survey-led</p><p class="text-sm text-ink/70">Multi-beam or frame programmes</p></div>
+      </div>
+      <p class="text-ink/70 text-sm">Oak beam repair costs depend on accessibility, section size, extent of decay, and whether scaffolding or temporary propping is required. We do not give fixed prices for structural timber repairs without a site visit.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Frequently asked questions</h2>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="border-b border-ink/10 pb-6">
+            <h3 class="font-display text-xl text-ink mb-2">{faq.question}</h3>
+            <p class="text-ink/70">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Pontefract-based, working first across WF postcodes: <a href="/areas/pontefract/" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield/" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford/" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone/" class="text-oak underline">Featherstone</a>. We travel for oak frame and structural timber projects across <a href="/areas/yorkshire/" class="text-oak underline">Yorkshire</a> and <a href="/areas/leeds/" class="text-oak underline">Leeds</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Related services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/services/structural-timber-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Structural Timber Repair</a>
+        <a href="/services/timber-frame-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Timber Frame Repair</a>
+        <a href="/services/roof-timber-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Roof Timber Repair</a>
+        <a href="/services/rot-and-splice/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Rot &amp; Splice Repair</a>
+        <a href="/repair-or-replace/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Repair or Replace? Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Send photos of the beam</h2>
+      <p class="text-ink/70 mb-8 max-w-2xl mx-auto">Photos of the timber showing the affected area, any visible decay, the bearing points, and surrounding context let us form a preliminary view before arranging a site visit.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

@@ -11,16 +11,26 @@ const currentYear = new Date().getFullYear();
 
 const primaryLinks = [
   { href: '/services', label: 'Services' },
+  { href: '/repair-or-replace', label: 'Repair or Replace?' },
   { href: '/about', label: 'About' },
   { href: '/case-studies', label: 'Case Studies' },
   { href: '/contact', label: 'Contact' },
 ];
 
 const serviceLinks = [
-  { href: '/services/listed-and-period-property-repairs', label: 'Listed & Period Repairs' },
+  { href: '/services/sash-window-repair', label: 'Sash Window Repair' },
   { href: '/services/timber-window-repair', label: 'Timber Window Repair' },
   { href: '/services/doors-and-frames', label: 'Doors & Frames' },
   { href: '/services/rot-and-splice', label: 'Rot & Splice Repair' },
+  { href: '/services/structural-timber-repair', label: 'Structural Timber Repair' },
+  { href: '/services/oak-beam-repair', label: 'Oak Beam Repair' },
+  { href: '/services/roof-timber-repair', label: 'Roof Timber Repair' },
+  { href: '/services/floor-joist-and-floorboard-repair', label: 'Floor Joist Repair' },
+  { href: '/services/timber-frame-repair', label: 'Timber Frame Repair' },
+  { href: '/services/heritage-wall-panelling-repair', label: 'Wall Panelling Repair' },
+  { href: '/services/timber-colour-matching-and-finishing', label: 'Colour Matching & Finishing' },
+  { href: '/services/listed-and-period-property-repairs', label: 'Listed & Period Repairs' },
+  { href: '/services/when-repair-is-not-viable', label: 'When Repair Is Not Viable' },
 ];
 
 const areaLinks = [
@@ -28,15 +38,19 @@ const areaLinks = [
   { href: '/areas/wakefield', label: 'Wakefield' },
   { href: '/areas/castleford', label: 'Castleford' },
   { href: '/areas/featherstone', label: 'Featherstone' },
+  { href: '/areas/knottingley', label: 'Knottingley' },
+  { href: '/areas/normanton', label: 'Normanton' },
+  { href: '/areas/leeds', label: 'Leeds' },
+  { href: '/areas/yorkshire', label: 'Yorkshire' },
 ];
 ---
 
 <footer class="bg-ink text-bone mt-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
     <!-- Main footer grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
       <!-- Brand + contact -->
-      <div class="lg:col-span-2">
+      <div class="lg:col-span-1">
         <div class="flex items-center gap-3 mb-4">
           <div class="w-12 h-12 bg-bone text-ink flex items-center justify-center">
             <span class="font-display text-xl">HJ</span>
@@ -44,12 +58,11 @@ const areaLinks = [
           <span class="font-display text-2xl text-bone">{name}</span>
         </div>
 
-        <p class="text-bone/70 mb-6 max-w-md">
-          Specialist timber window and door craftsmen serving Yorkshire.
-          Repair, restoration, and period-accurate replacement.
+        <p class="text-bone/70 mb-6 text-sm">
+          Repair-first timber specialists for listed and period buildings across Pontefract, Wakefield, and Yorkshire.
         </p>
 
-        <div class="space-y-2 text-bone/80">
+        <div class="space-y-2 text-bone/80 text-sm">
           <p>{address.full || 'Address pending'}</p>
           <p>
             <PhoneLink
@@ -70,50 +83,38 @@ const areaLinks = [
         </div>
       </div>
 
-      <!-- Primary nav -->
+      <!-- Navigation -->
       <div>
         <h3 class="font-display text-lg text-bone mb-4">Navigation</h3>
-        <ul class="space-y-3">
+        <ul class="space-y-2">
           {primaryLinks.map((link) => (
             <li>
-              <a
-                href={link.href}
-                class="text-bone/70 hover:text-brass transition-colors"
-              >
+              <a href={link.href} class="text-bone/70 hover:text-brass transition-colors text-sm">
                 {link.label}
               </a>
             </li>
           ))}
         </ul>
-      </div>
 
-      <!-- Services -->
-      <div>
-        <h3 class="font-display text-lg text-bone mb-4">Services</h3>
-        <ul class="space-y-3">
-          {serviceLinks.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                class="text-bone/70 hover:text-brass transition-colors"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- Areas -->
-      <div>
-        <h3 class="font-display text-lg text-bone mb-4">Areas</h3>
-        <ul class="space-y-3">
+        <h3 class="font-display text-lg text-bone mt-8 mb-4">Areas</h3>
+        <ul class="space-y-2">
           {areaLinks.map((link) => (
             <li>
-              <a
-                href={link.href}
-                class="text-bone/70 hover:text-brass transition-colors"
-              >
+              <a href={link.href} class="text-bone/70 hover:text-brass transition-colors text-sm">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Services (split into two columns) -->
+      <div class="lg:col-span-2">
+        <h3 class="font-display text-lg text-bone mb-4">Services</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+          {serviceLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-bone/70 hover:text-brass transition-colors text-sm">
                 {link.label}
               </a>
             </li>
@@ -130,10 +131,6 @@ const areaLinks = [
           <p class="mt-1">
             Registered in England. VAT {siteConfig.company.vatNumber || 'pending'}.
           </p>
-        </div>
-
-        <div class="flex gap-4">
-          {/* Social links render here when available */}
         </div>
       </div>
     </div>
