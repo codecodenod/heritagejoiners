@@ -8,8 +8,8 @@ import { siteConfig } from '../../config/site';
 const { phone, url } = siteConfig;
 const breadcrumbs = [
   { name: 'Home', url: `${url}/` },
-  { name: 'Areas', url: `${url}/areas/` },
-  { name: 'Yorkshire', url: `${url}/areas/yorkshire/` },
+  { name: 'Areas', url: `${url}/areas` },
+  { name: 'Yorkshire', url: `${url}/areas/yorkshire` },
 ];
 ---
 
@@ -42,13 +42,13 @@ const breadcrumbs = [
         <div class="p-6 bg-paper rounded-lg">
           <h3 class="font-display text-lg text-ink mb-3">West Yorkshire — primary territory</h3>
           <ul class="space-y-1 text-ink/70 text-sm">
-            <li><a href="/areas/pontefract/" class="text-oak hover:underline">Pontefract</a> (home base)</li>
-            <li><a href="/areas/wakefield/" class="text-oak hover:underline">Wakefield</a></li>
-            <li><a href="/areas/castleford/" class="text-oak hover:underline">Castleford</a></li>
-            <li><a href="/areas/featherstone/" class="text-oak hover:underline">Featherstone</a></li>
-            <li><a href="/areas/knottingley/" class="text-oak hover:underline">Knottingley</a></li>
-            <li><a href="/areas/normanton/" class="text-oak hover:underline">Normanton</a></li>
-            <li><a href="/areas/leeds/" class="text-oak hover:underline">Leeds</a></li>
+            <li><a href="/areas/pontefract" class="text-oak hover:underline">Pontefract</a> (home base)</li>
+            <li><a href="/areas/wakefield" class="text-oak hover:underline">Wakefield</a></li>
+            <li><a href="/areas/castleford" class="text-oak hover:underline">Castleford</a></li>
+            <li><a href="/areas/featherstone" class="text-oak hover:underline">Featherstone</a></li>
+            <li><a href="/areas/knottingley" class="text-oak hover:underline">Knottingley</a></li>
+            <li><a href="/areas/normanton" class="text-oak hover:underline">Normanton</a></li>
+            <li><a href="/areas/leeds" class="text-oak hover:underline">Leeds</a></li>
           </ul>
         </div>
         <div class="p-6 bg-paper rounded-lg">
@@ -71,15 +71,15 @@ const breadcrumbs = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Services across Yorkshire</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <a href="/services/sash-window-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Sash Window Repair</a>
-        <a href="/services/structural-timber-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Structural Timber Repair</a>
-        <a href="/services/oak-beam-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Oak Beam Repair</a>
-        <a href="/services/roof-timber-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Roof Timber Repair</a>
-        <a href="/services/timber-frame-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Timber Frame Repair</a>
-        <a href="/services/listed-and-period-property-repairs/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Listed &amp; Period Property Repairs</a>
-        <a href="/services/heritage-wall-panelling-repair/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Heritage Wall Panelling</a>
-        <a href="/services/timber-colour-matching-and-finishing/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Colour Matching &amp; Finishing</a>
-        <a href="/services/when-repair-is-not-viable/" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">When Repair Is Not Viable</a>
+        <a href="/services/sash-window-repair" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Sash Window Repair</a>
+        <a href="/services/structural-timber-repair" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Structural Timber Repair</a>
+        <a href="/services/oak-beam-repair" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Oak Beam Repair</a>
+        <a href="/services/roof-timber-repair" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Roof Timber Repair</a>
+        <a href="/services/timber-frame-repair" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Timber Frame Repair</a>
+        <a href="/services/listed-and-period-property-repairs" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Listed &amp; Period Property Repairs</a>
+        <a href="/services/heritage-wall-panelling-repair" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Heritage Wall Panelling</a>
+        <a href="/services/timber-colour-matching-and-finishing" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Colour Matching &amp; Finishing</a>
+        <a href="/services/when-repair-is-not-viable" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">When Repair Is Not Viable</a>
       </div>
     </div>
   </section>
@@ -88,7 +88,7 @@ const breadcrumbs = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Counting House proof</h2>
       <p class="text-ink/70 mb-6">The Counting House in Pontefract is our anchor case study for listed and period timber work across the county.</p>
-      <a href="/case-studies/counting-house/" class="text-oak font-display">View Counting House case study &rarr;</a>
+      <a href="/case-studies/counting-house" class="text-oak font-display">View Counting House case study &rarr;</a>
     </div>
   </section>
 
