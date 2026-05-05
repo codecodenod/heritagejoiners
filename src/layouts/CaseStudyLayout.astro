@@ -18,10 +18,12 @@ interface Props {
     datePublished?: string;
     dateModified?: string;
   };
+  canonical?: string;
+  ogImage?: string;
 }
 
 const props = Astro.props;
-const { title, description, breadcrumbs, articleProps } = props;
+const { title, description, breadcrumbs, articleProps, canonical, ogImage } = props;
 const { url } = siteConfig;
 
 const breadcrumbItems = [
@@ -31,7 +33,7 @@ const breadcrumbItems = [
 ];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} canonical={canonical || articleProps?.url} ogImage={ogImage || articleProps?.image}>
   <slot name="schema">
     {articleProps && <ArticleSchema {...articleProps} />}
   </slot>

@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://heritagejoiners.com/sitemap-index.xml
+Sitemap: https://heritagejoiners.co.uk/sitemap-index.xml

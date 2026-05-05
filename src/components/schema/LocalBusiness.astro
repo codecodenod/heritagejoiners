@@ -8,7 +8,7 @@ interface Props {
   name?: string;
 }
 
-const { name, telephone, email, address, url, serviceArea, hours } = siteConfig;
+const { name, telephone, email, address, geo, url, serviceArea, hours } = siteConfig;
 
 const props = Astro.props;
 const bizName = props.name || name;
@@ -18,17 +18,30 @@ const schema = {
   '@type': 'LocalBusiness',
   '@id': `${url}/#localbusiness`,
   name: bizName,
+  url,
   telephone: telephone,
   email: email,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: address.street,
-    addressLocality: address.city,
-    postalCode: address.postcode,
-    addressRegion: 'England',
+    ...(address.street ? { streetAddress: address.street } : {}),
+    addressLocality: address.locality,
+    addressRegion: address.region,
     addressCountry: 'GB',
+    postalCode: address.postcode,
   },
-  areaServed: serviceArea,
+  ...(geo.latitude && geo.longitude
+    ? {
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: geo.latitude,
+          longitude: geo.longitude,
+        },
+      }
+    : {}),
+  areaServed: serviceArea.map((area) => ({
+    '@type': area === 'Yorkshire' || area === 'West Yorkshire' ? 'AdministrativeArea' : 'City',
+    name: area,
+  })),
   openingHoursSpecification: Object.entries(hours)
     .filter(([, value]) => value !== 'Closed')
     .map(([day, value]) => {
@@ -42,6 +55,9 @@ const schema = {
     }),
   priceRange: '££',
   image: `${url}/images/homepage/hero.webp`,
+  parentOrganization: {
+    '@id': `${url}/#organization`,
+  },
 };
 ---
 

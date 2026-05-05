@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
 import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
+import AreaLinks from '../../components/sections/AreaLinks.astro';
 import { siteConfig } from '../../config/site';
 
 const { phone, url } = siteConfig;
@@ -14,7 +15,7 @@ const breadcrumbs = [
 ---
 
 <BaseLayout
-  title="Timber Repair in Knottingley (WF11) | Heritage Joiners"
+  title="Timber Repair in Knottingley (WF11)"
   description="Repair-first timber specialists for listed and period properties in Knottingley and WF11. Windows, doors, beams, joists, rot and structural repairs."
 >
   <BreadcrumbSchema items={breadcrumbs} />
@@ -104,4 +105,5 @@ const breadcrumbs = [
       </div>
     </div>
   </section>
+  <AreaLinks heading="Nearby areas we cover" currentHref="/areas/knottingley" />
 </BaseLayout>

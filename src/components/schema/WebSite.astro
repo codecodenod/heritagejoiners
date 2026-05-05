@@ -1,0 +1,21 @@
+---
+/**
+ * WebSite schema
+ */
+import { siteConfig } from '../../config/site';
+
+const { name, url } = siteConfig;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${url}/#website`,
+  name,
+  url,
+  publisher: {
+    '@id': `${url}/#organization`,
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

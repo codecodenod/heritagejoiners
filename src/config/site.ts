@@ -22,10 +22,16 @@ export const siteConfig = {
 
   // Address
   address: {
-    street: 'Ackworth',
+    street: '',
+    locality: 'Ackworth',
     city: 'Pontefract',
-    postcode: '',
+    region: 'West Yorkshire',
+    postcode: 'WF7 7LH',
     full: 'Ackworth, Pontefract, West Yorkshire',
+  },
+  geo: {
+    latitude: '53.6492',
+    longitude: '-1.2806',
   },
 
   // NAP (Name, Address, Phone) for schema
@@ -37,7 +43,17 @@ export const siteConfig = {
   addressFull: 'Ackworth, Pontefract, West Yorkshire',
 
   // Service area
-  serviceArea: ['Yorkshire'],
+  serviceArea: [
+    'Pontefract',
+    'Wakefield',
+    'Castleford',
+    'Featherstone',
+    'Knottingley',
+    'Normanton',
+    'Leeds',
+    'West Yorkshire',
+    'Yorkshire',
+  ],
 
   // Social
   social: {

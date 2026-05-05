@@ -14,6 +14,9 @@ interface Props {
     name: string;
     url: string;
   };
+  serviceType?: string;
+  category?: string;
+  areaServed?: Array<string | { '@type': string; name: string }>;
 }
 
 const props = Astro.props;
@@ -21,6 +24,7 @@ const { url, name: siteName } = siteConfig;
 
 const providerName = props.provider?.name || siteName;
 const providerUrl = props.provider?.url || url;
+const areaServed = props.areaServed || siteConfig.serviceArea;
 
 const schema = {
   '@context': 'https://schema.org',
@@ -29,12 +33,22 @@ const schema = {
   description: props.description,
   url: props.url,
   image: props.image || `${url}/images/homepage/hero.webp`,
+  serviceType: props.serviceType || props.name,
+  ...(props.category ? { category: props.category } : {}),
   provider: {
-    '@type': 'Organization',
+    '@id': `${providerUrl}/#localbusiness`,
+    '@type': 'LocalBusiness',
     name: providerName,
     url: providerUrl,
   },
-  areaServed: siteConfig.serviceArea,
+  areaServed: areaServed.map((area) => (
+    typeof area === 'string'
+      ? {
+          '@type': area === 'Yorkshire' || area === 'West Yorkshire' ? 'AdministrativeArea' : 'City',
+          name: area,
+        }
+      : area
+  )),
   priceRange: props.priceRange || '££',
 };
 ---

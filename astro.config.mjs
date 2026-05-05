@@ -13,7 +13,17 @@ export default defineConfig({
     format: 'file'
   },
   devToolbar: { enabled: false },
-  integrations: [react(), sitemap()],
+  integrations: [react(), sitemap({
+    lastmod: new Date(),
+    changefreq: 'weekly',
+    serialize(item) {
+      const path = new URL(item.url).pathname;
+      return {
+        ...item,
+        priority: path === '/' ? 1 : path.startsWith('/services') || path.startsWith('/areas') ? 0.8 : 0.6
+      };
+    }
+  })],
   vite: {
     plugins: [tailwindcss()]
   }

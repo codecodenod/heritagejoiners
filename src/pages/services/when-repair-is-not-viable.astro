@@ -1,7 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
-import ServiceSchema from '../../components/schema/Service.astro';
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
 import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
 import { siteConfig } from '../../config/site';
@@ -9,10 +7,16 @@ import { siteConfig } from '../../config/site';
 const { phone, url } = siteConfig;
 
 const breadcrumbs = [
-  { name: 'Home', url: `${url}/` },
-  { name: 'Services', url: `${url}/services` },
   { name: 'When Repair Is Not Viable', url: `${url}/services/when-repair-is-not-viable` },
 ];
+
+const schemaProps = {
+  description: 'Honest guidance on when original timber should be replaced rather than repaired, and how replacement is approached on listed and period buildings.',
+  url: `${url}/services/when-repair-is-not-viable`,
+  priceRange: '£££',
+  serviceType: 'Timber replacement viability guidance',
+  category: 'Heritage timber repair',
+};
 
 const replacementTriggers = [
   { title: 'Sound timber below threshold', body: 'Where the remaining sound timber is too low to support a load-bearing repair — typically under 50% of the original cross-section in a critical zone — a splice or scarf will not deliver durable structural function. Repair at any cost is not honest practice.' },
@@ -23,18 +27,13 @@ const replacementTriggers = [
 ];
 ---
 
-<BaseLayout
-  title="When Timber Should Be Replaced, Not Repaired | Heritage Joiners"
+<ServiceLayout
+  title="When Timber Should Be Replaced, Not Repaired"
   description="Honest guidance on when original timber cannot be retained safely or economically, and what sympathetic replacement should look like."
+  serviceName="When Repair Is Not Viable — Replacement Guidance"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
 >
-  <BreadcrumbSchema items={breadcrumbs} />
-  <ServiceSchema
-    name="When Repair Is Not Viable — Replacement Guidance"
-    description="Honest guidance on when original timber should be replaced rather than repaired, and how replacement is approached on listed and period buildings."
-    url={`${url}/services/when-repair-is-not-viable`}
-    priceRange="£££"
-  />
-
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
@@ -127,4 +126,4 @@ const replacementTriggers = [
       </div>
     </div>
   </section>
-</BaseLayout>
+</ServiceLayout>

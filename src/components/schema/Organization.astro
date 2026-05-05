@@ -8,9 +8,11 @@ interface Props {
   name?: string;
 }
 
-const { name: configName, url } = siteConfig;
+const { name: configName, url, email, telephone, social } = siteConfig;
 const props = Astro.props;
 const orgName = props.name || configName;
+
+const sameAs = [social.linkedin, social.instagram].filter(Boolean);
 
 const schema = {
   '@context': 'https://schema.org',
@@ -18,6 +20,10 @@ const schema = {
   '@id': `${url}/#organization`,
   name: orgName,
   url: url,
+  logo: `${url}/heritage-joiners-hj-logo-180.webp`,
+  email,
+  telephone,
+  ...(sameAs.length ? { sameAs } : {}),
 };
 ---
 

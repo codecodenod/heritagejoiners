@@ -12,7 +12,8 @@ export default function WhatsAppCTA({ message, variant = 'button' }: Props) {
   const { whatsapp } = siteConfig;
   const defaultMessage = message || "Hi Heritage Joiners, I'd like to discuss a timber window project";
   const encodedMessage = encodeURIComponent(defaultMessage);
-  const waLink = whatsapp.link ? `https://wa.me/${whatsapp.link}?text=${encodedMessage}` : '/contact';
+  const separator = whatsapp.link.includes('?') ? '&' : '?';
+  const waLink = whatsapp.link ? `${whatsapp.link}${separator}text=${encodedMessage}` : '/contact';
 
   if (variant === 'floating') {
     return (

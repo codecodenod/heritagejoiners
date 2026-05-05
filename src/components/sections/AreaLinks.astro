@@ -1,0 +1,40 @@
+---
+interface Props {
+  heading?: string;
+  intro?: string;
+  currentHref?: string;
+}
+
+const {
+  heading = 'Where we work',
+  intro = 'Repair-first timber work from a Pontefract base across local towns and selected listed or period projects across Yorkshire.',
+  currentHref,
+} = Astro.props;
+
+const areas = [
+  { href: '/areas/pontefract', label: 'Pontefract' },
+  { href: '/areas/wakefield', label: 'Wakefield' },
+  { href: '/areas/castleford', label: 'Castleford' },
+  { href: '/areas/featherstone', label: 'Featherstone' },
+  { href: '/areas/knottingley', label: 'Knottingley' },
+  { href: '/areas/normanton', label: 'Normanton' },
+  { href: '/areas/leeds', label: 'Leeds' },
+  { href: '/areas/yorkshire', label: 'Yorkshire' },
+].filter((area) => area.href !== currentHref);
+---
+
+<section class="py-16 bg-bone">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mb-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">{heading}</h2>
+      <p class="text-ink/70">{intro}</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      {areas.map((area) => (
+        <a href={area.href} class="p-4 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">
+          {area.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

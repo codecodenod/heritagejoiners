@@ -10,11 +10,13 @@ import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import OrganizationSchema from '../components/schema/Organization.astro';
 import LocalBusinessSchema from '../components/schema/LocalBusiness.astro';
+import WebSiteSchema from '../components/schema/WebSite.astro';
 
 interface Props {
   title?: string;
   description?: string;
   canonical?: string;
+  ogImage?: string;
   noindex?: boolean;
   schema?: 'organization' | 'localbusiness' | 'none';
 }
@@ -25,16 +27,30 @@ const {
   title,
   description = 'Heritage Joiners — specialist timber window and door repair for listed and period properties across Yorkshire. 35+ years listed-building expertise. Repair-first approach.',
   canonical,
+  ogImage: pageOgImage,
   noindex = false,
   schema = 'localbusiness',
 } = props;
 
-const siteTitle = title ? `${title} | Heritage Joiners` : 'Heritage Joiners';
 const { url, plausible } = siteConfig;
-const fullCanonical = canonical || url;
+const cleanTitle = title
+  ?.replace(/\s*\|\s*Heritage Joiners(?:\s+(?:Pontefract|Yorkshire))?\s*$/i, '')
+  .trim();
+const siteTitle = cleanTitle ? `${cleanTitle} | Heritage Joiners` : 'Heritage Joiners';
+
+const routePath = Astro.url.pathname
+  .replace(/\/index\.html$/, '/')
+  .replace(/\.html$/, '');
+
+const canonicalUrl = canonical
+  ? new URL(canonical, url)
+  : new URL(routePath || '/', url);
+canonicalUrl.search = '';
+canonicalUrl.hash = '';
+const fullCanonical = canonicalUrl.toString().replace(/\/$/, canonicalUrl.pathname === '/' ? '/' : '');
 
 // OG image
-const ogImage = `${url}/images/homepage/hero.webp`;
+const ogImage = pageOgImage ? new URL(pageOgImage, url).toString() : `${url}/images/homepage/hero.webp`;
 const twitterCard = 'summary_large_image';
 ---
 
@@ -68,10 +84,13 @@ const twitterCard = 'summary_large_image';
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Heritage Joiners" />
     <meta property="og:url" content={fullCanonical} />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_GB" />
 
     <!-- Twitter -->
@@ -90,6 +109,7 @@ const twitterCard = 'summary_large_image';
     )}
 
     <!-- Schema -->
+    <WebSiteSchema />
     {schema === 'organization' && <OrganizationSchema />}
     {schema === 'localbusiness' && <LocalBusinessSchema />}
   </head>

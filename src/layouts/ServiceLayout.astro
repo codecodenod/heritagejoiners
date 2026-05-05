@@ -5,6 +5,7 @@
 import BaseLayout from './BaseLayout.astro';
 import BreadcrumbSchema from '../components/schema/Breadcrumb.astro';
 import ServiceSchema from '../components/schema/Service.astro';
+import AreaLinks from '../components/sections/AreaLinks.astro';
 import { siteConfig } from '../config/site';
 
 interface Props {
@@ -17,11 +18,16 @@ interface Props {
     url: string;
     image?: string;
     priceRange?: string;
+    serviceType?: string;
+    category?: string;
+    areaServed?: Array<string | { '@type': string; name: string }>;
   };
+  canonical?: string;
+  ogImage?: string;
 }
 
 const props = Astro.props;
-const { title, description, serviceName, breadcrumbs, schemaProps } = props;
+const { title, description, serviceName, breadcrumbs, schemaProps, canonical, ogImage } = props;
 const { url } = siteConfig;
 
 const breadcrumbItems = [
@@ -31,10 +37,10 @@ const breadcrumbItems = [
 ];
 ---
 
-<BaseLayout title={title} description={description}>
-  <slot name="schema">
-    {schemaProps && <ServiceSchema name={serviceName} {...schemaProps} />}
-  </slot>
+<BaseLayout title={title} description={description} canonical={canonical || schemaProps?.url} ogImage={ogImage || schemaProps?.image}>
+  {schemaProps && <ServiceSchema name={serviceName} {...schemaProps} />}
+  <slot name="schema" />
   <BreadcrumbSchema items={breadcrumbItems} />
   <slot />
+  <AreaLinks />
 </BaseLayout>
