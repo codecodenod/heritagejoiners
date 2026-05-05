@@ -11,15 +11,18 @@ const { phone } = siteConfig;
 
 <header class="sticky top-0 z-50 bg-bone/95 backdrop-blur-sm border-b border-ink/5">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 lg:h-20">
+    <div class="flex items-center justify-between py-1 sm:py-3">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3" aria-label="Heritage Joiners - Home">
-        <div class="w-10 h-10 lg:w-12 lg:h-12 bg-ink text-bone flex items-center justify-center">
-          <span class="font-display text-xl lg:text-2xl">HJ</span>
+      <a href="/" class="flex items-center gap-2 sm:gap-3" aria-label="Heritage Joiners - Home">
+        <img
+          src="/heritage-joiners-hj-logo-180.webp"
+          alt="HJ emblem"
+          class="h-10 sm:h-16 lg:h-20 w-auto"
+        />
+        <div class="flex flex-col">
+          <span style="font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400;" class="text-xs sm:text-xl lg:text-2xl text-ink tracking-wider uppercase whitespace-nowrap">Heritage Joiners</span>
+          <span style="font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400;" class="text-[10px] tracking-widest text-oak uppercase hidden sm:block">Specialist Joinery &middot; Period Restoration &middot; Fine Craftsmanship</span>
         </div>
-        <span class="font-display text-xl lg:text-2xl text-ink hidden sm:block">
-          Heritage Joiners
-        </span>
       </a>
 
       <!-- Desktop nav + phone -->
@@ -34,7 +37,7 @@ const { phone } = siteConfig;
 
       <!-- Mobile menu button -->
       <button
-        class="lg:hidden p-2 text-ink"
+        class="lg:hidden p-2 text-ink -mr-5"
         aria-label="Open menu"
         id="mobile-menu-open"
       >
@@ -64,11 +67,12 @@ const { phone } = siteConfig;
 >
   <div class="flex flex-col h-full p-6 relative" style="z-index:1">
     <div class="flex items-center justify-between mb-6">
-      <a href="/" class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-ink text-bone flex items-center justify-center">
-          <span class="font-display text-xl">HJ</span>
-        </div>
-        <span class="font-display text-xl text-ink">Heritage Joiners</span>
+      <a href="/">
+        <img
+          src="/heritage-joiners-hj-logo-180.webp"
+          alt="Heritage Joiners"
+          class="h-16 w-auto"
+        />
       </a>
       <button
         class="p-2 text-ink"
