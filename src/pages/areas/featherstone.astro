@@ -35,16 +35,35 @@ const breadcrumbs = [
   <section class="py-16 bg-bone">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Local repair focus</h2>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Local building stock</h2>
         <p class="text-ink/70">
-          Featherstone sits inside Heritage Joiners' priority WF patch. We focus on original timber, not sales-led replacement, and advise honestly when repair is or is not viable.
+          Featherstone's mining-era terraced streets are mostly brick-built with original sash windows still in place on older fronts. The frames are often solid but the cill ends and lower rails have taken 100 years of weather without much intervention. Many properties around Station Lane and North Featherstone carry original joinery that repays careful repair.
         </p>
       </div>
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">What we assess</h2>
-        <p class="text-ink/70">
-          Sills, lower rails, frames, door thresholds, glazing beds, and previous repairs are checked before we recommend splice repair, partial replacement, or full replacement.
-        </p>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Areas we cover in Featherstone</h2>
+        <ul class="space-y-1 text-ink/70 list-disc list-inside">
+          <li>Purston</li>
+          <li>Ackton</li>
+          <li>North Featherstone</li>
+          <li>South Featherstone</li>
+          <li>Station Lane area</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-6">Common timber issues we see in Featherstone</h2>
+        <ul class="space-y-3 text-ink/70 list-disc list-inside">
+          <li>Cill noses split with decay tracking back into the body of the cill</li>
+          <li>Door frame feet softened by constant splashback from hard surfaces</li>
+          <li>Sash lower rails swollen and cracked after repeated wet-dry cycles</li>
+          <li>Subframe junctions holding damp in shaded or north-facing spots</li>
+          <li>Previous resin patches breaking out and exposing untreated rot beneath</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -68,7 +87,7 @@ const breadcrumbs = [
   <section class="py-16 bg-paper">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-display text-3xl text-ink mb-4">Need timber repair in Featherstone?</h2>
-      <p class="text-ink/70 mb-8 mx-auto">Send photos first for an initial repair viability view.</p>
+      <p class="text-ink/70 mb-8 mx-auto">WhatsApp photos and postcode. Images of cills, thresholds, and any visible decay help assess scope before a site visit.</p>
       <div class="flex flex-wrap justify-center gap-4">
         <WhatsAppCTA client:load />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />

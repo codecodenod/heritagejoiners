@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://heritagejoiners.com',
+  site: 'https://heritagejoiners.co.uk',
   trailingSlash: 'never',
   build: {
     format: 'file'

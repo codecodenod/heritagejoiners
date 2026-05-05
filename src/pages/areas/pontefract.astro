@@ -35,16 +35,37 @@ const breadcrumbs = [
   <section class="py-16 bg-bone">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Local period timber work</h2>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Local building stock</h2>
         <p class="text-ink/70">
-          Pontefract has Georgian, Victorian, Edwardian, and commercial historic stock where original joinery is part of the building's value. We start with repair viability before discussing replacement.
+          Pontefract has Victorian terraces, inter-war semis, and older properties around the market core. Exposed fronts around Southgate and out toward Carleton often show decay first at cills, thresholds, and lower frame joints. The Georgian and Edwardian stock in the town centre and Tanshelf ward carries original sash windows that are worth repairing rather than replacing.
         </p>
       </div>
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Nearby villages</h2>
-        <p class="text-ink/70">
-          We cover Ackworth, Darrington, East Hardwick, Carleton, Tanshelf, and surrounding WF villages.
-        </p>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Villages we cover</h2>
+        <ul class="space-y-1 text-ink/70 list-disc list-inside">
+          <li>Ackworth</li>
+          <li>Darrington</li>
+          <li>East Hardwick</li>
+          <li>Carleton</li>
+          <li>Tanshelf</li>
+          <li>Monkhill</li>
+          <li>Baghill</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-6">Common timber issues we see in Pontefract</h2>
+        <ul class="space-y-3 text-ink/70 list-disc list-inside">
+          <li>Cill ends gone soft where water sits at masonry joints</li>
+          <li>Lower sash rails opening at joints after long-term wetting</li>
+          <li>Door thresholds decayed at the weather edge</li>
+          <li>Frame bases holding moisture behind old paint films</li>
+          <li>Bay window junctions split where old fillers have failed</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -72,7 +93,7 @@ const breadcrumbs = [
   <section class="py-16 bg-bone">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Pontefract proof</h2>
-      <p class="text-ink/70 mb-6">The Counting House is the anchor Pontefract case study for timber window and door restoration.</p>
+      <p class="text-ink/70 mb-6">The Counting House is a listed period building in Pontefract — the anchor case study showing the repair decisions made on sash windows, timber doors, and profile matching across the whole building.</p>
       <a href="/case-studies/counting-house" class="text-oak font-display">View Counting House &rarr;</a>
     </div>
   </section>
@@ -80,7 +101,7 @@ const breadcrumbs = [
   <section class="py-16 bg-paper">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-display text-3xl text-ink mb-4">Need timber repair in Pontefract?</h2>
-      <p class="text-ink/70 mb-8 mx-auto">Send photos first for an initial repair viability view.</p>
+      <p class="text-ink/70 mb-8 mx-auto">WhatsApp photos of the affected areas — wide shot plus close-up per defect. You'll get a direct answer on what's repairable and what the options are.</p>
       <div class="flex flex-wrap justify-center gap-4">
         <WhatsAppCTA client:load />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />

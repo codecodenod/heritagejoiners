@@ -35,16 +35,36 @@ const breadcrumbs = [
   <section class="py-16 bg-bone">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Timber, not uPVC</h2>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Local building stock</h2>
         <p class="text-ink/70">
-          Many local window routes start with modern replacement. Heritage Joiners is focused on timber repair, restoration, splice work, and sympathetic replacement only where repair is not sound.
+          Castleford has long runs of Victorian terraces and inter-war housing, with older street lines near the former industrial routes through the town. In WF10, repeated painting over aging joinery is common — when the paint film finally fails, the rot beneath it is often deeper than it looks. Glasshoughton and Allerton Bywater have older property pockets worth repairing rather than replacing.
         </p>
       </div>
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Repair-first assessment</h2>
-        <p class="text-ink/70">
-          We check decay depth, joint condition, remaining sound timber, and expected service life before recommending the lowest viable intervention.
-        </p>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Areas we cover in Castleford</h2>
+        <ul class="space-y-1 text-ink/70 list-disc list-inside">
+          <li>Glasshoughton</li>
+          <li>Whitwood</li>
+          <li>Allerton Bywater</li>
+          <li>Airedale</li>
+          <li>Cutsyke</li>
+          <li>Fryston</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-6">Common timber issues we see in Castleford</h2>
+        <ul class="space-y-3 text-ink/70 list-disc list-inside">
+          <li>Ground-floor cills soft at outer corners after repeated wetting</li>
+          <li>Door thresholds crumbling on weather-facing elevations</li>
+          <li>Sash meeting rails opening and drawing in rain</li>
+          <li>Old patch repairs failing where the wrong timber species was used</li>
+          <li>Rot pockets at frame-to-brick junctions where mortar has shrunk</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -68,7 +88,7 @@ const breadcrumbs = [
   <section class="py-16 bg-paper">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-display text-3xl text-ink mb-4">Need timber repair in Castleford?</h2>
-      <p class="text-ink/70 mb-8 mx-auto">Send photos first for an initial repair viability view.</p>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos on WhatsApp — wide shot and close-up for each area of concern, plus postcode and approximate age of the property.</p>
       <div class="flex flex-wrap justify-center gap-4">
         <WhatsAppCTA client:load />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />

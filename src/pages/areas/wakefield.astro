@@ -35,16 +35,37 @@ const breadcrumbs = [
   <section class="py-16 bg-bone">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Wakefield repair context</h2>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Local building stock</h2>
         <p class="text-ink/70">
-          Wakefield has listed buildings, Victorian and Edwardian streets, and conservation-sensitive areas where repair can often preserve more value than unnecessary replacement.
+          Wakefield has dense Victorian terraces, larger period homes in Sandal, and Georgian townhouses around the cathedral quarter. West-facing joinery across WF1 and WF2 takes weather hard — exposed cills and door bottoms on those elevations are the most common starting point for rot. The conservation areas around Westgate and the cathedral precinct contain listed buildings where repair is the only appropriate route.
         </p>
       </div>
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Council and conservation awareness</h2>
-        <p class="text-ink/70">
-          Where listed-building or conservation questions arise, we keep recommendations repair-led and evidence-based so owners can make clear decisions before formal consent routes are triggered.
-        </p>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Areas we cover in Wakefield</h2>
+        <ul class="space-y-1 text-ink/70 list-disc list-inside">
+          <li>Sandal</li>
+          <li>Crigglestone</li>
+          <li>Horbury</li>
+          <li>Ossett</li>
+          <li>Agbrigg</li>
+          <li>Lupset</li>
+          <li>Outwood</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-6">Common timber issues we see in Wakefield</h2>
+        <ul class="space-y-3 text-ink/70 list-disc list-inside">
+          <li>Door bottom rails decayed behind thick paint edges</li>
+          <li>Sash cills split at corners with rot tracking inward</li>
+          <li>Casement frame corners opening after repeated seasonal movement</li>
+          <li>Porch supports soft at the base from long-term splashback</li>
+          <li>Joist-end decay where historic damp has been left untreated</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -69,7 +90,7 @@ const breadcrumbs = [
   <section class="py-16 bg-paper">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-display text-3xl text-ink mb-4">Need timber repair in Wakefield?</h2>
-      <p class="text-ink/70 mb-8 mx-auto">Send photos first for an initial repair viability view.</p>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos on WhatsApp — postcode, approximate property age, and one wide shot plus close-up per defect. You'll get a straight answer on repair scope from the first contact.</p>
       <div class="flex flex-wrap justify-center gap-4">
         <WhatsAppCTA client:load />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />

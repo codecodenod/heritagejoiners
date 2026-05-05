@@ -6,35 +6,35 @@
 
 export const siteConfig = {
   // Domain
-  domain: 'heritagejoiners.com',
-  url: 'https://heritagejoiners.com',
+  domain: 'heritagejoiners.co.uk',
+  url: 'https://heritagejoiners.co.uk',
 
   // Business contact
   phone: {
-    display: '',
-    tel: '',
+    display: '07561 196977',
+    tel: '+447561196977',
   },
   whatsapp: {
-    display: '',
-    link: '',
+    display: '07561 196977',
+    link: 'https://wa.me/447561196977',
   },
-  email: '',
+  email: 'rob@heritagejoiners.co.uk',
 
   // Address
   address: {
-    street: '',
+    street: 'Ackworth',
     city: 'Pontefract',
     postcode: '',
-    full: '',
+    full: 'Ackworth, Pontefract, West Yorkshire',
   },
 
   // NAP (Name, Address, Phone) for schema
   name: 'Heritage Joiners',
-  telephone: '',
+  telephone: '+447561196977',
   // Note: email is above under business contact
 
   // Full address for schema
-  addressFull: '',
+  addressFull: 'Ackworth, Pontefract, West Yorkshire',
 
   // Service area
   serviceArea: ['Yorkshire'],
