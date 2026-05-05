@@ -1,22 +1,19 @@
 # Cloudflare Cache Rules
-# Cache static assets for 1 year
 
 /images/*:
-  Cache-Tag: images
-  Cache-Control: public, max-age=31536000
+  Cache-Control: public, max-age=31536000, immutable
 
 /fonts/*:
-  Cache-Tag: fonts
-  Cache-Control: public, max-age=31536000
+  Cache-Control: public, max-age=31536000, immutable
 
 /_astro/*:
-  Cache-Tag: astro
-  Cache-Control: public, max-age=31536000
+  Cache-Control: public, max-age=31536000, immutable
 
-# HTML - no cache (always fresh)
-*.html:
-  Cache-Control: no-cache
+/*.html:
+  Cache-Control: no-store, no-cache
 
-# JSON/XML - short cache
+/:
+  Cache-Control: no-store, no-cache
+
 /sitemap*.xml:
   Cache-Control: public, max-age=3600
