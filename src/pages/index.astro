@@ -2,9 +2,6 @@
 /**
  * Homepage
  */
-import { existsSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import path from 'node:path';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/ui/Button.astro';
 import PhoneLink from '../components/ui/PhoneLink.astro';
@@ -15,8 +12,6 @@ import { Phone } from 'lucide-react';
 
 const { phone } = siteConfig;
 
-const iconsDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '../../public/images/icons');
-const hasIcon = (filename: string) => existsSync(path.join(iconsDir, filename));
 const icons = {
   craftsmanship: '35-years-hands-on-woodgrain-icon.png',
   repair: 'repair-first-period-building-icon.png',
@@ -234,48 +229,42 @@ const icons = {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
         <div class="text-bone flex flex-col items-center md:items-start gap-4">
-          {hasIcon(icons.craftsmanship) && (
-            <img
-              src={`/images/icons/${icons.craftsmanship}`}
-              alt=""
-              width="56"
-              height="56"
-              class="w-14 h-14"
-              loading="lazy"
-            />
-          )}
+          <img
+            src={`/images/icons/${icons.craftsmanship}`}
+            alt=""
+            width="56"
+            height="56"
+            class="w-14 h-14"
+            loading="lazy"
+          />
           <div>
             <p class="font-display text-2xl lg:text-3xl mb-2">35+ years hands-on</p>
             <p class="text-bone/60 text-sm">joinery & site carpentry</p>
           </div>
         </div>
         <div class="text-bone flex flex-col items-center md:items-start gap-4">
-          {hasIcon(icons.repair) && (
-            <img
-              src={`/images/icons/${icons.repair}`}
-              alt=""
-              width="56"
-              height="56"
-              class="w-14 h-14"
-              loading="lazy"
-            />
-          )}
+          <img
+            src={`/images/icons/${icons.repair}`}
+            alt=""
+            width="56"
+            height="56"
+            class="w-14 h-14"
+            loading="lazy"
+          />
           <div>
             <p class="font-display text-2xl lg:text-3xl mb-2">Repair-first</p>
             <p class="text-bone/60 text-sm">for listed and period buildings</p>
           </div>
         </div>
         <div class="text-bone flex flex-col items-center md:items-start gap-4">
-          {hasIcon(icons.location) && (
-            <img
-              src={`/images/icons/${icons.location}`}
-              alt=""
-              width="56"
-              height="56"
-              class="w-14 h-14"
-              loading="lazy"
-            />
-          )}
+          <img
+            src={`/images/icons/${icons.location}`}
+            alt=""
+            width="56"
+            height="56"
+            class="w-14 h-14"
+            loading="lazy"
+          />
           <div>
             <p class="font-display text-2xl lg:text-3xl mb-2">Pontefract-based</p>
             <p class="text-bone/60 text-sm">serving Yorkshire</p>
