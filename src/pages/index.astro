@@ -14,10 +14,68 @@ const { phone } = siteConfig;
 ---
 
 <BaseLayout title="Listed Timber Repair in Pontefract">
-  <!-- Hero -->
-  <section class="relative py-20 lg:py-32 bg-cover bg-center" style="background-image: url('/images/homepage/hero.webp')">
-    <div class="absolute inset-0 bg-gradient-to-r from-bone via-bone/80 to-transparent"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <!-- Hero Carousel -->
+  <section class="hero-carousel relative overflow-hidden bg-bone" aria-label="Heritage Joiners showcase">
+    <!-- Slides -->
+    <div class="absolute inset-0">
+      <div class="hero-slide is-active" data-slide="0">
+        <img
+          src="/images/homepage/heritage-joiners-pontefract-logo.webp"
+          alt="Heritage Joiners — listed timber repair, Pontefract"
+          fetchpriority="high"
+          loading="eager"
+          width="1920"
+          height="1080"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="hero-slide" data-slide="1">
+        <img
+          src="/images/homepage/listed-timber-splice-repair-yorkshire.webp"
+          alt="Hand splice repair on weathered oak — Yorkshire timber joiner"
+          loading="lazy"
+          width="1920"
+          height="1080"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="hero-slide" data-slide="2">
+        <img
+          src="/images/homepage/restored-sash-window-period-property-pontefract.webp"
+          alt="Restored sash window in a Pontefract period property"
+          loading="lazy"
+          width="1920"
+          height="1080"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="hero-slide" data-slide="3">
+        <img
+          src="/images/homepage/heritage-oak-door-restoration-yorkshire.webp"
+          alt="Restored heritage oak door in Yorkshire stone arch"
+          loading="lazy"
+          width="1920"
+          height="1080"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="hero-slide" data-slide="4">
+        <img
+          src="/images/homepage/timber-joinery-workshop-pontefract.webp"
+          alt="Heritage Joiners workshop bench in Pontefract — hand tools and timber repair in progress"
+          loading="lazy"
+          width="1920"
+          height="1080"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- Gradient overlay for text legibility -->
+    <div class="absolute inset-0 bg-gradient-to-r from-bone via-bone/80 to-transparent pointer-events-none"></div>
+
+    <!-- Persistent content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
       <div class="max-w-3xl">
         <h1 class="font-display text-4xl lg:text-6xl text-ink mb-6">
           Listed & Period Timber Repairs in Pontefract, Wakefield & Across Yorkshire
@@ -38,7 +96,122 @@ const { phone } = siteConfig;
         </div>
       </div>
     </div>
+
+    <!-- Pagination dots -->
+    <div class="absolute bottom-6 right-6 lg:bottom-10 lg:right-12 z-20 flex gap-3" role="tablist" aria-label="Hero slides">
+      <button type="button" class="hero-dot is-active" data-target="0" role="tab" aria-label="Slide 1: Heritage Joiners" aria-selected="true"></button>
+      <button type="button" class="hero-dot" data-target="1" role="tab" aria-label="Slide 2: Splice repair" aria-selected="false"></button>
+      <button type="button" class="hero-dot" data-target="2" role="tab" aria-label="Slide 3: Restored sash window" aria-selected="false"></button>
+      <button type="button" class="hero-dot" data-target="3" role="tab" aria-label="Slide 4: Heritage oak door" aria-selected="false"></button>
+      <button type="button" class="hero-dot" data-target="4" role="tab" aria-label="Slide 5: Workshop" aria-selected="false"></button>
+    </div>
   </section>
+
+  <style>
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+    .hero-slide.is-active {
+      opacity: 1;
+    }
+    .hero-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      background: rgba(28, 25, 23, 0.3);
+      border: 1px solid rgba(28, 25, 23, 0.5);
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+      padding: 0;
+    }
+    .hero-dot:hover {
+      background: rgba(28, 25, 23, 0.6);
+    }
+    .hero-dot.is-active {
+      background: #b46e38;
+      border-color: #b46e38;
+      transform: scale(1.25);
+    }
+    .hero-dot:focus-visible {
+      outline: 2px solid #b46e38;
+      outline-offset: 3px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-slide {
+        transition: none;
+      }
+    }
+  </style>
+
+  <script>
+    function initHeroCarousel() {
+      const section = document.querySelector<HTMLElement>('.hero-carousel');
+      if (!section) return;
+
+      const slides = section.querySelectorAll<HTMLElement>('.hero-slide');
+      const dots = section.querySelectorAll<HTMLButtonElement>('.hero-dot');
+      if (slides.length === 0) return;
+
+      let current = 0;
+      let timer: number | null = null;
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const INTERVAL_MS = 6000;
+
+      function show(index: number) {
+        slides[current].classList.remove('is-active');
+        dots[current]?.classList.remove('is-active');
+        dots[current]?.setAttribute('aria-selected', 'false');
+
+        current = index;
+
+        slides[current].classList.add('is-active');
+        dots[current]?.classList.add('is-active');
+        dots[current]?.setAttribute('aria-selected', 'true');
+      }
+
+      function next() {
+        show((current + 1) % slides.length);
+      }
+
+      function start() {
+        if (reducedMotion) return;
+        stop();
+        timer = window.setInterval(next, INTERVAL_MS);
+      }
+
+      function stop() {
+        if (timer !== null) {
+          window.clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          if (i !== current) show(i);
+          start();
+        });
+      });
+
+      section.addEventListener('mouseenter', stop);
+      section.addEventListener('mouseleave', start);
+      section.addEventListener('focusin', stop);
+      section.addEventListener('focusout', start);
+
+      // Pause when tab is hidden, resume on return
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop();
+        else start();
+      });
+
+      start();
+    }
+
+    initHeroCarousel();
+  </script>
 
   <!-- Trust strip -->
   <section class="py-14 lg:py-20 bg-ink">
@@ -312,6 +485,35 @@ const { phone } = siteConfig;
           <h3 class="font-display text-xl text-ink mb-3">Clear recommendation & quote</h3>
           <p class="text-ink/70">Honest advice on repair vs replacement, with pricing for both options.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax: Yorkshire coverage band -->
+  <section
+    class="relative bg-ink overflow-hidden"
+    aria-labelledby="parallax-yorkshire-coverage"
+  >
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed"
+      style="background-image: url('/images/parallax/yorkshire-listed-building-timber-windows-golden-hour.webp')"
+      role="presentation"
+    ></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-ink/50"
+      aria-hidden="true"
+    ></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-40">
+      <div class="max-w-xl mr-auto text-left">
+        <h2
+          id="parallax-yorkshire-coverage"
+          class="font-display text-3xl sm:text-4xl lg:text-5xl text-bone mb-4"
+        >
+          A Yorkshire trade.
+        </h2>
+        <p class="text-lg text-bone/80">
+          Listed and period property repairs across Pontefract, Wakefield, Castleford, Leeds and York.
+        </p>
       </div>
     </div>
   </section>
