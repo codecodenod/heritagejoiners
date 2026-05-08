@@ -202,8 +202,6 @@ const { phone } = siteConfig;
 
       section.addEventListener('mouseenter', stop);
       section.addEventListener('mouseleave', start);
-      section.addEventListener('focusin', stop);
-      section.addEventListener('focusout', start);
 
       document.addEventListener('visibilitychange', () => {
         if (document.hidden) stop();
