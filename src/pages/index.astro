@@ -148,28 +148,32 @@ const { phone } = siteConfig;
 
   <script>
     function initHeroCarousel() {
-      const section = document.querySelector<HTMLElement>('.hero-carousel');
+      const section = document.querySelector('.hero-carousel');
       if (!section) return;
 
-      const slides = section.querySelectorAll<HTMLElement>('.hero-slide');
-      const dots = section.querySelectorAll<HTMLButtonElement>('.hero-dot');
+      const slides = section.querySelectorAll('.hero-slide');
+      const dots = section.querySelectorAll('.hero-dot');
       if (slides.length === 0) return;
 
       let current = 0;
-      let timer: number | null = null;
+      let timer = null;
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const INTERVAL_MS = 6000;
 
-      function show(index: number) {
+      function show(index) {
         slides[current].classList.remove('is-active');
-        dots[current]?.classList.remove('is-active');
-        dots[current]?.setAttribute('aria-selected', 'false');
+        if (dots[current]) {
+          dots[current].classList.remove('is-active');
+          dots[current].setAttribute('aria-selected', 'false');
+        }
 
         current = index;
 
         slides[current].classList.add('is-active');
-        dots[current]?.classList.add('is-active');
-        dots[current]?.setAttribute('aria-selected', 'true');
+        if (dots[current]) {
+          dots[current].classList.add('is-active');
+          dots[current].setAttribute('aria-selected', 'true');
+        }
       }
 
       function next() {
@@ -201,7 +205,6 @@ const { phone } = siteConfig;
       section.addEventListener('focusin', stop);
       section.addEventListener('focusout', start);
 
-      // Pause when tab is hidden, resume on return
       document.addEventListener('visibilitychange', () => {
         if (document.hidden) stop();
         else start();
@@ -210,7 +213,11 @@ const { phone } = siteConfig;
       start();
     }
 
-    initHeroCarousel();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initHeroCarousel);
+    } else {
+      initHeroCarousel();
+    }
   </script>
 
   <!-- Trust strip -->
