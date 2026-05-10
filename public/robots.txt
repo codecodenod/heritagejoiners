@@ -1,5 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
+# Site is in test/staging — block all crawlers until launch.
 User-agent: *
-Allow: /
-
-Sitemap: https://heritagejoiners.co.uk/sitemap-index.xml
+Disallow: /
