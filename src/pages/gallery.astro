@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhoneLink from '../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../components/ui/WhatsAppCTA';
+import { siteConfig } from '../config/site';
+
+const { phone } = siteConfig;
+
+const galleryItems = [
+  {
+    title: 'Timber Doors',
+    category: 'Doors',
+    image: '/images/homepage/service-doors.webp',
+    alt: 'Timber door work by Heritage Joiners',
+  },
+  {
+    title: 'Timber Windows',
+    category: 'Windows',
+    image: '/images/homepage/service-windows.webp',
+    alt: 'Timber window work by Heritage Joiners',
+  },
+  {
+    title: 'Splice Repairs',
+    category: 'Timber Repair',
+    image: '/images/homepage/service-rot.webp',
+    alt: 'Splice repair work in timber',
+  },
+  {
+    title: 'Workshop Joinery',
+    category: 'Joinery',
+    image: '/images/homepage/timber-joinery-workshop-pontefract.webp',
+    alt: 'Joinery workshop bench and timber work',
+  },
+  {
+    title: 'Counting House Before',
+    category: 'Case Study',
+    image: '/images/case-studies/sash-before.webp',
+    alt: 'Before image from the Counting House case study',
+  },
+  {
+    title: 'Counting House During',
+    category: 'Case Study',
+    image: '/images/case-studies/sash-during.webp',
+    alt: 'During image from the Counting House case study',
+  },
+  {
+    title: 'Counting House After',
+    category: 'Case Study',
+    image: '/images/case-studies/sash-after.webp',
+    alt: 'After image from the Counting House case study',
+  },
+  {
+    title: 'Period Door Detail',
+    category: 'Heritage',
+    image: '/images/homepage/heritage-oak-door-restoration-yorkshire.webp',
+    alt: 'Restored oak door detail',
+  },
+];
+---
+
+<BaseLayout
+  title="Gallery | Heritage Joiners"
+  description="A gallery of carpentry, joinery, timber repair, and heritage work across Pontefract, Wakefield, and West Yorkshire."
+>
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="text-oak uppercase tracking-wide mb-4">Recent work</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Carpentry &amp; Joinery Work Across West Yorkshire</h1>
+        <p class="text-lg text-ink/70">
+          A working gallery of carpentry, joinery, heritage repair, and timber details across West Yorkshire. The point is simple: let the timber, the repairs, and the fitting details speak for the work while the gallery grows with more doors, kitchens, stairs, roofs, and built-in joinery.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {galleryItems.map((item) => (
+          <article class="group block bg-bone rounded-lg overflow-hidden border border-ink/10 hover:border-oak transition-colors">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src={item.image} alt={item.alt} class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs text-oak uppercase tracking-wide">{item.category}</span>
+              </div>
+              <h2 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{item.title}</h2>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-ink text-bone">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl mb-4">Have a job you want us to look at?</h2>
+      <p class="text-bone/70 mb-8 mx-auto">Send photos of the work area and Rob will tell you whether it fits the kind of joinery and carpentry Heritage Joiners takes on.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

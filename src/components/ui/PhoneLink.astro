@@ -29,7 +29,7 @@ const href = phone ? `tel:${phone}` : '/contact';
 
 <a
   href={href}
-  class:list={[combinedStyles, className]}
+  class:list={[combinedStyles, 'whitespace-nowrap', className]}
   data-plausible-event="phone-click"
 >
   <slot>

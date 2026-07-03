@@ -14,8 +14,10 @@ const isMobile = props.mobile || false;
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
+  { href: '/gallery', label: 'Gallery' },
   { href: '/about', label: 'About' },
   { href: '/case-studies', label: 'Case Studies' },
+  { href: '/blog', label: 'Blog' },
   { href: '/areas', label: 'Areas' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -33,11 +35,11 @@ const navLinks = [
     ))}
   </nav>
 ) : (
-  <nav class="hidden lg:flex items-center gap-6">
+  <nav class="hidden lg:flex items-center gap-x-4 xl:gap-x-6">
     {navLinks.map((link) => (
       <a
         href={link.href}
-        class="font-display text-sm text-ink hover:text-oak transition-colors"
+        class="font-display text-sm text-ink hover:text-oak transition-colors whitespace-nowrap"
       >
         {link.label}
       </a>

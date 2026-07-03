@@ -1,0 +1,137 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Built-in & Bespoke Joinery', url: `${url}/services/bespoke-joinery` }];
+const schemaProps = {
+  description: 'Fitted wardrobes, bespoke joinery, and built-in storage across Pontefract, Wakefield, and West Yorkshire.',
+  url: `${url}/services/bespoke-joinery`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How much do fitted wardrobes cost?',
+    answer:
+      'Joiner fitted wardrobes, carpenter to fit wardrobes, bespoke wardrobes, and made to measure wardrobes all come back to the same question: do you need design, manufacture, fitting, or all three?',
+  },
+  {
+    question: 'What helps Rob start a bespoke joinery job?',
+    answer:
+      'A few room photos and rough sizes are usually enough for Rob to start the first conversation.',
+  },
+  {
+    question: 'Can you get built-in storage made around the room?',
+    answer:
+      'Built-in cupboards, alcove units, shelving, media units, and window seats are all part of the bespoke joinery work on this service.',
+  },
+];
+
+const bespokeServices = [
+  'Fitted wardrobes and built in wardrobes',
+  'Fitted wardrobes and made to measure wardrobes',
+  'Built-in cupboards and storage',
+  'Bespoke alcove units and shelving',
+  'Bookcases, media units, and window seats',
+  'Bench seating, boot rooms, and utility joinery',
+  'Home office and study furniture',
+  'Bespoke cabinetry and bespoke joinery',
+];
+---
+
+<ServiceLayout
+  title="Fitted Wardrobes in Pontefract, Wakefield & West Yorkshire"
+  description="Fitted wardrobes, bespoke joinery, built-in cupboards, alcove units, and made-to-measure storage across Pontefract, Wakefield and West Yorkshire."
+  serviceName="Built-in & Bespoke Joinery"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Built-in and bespoke joinery</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Fitted Wardrobes in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob designs and builds fitted wardrobes, built-in cupboards, alcove units, shelving, and bespoke joinery across West Yorkshire. The job is still joinery: measuring the room properly, solving the awkward corners, and making the storage look as if it belongs there.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {bespokeServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Bespoke joinery, made to the room</h2>
+        <p class="text-ink/70 mb-3">
+          Fitted wardrobes only work when the room has been measured properly and the awkward details have been handled: out-of-plumb walls, chimney breasts, sloping ceilings, alcoves, and existing trims.
+        </p>
+        <p class="text-ink/70">
+          That is where a fully qualified apprentice trained bench hand joiner, time served, can make the difference between units that merely fit and joinery that looks settled in the room.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">A practical built-in service</h2>
+        <p class="text-ink/70 mb-3">
+          The same approach applies to window seats, bookcases, media units, boot rooms, home office joinery, and storage where the first enquiry may be fitted wardrobe specialists but the real need is custom fitted furniture.
+        </p>
+        <p class="text-ink/70">
+          If you are comparing fitted wardrobes cost or fitted wardrobes prices, size, internal layout, doors, hardware, scribed edges, and finish level are the big variables.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Bespoke joinery is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need fitted wardrobe specialists near you?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send room photos, rough dimensions, and any inspiration images so Rob can advise on the best route.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

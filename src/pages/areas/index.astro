@@ -10,23 +10,23 @@ const breadcrumbs = [
 ];
 
 const localAreas = [
-  { href: '/areas/pontefract', title: 'Pontefract', desc: 'Home base. WF7, WF8, WF9 and surrounding villages.' },
-  { href: '/areas/wakefield', title: 'Wakefield', desc: 'WF1–WF4. Cathedral quarter and period housing.' },
-  { href: '/areas/castleford', title: 'Castleford', desc: 'WF10. Victorian terraces and period stock.' },
-  { href: '/areas/featherstone', title: 'Featherstone', desc: 'WF7. Miners\' cottages and period chapels.' },
-  { href: '/areas/knottingley', title: 'Knottingley', desc: 'WF11. Victorian terraces and commercial period stock.' },
-  { href: '/areas/normanton', title: 'Normanton', desc: 'WF6. Victorian and Edwardian housing.' },
+  { href: '/areas/pontefract', title: 'Pontefract', desc: 'Home base. WF7, WF8, WF9 and surrounding villages for general joinery and timber repair.' },
+  { href: '/areas/wakefield', title: 'Wakefield', desc: 'WF1-WF4. Everyday carpentry, period housing, and timber-led repair work.' },
+  { href: '/areas/castleford', title: 'Castleford', desc: 'WF10. Kitchens, doors, trim, flooring, and practical joinery in mixed housing stock.' },
+  { href: '/areas/featherstone', title: 'Featherstone', desc: 'WF7. Local carpentry, joinery, maintenance, and repair-led timber work.' },
+  { href: '/areas/knottingley', title: 'Knottingley', desc: 'WF11. General joinery, doors, kitchens, windows, and older timber details.' },
+  { href: '/areas/normanton', title: 'Normanton', desc: 'WF6. Practical joinery for Victorian, Edwardian, and everyday family homes.' },
 ];
 
 const travelAreas = [
-  { href: '/areas/leeds', title: 'Leeds', desc: 'Listed and period work. Headingley, Roundhay, central Georgian.' },
-  { href: '/areas/yorkshire', title: 'Yorkshire (wider)', desc: 'Significant structural and listed building projects across the county.' },
+  { href: '/areas/leeds', title: 'Leeds', desc: 'Selected timber-led joinery, built-ins, roof carpentry, and older-building repair work.' },
+  { href: '/areas/yorkshire', title: 'Yorkshire (wider)', desc: 'Significant structural, timber-led, and heritage projects where the scope justifies travel.' },
 ];
 ---
 
 <BaseLayout
   title="Areas We Cover from Pontefract"
-  description="Heritage Joiners covers Pontefract, Wakefield, Castleford, Featherstone, Knottingley, Normanton, Leeds, and selected listed or period projects across Yorkshire."
+  description="Heritage Joiners covers Pontefract, Wakefield, Castleford, Featherstone, Knottingley, Normanton, Leeds, and selected timber-led projects across Yorkshire."
 >
   <BreadcrumbSchema items={breadcrumbs} />
 
@@ -35,7 +35,7 @@ const travelAreas = [
       <div class="max-w-3xl mb-12">
         <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Areas we cover</h1>
         <p class="text-lg text-ink/70">
-          Pontefract-based, covering WF postcodes as primary territory. We travel for listed and period timber work across the wider Yorkshire area.
+          Heritage Joiners is Pontefract-based, with WF postcodes as the core patch for carpentry and joinery across West Yorkshire. Rob is a fully qualified apprentice trained bench hand joiner, time served, and travels wider for selected timber-led and heritage projects where that experience is the right fit.
         </p>
       </div>
 
@@ -49,7 +49,7 @@ const travelAreas = [
         ))}
       </div>
 
-      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Travel — listed &amp; period work</h2>
+      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Travel — larger timber-led work</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {travelAreas.map((area) => (
           <a href={area.href} class="block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">

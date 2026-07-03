@@ -1,0 +1,134 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Doors', url: `${url}/services/doors` }];
+const schemaProps = {
+  description: 'Door hanging, internal door fitting, external door fitting, and door frame repair across Pontefract, Wakefield, and West Yorkshire.',
+  url: `${url}/services/doors`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does front door installation cost?',
+    answer:
+      'Front door installation cost, interior door installation cost, and the cost to hang a door all depend on the door type, frame condition, ironmongery, and whether trimming or repairs are needed before fitting.',
+  },
+  {
+    question: 'Can you tell whether it is a simple fitting job or a repair?',
+    answer:
+      'Send photos first and Rob can usually tell whether it is a simple fitting job, a door frame repair, or a wider second-fix package.',
+  },
+];
+
+const doorServices = [
+  'Internal door fitting and door hanging',
+  'External door fitting and front door installation',
+  'Back doors, stable doors, and timber garage doors',
+  'French doors, sliding doors, and internal bifold doors',
+  'Fire door installation and adjustment',
+  'Door frames, linings, thresholds, and sills',
+  'Locks, handles, hinges, latches, and other ironmongery',
+  'Draught-proofing, easing, and adjusting sticking doors',
+  'Period and heritage door repair and restoration',
+  'Bespoke timber doors where replacement is the right answer',
+];
+---
+
+<ServiceLayout
+  title="Door Hanging in Pontefract, Wakefield & West Yorkshire"
+  description="Door hanging, internal door fitting, external door fitting, and door frame repair across Pontefract, Wakefield and West Yorkshire for homes, landlords, and period properties."
+  serviceName="Doors"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Door hanging and fitting</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Door Hanging in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob handles internal door fitting, external door fitting, fire door installation, and door frame repair with the judgement of a fully qualified apprentice trained bench hand joiner, time served. A door is only right when the opening, hinges, stops, locks, margins and swing have all been solved together.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {doorServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">From single doors to full second-fix joinery</h2>
+        <p class="text-ink/70 mb-3">
+          Some jobs are straightforward door hanging work: one sticking door, a replacement internal leaf, or a new frame that needs setting out properly. Others reveal old linings, uneven floors, twisted frames, or ironmongery that needs thinking through before the door will close cleanly.
+        </p>
+        <p class="text-ink/70">
+          The work is timber-led joinery and carpentry, with careful preparation and no shortcut workmanship.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Heritage repair where it makes sense</h2>
+        <p class="text-ink/70 mb-3">
+          Heritage Joiners still carries its repair background into this service. If a period door or door frame can be repaired soundly, Rob will usually explain that before recommending a full replacement.
+        </p>
+        <p class="text-ink/70">
+          Trusted joinery work at The Counting House, one of Pontefract's oldest buildings, shows that approach in practice. <a href="/case-studies/counting-house/timber-doors" class="text-oak underline">See the timber doors case study</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Based in Ackworth, covering <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a> for door fitting, repairs, and second-fix joinery.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need a door fitted or repaired?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send a photo of the opening, the door, and any frame issue and Rob will point you in the right direction.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

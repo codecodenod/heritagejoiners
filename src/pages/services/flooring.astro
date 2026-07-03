@@ -1,0 +1,148 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Flooring', url: `${url}/services/flooring` }];
+const schemaProps = {
+  description: 'Floor sanding, wood floor repair, floorboard repair, and wood flooring fitting across Pontefract, Wakefield, and West Yorkshire.',
+  url: `${url}/services/flooring`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does floor sanding cost?',
+    answer:
+      'Floor sanding cost, hardwood sanding and refinishing cost, and whether damaged boards can be repaired rather than replaced all come down to the condition of the timber and what is happening underneath it.',
+  },
+  {
+    question: 'What photos help with a timber floor repair or refinishing quote?',
+    answer:
+      'Wide shots of the room plus close-ups of damaged boards help Rob give a better first steer.',
+  },
+];
+
+const flooringServices = [
+  'Solid wood flooring and engineered wood flooring',
+  'Parquet flooring and floorboard installation',
+  'Wood flooring fitter and installation work',
+  'Wood floor repair and floorboard repair',
+  'Floorboard replacement and timber floor repairs',
+  'Floor sanding and wood floor sanding and refinishing',
+  'Laminate flooring installation — Pergo Certified Installer',
+  'Supply and fit, or fitting flooring you have bought yourself',
+  'Subfloor repairs and floor levelling',
+  'Reclaimed timber flooring details',
+  'Flooring repairs in period properties',
+  'Making good around trims, thresholds, and stairs',
+];
+---
+
+<ServiceLayout
+  title="Floor Sanding & Wood Flooring in Pontefract, Wakefield & West Yorkshire"
+  description="Floor sanding, wood floor repair, floorboard repair, and wood flooring fitting across Pontefract, Wakefield and West Yorkshire — plus laminate flooring as a Pergo Certified Installer."
+  serviceName="Flooring"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Timber floors and floorboards</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Floor Sanding &amp; Wood Flooring in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob installs, repairs, and refinishes timber floors across West Yorkshire, including floor sanding, wood floor repair, floorboard repair, parquet work, and wood flooring fitting. He is also a <strong class="text-ink">Pergo Certified Installer</strong>, registered to fit Pergo laminate and wood flooring. Flooring can be supplied and fitted, or Rob will fit flooring you have bought yourself. Older floors often need carpentry judgement and finishing skill before the sanding machine comes anywhere near them.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-ink text-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-patina uppercase tracking-wide mb-3 font-display text-sm">Pergo Certified Installer</p>
+        <h2 class="font-display text-2xl lg:text-3xl mb-4">A registered Pergo installer for laminate and wood flooring</h2>
+        <p class="text-bone/80">
+          Rob is on the Pergo installer register, certified to fit Pergo laminate and wood flooring to the manufacturer's standard. That means correct subfloor preparation, expansion gaps, underlay, and finishing — so the floor is laid right and any product guarantee is protected. Laminate is fitted alongside the same timber flooring, repair, and refinishing work, so one tradesman handles the whole floor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {flooringServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Repair before refinishing</h2>
+        <p class="text-ink/70 mb-3">
+          A lot of floor sanding enquiries start with movement, damaged boards, squeaks, or local decay. Rob checks the boards, fixings, joists, and subfloor first, then decides whether sanding and refinishing is enough or whether repairs are needed before any finish goes down.
+        </p>
+        <p class="text-ink/70">
+          That is especially important in period houses where original floorboards are part of the building's character and may already have been sanded before.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Installation and restoration</h2>
+        <p class="text-ink/70 mb-3">
+          Rob takes on new wood flooring fitter enquiries as well as restoration-led jobs. That covers solid wood flooring, engineered timber, parquet repairs, reclaimed boards, moisture checks, <a href="/services/first-fix-carpentry" class="text-oak underline">floor joists installation</a>, and finish matching around skirtings and thresholds.
+        </p>
+        <p class="text-ink/70">
+          If you are looking up wood floor sanding prices or wood floor restoration cost, board thickness, previous sanding, movement, and repair needs are usually the biggest factors.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Flooring work is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need a timber floor repaired or refinished?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the room, any damaged boards, and the overall floor condition so Rob can advise on repair versus sanding.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

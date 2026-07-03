@@ -1,0 +1,132 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Roofing & Roof Carpentry', url: `${url}/services/roofing-carpentry` }];
+const schemaProps = {
+  description: 'Roof carpenter services across Pontefract, Wakefield, and West Yorkshire, including cut roofs, rafter repair, dormer construction, and timber roof work.',
+  url: `${url}/services/roofing-carpentry`,
+  priceRange: '£££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does rafter replacement cost?',
+    answer:
+      'The cost of rafter replacement or roof timber work depends on access, scaffolding, covering removal, and whether the issue is isolated or part of a wider structural problem.',
+  },
+  {
+    question: 'What does Rob need to know before recommending roof carpentry work?',
+    answer:
+      'For older buildings, Rob will want to know the moisture source as well as the timber condition before recommending work.',
+  },
+];
+
+const roofingServices = [
+  'Roof carpenter and cut roof carpentry',
+  'Traditional rafters, rafter tails, and rafter repair',
+  'Roof trusses, timber roof truss, and roof structure set-out',
+  'Purlins, ridge boards, wall plates, and timber roof beams',
+  'Joists, ceiling joists, and flat roof firrings',
+  'Dormer construction and roof structure alterations',
+  'Timber soffits, fascias, and bargeboards',
+  'Roof timber repair where original members can be retained',
+];
+---
+
+<ServiceLayout
+  title="Roof Carpenter in Pontefract, Wakefield & West Yorkshire"
+  description="Roof carpenter services across Pontefract, Wakefield and West Yorkshire, including cut roofs, roof trusses, rafter repair, dormer construction, and timber roof repairs."
+  serviceName="Roofing & Roof Carpentry"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Roofing and roof structure</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Roof Carpenter in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob covers roof carpenter work across West Yorkshire, including traditional cut roofs, timber roof truss work, common rafters, hip and valley rafters, purlins, dormer construction, flat roof joists and targeted rafter repair. A roof is problem-solving in timber: pitch, spans, loads, birdsmouth cuts, plumb cuts, trimmed openings and reveals all have to line up.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {roofingServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">New build carpentry and repair-led roof work</h2>
+        <p class="text-ink/70 mb-3">
+          Roof carpentry covers both new timber work and careful repair-led roof work. Some jobs are clean structural carpentry from drawings. Others are older roofs where a localised timber failure needs careful inspection before anyone strips out more than necessary.
+        </p>
+        <p class="text-ink/70">
+          That repair judgement comes directly from Rob's old-building experience and is especially useful on older roofs.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Rafters, purlins, dormers, and rooflights</h2>
+        <p class="text-ink/70 mb-3">
+          A traditional cut roof is not just pieces of timber fixed together. Ridge boards, common rafters, hip rafters, valley rafters, jack rafters, purlins, collars, struts, wall plates, birdsmouth cuts, rafter centres and C16/C24 graded timber all need setting out correctly so the loads are carried properly.
+        </p>
+        <p class="text-ink/70">
+          Rooflights, dormers or attic use should be considered during the roof set-out, not added after tiling. The rooflight frame and finished reveal affect both structure and daylight into the room, especially where <a href="/services/woodworm-treatment" class="text-oak underline">woodworm in joists</a> needs dealing with before the roof is closed up.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Roofing carpentry is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and further afield for selected structural and heritage roof work across <a href="/areas/yorkshire" class="text-oak underline">Yorkshire</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need roof carpentry or roof timber advice?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send roof void photos, plans, or clear images of the affected area and Rob will advise on the next step.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

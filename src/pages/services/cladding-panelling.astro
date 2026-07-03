@@ -1,0 +1,132 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Cladding & Panelling', url: `${url}/services/cladding-panelling` }];
+const schemaProps = {
+  description: 'Wall panelling, tongue and groove panelling, and external timber cladding across Pontefract, Wakefield, and West Yorkshire.',
+  url: `${url}/services/cladding-panelling`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'What affects period panelling repair cost?',
+    answer:
+      'Period panelling repair, fluted panel feature wall cost, and wood accent wall cost all change with wall condition, room proportions, profile choice, and how much of the work is decorative versus remedial.',
+  },
+  {
+    question: 'What photos help with a timber panelling or cladding job?',
+    answer:
+      'Photos of the room plus a rough idea of the look you want are usually enough for Rob to give a first steer.',
+  },
+];
+
+const panellingServices = [
+  'Wall panelling and internal decorative panelling',
+  'Tongue and groove panelling and fitted wall cladding',
+  'Hallway panelling, stair panelling, and feature walls',
+  'Shaker and decorative wall details',
+  'Wood wall cladding and external timber cladding',
+  'Heritage and period panelling repair',
+  'Panelling around stairs, landings, and entrances',
+  'Timber-led repairs and profile matching for older interiors',
+];
+---
+
+<ServiceLayout
+  title="Wall Panelling in Pontefract, Wakefield & West Yorkshire"
+  description="Wall panelling, tongue and groove panelling, stair wall panelling, and external timber cladding across Pontefract, Wakefield and West Yorkshire."
+  serviceName="Cladding & Panelling"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Timber cladding and panelling</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Wall Panelling in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob fits wall panelling, tongue and groove panelling, and timber cladding across West Yorkshire, covering modern decorative work as well as heritage and period panelling repair where older interiors need a more careful approach.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {panellingServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Fitting tongue and groove panelling with clean timber detail</h2>
+        <p class="text-ink/70 mb-3">
+          Hallway panelling, stair wall panelling, tongue and groove panelling, and a wood feature wall all depend on setting out. Rails, stiles, margins, board widths, and returns need to be planned so the finished wall does not feel random, and the same timber eye carries across to <a href="/services/outdoor-carpentry" class="text-oak underline">garden screening and fencing</a> when the brief moves outside.
+        </p>
+        <p class="text-ink/70">
+          Rob stays on the timber side of the category and treats panelling as joinery, not just decoration stuck to a wall.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Heritage repair stays part of the service</h2>
+        <p class="text-ink/70 mb-3">
+          Tudor, Georgian, Victorian, and Edwardian timber panelling still needs a proper repair route when the timber is worth keeping. The same care also helps contemporary interiors, because proportion and preparation matter in both.
+        </p>
+        <p class="text-ink/70">
+          Where panelling needs matching rather than simple installation, Rob can advise on profile matching, finish blending, and local repair.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Panelling and cladding work is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need wall panelling fitted near you?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send room photos or external elevations and a rough idea of the style or repair issue.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

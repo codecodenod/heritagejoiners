@@ -1,0 +1,134 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Timber Repair & Restoration', url: `${url}/services/timber-repair` }];
+const schemaProps = {
+  description: 'Timber repair, wood rot repair, wet rot repair, dry rot repair, splice repair, and timber restoration across Pontefract, Wakefield, and West Yorkshire.',
+  url: `${url}/services/timber-repair`,
+  priceRange: '£££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does wood rot treatment cost?',
+    answer:
+      'Wood treatment for dry rot, dry rot treatment, wood rot treatment, and repair rot all start with the same practical question: has the moisture cause been solved, and is the timber still structurally viable?',
+  },
+  {
+    question: 'Can you repair rotting wood without replacing it?',
+    answer:
+      'Resin or filler alone is not the same thing as a proper timber repair service. Rob repairs the timber itself, not just the surface symptom.',
+  },
+];
+
+const repairServices = [
+  'Timber repair and timber restoration',
+  'Wood rot repair, wet rot repair, and dry rot repair',
+  'Rotten timber repair to windows, doors, and frames',
+  'Splice repair and scarf joints',
+  'Repair wooden door frame and repair wood window sill work',
+  'Repairing rotted beams and timber beam repair',
+  'Listed and period property timber repair',
+  'Window and door restoration',
+  'Floorboard repair and local structural timber repair',
+  'Conservation-minded joinery and honest repair-or-replace advice',
+];
+---
+
+<ServiceLayout
+  title="Timber Repair in Pontefract, Wakefield & West Yorkshire"
+  description="Timber repair, wood rot repair, wet rot repair, dry rot repair, splice repair, and timber restoration across Pontefract, Wakefield and West Yorkshire."
+  serviceName="Timber Repair & Restoration"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Repair and restoration specialism</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Timber Repair in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Timber repair is still one of Rob's strongest specialisms. Heritage Joiners carries out wood rot repair, wet rot repair, dry rot repair, splice repair, and wider timber restoration across West Yorkshire, always starting with what can be soundly kept rather than what can be quickly replaced.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {repairServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The repair logic stays the same</h2>
+        <p class="text-ink/70 mb-3">
+          The judgement is always the same: identify the moisture cause, establish how much sound timber is left, and choose the least disruptive repair that is structurally honest. That may be a splice repair, a scarf joint, a sill repair, a beam-end repair, or a new section made to match.
+        </p>
+        <p class="text-ink/70">
+          Rob's bench joinery and site carpentry background matters here, because repair work needs clean cutting, good bearing, matching sections, and the judgement to stop where the sound timber starts.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Repair first does not mean repair at any cost</h2>
+        <p class="text-ink/70 mb-3">
+          Rob still gives honest advice when repairing rotting wood without replacing is no longer sensible. If a structural cross-section has failed or too little sound timber remains, replacement is the better long-term answer.
+        </p>
+        <p class="text-ink/70">
+          <a href="/repair-or-replace" class="text-oak underline">Read the full repair-or-replace framework</a> if you want to understand how that decision gets made, and the same logic applies when <a href="/services/windows" class="text-oak underline">timber window repairs</a> or <a href="/services/woodworm-treatment" class="text-oak underline">woodworm treatment</a> need to be judged alongside the repair.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Timber repair work is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and for selected heritage projects across wider <a href="/areas/yorkshire" class="text-oak underline">Yorkshire</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need decayed timber assessed?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send close photos of the affected timber and a wider shot showing the surrounding joinery or structure. Rob will give you an honest first view.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

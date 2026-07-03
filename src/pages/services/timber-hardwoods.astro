@@ -1,0 +1,137 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Timber & Hardwoods', url: `${url}/services/timber-hardwoods` }];
+const schemaProps = {
+  description: 'Oak joinery, hardwood joinery, reclaimed timber, Accoya windows, and material-led joinery advice across Pontefract, Wakefield, and West Yorkshire.',
+  url: `${url}/services/timber-hardwoods`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'What should I know about green oak prices and reclaimed timber prices?',
+    answer:
+      'Green oak prices, reclaimed timber prices, and the cost of reclaimed wood are useful context, but Heritage Joiners does not sell timber by the yard.',
+  },
+  {
+    question: 'Can Rob advise on suitable materials for a joinery or carpentry project?',
+    answer:
+      'Rob can advise on suitable materials within a joinery or carpentry project.',
+  },
+  {
+    question: 'What if I already know the material I want to use?',
+    answer:
+      'If you already know the material you want to use, include that in your enquiry and Rob can advise whether it suits the job.',
+  },
+];
+
+const materialServices = [
+  'Oak joinery and oak joinery work',
+  'Hardwood joinery for doors, windows, and visible joinery',
+  'Green oak, seasoned oak, and reclaimed oak timber',
+  'Reclaimed timber and reclaimed wood details',
+  'Iroko worktops and outdoor hardwood applications',
+  'Accoya windows and durable timber choices',
+  'Softwood, hardwood, and engineered timber selection',
+  'Material advice that fits the job rather than a merchant list',
+];
+---
+
+<ServiceLayout
+  title="Oak Joinery in Pontefract, Wakefield & West Yorkshire"
+  description="Oak joinery, hardwood joinery, reclaimed timber, Accoya windows, and material-led timber advice across Pontefract, Wakefield and West Yorkshire."
+  serviceName="Timber & Hardwoods"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Materials and timber choice</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Oak Joinery in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Oak joinery, hardwood joinery, reclaimed timber, Accoya windows, iroko worktops, and good softwood all behave differently. Rob uses hardwood and softwood experience to choose timber that suits the job, the building, and the level of exposure.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we work with</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {materialServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Choosing the right timber for the job</h2>
+        <p class="text-ink/70 mb-3">
+          Different jobs want different materials. Green oak behaves differently from seasoned oak. Reclaimed timber can bring real character, but only if it is stable enough for the intended use. Accoya makes sense in some external settings where durability matters.
+        </p>
+        <p class="text-ink/70">
+          Material choice is part of the joinery judgement, not an afterthought. Movement, grain, moisture, finish, fixing, and the surrounding building all matter.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">A reassurance page, not a timber yard</h2>
+        <p class="text-ink/70 mb-3">
+          Heritage Joiners is not a timber yard. This service exists because clients often want to know whether oak, reclaimed timber, green oak, iroko, Accoya, or a simpler softwood is the right material for their joinery.
+        </p>
+        <p class="text-ink/70">
+          Rob's answer is based on the work the timber needs to do, not a merchant list.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Material-led joinery advice and hardwood work are available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need advice on timber choice?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Tell Rob what the joinery needs to do and where it sits, and he can advise on the most suitable timber.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

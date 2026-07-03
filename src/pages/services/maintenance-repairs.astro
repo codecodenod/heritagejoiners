@@ -1,0 +1,132 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Maintenance & Repairs', url: `${url}/services/maintenance-repairs` }];
+const schemaProps = {
+  description: 'General carpentry repairs, door and window adjustments, shelving, lock replacement, and maintenance joinery across Pontefract, Wakefield, and West Yorkshire.',
+  url: `${url}/services/maintenance-repairs`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does door repair cost?',
+    answer:
+      'Door repair cost, lock replacement cost, and front door lock replacement cost all depend on the condition of the timber around the hardware and whether the repair is isolated or part of a wider issue.',
+  },
+  {
+    question: 'Can Rob give an initial view from photos?',
+    answer:
+      'Rob can often give an initial view from photos before arranging a visit.',
+  },
+];
+
+const maintenanceServices = [
+  'General carpentry repairs and small joinery jobs',
+  'Door and window adjustments',
+  'Lock replacement, hinge replacement, and minor ironmongery fixes',
+  'Shelving and practical fitted details',
+  'Flat-pack assembly where joinery skill still matters',
+  'Snagging and finishing corrections',
+  'Storm and damage repair to timber elements',
+  'Small maintenance work that sits between handyman and full contract joinery',
+];
+---
+
+<ServiceLayout
+  title="General Carpentry Repairs in Pontefract, Wakefield & West Yorkshire"
+  description="General carpentry repairs, door and window adjustments, lock replacement, shelving, and maintenance joinery across Pontefract, Wakefield and West Yorkshire."
+  serviceName="Maintenance & Small Jobs"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Maintenance and smaller jobs</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">General Carpentry Repairs in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob also handles the smaller, practical side of the business: general carpentry repairs, door and window adjustments, lock replacement, shelving, snagging, and storm damage repair. These jobs may be small, but they still need a proper joiner rather than guesswork.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {maintenanceServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The local joiner for the small jobs</h2>
+        <p class="text-ink/70 mb-3">
+          Practical maintenance enquiries are often simple on the surface: a door that needs easing, a lock replacement, hinges that have failed, loose shelving, or small timber damage that needs sorting out quickly.
+        </p>
+        <p class="text-ink/70">
+          Rob brings the same workshop-trained and site-proven judgement to these jobs as he does to larger carpentry projects.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Small jobs still need proper joinery</h2>
+        <p class="text-ink/70 mb-3">
+          General joinery services and door repair enquiries often turn into practical joinery and carpentry problem-solving once the timber is seen properly. Existing timber may be awkward, old, loose, or already failing around the hardware.
+        </p>
+        <p class="text-ink/70">
+          Photos and a simple list of what needs doing are usually enough for a first reply.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Maintenance joinery is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need a small carpentry job sorted?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send a short list and a few photos and Rob will tell you whether it fits this service.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

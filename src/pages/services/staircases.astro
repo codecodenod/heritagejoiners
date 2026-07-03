@@ -1,0 +1,134 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Staircases', url: `${url}/services/staircases` }];
+const schemaProps = {
+  description: 'Staircase fitter services across Pontefract, Wakefield, and West Yorkshire, including bespoke staircase work, staircase repair, and staircase renovation.',
+  url: `${url}/services/staircases`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does staircase renovation cost?',
+    answer:
+      'Staircase renovation, stair repair, and stairs made to measure can all mean different things on site. The right answer depends on whether the structure needs changing or whether the existing stair can be made sound and improved.',
+  },
+  {
+    question: 'Can Rob tell whether it needs bespoke manufacture or renovation?',
+    answer:
+      'Rob can usually tell from photos whether the job looks like bespoke manufacture, second-fix joinery, or a renovation-led approach.',
+  },
+];
+
+const staircaseServices = [
+  'New staircase installation and staircase replacement',
+  'Bespoke staircase and made-to-measure stair work',
+  'Loft staircase and attic staircase fitting',
+  'Open-plan and cut-string stairs',
+  'Newel posts, handrails, and spindles',
+  'Stair treads, risers, and landing details',
+  'Staircase repair and staircase restoration',
+  'Staircase renovation and stair refurbishment',
+  'Stair cladding and renovation kits',
+  'Under-stair storage and cupboards',
+];
+---
+
+<ServiceLayout
+  title="Staircase Fitter in Pontefract, Wakefield & West Yorkshire"
+  description="Staircase fitter services across Pontefract, Wakefield and West Yorkshire, including bespoke staircases, staircase repair, staircase renovation, and loft staircases."
+  serviceName="Stairs & Staircases"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Stairs and staircases</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Staircase Fitter in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob fits, repairs, and improves staircases across West Yorkshire, from bespoke staircase work and loft staircases to staircase repair, staircase renovation, and newel post replacement. A staircase has to be set out properly before it can look right, feel right, and work safely in the building.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {staircaseServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Joinery, finish, and safe installation</h2>
+        <p class="text-ink/70 mb-3">
+          Stair work brings together setting out, fixing, and visible finish. Rise, going, pitch, landings, treads, risers, newels, handrails, and spindles all have to work as one, whether the job is a full replacement staircase or a careful upgrade.
+        </p>
+        <p class="text-ink/70">
+          In older houses, Rob also looks at out-of-square walls, worn strings, loose newels, and moulding details so original character is kept where the existing staircase is worth retaining.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Renovation instead of full replacement</h2>
+        <p class="text-ink/70 mb-3">
+          Not every enquiry needs a completely new staircase. Stair refurbishment, tread repairs, newel post replacement, and stair cladding can often solve the problem without rebuilding the whole flight, and <a href="/services/cladding-panelling" class="text-oak underline">stair wall panelling</a> can sit with the same work when the hall needs finishing.
+        </p>
+        <p class="text-ink/70">
+          If you are weighing up staircase renovation cost or new staircase cost, photos, floor-to-floor height, and a few basic dimensions help Rob narrow down the honest route early.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Staircase work is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need a staircase fitted or repaired?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send a few photos, the floor-to-floor height if you know it, and what you want to improve. Rob will tell you what looks practical.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

@@ -68,11 +68,11 @@ export const siteConfig = {
 
   // Business hours
   hours: {
-    monday: '08:00 - 17:00',
-    tuesday: '08:00 - 17:00',
-    wednesday: '08:00 - 17:00',
-    thursday: '08:00 - 17:00',
-    friday: '08:00 - 17:00',
+    monday: '09:00 - 17:00',
+    tuesday: '09:00 - 17:00',
+    wednesday: '09:00 - 17:00',
+    thursday: '09:00 - 17:00',
+    friday: '09:00 - 17:00',
     saturday: 'Closed',
     sunday: 'Closed',
   },

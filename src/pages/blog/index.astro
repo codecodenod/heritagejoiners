@@ -1,0 +1,51 @@
+---
+/**
+ * Blog index
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<BaseLayout
+  title="Blog — Carpentry & Joinery Advice"
+  description="Practical carpentry and joinery advice from Heritage Joiners in Pontefract — what good workmanship looks like, what jobs cost, and how things should be done properly."
+>
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Blog</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Carpentry &amp; joinery, explained</h1>
+        <p class="text-lg text-ink/70 mb-12">
+          Plain, practical advice on joinery and carpentry — what jobs involve, what good workmanship
+          looks like, and how things should be done properly. Written from the bench and the site, not the brochure.
+        </p>
+      </div>
+
+      {posts.length === 0 ? (
+        <p class="text-ink/60">Posts are on the way — check back soon.</p>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map((post) => (
+            <a
+              href={`/blog/${post.id}`}
+              class="group block bg-bone rounded-lg overflow-hidden border border-ink/10 hover:border-oak transition-colors p-6"
+            >
+              <p class="text-xs text-ink/40 mb-3">{fmt(post.data.pubDate)}</p>
+              <h2 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">
+                {post.data.title}
+              </h2>
+              <p class="text-ink/70 text-sm">{post.data.description}</p>
+              <span class="inline-block mt-4 text-oak font-display text-sm">Read more &rarr;</span>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

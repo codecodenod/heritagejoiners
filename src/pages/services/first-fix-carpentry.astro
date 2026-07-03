@@ -1,0 +1,132 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'First Fix Carpentry', url: `${url}/services/first-fix-carpentry` }];
+const schemaProps = {
+  description: 'First fix joiner services across Pontefract, Wakefield, and West Yorkshire, including floor joists, stud partitions, and structural timber carpentry.',
+  url: `${url}/services/first-fix-carpentry`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does floor joist replacement cost?',
+    answer:
+      'Cost to replace a floor joist and replacing floor joists both depend on span, access, floor build-up, and whether the problem is local or widespread.',
+  },
+  {
+    question: 'What should I send for a first-fix job?',
+    answer:
+      'Photos, plans, and a short description of the build stage help Rob quickly tell whether the job is straightforward first fix or something more structural.',
+  },
+];
+
+const firstFixServices = [
+  'First fix carpentry and first fix joiner work',
+  'First fix carpenter packages for refurbishments',
+  'Floor joists, joist replacement, and floor structures',
+  'Stud partition walls and timber partition walls',
+  'Door linings and frames at first fix stage',
+  'Window fitting and structural openings',
+  'Noggins, firrings, and flat roof set-out',
+  'Structural timber and decked floor work',
+];
+---
+
+<ServiceLayout
+  title="First Fix Joiner in Pontefract, Wakefield & West Yorkshire"
+  description="First fix joiner services across Pontefract, Wakefield and West Yorkshire, including floor joists, stud partition walls, door linings, and structural timber work."
+  serviceName="First Fix Carpentry"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">First fix carpentry</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">First Fix Joiner in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob takes on first fix joiner and first fix carpenter work across West Yorkshire, drawing on a bench joinery and site carpentry background. Floor joists, stud partition walls, timber partition walls, linings, frames and structural timber all need correct setting out before anything gets covered up.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {firstFixServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Set-out and structure first</h2>
+        <p class="text-ink/70 mb-3">
+          First fix work does not get seen at the end, but it controls almost everything that follows. Rob treats levels, openings, bearing points, and structural order properly so the second-fix and finishing work has a clean base.
+        </p>
+        <p class="text-ink/70">
+          That applies equally to extensions, loft work, refurbs, and selective remedial carpentry.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Joists and partitions without the guesswork</h2>
+        <p class="text-ink/70 mb-3">
+          A stud wall should not feel weak or springy. Where the job allows, Rob uses proper timber sizing, accurate setting out, and extra noggins or blocking to stiffen the frame before boarding, so it resists knocks and flex.
+        </p>
+        <p class="text-ink/70">
+          Floor joist replacement cost depends heavily on access, the size of the affected area, and whether the cause of failure has been solved.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        First fix carpentry is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need first fix carpentry on site?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send drawings, room sizes, or photos of the current stage and Rob can advise on scope and availability.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

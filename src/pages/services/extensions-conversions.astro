@@ -1,0 +1,134 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Extensions, Conversions & Structural', url: `${url}/services/extensions-conversions` }];
+const schemaProps = {
+  description: 'Attic conversion, loft conversion, timber frame construction, and structural carpentry across Pontefract, Wakefield, and West Yorkshire.',
+  url: `${url}/services/extensions-conversions`,
+  priceRange: '£££',
+};
+
+const faqItems = [
+  {
+    question: 'What affects the cost of attic conversion with dormer work?',
+    answer:
+      'The cost of attic conversion with dormer work depends on structure, steel, stair position, insulation build-up, and whether the roof needs wider carpentry changes.',
+  },
+  {
+    question: 'What should I send first for an attic conversion or structural enquiry?',
+    answer:
+      'Plans, sketches, or roof void photos are the best way to start the conversation, especially if the building is older or the structure has already been altered.',
+  },
+];
+
+const structuralServices = [
+  'Attic conversion and loft conversion carpentry',
+  'Dormer loft conversion structure',
+  'Extensions and structural carpentry elements',
+  'Garage conversions and internal structural changes',
+  'Timber frame construction and timber frame carpentry',
+  'Timber frame joinery and timber frame repair',
+  'Structural timber, joists, and floor structures',
+  'Oak frame carpentry company level work on selected projects',
+  'Garden room builder and outbuilding timber structures',
+  'Steel beam boxing and joinery integration',
+];
+---
+
+<ServiceLayout
+  title="Attic Conversion in Pontefract, Wakefield & West Yorkshire"
+  description="Attic conversion, loft conversion, timber frame construction, and structural carpentry across Pontefract, Wakefield and West Yorkshire."
+  serviceName="Extensions, Conversions & Structural"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Conversions and structural carpentry</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Attic Conversion in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob covers attic conversion, loft conversion, timber frame construction, and structural carpentry across West Yorkshire. This is where workshop-trained and site-proven joinery matters: awkward roof geometry, existing timbers, new openings, trimmers, joists and finishes all have to be made to work together.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {structuralServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Build work with structural judgement</h2>
+        <p class="text-ink/70 mb-3">
+          This is the structural and conversion side of the business. Some jobs are straightforward build carpentry from drawings. Others involve existing timber frames, older joists, weak framing or awkward roof geometry where old-building experience is genuinely useful, especially when a <a href="/services/first-fix-carpentry" class="text-oak underline">first fix joiner</a> is needed to sort the structure before the wider conversion starts.
+        </p>
+        <p class="text-ink/70">
+          That crossover is why structural timber, timber frame construction and repair-led carpentry sit naturally in this service.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Lofts, dormers, and timber frames</h2>
+        <p class="text-ink/70 mb-3">
+          Loft conversion cost, dormer attic conversion, attic conversion price, and timber frame extensions are useful starting points, but pricing always comes back to structure, access, stair position, rooflight or dormer set-out, and the level of finish required.
+        </p>
+        <p class="text-ink/70">
+          Rob can review plans and advise when an existing structural timber issue should be solved before the wider conversion work begins. Rooflights, dormers and attic use are best considered during the roof set-out, while rafters, trimmers and reveals can still be formed properly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Extensions and conversions are available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>, with selected larger projects across wider <a href="/areas/yorkshire" class="text-oak underline">Yorkshire</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Planning an extension or conversion?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send plans, rough dimensions, or clear roof and room photos and Rob can advise on the carpentry scope.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

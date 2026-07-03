@@ -1,0 +1,132 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Finishing & Specialist', url: `${url}/services/finishing` }];
+const schemaProps = {
+  description: 'Wood staining, wood oiling, timber finishing, French polishing, and sanding and refinishing across Pontefract, Wakefield, and West Yorkshire.',
+  url: `${url}/services/finishing`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does sanding wooden floors cost?',
+    answer:
+      'Sanding wooden floors cost, hardwood sanding and refinishing cost, and wood floor restoration cost all depend on wear, previous finishes, filling needs, and how much remedial carpentry is needed before finishing starts.',
+  },
+  {
+    question: 'What does Rob need to know before advising on colour match expectations?',
+    answer:
+      'On heritage repairs, Rob also wants to know what the surrounding timber looks like in natural light before advising on match expectations.',
+  },
+];
+
+const finishingServices = [
+  'Wood staining, wood oiling, and wood waxing',
+  'Timber finishing and colour matching',
+  'French polishing and hand finishing',
+  'Sanding and refinishing hardwood floors',
+  'Wood floor refinishing and floor refinishing work',
+  'Paint preparation and surface readiness',
+  'Ageing or distressing new timber to sit with old fabric',
+  'Finish blending on repair sections and visible joinery',
+];
+---
+
+<ServiceLayout
+  title="Wood Staining in Pontefract, Wakefield & West Yorkshire"
+  description="Wood staining, wood oiling, timber finishing, French polishing, and sanding and refinishing across Pontefract, Wakefield and West Yorkshire."
+  serviceName="Finishing & Specialist"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Timber finishing and matching</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Wood Staining in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob carries out wood staining, wood oiling, timber finishing, French polishing, and sanding and refinishing across West Yorkshire. On straightforward jobs that means careful preparation and the right finish system. On heritage work it can mean closing the visual gap between old timber and repaired sections.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {finishingServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The finish stage is not an afterthought</h2>
+        <p class="text-ink/70 mb-3">
+          Whether it is a repaired sash, a new oak detail, or a reclaimed floorboard patch, the timber only really settles once the finish is right. Preparation, sanding sequence, test boards, grain, colour, sheen, and light all change the result.
+        </p>
+        <p class="text-ink/70">
+          That is one reason finishing remains closely tied to the heritage specialism, even though it is just as useful on ordinary joinery and flooring work.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Floors, joinery, and visible repair work</h2>
+        <p class="text-ink/70 mb-3">
+          Wood staining, hardwood floor refinishing, and French polishing usually fall into two practical buckets: visible joinery that needs careful finish matching, or timber floors that need <a href="/services/flooring" class="text-oak underline">floor sanding</a> properly.
+        </p>
+        <p class="text-ink/70">
+          If you are comparing wood floor sanding prices or hardwood refinishing price, the amount of preparation is often the key variable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Finishing work is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, <a href="/areas/leeds" class="text-oak underline">Leeds</a>, and selected heritage projects across wider <a href="/areas/yorkshire" class="text-oak underline">Yorkshire</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need timber finishing or colour matching?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the timber, the existing finish, and the level of wear or colour difference you are trying to solve.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

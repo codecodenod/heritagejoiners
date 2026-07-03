@@ -1,0 +1,134 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Skirting, Architrave & Trim', url: `${url}/services/skirting-architrave` }];
+const schemaProps = {
+  description: 'Skirting board fitting, architrave fitting, coving fitting, and period moulding work across Pontefract, Wakefield, and West Yorkshire.',
+  url: `${url}/services/skirting-architrave`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does skirting board installation cost?',
+    answer:
+      'Skirting board installation cost, the cost of replacing skirting boards, architrave fitting cost, and coving installation cost all depend on room size, wall condition, and whether the job needs plain stock or matched detail.',
+  },
+  {
+    question: 'What helps Rob give a clearer first answer?',
+    answer:
+      'Photos of the room and a close-up of the existing profile usually help Rob give a clearer first answer before a visit.',
+  },
+];
+
+const trimServices = [
+  'Skirting board fitting and skirting board installation',
+  'Skirting board replacement and repairs',
+  'Architrave fitting and architrave replacement',
+  'Dado rails and picture rail fitting',
+  'Window boards and internal sills',
+  'Coving fitting and coving repairs in timber-led interiors',
+  'Decorative mouldings and beading',
+  'Period and profile-matched mouldings',
+  'Trim packages for second-fix carpentry',
+  'Making good around doors, windows, and new floors',
+];
+---
+
+<ServiceLayout
+  title="Skirting Board Fitting in Pontefract, Wakefield & West Yorkshire"
+  description="Skirting board fitting, architrave fitting, picture rails, dado rails, and profile-matched trim work across Pontefract, Wakefield and West Yorkshire."
+  serviceName="Skirting, Architrave & Trim"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Trim and finishing joinery</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Skirting Board Fitting in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob covers skirting board fitting, skirting board installation, architrave fitting, and trim packages across West Yorkshire. That includes picture rail fitting, dado rails, internal window boards, and profile-matched mouldings where older houses need the detail to sit naturally.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {trimServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Clean second-fix detail</h2>
+        <p class="text-ink/70 mb-3">
+          Trim shows the setting out. Mitres, scribes, returns, plinth blocks, window boards, and architrave margins all expose whether the preparation was right. Old walls and floors often need careful scribing rather than timber forced into place.
+        </p>
+        <p class="text-ink/70">
+          Rob handles skirting board fitting style jobs as well as wider <a href="/services/second-fix-carpentry" class="text-oak underline">second fix carpentry</a> packages alongside door hanging, flooring, and finishing.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Period mouldings for older homes</h2>
+        <p class="text-ink/70 mb-3">
+          On period properties the moulding profile matters. Matching existing skirting, architrave, or picture rail usually gives a better result than dropping in a modern off-the-shelf substitute that jars with the room.
+        </p>
+        <p class="text-ink/70">
+          If you are looking up architrave fitting cost or the cost of fitting skirting boards, profile matching, wall condition, and the amount of making good are usually the biggest variables.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Trim and moulding work is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need trim work finished properly?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the room, existing profiles, and any new flooring or doors that the trim needs to tie into.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

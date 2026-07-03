@@ -1,0 +1,131 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Woodworm & Treatment', url: `${url}/services/woodworm-treatment` }];
+const schemaProps = {
+  description: 'Woodworm treatment, woodworm repair, timber treatment, and replacement of damaged timber across Pontefract, Wakefield, and West Yorkshire.',
+  url: `${url}/services/woodworm-treatment`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does woodworm treatment cost?',
+    answer:
+      'Woodworm treatment specialists, woodworm treatment companies, and cost of woodworm treatment in roof spaces are all broad starting points. Rob can advise on likely next steps once he has photos and knows where the attack is.',
+  },
+  {
+    question: 'Is it just spraying timber and walking away?',
+    answer:
+      'The focus is service-led assessment, treatment, and repair, not simply spraying timber and walking away.',
+  },
+];
+
+const treatmentServices = [
+  'Woodworm treatment and woodworm repair',
+  'Timber treatment and timber preservation',
+  'Replacement of woodworm-damaged timber',
+  'Dry rot and woodworm treatment coordination',
+  'Fungal and damp-related timber treatment',
+  'Inspection of woodworm in joists, roof timbers, and floorboards',
+  'Follow-on carpentry repairs once the cause is addressed',
+];
+---
+
+<ServiceLayout
+  title="Woodworm Treatment in Pontefract, Wakefield & West Yorkshire"
+  description="Woodworm treatment, woodworm repair, timber treatment, and replacement of damaged timber across Pontefract, Wakefield and West Yorkshire."
+  serviceName="Woodworm & Treatment"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Inspection, treatment, and repair</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Woodworm Treatment in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob helps clients deal with woodworm treatment, woodworm repair, and wider timber treatment issues across West Yorkshire. That includes inspecting woodworm damage, identifying whether the attack is active, and replacing or repairing timber that has actually lost strength.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {treatmentServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Treatment is only part of the answer</h2>
+        <p class="text-ink/70 mb-3">
+          A proper service starts with condition, not a tin of treatment. Rob wants to know whether the attack is historic or active, what timber has lost strength, and whether damp or ventilation issues are part of the cause.
+        </p>
+        <p class="text-ink/70">
+          Once that is clear, the treatment and the carpentry repair can be planned together.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">From joists to visible joinery</h2>
+        <p class="text-ink/70 mb-3">
+          Woodworm in joists, woodworm damage in roof spaces, and follow-on repairs to visible joinery all need practical timber judgement after treatment. Damaged joists, floorboards, and roof timbers have to be assessed for strength, not just appearance.
+        </p>
+        <p class="text-ink/70">
+          If you are researching woodworm treatment cost, the affected area, access, moisture conditions, and the amount of timber replacement needed are the big cost drivers, and follow-on <a href="/services/timber-repair" class="text-oak underline">timber repair</a> is often part of the same conversation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Woodworm and timber treatment work is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Think you may have woodworm?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of exit holes, affected timbers, and the wider room or roof area so Rob can advise on urgency.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

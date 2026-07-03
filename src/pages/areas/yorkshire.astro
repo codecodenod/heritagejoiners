@@ -14,19 +14,16 @@ const breadcrumbs = [
 ];
 ---
 
-<BaseLayout
-  title="Listed & Period Timber Repair Across Yorkshire"
-  description="Heritage Joiners — Pontefract-based specialist timber repair for listed and period buildings across West Yorkshire, North Yorkshire, and beyond."
->
+<BaseLayout title="Carpenter & Joiner Across Yorkshire" description="Carpentry and joinery across Yorkshire for timber-led projects, with West Yorkshire as the core service area and heritage repair kept as a specialism.">
   <BreadcrumbSchema items={breadcrumbs} />
 
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <p class="text-oak uppercase tracking-wide mb-4">Yorkshire-wide heritage timber</p>
-        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Listed &amp; Period Timber Repair Across Yorkshire</h1>
+        <p class="text-oak uppercase tracking-wide mb-4">Yorkshire-wide timber work</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Carpenter &amp; Joiner Across Yorkshire</h1>
         <p class="text-lg text-ink/70 mb-8">
-          Heritage Joiners is based in Pontefract and covers the full West Yorkshire patch as primary territory. For listed building and period property timber work — structural repairs, oak frames, whole-property programmes, heritage panelling — we travel across the wider county, including North Yorkshire and South Yorkshire, where the scope justifies it.
+          West Yorkshire is the core patch for the business, but Rob also travels wider across Yorkshire for the right timber-led work. That includes general joinery, structural carpentry, bespoke timber jobs, and heritage repair where experience with older fabric really matters.
         </p>
         <div class="flex flex-wrap gap-4">
           <WhatsAppCTA client:load />
@@ -41,9 +38,9 @@ const breadcrumbs = [
       <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Coverage by area</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="p-6 bg-paper rounded-lg">
-          <h3 class="font-display text-lg text-ink mb-3">West Yorkshire — primary territory</h3>
+          <h3 class="font-display text-lg text-ink mb-3">West Yorkshire</h3>
           <ul class="space-y-1 text-ink/70 text-sm">
-            <li><a href="/areas/pontefract" class="text-oak hover:underline">Pontefract</a> (home base)</li>
+            <li><a href="/areas/pontefract" class="text-oak hover:underline">Pontefract</a></li>
             <li><a href="/areas/wakefield" class="text-oak hover:underline">Wakefield</a></li>
             <li><a href="/areas/castleford" class="text-oak hover:underline">Castleford</a></li>
             <li><a href="/areas/featherstone" class="text-oak hover:underline">Featherstone</a></li>
@@ -54,15 +51,15 @@ const breadcrumbs = [
         </div>
         <div class="p-6 bg-paper rounded-lg">
           <h3 class="font-display text-lg text-ink mb-3">North Yorkshire</h3>
-          <p class="text-ink/70 text-sm">York, Harrogate, Wetherby, and surrounding areas for listed and period work where the project scope justifies travel.</p>
+          <p class="text-ink/70 text-sm">Selected timber-led work where the scope justifies travel, especially older buildings and specialist joinery.</p>
         </div>
         <div class="p-6 bg-paper rounded-lg">
           <h3 class="font-display text-lg text-ink mb-3">South Yorkshire</h3>
-          <p class="text-ink/70 text-sm">Barnsley, Doncaster, and surrounding areas for significant structural or listed building timber programmes.</p>
+          <p class="text-ink/70 text-sm">Larger carpentry, timber repair, and structural jobs where site location is workable from the Pontefract base.</p>
         </div>
         <div class="p-6 bg-paper rounded-lg">
-          <h3 class="font-display text-lg text-ink mb-3">What justifies travel</h3>
-          <p class="text-ink/70 text-sm">Listed building timber repairs, structural programmes, oak frame work, whole-property restoration. We do not travel for general joinery or single small-item repairs outside our local patch.</p>
+          <h3 class="font-display text-lg text-ink mb-3">What tends to travel</h3>
+          <p class="text-ink/70 text-sm">Heritage timber repair, structural carpentry, bespoke joinery, and timber-heavy jobs rather than very small domestic maintenance visits.</p>
         </div>
       </div>
     </div>
@@ -70,17 +67,23 @@ const breadcrumbs = [
 
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Services across Yorkshire</h2>
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Representative services across Yorkshire</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <a href="/services/sash-window-repair" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Sash Window Repair</a>
-        <a href="/services/structural-timber-repair" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Structural Timber Repair</a>
-        <a href="/services/oak-beam-repair" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Oak Beam Repair</a>
-        <a href="/services/roof-timber-repair" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Roof Timber Repair</a>
-        <a href="/services/timber-frame-repair" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Timber Frame Repair</a>
-        <a href="/services/listed-and-period-property-repairs" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Listed &amp; Period Property Repairs</a>
-        <a href="/services/heritage-wall-panelling-repair" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Heritage Wall Panelling</a>
-        <a href="/services/timber-colour-matching-and-finishing" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Colour Matching &amp; Finishing</a>
-        <a href="/services/when-repair-is-not-viable" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">When Repair Is Not Viable</a>
+        <a href="/services/doors" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Doors</a>
+        <a href="/services/windows" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Windows</a>
+        <a href="/services/kitchens" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Kitchens</a>
+        <a href="/services/staircases" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Staircases</a>
+        <a href="/services/roofing-carpentry" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Roofing &amp; Roof Carpentry</a>
+        <a href="/services/extensions-conversions" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Extensions &amp; Conversions</a>
+        <a href="/services/bespoke-joinery" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Bespoke Joinery</a>
+        <a href="/services/timber-repair" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Timber Repair &amp; Restoration</a>
+        <a href="/services/finishing" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Finishing</a>
+        <a href="/services/cladding-panelling" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Cladding &amp; Panelling</a>
+        <a href="/services/first-fix-carpentry" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">First Fix Carpentry</a>
+        <a href="/services/second-fix-carpentry" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Second Fix Carpentry</a>
+        <a href="/services/skirting-architrave" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Skirting &amp; Architrave</a>
+        <a href="/services/outdoor-carpentry" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Outdoor Carpentry</a>
+        <a href="/services/woodworm-treatment" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Woodworm Treatment</a>
       </div>
     </div>
   </section>
@@ -88,15 +91,15 @@ const breadcrumbs = [
   <section class="py-16 bg-bone">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Counting House proof</h2>
-      <p class="text-ink/70 mb-6">The Counting House in Pontefract is our anchor case study for listed and period timber work across the county.</p>
+      <p class="text-ink/70 mb-6">Heritage Joiners contributed specialist joinery work to the restoration of The Counting House in Pontefract - a project later recognised with a Pontefract Civic Society restoration award.</p>
       <a href="/case-studies/counting-house" class="text-oak font-display">View Counting House case study &rarr;</a>
     </div>
   </section>
 
   <section class="py-16 bg-paper">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-display text-3xl text-ink mb-4">Heritage timber work across Yorkshire?</h2>
-      <p class="text-ink/70 mb-8 mx-auto">Send details of the property and the timber in question. We will advise whether the project is within our travel scope.</p>
+      <h2 class="font-display text-3xl text-ink mb-4">Working further across Yorkshire?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send the location, photos, and the basic scope and Rob will advise whether the job fits the wider travel coverage.</p>
       <div class="flex flex-wrap justify-center gap-4">
         <WhatsAppCTA client:load />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />

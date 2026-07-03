@@ -12,58 +12,64 @@ const breadcrumbs = [
   { name: 'Services', url: `${url}/services` },
 ];
 
-const windowServices = [
-  { href: '/services/sash-window-repair', title: 'Sash Window Repair', description: 'Cords, cills, draught-proofing, and splice repairs for sash windows in period and listed properties.' },
-  { href: '/services/timber-window-repair', title: 'Timber Window Repair', description: 'Casements, hung lights, and fixed-light period windows repaired before replacement is considered.' },
+const serviceCards = [
+  { href: '/services/doors', title: 'Doors', description: 'Door hanging, door frame repair, internal and external door fitting, fire doors, and timber door work set up to swing and close properly.' },
+  { href: '/services/windows', title: 'Windows', description: 'Sash window repair, timber windows, draught-proofing, restoration, and new timber window work assessed with repair-first judgement.' },
+  { href: '/services/first-fix-carpentry', title: 'First Fix Carpentry', description: 'Floor joists, stud partition walls, door linings, structural timber, and first-fix joiner work with proper setting out before boarding.' },
+  { href: '/services/second-fix-carpentry', title: 'Second Fix Carpentry', description: 'Door hanging, trims, window boards, boxing-in, ironmongery, and finishing joinery where margins and scribes matter.' },
+  { href: '/services/staircases', title: 'Staircases', description: 'New staircases, loft stairs, renovations, repairs, handrails, spindles, and under-stair storage set out to fit the building.' },
+  { href: '/services/kitchens', title: 'Kitchens', description: 'Kitchen fitting, timber worktops, cabinetry, pantry joinery, repairs, and refresh work with clean scribes and practical site fitting.' },
+  { href: '/services/skirting-architrave', title: 'Skirting, Architrave & Trim', description: 'Skirting board fitting, architrave, picture rails, dado rails, and profile-matched mouldings for rooms that are rarely square.' },
+  { href: '/services/flooring', title: 'Flooring', description: 'Floor sanding, wood floor repair, parquet, floorboard replacement, and timber floor refinishing after the boards are checked properly.' },
+  { href: '/services/bespoke-joinery', title: 'Built-in & Bespoke Joinery', description: 'Fitted wardrobes, alcove units, shelving, media units, window seats, and custom storage made around the room.' },
+  { href: '/services/roofing-carpentry', title: 'Roofing & Roof Carpentry', description: 'Cut roofs, rafters, roof trusses, dormer construction, soffits, and roof timber repair with accurate roof set-out.' },
+  { href: '/services/extensions-conversions', title: 'Extensions, Conversions & Structural', description: 'Attic conversions, lofts, garage conversions, timber frames, joists, openings, and structural carpentry.' },
+  { href: '/services/outdoor-carpentry', title: 'Outdoor & Landscape Carpentry', description: 'Wooden garden gates, fences, decking, pergolas, screening, and outdoor timber structures planned for weather and use.' },
+  { href: '/services/cladding-panelling', title: 'Cladding & Panelling', description: 'Wall panelling, tongue and groove panelling, feature walls, and external timber cladding with careful proportions.' },
+  { href: '/services/timber-repair', title: 'Timber Repair & Restoration', description: 'Wet rot, dry rot, splice repair, timber restoration, and heritage repair-first carpentry based on sound timber.' },
+  { href: '/services/woodworm-treatment', title: 'Woodworm & Treatment', description: 'Woodworm treatment, timber treatment, replacement of damaged timber, and related repair work after proper assessment.' },
+  { href: '/services/finishing', title: 'Finishing & Specialist', description: 'Wood staining, oiling, waxing, French polishing, colour matching, and refinishing with test boards and careful prep.' },
+  { href: '/services/timber-hardwoods', title: 'Timber & Hardwoods', description: 'Oak joinery, reclaimed timber, Accoya, iroko, hardwoods, softwoods, and practical material advice.' },
+  { href: '/services/maintenance-repairs', title: 'Maintenance & Repairs', description: 'General carpentry repairs, lock and hinge replacement, shelving, snagging, and small joinery jobs handled properly.' },
 ];
 
-const doorsServices = [
-  { href: '/services/doors-and-frames', title: 'Doors & Frames', description: 'Period timber doors, external and internal, frames, linings, thresholds, and ironmongery repaired wherever sound.' },
-];
+const serviceItems = serviceCards.map((service) => ({
+  name: service.title,
+  url: new URL(service.href, url).toString(),
+}));
 
-const rotServices = [
-  { href: '/services/rot-and-splice', title: 'Rot & Splice Repair', description: 'Targeted rot cut-out and scarf joints that replace only the failed timber section while the surrounding fabric is retained.' },
-];
-
-const structuralServices = [
-  { href: '/services/structural-timber-repair', title: 'Structural Timber Repair', description: 'Hub page for beams, joists, roof timbers, and timber frame work on listed and period buildings.' },
-  { href: '/services/oak-beam-repair', title: 'Oak Beam Repair', description: 'Scarf and splice repairs to oak beams and structural hardwood using traditional jointing methods.' },
-  { href: '/services/roof-timber-repair', title: 'Roof Timber Repair', description: 'Rafter tails, purlins, ridge boards, and wall plates. Repair-first with clear replacement thresholds.' },
-  { href: '/services/floor-joist-and-floorboard-repair', title: 'Floor Joist & Floorboard Repair', description: 'Sagging floors, joist end decay, and floorboard matching for period homes.' },
-  { href: '/services/timber-frame-repair', title: 'Timber Frame Repair', description: 'Oak frame members, mortice and tenon joints, pegs, sole plates, and infill panel relationships.' },
-];
-
-const interiorServices = [
-  { href: '/services/heritage-wall-panelling-repair', title: 'Heritage Wall Panelling Repair', description: 'Tudor, Georgian, Victorian, and Edwardian timber panelling repaired and refinished sympathetically.' },
-  { href: '/services/timber-colour-matching-and-finishing', title: 'Timber Colour Matching & Finishing', description: 'Oils, waxes, stains, and distressing to make new timber disappear into old fabric.' },
-];
-
-const specialistServices = [
-  { href: '/services/listed-and-period-property-repairs', title: 'Listed & Period Property Repairs', description: 'The whole-property service: windows, doors, structural timber, and interior joinery across a listed building by one specialist.' },
-  { href: '/services/when-repair-is-not-viable', title: 'When Repair Is Not Viable', description: 'Honest guidance on when replacement is the right answer — and how it should be done on a listed building.' },
-];
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: serviceItems.map((service, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: service.name,
+    item: service.url,
+  })),
+};
 ---
 
 <BaseLayout
-  title="Timber Repair Services in Yorkshire"
-  description="Explore heritage timber repair services: sash windows, doors, rot and splice, structural beams, roof timbers, floor joists, oak frames and panelling."
+  title="Carpentry & Joinery Services in Pontefract, Wakefield & West Yorkshire"
+  description="Explore carpentry and joinery services across West Yorkshire, from doors, kitchens, staircases, and roofing to heritage timber repair and specialist finishing."
 >
   <BreadcrumbSchema items={breadcrumbs} />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
 
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Heritage Timber Repair Services Across Yorkshire</h1>
+      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Carpentry &amp; Joinery Services Across West Yorkshire</h1>
       <p class="text-lg text-ink/70 mb-4 max-w-3xl">
-        From sash window cords to structural oak beams, Heritage Joiners covers the full range of timber repair work on listed and period buildings across Yorkshire. We assess repair viability on every element before recommending selective or full replacement.
+        Heritage Joiners covers general carpentry and joinery across West Yorkshire, with heritage timber repair kept as a strong specialism rather than the whole identity. Rob is a fully qualified apprentice trained bench hand joiner, time served, with over 35 years' experience across workshop joinery, site carpentry, refurbishments, and old buildings.
       </p>
       <p class="text-ink/70 mb-12 max-w-3xl">
-        <a href="/repair-or-replace" class="text-oak underline">Read the repair-or-replace framework</a> to understand how we make that decision.
+        Good joinery is problem-solving. If the job involves timber, awkward walls, weak framing, old repairs, uneven floors, or decayed sections, there is a good chance Rob can point you to the right service. <a href="/repair-or-replace" class="text-oak underline">Read the repair-or-replace framework</a> if your enquiry involves older or decayed timber.
       </p>
 
-      <!-- Windows -->
-      <h2 class="font-display text-2xl text-ink mb-4 mt-8 pb-2 border-b border-ink/10">Windows</h2>
+      <h2 class="font-display text-2xl text-ink mb-4 mt-8 pb-2 border-b border-ink/10">Core Joinery &amp; Carpentry</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        {windowServices.map((s) => (
+        {serviceCards.slice(0, 4).map((s) => (
           <a href={s.href} class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
             <h3 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{s.title}</h3>
             <p class="text-ink/70">{s.description}</p>
@@ -72,34 +78,9 @@ const specialistServices = [
         ))}
       </div>
 
-      <!-- Doors -->
-      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Doors</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        {doorsServices.map((s) => (
-          <a href={s.href} class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
-            <h3 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{s.title}</h3>
-            <p class="text-ink/70">{s.description}</p>
-            <span class="inline-block mt-4 text-oak font-display text-sm">Learn more &rarr;</span>
-          </a>
-        ))}
-      </div>
-
-      <!-- Rot -->
-      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Rot Repair</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        {rotServices.map((s) => (
-          <a href={s.href} class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
-            <h3 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{s.title}</h3>
-            <p class="text-ink/70">{s.description}</p>
-            <span class="inline-block mt-4 text-oak font-display text-sm">Learn more &rarr;</span>
-          </a>
-        ))}
-      </div>
-
-      <!-- Structural -->
-      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Structural Timber</h2>
+      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Interiors</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-        {structuralServices.map((s) => (
+        {serviceCards.slice(4, 9).map((s) => (
           <a href={s.href} class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
             <h3 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{s.title}</h3>
             <p class="text-ink/70">{s.description}</p>
@@ -108,10 +89,9 @@ const specialistServices = [
         ))}
       </div>
 
-      <!-- Interior & Finishing -->
-      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Interior Heritage &amp; Finishing</h2>
+      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Structural, Roofing &amp; Exterior</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        {interiorServices.map((s) => (
+        {serviceCards.slice(9, 13).map((s) => (
           <a href={s.href} class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
             <h3 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{s.title}</h3>
             <p class="text-ink/70">{s.description}</p>
@@ -120,10 +100,9 @@ const specialistServices = [
         ))}
       </div>
 
-      <!-- Specialist -->
-      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Whole-property &amp; Specialist</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {specialistServices.map((s) => (
+      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Heritage Repair &amp; Specialist Work</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {serviceCards.slice(13).map((s) => (
           <a href={s.href} class="group block p-6 bg-bone rounded-lg border border-ink/10 hover:border-oak transition-colors">
             <h3 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{s.title}</h3>
             <p class="text-ink/70">{s.description}</p>

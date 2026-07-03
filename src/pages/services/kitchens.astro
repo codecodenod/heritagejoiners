@@ -1,0 +1,134 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Kitchens', url: `${url}/services/kitchens` }];
+const schemaProps = {
+  description: 'Kitchen fitter services across Pontefract, Wakefield, and West Yorkshire, including fitted kitchens, kitchen installation, and timber worktops.',
+  url: `${url}/services/kitchens`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does kitchen fitting cost?',
+    answer:
+      'Kitchen fitters, kitchen installer, kitchen fitting company, and kitchen worktop fitters usually start with the same practical questions: what is already on site, what needs altering, and what problems are hidden behind the units.',
+  },
+  {
+    question: 'When is an older kitchen worth refreshing rather than replacing?',
+    answer:
+      'Good photos and a rough plan help Rob separate straight fitting work from bespoke joinery, and he can advise when an older kitchen is worth refreshing rather than replacing outright.',
+  },
+];
+
+const kitchenServices = [
+  'Kitchen fitting and kitchen installation',
+  'Fitted kitchens and bespoke kitchens',
+  'Kitchen units, cabinetry, and pantry joinery',
+  'Kitchen worktop fitting and worktop joining',
+  'Kitchen worktop supply and fit for timber worktops',
+  'Solid wood worktops, oak worktops, and wooden worktops',
+  'Breakfast bars and islands',
+  'Timber splashbacks and trims',
+  'Kitchen repairs and refresh work',
+  'Larder units, utility joinery, and storage details',
+];
+---
+
+<ServiceLayout
+  title="Kitchen Fitter in Pontefract, Wakefield & West Yorkshire"
+  description="Kitchen fitter services across Pontefract, Wakefield and West Yorkshire, including fitted kitchens, kitchen installation, solid wood worktops, and kitchen repairs."
+  serviceName="Kitchens"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Kitchen fitting and joinery</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Kitchen Fitter in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob fits kitchens across West Yorkshire, from full kitchen installation and fitted kitchens to kitchen worktop fitting, cabinetry adjustments, and timber-led refresh work. The job is practical joinery: level units, clean scribes, sound fixings, neat worktop joints, and details that still look right once the room is being used.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {kitchenServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Timber worktops and joinery-led kitchens</h2>
+        <p class="text-ink/70 mb-3">
+          Solid wood worktops, oak worktops, trims, scribes, and panels all need careful preparation. Timber moves, walls run out, floors dip, and older rooms rarely give you a square corner for free.
+        </p>
+        <p class="text-ink/70">
+          Rob brings a bench joinery and site carpentry background to the fitting, so awkward walls, uneven floors, and remedial cabinet work are treated as part of the job rather than a surprise.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Full installs and smaller refresh jobs</h2>
+        <p class="text-ink/70 mb-3">
+          Some clients need a full kitchen fitting service. Others only need new worktops, a breakfast bar, cabinet repairs, hinge and drawer corrections, or a smarter timber finish around an existing layout, and sometimes <a href="/services/bespoke-joinery" class="text-oak underline">bespoke joinery</a> is the better route for the built-in parts.
+        </p>
+        <p class="text-ink/70">
+          If you are looking up kitchen fitting cost or kitchen worktop fitting price, Rob can give a better steer once he knows whether the job is full installation, refresh, or remedial work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Kitchen fitting is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Planning a kitchen project?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send a plan, a few photos, and the parts you already have on site if the kitchen is supply-only. Rob will give you a practical first view.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

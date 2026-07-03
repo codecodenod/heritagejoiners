@@ -1,0 +1,137 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Outdoor & Landscape Carpentry', url: `${url}/services/outdoor-carpentry` }];
+const schemaProps = {
+  description: 'Wooden garden gates, fence installation, decking, pergolas, and outdoor carpentry across Pontefract, Wakefield, and West Yorkshire.',
+  url: `${url}/services/outdoor-carpentry`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does decking cost?',
+    answer:
+      'Wooden garden gates supplied and fitted, fence fitting, and decking installation can range from a simple replacement to a bigger garden timber project.',
+  },
+  {
+    question: 'What details help Rob narrow the scope?',
+    answer:
+      'Rob can usually narrow the likely scope quickly from a few site photos and approximate sizes.',
+  },
+  {
+    question: 'When do ground conditions matter?',
+    answer:
+      'For anything structural or load-bearing outside, ground conditions and fixing details are part of the conversation early.',
+  },
+];
+
+const outdoorServices = [
+  'Wooden garden gates and wooden gates supplied and fitted',
+  'Fence fitting, fence installation, and fence repairs',
+  'Decking installer and decking repairs',
+  'Pergola builder and garden screening',
+  'Trellis, sheds, and timber outbuildings',
+  'Summer houses, planters, and raised beds',
+  'External timber cladding and timber details',
+  'Timber carports and garden structures',
+];
+---
+
+<ServiceLayout
+  title="Wooden Garden Gates in Pontefract, Wakefield & West Yorkshire"
+  description="Wooden garden gates, fence installation, decking, pergolas, and outdoor carpentry across Pontefract, Wakefield and West Yorkshire."
+  serviceName="Outdoor & Landscape Carpentry"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Outdoor timber work</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Wooden Garden Gates in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/70 mb-8">
+          Rob builds and fits wooden garden gates, fencing, decking, pergolas, and other outdoor timber work across West Yorkshire. Outdoor carpentry still needs proper setting out, sound fixing, and weather-aware detailing, especially where gates, posts, decking, or cladding have to take real use.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA client:load />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What we do</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {outdoorServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Timber first outdoors</h2>
+        <p class="text-ink/70 mb-3">
+          Heritage Joiners stays on the timber side of outdoor work: timber gates, timber screening, timber decking, pergolas, and <a href="/services/cladding-panelling" class="text-oak underline">external timber cladding</a> details. It is the same practical timber skill, just exposed to weather and ground conditions.
+        </p>
+        <p class="text-ink/70">
+          Rob looks at post positions, gate swing, drainage, fixings, access, and how the timber will move outside before deciding the best way to build it.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Fence fitting and decking installation</h2>
+        <p class="text-ink/70 mb-3">
+          Some projects are straightforward garden gate fitting work. Others grow into decking, pergolas, cladding, or a small timber outbuilding that needs proper set-out and a sensible fixing plan.
+        </p>
+        <p class="text-ink/70">
+          If you are comparing decking cost or deck replacement cost, access, groundwork, support spacing, and existing levels usually matter as much as the timber itself.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Typical questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Coverage</h2>
+      <p class="text-ink/70">
+        Outdoor carpentry is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need garden gate fitters near you?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send a few site photos, rough sizes, and what you want to build, replace, or repair.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
