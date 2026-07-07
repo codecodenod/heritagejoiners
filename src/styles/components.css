@@ -2,6 +2,9 @@
 .mobile-nav-panel {
   background-color: #F0E8D5;
   background-image:
+    /* Top blend — matches the logo's cream background (#F3F0E8) at the very
+       top and fades into the parchment so the logo emblem melts in cleanly */
+    linear-gradient(to bottom, #F3F0E8 0, rgba(243, 240, 232, 0) 220px),
     /* Subtle noise grain */
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E"),
     /* Warm vignette */

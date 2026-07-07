@@ -8,7 +8,7 @@ interface Props {
   name?: string;
 }
 
-const { name, telephone, email, address, geo, url, serviceArea, hours } = siteConfig;
+const { name, telephone, address, geo, url, serviceArea, hours } = siteConfig;
 
 const props = Astro.props;
 const bizName = props.name || name;
@@ -20,7 +20,6 @@ const schema = {
   name: bizName,
   url,
   telephone: telephone,
-  email: email,
   address: {
     '@type': 'PostalAddress',
     ...(address.street ? { streetAddress: address.street } : {}),

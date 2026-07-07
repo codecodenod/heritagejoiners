@@ -1,0 +1,57 @@
+---
+/**
+ * EmailLink — spam-safe email link.
+ *
+ * The address is base64-encoded at build time, so the plaintext email never
+ * appears anywhere in the rendered HTML source. Client-side JS decodes it and
+ * sets the `mailto:` href after load. Scrapers (which don't run JS and match a
+ * plain `x@y` regex) get nothing; real visitors click and their mail app opens.
+ */
+// The address lives ONLY here (a server-only .astro component), never in
+// siteConfig — so it can't be bundled into client JS. It is base64-encoded at
+// build time, so the plaintext never appears in the rendered HTML either.
+const email = 'rob@heritagejoiners.co.uk';
+const encoded = Buffer.from(email).toString('base64');
+
+interface Props {
+  label?: string;
+  class?: string;
+}
+
+const { label = 'Email Rob', class: className = '' } = Astro.props;
+---
+
+<a
+  href="#"
+  class:list={['inline-flex items-center', className]}
+  data-email-link
+  data-e={encoded}
+  aria-label="Send Heritage Joiners an email"
+  rel="nofollow"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-4 h-4 mr-2"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="1.5"
+      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+    />
+  </svg>
+  <span>{label}</span>
+</a>
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('a[data-email-link]').forEach((el) => {
+    const enc = el.dataset.e;
+    if (!enc) return;
+    const addr = atob(enc);
+    el.href = `mailto:${addr}`;
+    el.removeAttribute('data-e');
+  });
+</script>

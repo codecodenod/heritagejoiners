@@ -16,7 +16,7 @@ const { phone, display, variant = 'default', size = 'md', class: className } = A
 
 // Variant styles
 const variantStyles = {
-  default: 'text-ink hover:text-oak transition-colors',
+  default: 'inline-flex items-center text-ink hover:text-oak transition-colors',
   primary: 'inline-flex items-center justify-center bg-ink text-bone font-display hover:bg-oak transition-colors',
   secondary: 'inline-flex items-center justify-center bg-bone text-ink font-display border border-ink hover:bg-paper transition-colors',
 };
@@ -27,7 +27,13 @@ const sizeStyles = {
   lg: 'px-8 py-4 text-base rounded-md',
 };
 
-const combinedStyles = variant === 'default' ? variantStyles.default : `${variantStyles[variant]} ${sizeStyles[size]}`;
+// When a caller passes its own text colour (e.g. the dark footer uses
+// `text-brass hover:text-bone`), drop the default `text-ink hover:text-oak` so
+// it doesn't win on Tailwind's stylesheet-order conflict resolution and render
+// the number black on a dark background.
+const hasCustomColor = className ? /(^|\s)!?(text|hover:text)-/.test(className) : false;
+const defaultVariantStyles = hasCustomColor ? 'inline-flex items-center transition-colors' : variantStyles.default;
+const combinedStyles = variant === 'default' ? defaultVariantStyles : `${variantStyles[variant]} ${sizeStyles[size]}`;
 
 // Format display phone
 const displayPhone = display || (phone ? phone.replace('+44', '0').replace(/^44/, '0') : 'Phone pending');

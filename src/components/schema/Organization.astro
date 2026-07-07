@@ -8,7 +8,7 @@ interface Props {
   name?: string;
 }
 
-const { name: configName, url, email, telephone, social } = siteConfig;
+const { name: configName, url, telephone, social } = siteConfig;
 const props = Astro.props;
 const orgName = props.name || configName;
 
@@ -21,7 +21,6 @@ const schema = {
   name: orgName,
   url: url,
   logo: `${url}/heritage-joiners-hj-logo-180.webp`,
-  email,
   telephone,
   ...(sameAs.length ? { sameAs } : {}),
 };

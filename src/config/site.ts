@@ -18,7 +18,10 @@ export const siteConfig = {
     display: '07561 196977',
     link: 'https://wa.me/447561196977',
   },
-  email: 'rob@heritagejoiners.co.uk',
+  // NOTE: email is intentionally NOT stored here. siteConfig is imported by
+  // client-side components (e.g. WhatsAppCTA), so anything in it ships to the
+  // browser in plaintext and gets scraped for spam. The address lives only in
+  // the server-only EmailLink component (base64-encoded). See ui/EmailLink.astro.
 
   // Address
   address: {
@@ -57,6 +60,7 @@ export const siteConfig = {
 
   // Social
   social: {
+    facebook: 'https://www.facebook.com/heritagejoiners/',
     linkedin: '',
     instagram: '',
   },

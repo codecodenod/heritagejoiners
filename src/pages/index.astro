@@ -4,6 +4,7 @@
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PhoneLink from '../components/ui/PhoneLink.astro';
+import EmailLink from '../components/ui/EmailLink.astro';
 import WhatsAppCTA from '../components/ui/WhatsAppCTA';
 import RepairVsReplacement from '../components/sections/RepairVsReplacement.astro';
 import { siteConfig } from '../config/site';
@@ -88,10 +89,12 @@ const icons = {
           Joiner Near Me in Pontefract, Wakefield &amp; Across West Yorkshire
         </h1>
         <p class="text-lg lg:text-xl text-ink mb-6 max-w-2xl">
-          If you are searching for a joiner or carpenter in West Yorkshire, Heritage Joiners provides proper joinery services and carpentry services by Rob, a fully qualified apprentice trained bench hand joiner, time served. Doors, kitchens, stairs, roofs, floors, fitted work and repairs all sit here, with heritage timber work kept as a specialism.
+          If you are searching for a joiner or carpenter in West Yorkshire, Heritage Joiners provides proper joinery services and carpentry services by Rob, a fully qualified apprentice trained bench hand joiner, time served. Doors, kitchens, stairs, roofs, floors, fitted work and repairs all sit here, with heritage timber work kept as a specialist strength.
         </p>
         <p class="text-sm lg:text-base text-oak mb-8 font-display uppercase tracking-wide">
-          Over 35 years' experience | Workshop-trained and site-proven | No shortcut workmanship
+          <span class="whitespace-nowrap">Over 35 years' experience</span> <span class="text-oak/50">|</span>
+          <span class="whitespace-nowrap">Workshop-trained and site-proven</span> <span class="text-oak/50">|</span>
+          <span class="whitespace-nowrap">No shortcut workmanship</span>
         </p>
         <div class="flex flex-wrap gap-4">
           <WhatsAppCTA client:load size="lg" />
@@ -255,7 +258,7 @@ const icons = {
           />
           <div>
             <p class="font-display text-2xl lg:text-3xl mb-2">General joinery</p>
-            <p class="text-bone/60 text-sm">with heritage repair as a specialism</p>
+            <p class="text-bone/60 text-sm">with heritage repair as a specialist strength</p>
           </div>
         </div>
         <div class="text-bone flex flex-col items-center md:items-start gap-4">
@@ -272,82 +275,6 @@ const icons = {
             <p class="text-bone/60 text-sm">serving Yorkshire</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Repair vs Replace Decision Framework -->
-  <section class="py-14 lg:py-28 bg-bone">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-16 max-w-2xl mx-auto text-center lg:text-left">
-        <div class="accent-line mx-auto lg:mx-0 mb-6"></div>
-        <h2 class="font-display text-4xl lg:text-5xl text-ink mb-6">
-          Heritage Repair Specialism
-        </h2>
-        <p class="text-lg text-ink/70">
-          Good joinery is problem-solving. Alongside general carpentry and joinery, Rob brings decades of bench and site experience to older timber, awkward openings, bad angles and previous repairs. Where original fabric can be soundly retained, he will say so. Where it cannot, he will explain the replacement route clearly.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <!-- We repair when -->
-        <div>
-          <h3 class="font-display text-2xl text-ink mb-6 pb-3 border-b-2 border-oak">
-            Rob repairs when:
-          </h3>
-          <ul class="space-y-4">
-            <li class="flex gap-4">
-              <span class="text-oak font-display text-xl flex-shrink-0">✓</span>
-              <span class="text-ink/80">Timber is still structurally sound in core sections</span>
-            </li>
-            <li class="flex gap-4">
-              <span class="text-oak font-display text-xl flex-shrink-0">✓</span>
-              <span class="text-ink/80">Decay is localised and can be cut out/spliced</span>
-            </li>
-            <li class="flex gap-4">
-              <span class="text-oak font-display text-xl flex-shrink-0">✓</span>
-              <span class="text-ink/80">Joints can be consolidated without compromising performance</span>
-            </li>
-            <li class="flex gap-4">
-              <span class="text-oak font-display text-xl flex-shrink-0">✓</span>
-              <span class="text-ink/80">Original character can be preserved effectively</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- We recommend replacement when -->
-        <div>
-          <h3 class="font-display text-2xl text-ink mb-6 pb-3 border-b-2 border-rust">
-            Rob recommends replacement when:
-          </h3>
-          <ul class="space-y-4">
-            <li class="flex gap-4">
-              <span class="text-rust font-display text-xl flex-shrink-0">→</span>
-              <span class="text-ink/80">Remaining sound timber is too low for a durable repair</span>
-            </li>
-            <li class="flex gap-4">
-              <span class="text-rust font-display text-xl flex-shrink-0">→</span>
-              <span class="text-ink/80">Decay is extensive through critical load-bearing zones</span>
-            </li>
-            <li class="flex gap-4">
-              <span class="text-rust font-display text-xl flex-shrink-0">→</span>
-              <span class="text-ink/80">Previous failed repairs make another repair unreliable</span>
-            </li>
-            <li class="flex gap-4">
-              <span class="text-rust font-display text-xl flex-shrink-0">→</span>
-              <span class="text-ink/80">A repair would be short-lived and poor value for you</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="mt-12 p-8 lg:p-10 bg-paper rounded-lg border border-ink/10 text-center">
-        <p class="text-lg lg:text-xl text-ink font-display leading-relaxed max-w-2xl mx-auto">
-          You get a straight recommendation: preserve original where viable, replace only where necessary, and solve the practical problem in front of the building.
-        </p>
-        <a href="/repair-or-replace" class="inline-block mt-6 text-oak font-display text-sm hover:text-ink transition-colors">
-          Read the full framework &rarr;
-        </a>
       </div>
     </div>
   </section>
@@ -628,6 +555,82 @@ const icons = {
   <!-- Why repair matters (keeping the 6-benefit section) -->
   <RepairVsReplacement />
 
+  <!-- Repair vs Replace Decision Framework -->
+  <section class="py-14 lg:py-28 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-16 max-w-2xl mx-auto text-center lg:text-left">
+        <div class="accent-line mx-auto lg:mx-0 mb-6"></div>
+        <h2 class="font-display text-4xl lg:text-5xl text-ink mb-6">
+          Heritage Repair Specialist
+        </h2>
+        <p class="text-lg text-ink/70">
+          Here, repair is a considered choice, not a compromise. Good joinery is problem-solving. Alongside general carpentry and joinery, Rob brings decades of bench and site experience to older timber, awkward openings, bad angles and previous repairs. Where original fabric can be soundly retained, he will say so. Where it cannot, he will explain the replacement route clearly.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- We repair when -->
+        <div>
+          <h3 class="font-display text-2xl text-ink mb-6 pb-3 border-b-2 border-oak">
+            Rob repairs when:
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex gap-4">
+              <span class="text-oak font-display text-xl flex-shrink-0">✓</span>
+              <span class="text-ink/80">Timber is still structurally sound in core sections</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-oak font-display text-xl flex-shrink-0">✓</span>
+              <span class="text-ink/80">Decay is localised and can be cut out/spliced</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-oak font-display text-xl flex-shrink-0">✓</span>
+              <span class="text-ink/80">Joints can be consolidated without compromising performance</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-oak font-display text-xl flex-shrink-0">✓</span>
+              <span class="text-ink/80">Original character can be preserved effectively</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- We recommend replacement when -->
+        <div>
+          <h3 class="font-display text-2xl text-ink mb-6 pb-3 border-b-2 border-rust">
+            Rob recommends replacement when:
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex gap-4">
+              <span class="text-rust font-display text-xl flex-shrink-0">→</span>
+              <span class="text-ink/80">Remaining sound timber is too low for a durable repair</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-rust font-display text-xl flex-shrink-0">→</span>
+              <span class="text-ink/80">Decay is extensive through critical load-bearing zones</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-rust font-display text-xl flex-shrink-0">→</span>
+              <span class="text-ink/80">Previous failed repairs make another repair unreliable</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-rust font-display text-xl flex-shrink-0">→</span>
+              <span class="text-ink/80">A repair would be short-lived and poor value for you</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 p-8 lg:p-10 bg-paper rounded-lg border border-ink/10 text-center">
+        <p class="text-lg lg:text-xl text-ink font-display leading-relaxed max-w-2xl mx-auto">
+          You get a straight recommendation: preserve original where viable, replace only where necessary, and solve the practical problem in front of the building.
+        </p>
+        <a href="/repair-or-replace" class="inline-block mt-6 text-oak font-display text-sm hover:text-ink transition-colors">
+          Read the full framework &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ section -->
   <section class="py-14 lg:py-28 bg-bone">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -655,7 +658,7 @@ const icons = {
             <span class="text-2xl group-open:rotate-180 transition-transform">+</span>
           </summary>
           <p class="text-ink/70 mt-4">
-            No. General carpentry and joinery across West Yorkshire is the main work. Heritage and listed-building timber repair stays as a strong specialism for the jobs that need old-building judgement.
+            No. General carpentry and joinery across West Yorkshire is the main work. That said, Rob has decades of hands-on experience with older and historic timber, so heritage and listed-building work sits comfortably within his skill set whenever a job calls for it.
           </p>
         </details>
 
@@ -665,7 +668,7 @@ const icons = {
             <span class="text-2xl group-open:rotate-180 transition-transform">+</span>
           </summary>
           <p class="text-ink/70 mt-4">
-            Yes. That remains one of the strongest parts of the business. If older timber can be repaired soundly, Rob will usually recommend that before replacement. <a href="/repair-or-replace" class="text-oak underline">Read the full repair-or-replace framework</a>.
+            Yes. Rob is very experienced with older and decayed timber. If it can be repaired soundly, he will usually recommend that before replacement. <a href="/repair-or-replace" class="text-oak underline">Read the full repair-or-replace framework</a>.
           </p>
         </details>
 
@@ -675,7 +678,7 @@ const icons = {
             <span class="text-2xl group-open:rotate-180 transition-transform">+</span>
           </summary>
           <p class="text-ink/70 mt-4">
-            Yes. Send clear photos on WhatsApp and Rob will give you an initial view on whether the job looks like straightforward joinery, wider carpentry, or heritage repair work. For a final recommendation and quote, he may still need to see it in person.
+            Yes. Send clear photos on WhatsApp, by email, or through the contact form, and Rob will give you an initial view on whether the job looks like straightforward joinery, wider carpentry, or heritage repair work. For a final recommendation and quote, he may still need to see it in person.
           </p>
         </details>
 
@@ -685,7 +688,7 @@ const icons = {
             <span class="text-2xl group-open:rotate-180 transition-transform">+</span>
           </summary>
           <p class="text-ink/70 mt-4">
-            Yes. The maintenance and repairs page gives the site a proper home for shelving, adjustments, lock changes, snagging, and other smaller timber jobs as well as the larger projects.
+            Yes. Shelving, repairs, lock changes, snagging and other minor jobs are all part of the work, right alongside the larger fitted projects. No job too small.
           </p>
         </details>
       </div>
@@ -701,7 +704,7 @@ const icons = {
           Need a joiner near you?
         </h2>
         <p class="text-lg text-ink/70 mb-12 mx-auto">
-          Send photos first. Rob will tell you whether the job looks like general joinery, wider carpentry, or a repair-led heritage project.
+          Contact us on WhatsApp, by phone or by email — whether it's general joinery, first and second fix carpentry, or a repair-led heritage project.
         </p>
       </div>
       <div class="flex flex-wrap justify-center gap-4">
@@ -711,6 +714,10 @@ const icons = {
           display={phone.display}
           variant="secondary"
           size="lg"
+        />
+        <EmailLink
+          label="Email Rob"
+          class="justify-center bg-bone text-ink font-display border border-ink hover:bg-paper transition-colors px-8 py-4 text-base rounded-md"
         />
       </div>
     </div>
