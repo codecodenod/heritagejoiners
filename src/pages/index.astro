@@ -3,12 +3,10 @@
  * Homepage
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Button from '../components/ui/Button.astro';
 import PhoneLink from '../components/ui/PhoneLink.astro';
 import WhatsAppCTA from '../components/ui/WhatsAppCTA';
 import RepairVsReplacement from '../components/sections/RepairVsReplacement.astro';
 import { siteConfig } from '../config/site';
-import { Phone } from 'lucide-react';
 
 const { phone } = siteConfig;
 
@@ -24,7 +22,7 @@ const icons = {
   description="Joiner and carpenter in Pontefract, Wakefield and West Yorkshire. Carpentry and joinery for kitchens, doors, windows, stairs, roofing, flooring, and heritage timber repair."
 >
   <!-- Hero Carousel -->
-  <section class="hero-carousel relative overflow-hidden bg-bone" aria-label="Heritage Joiners showcase">
+  <section class="hero-carousel relative overflow-hidden bg-bone min-h-[560px] lg:min-h-[720px]" aria-label="Heritage Joiners showcase">
     <!-- Slides -->
     <div class="absolute inset-0">
       <div class="hero-slide is-active" data-slide="0">
@@ -96,11 +94,12 @@ const icons = {
           Over 35 years' experience | Workshop-trained and site-proven | No shortcut workmanship
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA client:load size="lg" />
           <PhoneLink
             phone={phone.tel}
             display={phone.display}
             variant="secondary"
+            size="lg"
           />
         </div>
       </div>
@@ -290,7 +289,7 @@ const icons = {
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <!-- We repair when -->
         <div>
           <h3 class="font-display text-2xl text-ink mb-6 pb-3 border-b-2 border-oak">
@@ -364,7 +363,7 @@ const icons = {
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <a href="/services/kitchens" class="service-card group block relative">
+        <a href="/services/kitchens" class="service-card group relative">
           <div class="service-card-image" style="background-image: url('/images/homepage/workshop.webp')"></div>
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
@@ -373,10 +372,10 @@ const icons = {
             <p class="text-ink/70 text-sm mb-4 leading-relaxed">
               Kitchen fitting, timber worktops, cabinetry, pantry joinery, and careful set-out for homes across West Yorkshire.
             </p>
-            <span class="text-oak font-display text-xs">Learn more &rarr;</span>
+            <span class="mt-auto text-oak font-display text-xs">Learn more &rarr;</span>
           </div>
         </a>
-        <a href="/services/staircases" class="service-card group block relative">
+        <a href="/services/staircases" class="service-card group relative">
           <div class="service-card-image" style="background-image: url('/images/homepage/service-windows.webp')"></div>
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
@@ -385,10 +384,10 @@ const icons = {
             <p class="text-ink/70 text-sm mb-4 leading-relaxed">
               New staircases, loft stairs, handrails, spindles, repairs, and renovation work where the geometry has to be right.
             </p>
-            <span class="text-oak font-display text-xs">Learn more &rarr;</span>
+            <span class="mt-auto text-oak font-display text-xs">Learn more &rarr;</span>
           </div>
         </a>
-        <a href="/services/windows" class="service-card group block relative">
+        <a href="/services/windows" class="service-card group relative">
           <div class="service-card-image" style="background-image: url('/images/homepage/service-doors.webp')"></div>
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
@@ -397,10 +396,10 @@ const icons = {
             <p class="text-ink/70 text-sm mb-4 leading-relaxed">
               Door hanging, timber windows, sash repairs, draught-proofing, ironmongery, and practical joinery for everyday use and older properties alike.
             </p>
-            <span class="text-oak font-display text-xs">Learn more &rarr;</span>
+            <span class="mt-auto text-oak font-display text-xs">Learn more &rarr;</span>
           </div>
         </a>
-        <a href="/services/roofing-carpentry" class="service-card group block relative">
+        <a href="/services/roofing-carpentry" class="service-card group relative">
           <div class="service-card-image" style="background-image: url('/images/homepage/service-rot.webp')"></div>
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
@@ -409,10 +408,10 @@ const icons = {
             <p class="text-ink/70 text-sm mb-4 leading-relaxed">
               Roof carpentry, rafters, dormers, structural timber, and repair-led work where older sections can still be kept.
             </p>
-            <span class="text-oak font-display text-xs">Learn more &rarr;</span>
+            <span class="mt-auto text-oak font-display text-xs">Learn more &rarr;</span>
           </div>
         </a>
-        <a href="/services/doors" class="service-card group block relative">
+        <a href="/services/doors" class="service-card group relative">
           <div class="service-card-image" style="background-image: url('/images/homepage/service-doors.webp')"></div>
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
@@ -421,10 +420,10 @@ const icons = {
             <p class="text-ink/70 text-sm mb-4 leading-relaxed">
               Door hanging, frame repair, fire doors, and practical fitting for homes and period properties.
             </p>
-            <span class="text-oak font-display text-xs">Learn more &rarr;</span>
+            <span class="mt-auto text-oak font-display text-xs">Learn more &rarr;</span>
           </div>
         </a>
-        <a href="/services/bespoke-joinery" class="service-card group block relative">
+        <a href="/services/bespoke-joinery" class="service-card group relative">
           <div class="service-card-image" style="background-image: url('/images/homepage/workshop.webp')"></div>
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
@@ -433,10 +432,10 @@ const icons = {
             <p class="text-ink/70 text-sm mb-4 leading-relaxed">
               Fitted wardrobes, alcove units, window seats, and made-to-measure storage built around the room.
             </p>
-            <span class="text-oak font-display text-xs">Learn more &rarr;</span>
+            <span class="mt-auto text-oak font-display text-xs">Learn more &rarr;</span>
           </div>
         </a>
-        <a href="/services/timber-repair" class="service-card group block relative">
+        <a href="/services/timber-repair" class="service-card group relative">
           <div class="service-card-image" style="background-image: url('/images/homepage/service-rot.webp')"></div>
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
@@ -445,10 +444,10 @@ const icons = {
             <p class="text-ink/70 text-sm mb-4 leading-relaxed">
               Rot, splice repairs, timber restoration, and repair-first advice for older joinery.
             </p>
-            <span class="text-oak font-display text-xs">Learn more &rarr;</span>
+            <span class="mt-auto text-oak font-display text-xs">Learn more &rarr;</span>
           </div>
         </a>
-        <a href="/services/maintenance-repairs" class="service-card group block relative">
+        <a href="/services/maintenance-repairs" class="service-card group relative">
           <div class="service-card-image" style="background-image: url('/images/homepage/workshop.webp')"></div>
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
@@ -457,7 +456,7 @@ const icons = {
             <p class="text-ink/70 text-sm mb-4 leading-relaxed">
               Small joinery jobs, adjustments, snagging, and practical repairs when the fix needs a joiner.
             </p>
-            <span class="text-oak font-display text-xs">Learn more &rarr;</span>
+            <span class="mt-auto text-oak font-display text-xs">Learn more &rarr;</span>
           </div>
         </a>
       </div>
@@ -502,27 +501,21 @@ const icons = {
           Heritage Proof: The Counting House
         </h2>
         <p class="text-lg text-bone/70 max-w-2xl mx-auto">
-          Heritage Joiners contributed specialist joinery work to the restoration of The Counting House in Pontefract - a project later recognised with a Pontefract Civic Society restoration award.
+          Heritage Joiners contributed specialist oak joinery and restoration carpentry to The Counting House in Pontefract - a project later recognised with the Heritage Award at Pontefract Civic Society's 2025 Design Awards.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
         <div class="rounded-lg overflow-hidden border border-bone/20">
-          <div class="aspect-square bg-cover bg-center" style="background-image: url('/images/case-studies/sash-before.webp')"></div>
+          <div class="aspect-[4/3] bg-cover bg-center" style="background-image: url('/images/case-studies/counting-house-hero.webp')"></div>
           <div class="p-4 bg-bone/10 text-center">
-            <p class="text-bone font-display uppercase text-sm tracking-wide">Before</p>
+            <p class="text-bone font-display uppercase text-sm tracking-wide">The Building</p>
           </div>
         </div>
         <div class="rounded-lg overflow-hidden border border-bone/20">
-          <div class="aspect-square bg-cover bg-center" style="background-image: url('/images/case-studies/sash-during.webp')"></div>
+          <div class="aspect-[4/3] bg-cover bg-center" style="background-image: url('/images/case-studies/heritage-award-counting-house.webp')"></div>
           <div class="p-4 bg-bone/10 text-center">
-            <p class="text-bone font-display uppercase text-sm tracking-wide">During</p>
-          </div>
-        </div>
-        <div class="rounded-lg overflow-hidden border border-bone/20">
-          <div class="aspect-square bg-cover bg-center" style="background-image: url('/images/case-studies/sash-after.webp')"></div>
-          <div class="p-4 bg-bone/10 text-center">
-            <p class="text-bone font-display uppercase text-sm tracking-wide">After</p>
+            <p class="text-bone font-display uppercase text-sm tracking-wide">Heritage Award</p>
           </div>
         </div>
       </div>
@@ -622,11 +615,11 @@ const icons = {
         <p class="text-lg text-ink/70 max-w-2xl mx-auto">
           Based in Pontefract. Heritage Joiners covers Pontefract, Wakefield, Castleford, Featherstone, Knottingley, Normanton, and Leeds for general carpentry and joinery, and travels wider for selected timber-led and heritage projects where the job suits Rob's bench joinery and site carpentry background.
         </p>
-        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          <a href="/areas/pontefract" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Pontefract</a>
-          <a href="/areas/wakefield" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Wakefield</a>
-          <a href="/areas/castleford" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Castleford</a>
-          <a href="/areas/featherstone" class="p-5 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Featherstone</a>
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <a href="/areas/pontefract" class="p-6 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Pontefract</a>
+          <a href="/areas/wakefield" class="p-6 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Wakefield</a>
+          <a href="/areas/castleford" class="p-6 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Castleford</a>
+          <a href="/areas/featherstone" class="p-6 bg-paper rounded-lg border border-ink/10 text-ink hover:border-oak transition-colors">Featherstone</a>
         </div>
       </div>
     </div>
@@ -701,20 +694,23 @@ const icons = {
 
   <!-- Final CTA -->
   <section class="py-14 lg:py-28 bg-paper">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="accent-line mx-auto mb-6"></div>
-      <h2 class="font-display text-4xl lg:text-5xl text-ink mb-6">
-        Need a joiner near you?
-      </h2>
-      <p class="text-lg text-ink/70 mb-12 max-w-2xl mx-auto">
-        Send photos first. Rob will tell you whether the job looks like general joinery, wider carpentry, or a repair-led heritage project.
-      </p>
+      <div class="max-w-2xl mx-auto">
+        <h2 class="font-display text-4xl lg:text-5xl text-ink mb-6">
+          Need a joiner near you?
+        </h2>
+        <p class="text-lg text-ink/70 mb-12 mx-auto">
+          Send photos first. Rob will tell you whether the job looks like general joinery, wider carpentry, or a repair-led heritage project.
+        </p>
+      </div>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA client:load size="lg" />
         <PhoneLink
           phone={phone.tel}
           display={phone.display}
           variant="secondary"
+          size="lg"
         />
       </div>
     </div>

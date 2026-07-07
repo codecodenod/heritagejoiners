@@ -6,14 +6,21 @@ import { siteConfig } from '../../config/site';
 interface Props {
   message?: string;
   variant?: 'button' | 'floating';
+  size?: 'sm' | 'md' | 'lg';
 }
 
-export default function WhatsAppCTA({ message, variant = 'button' }: Props) {
+export default function WhatsAppCTA({ message, variant = 'button', size = 'md' }: Props) {
   const { whatsapp } = siteConfig;
   const defaultMessage = message || "Hi Heritage Joiners, I'd like to discuss a timber window project";
   const encodedMessage = encodeURIComponent(defaultMessage);
   const separator = whatsapp.link.includes('?') ? '&' : '?';
   const waLink = whatsapp.link ? `${whatsapp.link}${separator}text=${encodedMessage}` : '/contact';
+
+  const sizeStyles = {
+    sm: 'px-4 py-2.5 text-sm rounded-md',
+    md: 'px-6 py-3 text-base rounded-md',
+    lg: 'px-8 py-4 text-base rounded-md',
+  };
 
   if (variant === 'floating') {
     return (
@@ -44,7 +51,7 @@ export default function WhatsAppCTA({ message, variant = 'button' }: Props) {
       target={whatsapp.link ? '_blank' : undefined}
       rel={whatsapp.link ? 'noopener noreferrer' : undefined}
       data-plausible-event="whatsapp-click"
-      className="inline-flex items-center justify-center px-6 py-3 bg-[#25D366] text-white font-display rounded-md hover:bg-[#20BD5A] transition-colors"
+      className={`inline-flex items-center justify-center bg-[#25D366] text-white font-display hover:bg-[#20BD5A] transition-colors ${sizeStyles[size]}`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

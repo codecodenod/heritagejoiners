@@ -1,0 +1,98 @@
+---
+import CaseStudyLayout from '../../../layouts/CaseStudyLayout.astro';
+import PhoneLink from '../../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../../components/ui/WhatsAppCTA';
+import { siteConfig } from '../../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [
+  { name: 'The Counting House', url: `${url}/case-studies/counting-house` },
+  { name: 'Solid Oak Front Door & Frame', url: `${url}/case-studies/counting-house/oak-front-door` },
+];
+
+const articleProps = {
+  headline: 'The Counting House — Solid Oak Front Door & Frame',
+  url: `${url}/case-studies/counting-house/oak-front-door`,
+  datePublished: '2024-01-01',
+};
+---
+
+<CaseStudyLayout
+  title="Solid Oak Front Door & Frame at The Counting House"
+  description="A full solid oak front door and frame replacement at The Counting House in Pontefract, made as a heavy ledged and braced door over 60mm thick."
+  breadcrumbs={breadcrumbs}
+  articleProps={articleProps}
+>
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-oak uppercase tracking-wide mb-4">The Counting House — Pontefract</p>
+      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Solid Oak Front Door &amp; Frame</h1>
+      <p class="text-xl text-ink/70 max-w-2xl">
+        A complete front entrance replacement in solid oak, made as a heavy ledged and braced door with the presence of an original feature.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">A proper entrance</h2>
+        <p class="text-ink/70 mb-3">
+          The existing front door and frame were fully replaced in solid oak. On a building with the age and presence of The Counting House, the entrance could not feel thin, flat or shopfront-like.
+        </p>
+        <p class="text-ink/70">
+          The new door had to look as though it had always belonged there: substantial, traditional and in keeping with the restored town-centre frontage.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Ledged, braced and over 60mm thick</h2>
+        <p class="text-ink/70 mb-3">
+          The door was made as a heavy ledged and braced oak door, finishing over 60mm thick. It had real weight, enough that lifting and handling it took several people.
+        </p>
+        <p class="text-ink/70">
+          That mass was part of the character. The thickness, boards, braces and frame all needed to work together so the finished door felt honest to the building, not decorative for the sake of it.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Fitting to old fabric</h2>
+        <p class="text-ink/70 mb-3">
+          A new oak frame in an old opening requires care. The joinery has to be made accurately, but the final fitting has to respect the building as it is, not as a drawing might wish it to be.
+        </p>
+        <p class="text-ink/70">
+          The frame and door were set so the entrance looked settled and deliberate, with the oak doing the work visually and structurally.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The centrepiece</h2>
+        <p class="text-ink/70 mb-3">
+          The finished front door became one of the centrepieces of The Counting House. It gives the building a strong oak entrance and sets the tone for the visible joinery inside.
+        </p>
+        <p class="text-ink/70">
+          It is new work, but it carries the right language: solid timber, traditional construction, good proportion and a finish that sits with the building's age.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-6 pt-4 border-t border-ink/10">
+        <a href="/case-studies/counting-house" class="text-oak font-display">← Back to Counting House</a>
+        <a href="/services/doors" class="text-oak font-display">Doors service →</a>
+        <a href="/services/bespoke-joinery" class="text-oak font-display">Bespoke Joinery →</a>
+        <a href="/services/timber-hardwoods" class="text-oak font-display">Timber &amp; Hardwoods →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need a solid oak door made?</h2>
+      <p class="text-ink/70 mb-8 max-w-2xl mx-auto">For a new oak door, frame or period entrance, send the opening details and photos of the building. Rob will advise on construction, proportion and fitting.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</CaseStudyLayout>

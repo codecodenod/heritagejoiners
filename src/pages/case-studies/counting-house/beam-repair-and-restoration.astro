@@ -1,0 +1,98 @@
+---
+import CaseStudyLayout from '../../../layouts/CaseStudyLayout.astro';
+import PhoneLink from '../../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../../components/ui/WhatsAppCTA';
+import { siteConfig } from '../../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [
+  { name: 'The Counting House', url: `${url}/case-studies/counting-house` },
+  { name: 'Beam Repair & Restoration Carpentry', url: `${url}/case-studies/counting-house/beam-repair-and-restoration` },
+];
+
+const articleProps = {
+  headline: 'The Counting House — Beam Repair & Restoration Carpentry',
+  url: `${url}/case-studies/counting-house/beam-repair-and-restoration`,
+  datePublished: '2024-01-01',
+};
+---
+
+<CaseStudyLayout
+  title="Beam Repair & Restoration Carpentry at The Counting House"
+  description="Beam repairs, kitchen studwork and restoration carpentry at The Counting House in Pontefract, including original timber pieces repaired and refitted."
+  breadcrumbs={breadcrumbs}
+  articleProps={articleProps}
+>
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-oak uppercase tracking-wide mb-4">The Counting House — Pontefract</p>
+      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Beam Repair &amp; Restoration Carpentry</h1>
+      <p class="text-xl text-ink/70 max-w-2xl">
+        Practical restoration carpentry at The Counting House: split beams made sound, kitchen studwork formed, and original timber repaired rather than discarded.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Split beams pulled back together</h2>
+        <p class="text-ink/70 mb-3">
+          Several old beams in The Counting House had split and opened up over time. The task was to stabilise what was there, keeping the old timber in service while making it sound again.
+        </p>
+        <p class="text-ink/70">
+          The beams were drilled, bolted and pulled back together. It was direct, practical restoration carpentry: dealing with timber that had been creaking, cracking and moving, then securing it without stripping the building of its original fabric.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Kitchen studwork</h2>
+        <p class="text-ink/70 mb-3">
+          Heritage Joiners also formed the new studwork and plasterboarded the area that became the kitchen, ready for the next stages of fit-out.
+        </p>
+        <p class="text-ink/70">
+          This was part of making the building usable again as a bar and restaurant: first-fix carpentry done cleanly and accurately inside a structure where the surrounding fabric was anything but regular.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Original exterior frame repair</h2>
+        <p class="text-ink/70 mb-3">
+          An original exterior frame had failed at the bottom. Rather than losing the whole piece, the rotten lower section was cut out and a new piece of timber was spliced into the bottom of the frame.
+        </p>
+        <p class="text-ink/70">
+          The repair was cut cleanly and fitted properly, preserving the original frame above while giving the base a sound new section.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Original Victorian door restored</h2>
+        <p class="text-ink/70 mb-3">
+          A Victorian door to the downstairs electrical cupboard was repaired, restored and refitted. It would have been easy to replace, but keeping it was the better heritage decision.
+        </p>
+        <p class="text-ink/70">
+          Work like this keeps the building's story intact. The old door went back into use, carrying its age and character rather than being swapped out for something that only looked new.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-6 pt-4 border-t border-ink/10">
+        <a href="/case-studies/counting-house" class="text-oak font-display">← Back to Counting House</a>
+        <a href="/services/timber-repair" class="text-oak font-display">Timber Repair &amp; Restoration →</a>
+        <a href="/services/first-fix-carpentry" class="text-oak font-display">First Fix Carpentry →</a>
+        <a href="/services/kitchens" class="text-oak font-display">Kitchens →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need restoration carpentry?</h2>
+      <p class="text-ink/70 mb-8 max-w-2xl mx-auto">For beam repairs, old frames, original doors or first-fix work inside a heritage property, send photos and a short outline of the problem.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA client:load />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</CaseStudyLayout>
