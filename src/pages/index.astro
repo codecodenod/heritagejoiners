@@ -7,6 +7,7 @@ import PhoneLink from '../components/ui/PhoneLink.astro';
 import EmailLink from '../components/ui/EmailLink.astro';
 import WhatsAppCTA from '../components/ui/WhatsAppCTA';
 import RepairVsReplacement from '../components/sections/RepairVsReplacement.astro';
+import FAQPageSchema from '../components/schema/FAQPage.astro';
 import { siteConfig } from '../config/site';
 
 const { phone } = siteConfig;
@@ -16,12 +17,43 @@ const icons = {
   repair: 'repair-first-period-building-icon.png',
   location: 'pontefract-based-yorkshire-icon.png',
 };
+
+const homepageFaqItems = [
+  {
+    question: 'What kind of joinery work do you take on?',
+    answer:
+      'Heritage Joiners covers kitchens, doors, windows, staircases, flooring, first fix, second fix, roofing carpentry, bespoke joinery, outdoor timber work, maintenance jobs, and heritage timber repair. The work is practical joinery and carpentry problem-solving, not a generic builder list. The services page shows the full list.',
+  },
+  {
+    question: 'Do you only work on heritage and listed buildings?',
+    answer:
+      'No. General carpentry and joinery across West Yorkshire is the main work. That said, Rob has decades of hands-on experience with older and historic timber, so heritage and listed-building work sits comfortably within his skill set whenever a job calls for it.',
+  },
+  {
+    question: 'Can you still help with older or decayed timber?',
+    answer:
+      'Yes. Rob is very experienced with older and decayed timber. If it can be repaired soundly, he will usually recommend that before replacement. Read the full repair-or-replace framework.',
+  },
+  {
+    question: 'Can I get a rough opinion from photos first?',
+    answer:
+      'Yes. Send clear photos on WhatsApp, by email, or through the contact form, and Rob will give you an initial view on whether the job looks like straightforward joinery, wider carpentry, or heritage repair work. For a final recommendation and quote, he may still need to see it in person.',
+  },
+  {
+    question: 'Do you cover small repairs as well as bigger projects?',
+    answer:
+      'Yes. Shelving, repairs, lock changes, snagging and other minor jobs are all part of the work, right alongside the larger fitted projects. No job too small.',
+  },
+];
 ---
 
 <BaseLayout
   title="Joiner Near Me in Pontefract, Wakefield & West Yorkshire"
   description="Joiner and carpenter in Pontefract, Wakefield and West Yorkshire. Carpentry and joinery for kitchens, doors, windows, stairs, roofing, flooring, and heritage timber repair."
+  ogImage="/images/og-default.jpg"
 >
+  <FAQPageSchema faqs={homepageFaqItems} />
+
   <!-- Hero Carousel -->
   <section class="hero-carousel relative overflow-hidden bg-bone min-h-[560px] lg:min-h-[720px]" aria-label="Heritage Joiners showcase">
     <!-- Slides -->
@@ -473,8 +505,8 @@ const icons = {
           <div class="w-16 h-16 rounded-full bg-oak text-bone font-display text-2xl flex items-center justify-center mb-6">
             1
           </div>
-          <h3 class="font-display text-xl text-ink mb-3">Send photos on WhatsApp</h3>
-          <p class="text-ink/70">Share clear photos of the room, the timber, or the work area so Rob can understand the job quickly.</p>
+          <h3 class="font-display text-xl text-ink mb-3">Send Rob some photos</h3>
+          <p class="text-ink/70">Share clear photos of the room, the timber, or the work area on WhatsApp, by email, or through the contact form, so Rob can understand the job quickly.</p>
         </div>
 
         <div class="flex flex-col items-center text-center">
@@ -555,9 +587,12 @@ const icons = {
   <!-- Why repair matters (keeping the 6-benefit section) -->
   <RepairVsReplacement />
 
-  <!-- Repair vs Replace Decision Framework -->
-  <section class="py-14 lg:py-28 bg-bone">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Heritage Repair Specialist — over restoration background -->
+  <section class="relative py-16 lg:py-24 bg-ink overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/images/homepage/heritage-joiners-timber-restoration.webp')" aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-ink/40" aria-hidden="true"></div>
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-bone/70 backdrop-blur-sm rounded-2xl shadow-2xl border border-bone/40 p-8 sm:p-10 lg:p-14">
       <div class="mb-16 max-w-2xl mx-auto text-center lg:text-left">
         <div class="accent-line mx-auto lg:mx-0 mb-6"></div>
         <h2 class="font-display text-4xl lg:text-5xl text-ink mb-6">
@@ -627,6 +662,7 @@ const icons = {
         <a href="/repair-or-replace" class="inline-block mt-6 text-oak font-display text-sm hover:text-ink transition-colors">
           Read the full framework &rarr;
         </a>
+      </div>
       </div>
     </div>
   </section>

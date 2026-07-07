@@ -12,7 +12,7 @@ const { name: configName, url, telephone, social } = siteConfig;
 const props = Astro.props;
 const orgName = props.name || configName;
 
-const sameAs = [social.linkedin, social.instagram].filter(Boolean);
+const sameAs = [social.facebook, social.linkedin, social.instagram].filter(Boolean);
 
 const schema = {
   '@context': 'https://schema.org',

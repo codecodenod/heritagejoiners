@@ -50,7 +50,7 @@ canonicalUrl.hash = '';
 const fullCanonical = canonicalUrl.toString().replace(/\/$/, canonicalUrl.pathname === '/' ? '/' : '');
 
 // OG image
-const ogImage = pageOgImage ? new URL(pageOgImage, url).toString() : `${url}/images/homepage/hero.webp`;
+const ogImage = pageOgImage ? new URL(pageOgImage, url).toString() : `${url}/images/og-default.jpg`;
 const twitterCard = 'summary_large_image';
 ---
 

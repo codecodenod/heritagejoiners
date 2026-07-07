@@ -1,0 +1,39 @@
+---
+/**
+ * BlogPosting schema
+ */
+import { siteConfig } from '../../config/site';
+
+interface Props {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+}
+
+const props = Astro.props;
+const { url: siteUrl, name: siteName } = siteConfig;
+
+const organization = {
+  '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
+  name: siteName,
+  url: siteUrl,
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: props.headline,
+  description: props.description,
+  datePublished: props.datePublished,
+  author: organization,
+  publisher: organization,
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': props.url,
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
