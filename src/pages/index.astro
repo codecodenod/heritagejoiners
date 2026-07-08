@@ -71,9 +71,8 @@ const homepageFaqItems = [
       </div>
       <div class="hero-slide" data-slide="1">
         <img
-          src="/images/homepage/bespoke-oak-kitchen-pontefract.webp"
+          data-src="/images/homepage/bespoke-oak-kitchen-pontefract.webp"
           alt="Bespoke oak kitchen with hand-built island and cabinetry, Pontefract"
-          loading="lazy"
           width="1920"
           height="1080"
           class="w-full h-full object-cover"
@@ -81,9 +80,8 @@ const homepageFaqItems = [
       </div>
       <div class="hero-slide" data-slide="2">
         <img
-          src="/images/homepage/the-counting-house-solid-oak-door-being-made.webp"
+          data-src="/images/homepage/the-counting-house-solid-oak-door-being-made.webp"
           alt="Solid oak ledged and braced door being made on the bench at The Counting House, Pontefract"
-          loading="lazy"
           width="1920"
           height="1080"
           class="w-full h-full object-cover"
@@ -91,9 +89,8 @@ const homepageFaqItems = [
       </div>
       <div class="hero-slide" data-slide="3">
         <img
-          src="/images/homepage/heritage-oak-door-restoration-yorkshire.webp"
+          data-src="/images/homepage/heritage-oak-door-restoration-yorkshire.webp"
           alt="Restored heritage oak door in Yorkshire stone arch"
-          loading="lazy"
           width="1920"
           height="1080"
           class="w-full h-full object-cover"
@@ -101,9 +98,8 @@ const homepageFaqItems = [
       </div>
       <div class="hero-slide" data-slide="4">
         <img
-          src="/images/homepage/heritage-joiners-bespoke-craftsmanship.webp"
+          data-src="/images/homepage/heritage-joiners-bespoke-craftsmanship.webp"
           alt="Rob finishing the solid oak door by hand at The Counting House, Pontefract"
-          loading="lazy"
           width="1920"
           height="1080"
           class="w-full h-full object-cover"
@@ -195,6 +191,13 @@ const homepageFaqItems = [
       if (!section) return;
 
       const slides = section.querySelectorAll('.hero-slide');
+      // Deferred slide images: fetch after first paint so they don't block LCP
+      window.addEventListener('load', () => {
+        section.querySelectorAll('img[data-src]').forEach((img) => {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        });
+      });
       const dots = section.querySelectorAll('.hero-dot');
       if (slides.length === 0) return;
 
@@ -323,7 +326,7 @@ const homepageFaqItems = [
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <a href="/services/kitchens" class="service-card group relative">
-          <div class="service-card-image" style="background-image: url('/images/homepage/fitted-oak-kitchen-pontefract.webp')"></div>
+          <img src="/images/homepage/fitted-oak-kitchen-pontefract.webp" alt="" loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
               Kitchens
@@ -335,7 +338,7 @@ const homepageFaqItems = [
           </div>
         </a>
         <a href="/services/staircases" class="service-card group relative">
-          <div class="service-card-image" style="background-image: url('/images/homepage/oak-staircase-handrails-spindles.webp')"></div>
+          <img src="/images/homepage/oak-staircase-handrails-spindles.webp" alt="" loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
               Staircases
@@ -347,7 +350,7 @@ const homepageFaqItems = [
           </div>
         </a>
         <a href="/services/windows" class="service-card group relative">
-          <div class="service-card-image" style="background-image: url('/images/homepage/timber-sash-window-stone-surround.webp')"></div>
+          <img src="/images/homepage/timber-sash-window-stone-surround.webp" alt="" loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
               Windows
@@ -359,7 +362,7 @@ const homepageFaqItems = [
           </div>
         </a>
         <a href="/services/roofing-carpentry" class="service-card group relative">
-          <div class="service-card-image" style="background-image: url('/images/homepage/oak-roof-trusses-timber-rafters.webp')"></div>
+          <img src="/images/homepage/oak-roof-trusses-timber-rafters.webp" alt="" loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
               Roofing &amp; Timber Repair
@@ -371,7 +374,7 @@ const homepageFaqItems = [
           </div>
         </a>
         <a href="/services/doors" class="service-card group relative">
-          <div class="service-card-image" style="background-image: url('/images/homepage/oak-ledged-and-braced-front-door.webp')"></div>
+          <img src="/images/homepage/oak-ledged-and-braced-front-door.webp" alt="" loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
               Doors
@@ -383,7 +386,7 @@ const homepageFaqItems = [
           </div>
         </a>
         <a href="/services/bespoke-joinery" class="service-card group relative">
-          <div class="service-card-image" style="background-image: url('/images/homepage/workshop.webp')"></div>
+          <img src="/images/homepage/workshop.webp" alt="" loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
               Bespoke Joinery
@@ -395,7 +398,7 @@ const homepageFaqItems = [
           </div>
         </a>
         <a href="/services/timber-repair" class="service-card group relative">
-          <div class="service-card-image" style="background-image: url('/images/homepage/service-rot.webp')"></div>
+          <img src="/images/homepage/service-rot.webp" alt="" loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
               Timber Repair
@@ -407,7 +410,7 @@ const homepageFaqItems = [
           </div>
         </a>
         <a href="/services/maintenance-repairs" class="service-card group relative">
-          <div class="service-card-image" style="background-image: url('/images/homepage/carpentry-maintenance-repairs-yorkshire.webp')"></div>
+          <img src="/images/homepage/carpentry-maintenance-repairs-yorkshire.webp" alt="" loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
           <div class="service-card-content">
             <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
               Maintenance &amp; Repairs
@@ -428,8 +431,8 @@ const homepageFaqItems = [
     aria-labelledby="parallax-original-timber"
   >
     <div
-      class="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed"
-      style="background-image: url('/images/parallax/weathered-oak-beam-grain-texture.webp')"
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed lazy-bg"
+      data-bg="/images/parallax/weathered-oak-beam-grain-texture.webp"
       role="presentation"
     ></div>
     <div
@@ -466,13 +469,13 @@ const homepageFaqItems = [
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
         <div class="rounded-lg overflow-hidden border border-bone/20">
-          <div class="aspect-[4/3] bg-cover bg-center" style="background-image: url('/images/case-studies/counting-house-hero.webp')"></div>
+          <div class="aspect-[4/3] overflow-hidden"><img src="/images/case-studies/counting-house-hero.webp" alt="The Counting House, Pontefract — timber-framed historic building" loading="lazy" class="w-full h-full object-cover" /></div>
           <div class="p-4 bg-bone/10 text-center">
             <p class="text-bone font-display uppercase text-sm tracking-wide">The Building</p>
           </div>
         </div>
         <div class="rounded-lg overflow-hidden border border-bone/20">
-          <div class="aspect-[4/3] bg-cover bg-center" style="background-image: url('/images/case-studies/heritage-award-counting-house.webp')"></div>
+          <div class="aspect-[4/3] overflow-hidden"><img src="/images/case-studies/heritage-award-counting-house.webp" alt="Heritage Award presentation for The Counting House" loading="lazy" class="w-full h-full object-cover" /></div>
           <div class="p-4 bg-bone/10 text-center">
             <p class="text-bone font-display uppercase text-sm tracking-wide">Heritage Award</p>
           </div>
@@ -542,8 +545,8 @@ const homepageFaqItems = [
     aria-labelledby="parallax-yorkshire-coverage"
   >
     <div
-      class="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed"
-      style="background-image: url('/images/parallax/yorkshire-listed-building-timber-windows-golden-hour.webp')"
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed lazy-bg"
+      data-bg="/images/parallax/yorkshire-listed-building-timber-windows-golden-hour.webp"
       role="presentation"
     ></div>
     <div
@@ -589,7 +592,7 @@ const homepageFaqItems = [
 
   <!-- Heritage Repair Specialist — over restoration background -->
   <section class="relative py-16 lg:py-24 bg-ink overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/images/homepage/heritage-joiners-timber-restoration.webp')" aria-hidden="true"></div>
+    <img src="/images/homepage/heritage-joiners-timber-restoration.webp" alt="" loading="lazy" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover" />
     <div class="absolute inset-0 bg-ink/40" aria-hidden="true"></div>
     <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-bone/70 backdrop-blur-sm rounded-2xl shadow-2xl border border-bone/40 p-8 sm:p-10 lg:p-14">
@@ -758,4 +761,24 @@ const homepageFaqItems = [
       </div>
     </div>
   </section>
+
+  <script>
+    // Lazy-load CSS background images (parallax bands) when they approach the viewport
+    const lazyBgs = document.querySelectorAll('.lazy-bg[data-bg]');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const el = e.target;
+            el.style.backgroundImage = `url('${el.dataset.bg}')`;
+            el.removeAttribute('data-bg');
+            io.unobserve(el);
+          }
+        });
+      }, { rootMargin: '300px' });
+      lazyBgs.forEach((el) => io.observe(el));
+    } else {
+      lazyBgs.forEach((el) => { el.style.backgroundImage = `url('${el.dataset.bg}')`; });
+    }
+  </script>
 </BaseLayout>
