@@ -1,7 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import FAQPageSchema from '../../components/schema/FAQPage.astro';
 import { siteConfig } from '../../config/site';
 
@@ -62,7 +62,7 @@ const outdoorServices = [
           Rob builds and fits wooden garden gates, fencing, decking, pergolas, and other outdoor timber work across West Yorkshire. Outdoor carpentry still needs proper setting out, sound fixing, and weather-aware detailing, especially where gates, posts, decking, or cladding have to take real use.
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
@@ -129,7 +129,7 @@ const outdoorServices = [
       <h2 class="font-display text-3xl text-ink mb-4">Need garden gate fitters near you?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send a few site photos, rough sizes, and what you want to build, replace, or repair.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

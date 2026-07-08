@@ -3,7 +3,7 @@
  * The Counting House - parent case study
  */
 import CaseStudyLayout from '../../../layouts/CaseStudyLayout.astro';
-import WhatsAppCTA from '../../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../../components/ui/WhatsAppCTA.astro';
 import PhoneLink from '../../../components/ui/PhoneLink.astro';
 import { siteConfig } from '../../../config/site';
 
@@ -190,7 +190,7 @@ const articleProps = {
         <h2 class="font-display text-3xl mb-4">Need joinery for an old building?</h2>
         <p class="text-bone/70 mb-8 max-w-2xl mx-auto">For oak staircases, doors, interior frames or restoration carpentry, send a few details of the building and the work required. Rob will give you a practical first view before arranging a site visit.</p>
         <div class="flex flex-wrap justify-center gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>

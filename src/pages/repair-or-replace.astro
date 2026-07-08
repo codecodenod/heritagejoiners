@@ -4,7 +4,7 @@
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleSchema from '../components/schema/Article.astro';
-import WhatsAppCTA from '../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../components/ui/WhatsAppCTA.astro';
 import PhoneLink from '../components/ui/PhoneLink.astro';
 import { siteConfig } from '../config/site';
 
@@ -83,7 +83,7 @@ const description = 'A four-stage repair-or-replace assessment for listed and pe
           Most period timber can often be repaired, but not all timber should be repaired at any cost. Rob preserves what can be soundly retained and recommends selective or full replacement only when timber viability is too low for an honest result.
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
@@ -217,7 +217,7 @@ const description = 'A four-stage repair-or-replace assessment for listed and pe
         Clear photos are often enough for Rob to give a first view on whether repair is likely to be viable. A final recommendation still needs site inspection.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

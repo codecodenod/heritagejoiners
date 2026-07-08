@@ -1,7 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import FAQPageSchema from '../../components/schema/FAQPage.astro';
 import { siteConfig } from '../../config/site';
 
@@ -59,7 +59,7 @@ const secondFixServices = [
           Rob covers second fix carpenter work across West Yorkshire, including door hanging, skirting and architrave, window boards, boxing in pipes, ironmongery, and the finishing joinery that takes a job from built to properly finished.
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
@@ -126,7 +126,7 @@ const secondFixServices = [
       <h2 class="font-display text-3xl text-ink mb-4">Need a second-fix joiner?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send photos of the rooms and a list of the remaining items so Rob can advise on scope and timing.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

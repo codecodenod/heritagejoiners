@@ -1,7 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import FAQPageSchema from '../../components/schema/FAQPage.astro';
 import { siteConfig } from '../../config/site';
 
@@ -57,7 +57,7 @@ const panellingServices = [
           Rob fits wall panelling, tongue and groove panelling, and timber cladding across West Yorkshire, covering modern decorative work as well as heritage and period panelling repair where older interiors need a more careful approach.
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
@@ -124,7 +124,7 @@ const panellingServices = [
       <h2 class="font-display text-3xl text-ink mb-4">Need wall panelling fitted near you?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send room photos or external elevations and a rough idea of the style or repair issue.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

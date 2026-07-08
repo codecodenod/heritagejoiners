@@ -1,7 +1,7 @@
 ---
 import CaseStudyLayout from '../../../layouts/CaseStudyLayout.astro';
 import PhoneLink from '../../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../../components/ui/WhatsAppCTA.astro';
 import { siteConfig } from '../../../config/site';
 
 const { phone, url } = siteConfig;
@@ -92,7 +92,7 @@ const articleProps = {
       <h2 class="font-display text-3xl text-ink mb-4">Planning an oak staircase?</h2>
       <p class="text-ink/70 mb-8 max-w-2xl mx-auto">For oak stairs, landings or fitted joinery in an older property, send the key dimensions and a few site photos. Rob will advise on the next practical step.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

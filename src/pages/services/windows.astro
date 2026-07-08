@@ -1,7 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import FAQPageSchema from '../../components/schema/FAQPage.astro';
 import { siteConfig } from '../../config/site';
 
@@ -61,7 +61,7 @@ const windowServices = [
           Rob covers sash window repair, timber window repairs, wooden window repair, and full timber window restoration across West Yorkshire. The work starts with condition: cords, pulleys, staff beads, cills, rails, boxes, glazing beds and draughts all tell you what the window needs.
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
@@ -128,7 +128,7 @@ const windowServices = [
       <h2 class="font-display text-3xl text-ink mb-4">Need a timber window assessed?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send photos of the full window, the sill, and any failed joints and Rob will tell you whether repair looks viable.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

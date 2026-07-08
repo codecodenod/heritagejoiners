@@ -1,7 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import FAQPageSchema from '../../components/schema/FAQPage.astro';
 import { siteConfig } from '../../config/site';
 
@@ -56,7 +56,7 @@ const treatmentServices = [
           Rob helps clients deal with woodworm treatment, woodworm repair, and wider timber treatment issues across West Yorkshire. That includes inspecting woodworm damage, identifying whether the attack is active, and replacing or repairing timber that has actually lost strength.
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
@@ -123,7 +123,7 @@ const treatmentServices = [
       <h2 class="font-display text-3xl text-ink mb-4">Think you may have woodworm?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send photos of exit holes, affected timbers, and the wider room or roof area so Rob can advise on urgency.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

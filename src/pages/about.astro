@@ -4,7 +4,7 @@
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PhoneLink from '../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../components/ui/WhatsAppCTA.astro';
 import { siteConfig } from '../config/site';
 
 const { name, phone } = siteConfig;
@@ -104,7 +104,7 @@ const { name, phone } = siteConfig;
         Send photos first and I can usually give a faster, clearer answer on whether the job fits and what the next step should be.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

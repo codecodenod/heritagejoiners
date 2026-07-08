@@ -4,7 +4,7 @@
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PhoneLink from '../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../components/ui/WhatsAppCTA.astro';
 import { siteConfig } from '../config/site';
 
 const { name, phone, whatsapp, address, hours } = siteConfig;
@@ -57,7 +57,7 @@ const { name, phone, whatsapp, address, hours } = siteConfig;
           <!-- WhatsApp -->
           <div class="p-6 bg-bone rounded-lg">
             <h2 class="font-display text-lg text-ink mb-2">WhatsApp</h2>
-            <WhatsAppCTA client:load />
+            <WhatsAppCTA />
           </div>
         </div>
 

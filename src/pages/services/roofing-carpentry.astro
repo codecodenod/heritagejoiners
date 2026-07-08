@@ -1,7 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import FAQPageSchema from '../../components/schema/FAQPage.astro';
 import { siteConfig } from '../../config/site';
 
@@ -59,7 +59,7 @@ const roofingServices = [
           Rob covers roof carpenter work across West Yorkshire, including traditional cut roofs, timber roof truss work, common rafters, hip and valley rafters, purlins, dormer construction, flat roof joists and targeted rafter repair. A roof is problem-solving in timber: pitch, spans, loads, birdsmouth cuts, plumb cuts, trimmed openings and reveals all have to line up.
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
@@ -126,7 +126,7 @@ const roofingServices = [
       <h2 class="font-display text-3xl text-ink mb-4">Need roof carpentry or roof timber advice?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send roof void photos, plans, or clear images of the affected area and Rob will advise on the next step.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

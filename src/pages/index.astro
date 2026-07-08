@@ -5,7 +5,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PhoneLink from '../components/ui/PhoneLink.astro';
 import EmailLink from '../components/ui/EmailLink.astro';
-import WhatsAppCTA from '../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../components/ui/WhatsAppCTA.astro';
 import RepairVsReplacement from '../components/sections/RepairVsReplacement.astro';
 import FAQPageSchema from '../components/schema/FAQPage.astro';
 import { siteConfig } from '../config/site';
@@ -125,7 +125,7 @@ const homepageFaqItems = [
           <span class="whitespace-nowrap">No shortcut workmanship</span>
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load size="lg" />
+          <WhatsAppCTA size="lg" />
           <PhoneLink
             phone={phone.tel}
             display={phone.display}
@@ -157,8 +157,10 @@ const homepageFaqItems = [
       opacity: 1;
     }
     .hero-dot {
-      width: 10px;
-      height: 10px;
+      width: 24px;
+      height: 24px;
+      padding: 7px;
+      background-clip: content-box;
       border-radius: 9999px;
       background: rgba(28, 25, 23, 0.3);
       border: 1px solid rgba(28, 25, 23, 0.5);
@@ -747,7 +749,7 @@ const homepageFaqItems = [
         </p>
       </div>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load size="lg" />
+        <WhatsAppCTA size="lg" />
         <PhoneLink
           phone={phone.tel}
           display={phone.display}

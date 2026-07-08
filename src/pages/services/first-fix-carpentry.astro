@@ -1,7 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import FAQPageSchema from '../../components/schema/FAQPage.astro';
 import { siteConfig } from '../../config/site';
 
@@ -59,7 +59,7 @@ const firstFixServices = [
           Rob takes on first fix joiner and first fix carpenter work across West Yorkshire, drawing on a bench joinery and site carpentry background. Floor joists, stud partition walls, timber partition walls, linings, frames and structural timber all need correct setting out before anything gets covered up.
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
@@ -126,7 +126,7 @@ const firstFixServices = [
       <h2 class="font-display text-3xl text-ink mb-4">Need first fix carpentry on site?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send drawings, room sizes, or photos of the current stage and Rob can advise on scope and availability.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

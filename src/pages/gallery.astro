@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PhoneLink from '../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../components/ui/WhatsAppCTA.astro';
 import { siteConfig } from '../config/site';
 
 const { phone } = siteConfig;
@@ -103,7 +103,7 @@ const galleryItems = [
       <h2 class="font-display text-3xl mb-4">Have a job you want us to look at?</h2>
       <p class="text-bone/70 mb-8 mx-auto">Send photos of the work area and Rob will tell you whether it fits the kind of joinery and carpentry Heritage Joiners takes on.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

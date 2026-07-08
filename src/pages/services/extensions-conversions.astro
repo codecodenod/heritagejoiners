@@ -1,7 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import FAQPageSchema from '../../components/schema/FAQPage.astro';
 import { siteConfig } from '../../config/site';
 
@@ -59,7 +59,7 @@ const structuralServices = [
           Rob covers attic conversion, loft conversion, timber frame construction, and structural carpentry across West Yorkshire. This is where workshop-trained and site-proven joinery matters: awkward roof geometry, existing timbers, new openings, trimmers, joists and finishes all have to be made to work together.
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
@@ -126,7 +126,7 @@ const structuralServices = [
       <h2 class="font-display text-3xl text-ink mb-4">Planning an extension or conversion?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send plans, rough dimensions, or clear roof and room photos and Rob can advise on the carpentry scope.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

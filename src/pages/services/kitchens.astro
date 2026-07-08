@@ -1,7 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import FAQPageSchema from '../../components/schema/FAQPage.astro';
 import { siteConfig } from '../../config/site';
 
@@ -61,7 +61,7 @@ const kitchenServices = [
           Rob fits kitchens across West Yorkshire, from full kitchen installation and fitted kitchens to kitchen worktop fitting, cabinetry adjustments, and timber-led refresh work. The job is practical joinery: level units, clean scribes, sound fixings, neat worktop joints, and details that still look right once the room is being used.
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
@@ -128,7 +128,7 @@ const kitchenServices = [
       <h2 class="font-display text-3xl text-ink mb-4">Planning a kitchen project?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send a plan, a few photos, and the parts you already have on site if the kitchen is supply-only. Rob will give you a practical first view.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

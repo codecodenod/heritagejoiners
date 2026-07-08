@@ -1,7 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import FAQPageSchema from '../../components/schema/FAQPage.astro';
 import { siteConfig } from '../../config/site';
 
@@ -57,7 +57,7 @@ const finishingServices = [
           Rob carries out wood staining, wood oiling, timber finishing, French polishing, and sanding and refinishing across West Yorkshire. On straightforward jobs that means careful preparation and the right finish system. On heritage work it can mean closing the visual gap between old timber and repaired sections.
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
@@ -124,7 +124,7 @@ const finishingServices = [
       <h2 class="font-display text-3xl text-ink mb-4">Need timber finishing or colour matching?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send photos of the timber, the existing finish, and the level of wear or colour difference you are trying to solve.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

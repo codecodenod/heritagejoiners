@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
-import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
 import AreaLinks from '../../components/sections/AreaLinks.astro';
 import { siteConfig } from '../../config/site';
@@ -26,7 +26,7 @@ const breadcrumbs = [
           Rob covers Wakefield for general carpentry and joinery, from kitchens, trim, and door fitting through to flooring, staircases, roof carpentry, and heritage timber repair on older buildings.
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
@@ -99,7 +99,7 @@ const breadcrumbs = [
       <h2 class="font-display text-3xl text-ink mb-4">Need a joiner in Wakefield?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send photos on WhatsApp and a quick outline of the work you need done. Rob will tell you what looks practical.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

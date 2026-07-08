@@ -1,7 +1,7 @@
 ---
 import CaseStudyLayout from '../../../layouts/CaseStudyLayout.astro';
 import PhoneLink from '../../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../../components/ui/WhatsAppCTA.astro';
 import { siteConfig } from '../../../config/site';
 
 const { phone, url } = siteConfig;
@@ -90,7 +90,7 @@ const articleProps = {
       <h2 class="font-display text-3xl text-ink mb-4">Need oak interior joinery?</h2>
       <p class="text-ink/70 mb-8 max-w-2xl mx-auto">For oak frames, boxing-ins, feature details or careful matching against older timber, send photos of the room and the junctions involved.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

@@ -1,7 +1,7 @@
 ---
 import CaseStudyLayout from '../../../layouts/CaseStudyLayout.astro';
 import PhoneLink from '../../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../../components/ui/WhatsAppCTA.astro';
 import { siteConfig } from '../../../config/site';
 
 const { phone, url } = siteConfig;
@@ -92,7 +92,7 @@ const articleProps = {
       <h2 class="font-display text-3xl text-ink mb-4">Need a solid oak door made?</h2>
       <p class="text-ink/70 mb-8 max-w-2xl mx-auto">For a new oak door, frame or period entrance, send the opening details and photos of the building. Rob will advise on construction, proportion and fitting.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

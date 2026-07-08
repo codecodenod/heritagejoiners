@@ -1,7 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import FAQPageSchema from '../../components/schema/FAQPage.astro';
 import { siteConfig } from '../../config/site';
 
@@ -61,7 +61,7 @@ const staircaseServices = [
           Rob fits, repairs, and improves staircases across West Yorkshire, from bespoke staircase work and loft staircases to staircase repair, staircase renovation, and newel post replacement. A staircase has to be set out properly before it can look right, feel right, and work safely in the building.
         </p>
         <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA client:load />
+          <WhatsAppCTA />
           <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
         </div>
       </div>
@@ -128,7 +128,7 @@ const staircaseServices = [
       <h2 class="font-display text-3xl text-ink mb-4">Need a staircase fitted or repaired?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send a few photos, the floor-to-floor height if you know it, and what you want to improve. Rob will tell you what looks practical.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>

@@ -4,7 +4,7 @@
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../../components/ui/WhatsAppCTA';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import BlogPostingSchema from '../../components/schema/BlogPosting.astro';
 import { getCollection, render } from 'astro:content';
 import { siteConfig } from '../../config/site';
@@ -47,7 +47,7 @@ const fmt = (d: Date) =>
       <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Need a joiner in Pontefract or across Yorkshire?</h2>
       <p class="text-ink/70 mb-8">Send photos first and Rob can usually give an initial view.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA client:load />
+        <WhatsAppCTA />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>
