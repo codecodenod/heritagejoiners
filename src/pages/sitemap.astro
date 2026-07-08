@@ -1,0 +1,85 @@
+---
+/**
+ * Human-readable site map — a directory of every page on the site.
+ * Auto-generated from the pages folder + blog collection, so new pages appear automatically.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const pageFiles = Object.keys(import.meta.glob('./**/*.astro'));
+
+function toRoute(file: string): string {
+  let r = file.replace(/^\.\//, '/').replace(/\.astro$/, '');
+  r = r.replace(/\/index$/, '') || '/';
+  return r === '' ? '/' : r;
+}
+
+const routes = pageFiles
+  .map(toRoute)
+  .filter((r) => !r.includes('[') && r !== '/404' && r !== '/sitemap');
+
+function label(route: string): string {
+  if (route === '/') return 'Home';
+  const last = route.split('/').filter(Boolean).pop() || '';
+  return last
+    .split('-')
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ');
+}
+
+const groups: { title: string; match: (r: string) => boolean }[] = [
+  { title: 'Main pages', match: (r) => !r.startsWith('/services') && !r.startsWith('/areas') && !r.startsWith('/case-studies') && !r.startsWith('/blog') },
+  { title: 'Services', match: (r) => r.startsWith('/services') },
+  { title: 'Areas we cover', match: (r) => r.startsWith('/areas') },
+  { title: 'Case studies', match: (r) => r.startsWith('/case-studies') },
+];
+
+const posts = await getCollection('blog', ({ data }) => !data.draft);
+const blogLinks = [
+  { href: '/blog', text: 'Blog' },
+  ...posts.map((p) => ({ href: `/blog/${p.id.replace(/\.md$/, '')}`, text: p.data.title || label(p.id) })),
+];
+---
+
+<BaseLayout
+  title="Site Map"
+  description="A full directory of every page on the Heritage Joiners website — services, areas covered, case studies, and more."
+>
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12">
+        <p class="text-oak uppercase tracking-wide mb-4">Directory</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Site map</h1>
+        <p class="text-lg text-ink/70">Every page on the site, in one place.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {groups.map((g) => {
+          const items = routes.filter(g.match).sort((a, b) => a.localeCompare(b));
+          return (
+            <div>
+              <h2 class="font-display text-xl text-ink mb-4 pb-2 border-b border-ink/10">{g.title}</h2>
+              <ul class="space-y-2">
+                {items.map((r) => (
+                  <li>
+                    <a href={r} class="text-oak hover:text-ink transition-colors">{label(r)}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+        <div>
+          <h2 class="font-display text-xl text-ink mb-4 pb-2 border-b border-ink/10">Blog</h2>
+          <ul class="space-y-2">
+            {blogLinks.map((l) => (
+              <li>
+                <a href={l.href} class="text-oak hover:text-ink transition-colors">{l.text}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
