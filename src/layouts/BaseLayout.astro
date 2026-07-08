@@ -77,9 +77,7 @@ const twitterCard = 'summary_large_image';
     <!-- Description -->
     <meta name="description" content={description} />
 
-    <!-- Robots: site-wide noindex while in test/staging -->
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="googlebot" content="noindex, nofollow" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
