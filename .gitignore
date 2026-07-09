@@ -6,3 +6,6 @@ dist/
 .vscode/
 PRIVATE/
 temp.html
+
+# Astro build cache
+.astro/
