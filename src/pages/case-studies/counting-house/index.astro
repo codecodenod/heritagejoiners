@@ -18,6 +18,82 @@ const articleProps = {
   url: `${url}/case-studies/counting-house`,
   datePublished: '2024-01-01',
 };
+
+const base = '/images/case-studies/counting-house';
+
+// Alternating text/image feature rows
+const features = [
+  {
+    title: 'Kitchen studwork & first fix',
+    body: [
+      'The kitchen area was formed with new studwork and plasterboarded, ready for the next stages of fit-out. It was first-fix carpentry set out cleanly and accurately inside a structure where the surrounding fabric was anything but regular.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-kitchen-studwork-first-fix.webp`, alt: 'New timber studwork and first-fix carpentry forming the kitchen area at The Counting House', portrait: false },
+      { src: `${base}/the-counting-house-kitchen-studwork-plasterboarded.webp`, alt: 'Kitchen area studwork plasterboarded and ready for fit-out at The Counting House', portrait: false },
+    ],
+  },
+  {
+    title: 'Beam repair & restoration',
+    body: [
+      'Several old structural beams had split and opened up over time. They were drilled, bolted and pulled back together with threaded bar and washer plates so the timber was sound again — direct, practical restoration carpentry that kept the original fabric in service rather than replacing it.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-oak-beam-repair-threaded-bar.webp`, alt: 'Split oak beam drilled and pulled back together with threaded bar at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-oak-beam-repair-threaded-bar-washer.webp`, alt: 'Threaded bar and washer plate securing a repaired oak beam junction at The Counting House', portrait: true },
+    ],
+  },
+  {
+    title: 'Oak staircases & landings',
+    body: [
+      'The largest feature was the pair of rear staircases and landings, made and fitted in solid oak with non-slip metal treads worked into the design. They had to carry daily use, feel secure underfoot, and still look as though they belonged in a restored historic building.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-external-oak-staircase-non-slip-treads.webp`, alt: 'External solid oak staircase with non-slip metal treads at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-oak-staircase.webp`, alt: 'Solid oak staircase and landing with non-slip treads at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-oak-staircase-courtyard.webp`, alt: 'Rear external solid oak staircase rising to the first floor at The Counting House', portrait: false },
+      { src: `${base}/the-counting-house-oak-staircase-landing-rear.webp`, alt: 'Solid oak staircase and landing at the rear of The Counting House, Pontefract', portrait: false },
+    ],
+  },
+  {
+    title: 'Solid oak front door & frame',
+    body: [
+      'The existing entrance was replaced with a heavy ledged and braced solid oak door and frame, finishing over 60mm thick — heavy enough that it took several people to lift and handle. It was made to look as though it had always belonged to the building, and became one of its centrepieces.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-solid-oak-ledged-and-braced-door.webp`, alt: 'Bespoke solid oak ledged and braced front door at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-oak-ledged-braced-door-interior.webp`, alt: 'Interior of the solid oak ledged and braced door with stained-glass light at The Counting House', portrait: true },
+    ],
+  },
+  {
+    title: 'Oak-framed gate',
+    body: [
+      'A solid oak, ledged and braced gate was made and hung to a yard opening — boarded on one face and cross-braced on the other, on heavy black ironmongery built to take daily use in an exposed outdoor position and to sit with the age of the building.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-oak-framed-ledged-braced-gate.webp`, alt: 'Solid oak framed, ledged and braced gate at The Counting House, Pontefract', portrait: true },
+      { src: `${base}/the-counting-house-oak-framed-braced-gate-back.webp`, alt: 'Cross-braced back of the oak-framed gate on black ironmongery at The Counting House', portrait: true },
+    ],
+  },
+  {
+    title: 'Oak window surrounds & reveals',
+    body: [
+      'Internal window openings were lined in solid oak. The reveals, lintel and window board were all worked in timber, so the windows sat in warm, rustic oak surrounds that suited the old fabric rather than a plain plastered return.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-rustic-oak-window-surround-reveals.webp`, alt: 'Rustic oak internal window surround with oak reveals, lintel and window board at The Counting House', portrait: true },
+    ],
+  },
+  {
+    title: 'Restored original timber',
+    body: [
+      'Original timber was retained and restored wherever possible. An original exterior frame was repaired with a clean bottom splice, and an original Victorian door was repaired, restored and refitted to the downstairs cupboard rather than being swapped out for something new.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-victorian-door-splice-repair.webp`, alt: 'Restored Victorian panelled cupboard door refitted at The Counting House', portrait: true },
+    ],
+  },
+];
 ---
 
 <CaseStudyLayout
@@ -25,7 +101,7 @@ const articleProps = {
   description="The Counting House in Pontefract: specialist oak joinery, staircases, a solid oak front door, beam repairs and restoration carpentry in one of the town's oldest buildings."
   breadcrumbs={breadcrumbs}
   articleProps={articleProps}
-  ogImage="/images/case-studies/heritage-award-counting-house.webp"
+  ogImage="/images/case-studies/counting-house/heritage-award-counting-house.webp"
 >
   <article>
     <!-- Hero -->
@@ -35,122 +111,157 @@ const articleProps = {
         <h1 class="font-display text-4xl lg:text-6xl text-ink mb-6">
           The Counting House
         </h1>
-        <p class="text-xl text-ink/70 max-w-2xl">
+        <p class="text-xl text-ink/70 max-w-2xl mb-10">
           Specialist joinery and carpentry on one of Pontefract's oldest buildings. Heritage Joiners contributed oak joinery and restoration carpentry to the scheme, and the finished project later received the Heritage Award at Pontefract Civic Society's 2025 Design Awards.
+        </p>
+        <img
+          src={`${base}/the-counting-house-pontefract-historic-building.webp`}
+          alt="The Counting House, Pontefract — a historic timber-framed and stone town-centre building"
+          width="1500"
+          height="844"
+          fetchpriority="high"
+          class="w-full h-auto rounded-2xl shadow-lg"
+        />
+      </div>
+    </section>
+
+    <!-- The building -->
+    <section class="py-16 bg-bone">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The building</h2>
+        <p class="text-ink/70 mb-3">
+          The Counting House is one of Pontefract's oldest buildings, set in the town centre with a long commercial history and now brought back into use as a bar and restaurant. The work sat inside an architect-led restoration of a building that had moved, settled and been altered over centuries.
+        </p>
+        <p class="text-ink/70">
+          Nothing was square, level or regular. Every opening, beam and junction had to be treated as its own problem, with new joinery made to sit convincingly inside old fabric rather than looking like a modern addition.
         </p>
       </div>
     </section>
 
-    <!-- Overview -->
-    <section class="py-16 bg-bone">
+    <!-- The work — alternating rows -->
+    <section class="py-16 lg:py-24 bg-paper">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div class="lg:col-span-2 space-y-10">
-            <div>
-              <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The building</h2>
-              <p class="text-ink/70 mb-3">
-                The Counting House is one of Pontefract's oldest buildings, set in the town centre with a long commercial history and now brought back into use as a bar and restaurant. The work sat inside an architect-led restoration of a building that had moved, settled and been altered over centuries.
-              </p>
-              <p class="text-ink/70">
-                Nothing was square, level or regular. Every opening, beam and junction had to be treated as its own problem, with new joinery made to sit convincingly inside old fabric rather than looking like a modern addition.
-              </p>
+        <h2 class="font-display text-3xl lg:text-4xl text-ink mb-14 text-center">The work</h2>
+        <div class="space-y-16 lg:space-y-24">
+          {features.map((f, i) => (
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+              <div class={i % 2 === 1 ? 'lg:order-2' : ''}>
+                <h3 class="font-display text-2xl lg:text-3xl text-ink mb-4">{f.title}</h3>
+                {f.body.map((p) => <p class="text-ink/70 mb-3 leading-relaxed">{p}</p>)}
+              </div>
+              <div class={i % 2 === 1 ? 'lg:order-1' : ''}>
+                {f.images.length === 1 ? (
+                  f.images[0].portrait ? (
+                    <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+                      <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-full object-cover" />
+                    </div>
+                  ) : (
+                    <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
+                  )
+                ) : (
+                  <div class="grid grid-cols-2 gap-4">
+                    {f.images.map((img) => (
+                      <div class="aspect-square overflow-hidden rounded-lg shadow-md">
+                        <img src={img.src} alt={img.alt} loading="lazy" class="w-full h-full object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
-            <div>
-              <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The brief and the work</h2>
-              <p class="text-ink/70 mb-3">
-                Heritage Joiners carried out a broad package of oak joinery and restoration carpentry. The kitchen area was formed with new studwork and plasterboarded ready for the next stages of fit-out. Split structural beams were drilled, bolted and pulled back together so the old timber was sound again.
-              </p>
-              <p class="text-ink/70 mb-3">
-                The largest feature was the pair of rear staircases and landings, made and fitted in solid oak with non-slip metal treads worked into the design. At the front, the existing entrance was replaced with a heavy ledged and braced solid oak door and frame, made over 60mm thick and built with the weight and presence the building deserved.
-              </p>
-              <p class="text-ink/70">
-                Around the interior, oak was machined and fitted to windows, door frames, toilet areas, boxing-ins and feature details. Original timber was retained and restored where possible, including an original exterior frame repaired with a clean bottom splice and an original Victorian door repaired, restored and refitted to the downstairs electrical cupboard.
-              </p>
+    <!-- Matching + Outcome -->
+    <section class="py-16 bg-bone">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        <div>
+          <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Matching old and new oak</h2>
+          <p class="text-ink/70 mb-3">
+            Much of the craft was in making new work sit naturally against old work. Old oak carries colour, movement, marks and character that new timber does not have on the bench. New sections had to be machined accurately, then finished with judgement so they did not read as too sharp or too clean once fitted.
+          </p>
+          <p class="text-ink/70">
+            New oak, reused oak and existing timber were brought together through proportion, profile, grain and finish. That is where bench-hand joinery experience shows: not just in making a piece correctly, but in knowing whether it looks right when you stand back in the building.
+          </p>
+        </div>
+        <div>
+          <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Outcome</h2>
+          <p class="text-ink/70 mb-3">
+            The Counting House was brought back into use with visible oak joinery and practical restoration carpentry forming a major part of the finished building. The rear oak staircases and landings, the solid oak front door and frame, the internal frames and boxing-ins, kitchen studwork, beam repairs, toilet-area details and restored original timber all work together without stripping the building of its age.
+          </p>
+          <p class="text-ink/70">
+            It is now a usable town-centre bar and restaurant that still carries the weight and character of an old Pontefract building. The restoration project went on to receive the Heritage Award at Pontefract Civic Society's 2025 Design Awards.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Heritage Award -->
+    <section id="heritage-award" class="py-16 bg-paper scroll-mt-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Heritage Award – The Counting House</h2>
+        <img
+          src="/images/case-studies/counting-house/heritage-award-counting-house.webp"
+          alt="Heritage Joiners receiving the Heritage Award for The Counting House at the Pontefract Civic Society 2025 Design Awards"
+          loading="lazy"
+          class="max-w-full h-auto rounded-lg"
+        />
+        <p class="text-ink/60 text-sm mt-3">
+          The Counting House and the Pontefract Civic Society 2025 Design Awards presentation.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="https://www.pontefractcivicsociety.org.uk/design-awards-2026/" target="_blank" rel="noopener" class="text-oak underline">
+            View the Pontefract Civic Society Design Awards 2025 &rarr;
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Overview + related -->
+    <section class="py-16 bg-bone">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 p-6 bg-paper rounded-lg border border-ink/10">
+          <h3 class="font-display text-lg text-ink mb-4">Project overview</h3>
+          <dl class="space-y-3 text-sm">
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-ink/10 pb-2">
+              <dt class="text-ink/60">Location</dt>
+              <dd class="text-ink sm:text-right">Pontefract, West Yorkshire</dd>
             </div>
-
-            <div>
-              <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Matching old and new oak</h2>
-              <p class="text-ink/70 mb-3">
-                Much of the craft was in making new work sit naturally against old work. Old oak carries colour, movement, marks and character that new timber does not have on the bench. New sections had to be machined accurately, then finished with judgement so they did not read as too sharp or too clean once fitted.
-              </p>
-              <p class="text-ink/70">
-                New oak, reused oak and existing timber were brought together through proportion, profile, grain and finish. That is where bench-hand joinery experience shows: not just in making a piece correctly, but in knowing whether it looks right when you stand back in the building.
-              </p>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-ink/10 pb-2">
+              <dt class="text-ink/60">Building</dt>
+              <dd class="text-ink sm:text-right">One of Pontefract's oldest town-centre buildings</dd>
             </div>
-
-            <div>
-              <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Outcome</h2>
-              <p class="text-ink/70 mb-3">
-                The Counting House was brought back into use with visible oak joinery and practical restoration carpentry forming a major part of the finished building. The rear oak staircases and landings, the solid oak front door and frame, the internal frames and boxing-ins, kitchen studwork, beam repairs, toilet-area details and restored original timber all work together without stripping the building of its age.
-              </p>
-              <p class="text-ink/70">
-                It is now a usable town-centre bar and restaurant that still carries the weight and character of an old Pontefract building. The restoration project went on to receive the Heritage Award at Pontefract Civic Society's 2025 Design Awards.
-              </p>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-ink/10 pb-2">
+              <dt class="text-ink/60">Main materials</dt>
+              <dd class="text-ink sm:text-right">Solid oak, reused/original oak, structural timber</dd>
             </div>
-
-            <section id="heritage-award" class="scroll-mt-24">
-              <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Heritage Award – The Counting House</h2>
-              <img
-                src="/images/case-studies/heritage-award-counting-house.webp"
-                alt="Heritage Joiners receiving the Heritage Award for The Counting House at the Pontefract Civic Society 2025 Design Awards"
-                loading="lazy"
-                class="max-w-full h-auto rounded-lg"
-              />
-              <p class="text-ink/60 text-sm mt-3">
-                The Counting House and the Pontefract Civic Society 2025 Design Awards presentation.
-              </p>
-              <p class="mt-3 text-sm">
-                <a href="https://www.pontefractcivicsociety.org.uk/design-awards-2026/" target="_blank" rel="noopener" class="text-oak underline">
-                  View the Pontefract Civic Society Design Awards 2025 &rarr;
-                </a>
-              </p>
-            </section>
-          </div>
-
-          <div class="space-y-6">
-            <div class="p-6 bg-paper rounded-lg border border-ink/10">
-              <h3 class="font-display text-lg text-ink mb-4">Project overview</h3>
-              <dl class="space-y-3 text-sm">
-                <div class="border-b border-ink/10 pb-2">
-                  <dt class="text-ink/60">Location</dt>
-                  <dd class="text-ink">Pontefract, West Yorkshire</dd>
-                </div>
-                <div class="border-b border-ink/10 pb-2">
-                  <dt class="text-ink/60">Building</dt>
-                  <dd class="text-ink">One of Pontefract's oldest town-centre buildings</dd>
-                </div>
-                <div class="border-b border-ink/10 pb-2">
-                  <dt class="text-ink/60">Main materials</dt>
-                  <dd class="text-ink">Solid oak, reused/original oak, structural timber</dd>
-                </div>
-                <div class="border-b border-ink/10 pb-2">
-                  <dt class="text-ink/60">Key work</dt>
-                  <dd class="text-ink">Oak staircases &amp; landings, solid oak front door &amp; frame, internal oak frames &amp; boxing-ins, kitchen studwork, beam repairs</dd>
-                </div>
-                <div class="border-b border-ink/10 pb-2">
-                  <dt class="text-ink/60">Restoration</dt>
-                  <dd class="text-ink">Split beams drilled, bolted &amp; pulled back together; original exterior door frame spliced &amp; repaired; original Victorian cupboard door restored &amp; refitted</dd>
-                </div>
-                <div>
-                  <dt class="text-ink/60">Recognition</dt>
-                  <dd class="text-ink">Heritage Award at Pontefract Civic Society's 2025 Design Awards</dd>
-                </div>
-              </dl>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-ink/10 pb-2">
+              <dt class="text-ink/60">Key work</dt>
+              <dd class="text-ink sm:text-right sm:max-w-md">Oak staircases &amp; landings, solid oak front door &amp; frame, internal oak frames &amp; boxing-ins, kitchen studwork, beam repairs</dd>
             </div>
-
-            <div class="p-6 bg-paper rounded-lg border border-ink/10">
-              <h3 class="font-display text-lg text-ink mb-3">Related service pages</h3>
-              <ul class="space-y-2 text-sm">
-                <li><a href="/services/staircases" class="text-oak hover:underline">Staircases</a></li>
-                <li><a href="/services/doors" class="text-oak hover:underline">Doors</a></li>
-                <li><a href="/services/bespoke-joinery" class="text-oak hover:underline">Bespoke Joinery</a></li>
-                <li><a href="/services/timber-repair" class="text-oak hover:underline">Timber Repair &amp; Restoration</a></li>
-                <li><a href="/services/first-fix-carpentry" class="text-oak hover:underline">First Fix Carpentry</a></li>
-                <li><a href="/areas/pontefract" class="text-oak hover:underline">Pontefract area page</a></li>
-              </ul>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-ink/10 pb-2">
+              <dt class="text-ink/60">Restoration</dt>
+              <dd class="text-ink sm:text-right sm:max-w-md">Split beams drilled, bolted &amp; pulled back together; original exterior door frame spliced &amp; repaired; original Victorian cupboard door restored &amp; refitted</dd>
             </div>
-          </div>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1">
+              <dt class="text-ink/60">Recognition</dt>
+              <dd class="text-ink sm:text-right">Heritage Award at Pontefract Civic Society's 2025 Design Awards</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="p-6 bg-paper rounded-lg border border-ink/10">
+          <h3 class="font-display text-lg text-ink mb-3">Related service pages</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services/staircases" class="text-oak hover:underline">Staircases</a></li>
+            <li><a href="/services/doors" class="text-oak hover:underline">Doors</a></li>
+            <li><a href="/services/bespoke-joinery" class="text-oak hover:underline">Bespoke Joinery</a></li>
+            <li><a href="/services/timber-repair" class="text-oak hover:underline">Timber Repair &amp; Restoration</a></li>
+            <li><a href="/services/first-fix-carpentry" class="text-oak hover:underline">First Fix Carpentry</a></li>
+            <li><a href="/areas/pontefract" class="text-oak hover:underline">Pontefract area page</a></li>
+          </ul>
         </div>
       </div>
     </section>
