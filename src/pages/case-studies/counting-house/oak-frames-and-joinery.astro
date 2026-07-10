@@ -16,67 +16,108 @@ const articleProps = {
   url: `${url}/case-studies/counting-house/oak-frames-and-joinery`,
   datePublished: '2024-01-01',
 };
+
+const base = '/images/case-studies/counting-house';
+
+// Alternating text/image feature rows
+const features = [
+  {
+    title: 'Frames, boxing-ins and reused timber',
+    body: [
+      'Oak was machined to size and worked around windows, frames, toilet areas, boxing-ins and other junctions, so the service spaces still felt part of the same heritage scheme. Each piece had to be practical, neat and in keeping with the old building around it.',
+      'Where a piece of original timber could be reused, it was. A salvaged panelled door was repurposed as the front of a bespoke boxed-in cupboard — old character kept in the building rather than thrown away.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-salvaged-panel-door-cupboard.webp`, alt: 'Salvaged Victorian panelled door repurposed as a bespoke boxed-in cupboard front at The Counting House', portrait: true },
+    ],
+  },
+  {
+    title: 'Old oak, new oak and rustic detail',
+    body: [
+      'A sawn, rustic finish was chosen for much of the oak, so new work sat naturally against the old fabric rather than looking too clean or too flat. New oak was machined accurately, then judged against reused oak and existing timber so the finished detail felt believable — colour, grain and edge sharpness all mattered.',
+      'Where it suited the room, oak was also shaped and moulded: near the bar stair, a newel and post detail was fluted and given an ogee-style moulding, a small decorative lift that kept the piece in the building’s traditional language.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-rustic-sawn-oak-boarding.webp`, alt: 'Rustic sawn-finish oak boarding used for boxing-ins and detailing at The Counting House', portrait: false },
+    ],
+  },
+  {
+    title: 'New oak against original fabric',
+    body: [
+      'The finished interior is a mix of new oak, reused oak and original fabric — stone-flagged floors, exposed brick and old timber all sitting together.',
+      'Good interior joinery in a building like this is not about making everything shout. It is about line, fit, proportion and finish, so the oak looks considered and settled against centuries-old surroundings rather than added late.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-original-stone-flagged-floor.webp`, alt: 'Original stone-flagged floor and exposed brick with oak detailing at The Counting House', portrait: true },
+    ],
+  },
+];
 ---
 
 <CaseStudyLayout
   title="Oak Frames, Boxing-ins & Interior Details at The Counting House"
-  description="Oak frames, boxing-ins and interior joinery at The Counting House in Pontefract, including toilet-area details, old-and-new oak matching and a fluted ogee-style newel detail."
+  description="Oak frames, boxing-ins and interior joinery at The Counting House in Pontefract, including reused timber, rustic sawn oak, and a fluted ogee-style newel detail."
   breadcrumbs={breadcrumbs}
   articleProps={articleProps}
+  ogImage="/images/case-studies/counting-house/the-counting-house-oak-interior-boxing-in-window.webp"
 >
+  <!-- Hero -->
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-oak uppercase tracking-wide mb-4">The Counting House — Pontefract</p>
-      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Oak Frames, Boxing-ins &amp; Interior Details</h1>
-      <p class="text-xl text-ink/70 max-w-2xl">
-        Oak machined and fitted around windows, door frames, toilet areas, boxing-ins and feature details, with new and old oak worked together by eye and hand.
-      </p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div>
+          <p class="text-oak uppercase tracking-wide mb-4">The Counting House — Pontefract</p>
+          <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Oak Frames, Boxing-ins &amp; Interior Details</h1>
+          <p class="text-xl text-ink/70">
+            A large amount of visible oak joinery fitted into the everyday parts of the interior — machined and worked around windows, frames, toilet areas and boxing-ins, with new and old oak brought together by eye and hand.
+          </p>
+        </div>
+        <img
+          src={`${base}/the-counting-house-oak-interior-boxing-in-window.webp`}
+          alt="Oak boxing-in and panelling around a window in the historic interior of The Counting House, Pontefract"
+          width="1080"
+          height="1619"
+          fetchpriority="high"
+          class="w-full h-auto rounded-2xl shadow-lg"
+        />
+      </div>
     </div>
   </section>
 
-  <section class="py-16 bg-bone">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-      <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Oak throughout the interior</h2>
-        <p class="text-ink/70 mb-3">
-          The Counting House needed more than one set-piece. The character of the finished building came through a large amount of visible oak joinery, fitted into the everyday parts of the interior.
-        </p>
-        <p class="text-ink/70">
-          Oak was machined to size and worked around windows, frames, toilet areas, boxing-ins and other junctions. Each piece had to be practical, neat and in keeping with the old building around it.
-        </p>
+  <!-- Alternating rows -->
+  <section class="py-16 lg:py-24 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-16 lg:space-y-24">
+        {features.map((f, i) => (
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+            <div class={i % 2 === 1 ? 'lg:order-2' : ''}>
+              <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">{f.title}</h2>
+              {f.body.map((p) => <p class="text-ink/70 mb-3 leading-relaxed">{p}</p>)}
+            </div>
+            <div class={i % 2 === 1 ? 'lg:order-1' : ''}>
+              {f.images.length === 1 ? (
+                f.images[0].portrait ? (
+                  <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+                    <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-full object-cover" />
+                  </div>
+                ) : (
+                  <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
+                )
+              ) : (
+                <div class="grid grid-cols-2 gap-4">
+                  {f.images.map((img) => (
+                    <div class="aspect-square overflow-hidden rounded-lg shadow-md">
+                      <img src={img.src} alt={img.alt} loading="lazy" class="w-full h-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
 
-      <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Toilet-area frames and boxing-ins</h2>
-        <p class="text-ink/70 mb-3">
-          The toilet areas were given oak frames, boxing-ins and feature details so the service spaces still felt part of the same heritage scheme.
-        </p>
-        <p class="text-ink/70">
-          Good interior joinery in a building like this is not about making everything shout. It is about line, fit, proportion and finish, so the practical work looks considered rather than added late.
-        </p>
-      </div>
-
-      <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Old oak, new oak and rustic detail</h2>
-        <p class="text-ink/70 mb-3">
-          In the gents, a small window detail was made with a mix of old rustic oak and new oak for the sides and head. The point was to keep the detail in character, avoiding anything too clean or flat against the surrounding fabric.
-        </p>
-        <p class="text-ink/70">
-          New oak was machined accurately, then judged against reused oak and existing timber so the finished detail felt believable. Colour, grain and edge sharpness all mattered.
-        </p>
-      </div>
-
-      <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Decorative oak near the bar stair</h2>
-        <p class="text-ink/70 mb-3">
-          Near the bar stair area, an oak newel and post detail was shaped, fluted and given an ogee-style moulded detail. It gave the piece a decorative lift without pulling it away from the building's traditional language.
-        </p>
-        <p class="text-ink/70">
-          This is the kind of small detail that changes how a room feels. A flat piece would have done the job; shaped oak made it part of the building.
-        </p>
-      </div>
-
-      <div class="flex flex-wrap gap-6 pt-4 border-t border-ink/10">
+      <div class="flex flex-wrap gap-6 pt-16 mt-16 border-t border-ink/10">
         <a href="/case-studies/counting-house" class="text-oak font-display">← Back to Counting House</a>
         <a href="/services/bespoke-joinery" class="text-oak font-display">Bespoke Joinery →</a>
         <a href="/services/second-fix-carpentry" class="text-oak font-display">Second Fix Carpentry →</a>
@@ -85,6 +126,7 @@ const articleProps = {
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="py-16 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-display text-3xl text-ink mb-4">Need oak interior joinery?</h2>
