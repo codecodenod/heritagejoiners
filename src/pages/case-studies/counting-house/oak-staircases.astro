@@ -16,6 +16,54 @@ const articleProps = {
   url: `${url}/case-studies/counting-house/oak-staircases`,
   datePublished: '2024-01-01',
 };
+
+const base = '/images/case-studies/counting-house';
+
+// Alternating text/image feature rows
+const features = [
+  {
+    title: 'A major oak feature',
+    body: [
+      "The rear staircases were the largest single element of Heritage Joiners' work at The Counting House. They had to carry daily use, feel secure underfoot, and still look right within a restored historic building.",
+      'Solid oak gave the staircases the strength, grain and presence the space needed. The aim was not a lightweight modern insert, but stair joinery with the substance and proportion to sit comfortably inside old walls and settled fabric.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-oak-staircase-landing-top-view.webp`, alt: 'Looking down the finished solid oak staircase and landing at The Counting House, Pontefract', portrait: true },
+    ],
+  },
+  {
+    title: 'Setting out in an old building',
+    body: [
+      'Nothing at The Counting House offered a clean, regular starting point. Levels, openings and junctions all had to be read carefully before the oak could be made and fitted.',
+      'The oak newels, frame and landing were set out and assembled on site, keeping the staircase strong and safe while making the finished lines feel natural against a building that had moved and settled over time.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-oak-newels-forming-landing.webp`, alt: 'Oak newels and frame being set out to form the landing at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-oak-landing-frame-construction.webp`, alt: 'Oak landing frame under construction with scaffolding at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-oak-landing-frame-assembled.webp`, alt: 'Assembled solid oak landing frame with newel posts and braces at The Counting House', portrait: true },
+    ],
+  },
+  {
+    title: 'Oak with metal tread detail',
+    body: [
+      'Non-slip metal treads were fitted into the stair design, giving safe footing without robbing the staircases of their oak character. The detail had to be robust, neat and visually balanced.',
+      'Done well, the metal sits as a practical working detail rather than an afterthought. The oak still leads the eye: grain, weight, landing lines and hand-finished edges all doing their part.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-oak-staircase-non-slip-treads-flight.webp`, alt: 'Non-slip metal treads fitted into the solid oak staircase flight at The Counting House', portrait: true },
+    ],
+  },
+  {
+    title: 'Made to belong',
+    body: [
+      'The oak was cut and jointed with proper bench-hand joinery — mortice-and-tenon newels worked to take the weight and the years, not just screwed together on site.',
+      'Their success is in the balance between new work and old surroundings. The staircases are clearly made for modern use, but their oak, proportion and finish allow them to feel as though the building was waiting for them.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-oak-staircase-tenons-newels-workshop.webp`, alt: 'Solid oak newel posts with cut tenons in the workshop for The Counting House staircase', portrait: true },
+    ],
+  },
+];
 ---
 
 <CaseStudyLayout
@@ -23,62 +71,61 @@ const articleProps = {
   description="Two large rear staircases and landings in solid oak, made and fitted for The Counting House in Pontefract with non-slip metal treads worked into the design."
   breadcrumbs={breadcrumbs}
   articleProps={articleProps}
-
-  ogImage="/images/homepage/the-counting-house-oak-staircase-landing.webp"
+  ogImage="/images/case-studies/counting-house/the-counting-house-rear-oak-staircase-finished.webp"
 >
+  <!-- Hero -->
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <p class="text-oak uppercase tracking-wide mb-4">The Counting House — Pontefract</p>
       <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Oak Staircases &amp; Landings</h1>
-      <p class="text-xl text-ink/70 max-w-2xl">
+      <p class="text-xl text-ink/70 max-w-2xl mb-10">
         Two large rear staircases and landings in solid oak, set out and fitted to become a major feature at the back of one of Pontefract's oldest buildings.
       </p>
+      <img
+        src={`${base}/the-counting-house-rear-oak-staircase-finished.webp`}
+        alt="Finished solid oak rear staircase and landing at The Counting House, Pontefract"
+        width="1500"
+        height="844"
+        fetchpriority="high"
+        class="w-full h-auto rounded-2xl shadow-lg"
+      />
     </div>
   </section>
 
-  <section class="py-16 bg-bone">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-      <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">A major oak feature</h2>
-        <p class="text-ink/70 mb-3">
-          The rear staircases were the largest single element of Heritage Joiners' work at The Counting House. They had to carry daily use, feel secure underfoot, and still look right within a restored historic building.
-        </p>
-        <p class="text-ink/70">
-          Solid oak gave the staircases the strength, grain and presence the space needed. The aim was not a lightweight modern insert, but stair joinery with the substance and proportion to sit comfortably inside old walls and settled fabric.
-        </p>
+  <!-- Alternating rows -->
+  <section class="py-16 lg:py-24 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-16 lg:space-y-24">
+        {features.map((f, i) => (
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+            <div class={i % 2 === 1 ? 'lg:order-2' : ''}>
+              <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">{f.title}</h2>
+              {f.body.map((p) => <p class="text-ink/70 mb-3 leading-relaxed">{p}</p>)}
+            </div>
+            <div class={i % 2 === 1 ? 'lg:order-1' : ''}>
+              {f.images.length === 1 ? (
+                f.images[0].portrait ? (
+                  <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+                    <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-full object-cover" />
+                  </div>
+                ) : (
+                  <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
+                )
+              ) : (
+                <div class="grid grid-cols-2 gap-4">
+                  {f.images.map((img) => (
+                    <div class="aspect-square overflow-hidden rounded-lg shadow-md">
+                      <img src={img.src} alt={img.alt} loading="lazy" class="w-full h-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
 
-      <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Setting out in an old building</h2>
-        <p class="text-ink/70 mb-3">
-          Nothing at The Counting House offered a clean, regular starting point. Levels, openings and junctions all had to be read carefully before the oak could be made and fitted.
-        </p>
-        <p class="text-ink/70">
-          That meant practical setting out on site as well as accurate bench work: keeping the staircase strong and safe while making the finished lines feel natural against a building that had moved and settled over time.
-        </p>
-      </div>
-
-      <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Oak with metal tread detail</h2>
-        <p class="text-ink/70 mb-3">
-          Non-slip metal treads were fitted into the stair design, giving safe footing without robbing the staircases of their oak character. The detail had to be robust, neat and visually balanced.
-        </p>
-        <p class="text-ink/70">
-          Done well, the metal sits as a practical working detail rather than an afterthought. The oak still leads the eye: grain, weight, landing lines and hand-finished edges all doing their part.
-        </p>
-      </div>
-
-      <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Made to belong</h2>
-        <p class="text-ink/70 mb-3">
-          The finished staircases became a strong rear feature of the building. They read as proper joinery: well set out, solid underfoot, and suited to the restored character of The Counting House.
-        </p>
-        <p class="text-ink/70">
-          Their success is in the balance between new work and old surroundings. The staircases are clearly made for modern use, but their oak, proportion and finish allow them to feel as though the building was waiting for them.
-        </p>
-      </div>
-
-      <div class="flex flex-wrap gap-6 pt-4 border-t border-ink/10">
+      <div class="flex flex-wrap gap-6 pt-16 mt-16 border-t border-ink/10">
         <a href="/case-studies/counting-house" class="text-oak font-display">← Back to Counting House</a>
         <a href="/services/staircases" class="text-oak font-display">Staircases service →</a>
         <a href="/services/timber-hardwoods" class="text-oak font-display">Timber &amp; Hardwoods →</a>
@@ -87,6 +134,7 @@ const articleProps = {
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="py-16 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-display text-3xl text-ink mb-4">Planning an oak staircase?</h2>
