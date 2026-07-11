@@ -11,25 +11,39 @@ const { name, phone, whatsapp, address, hours } = siteConfig;
 ---
 
 <BaseLayout title="Contact a Joiner in Pontefract & Wakefield | Heritage Joiners" description="Contact a joiner or carpenter in Pontefract, Wakefield, and West Yorkshire for carpentry, joinery, repairs, kitchens, doors, windows, stairs, and heritage timber work.">
-  <section class="py-16 lg:py-24 bg-paper">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
+  <!-- Hero: Yorkshire countryside background with fade for text legibility -->
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/heritage-joiners-pontefract-carpentry-and-timber-restoration.webp"
+      alt="Yorkshire countryside with stone barns and dry stone walls"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
         <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">
           Contact a Joiner in Pontefract, Wakefield &amp; West Yorkshire
         </h1>
-        <p class="text-lg text-ink/70 mb-8">
+        <p class="text-lg text-ink/80">
           Send photos first. If you are looking for a joiner or carpenter, it is the fastest way for Rob to tell whether your enquiry looks like general joinery, a larger carpentry project, or heritage timber repair.
         </p>
+      </div>
+    </div>
+  </section>
 
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
         <div class="mb-12">
           <h2 class="font-display text-2xl text-ink mb-4">What to send</h2>
           <ul class="space-y-2 text-ink/70 list-disc list-inside">
             <li>Postcode and town</li>
-            <li>Property type and approximate age</li>
-            <li>Listed status if known, only if it applies</li>
-            <li>One wide photo of each affected area</li>
-            <li>One close-up photo of each defect</li>
-            <li>Notes on any leaks, damp, movement, or access issues you have noticed</li>
+            <li>A few words on the job - a new door, kitchen, staircase, flooring, fitted work, a repair, or anything else timber</li>
+            <li>One wide photo of the room or area the work is in</li>
+            <li>Rough sizes if you have them - nothing exact, a tape-measure guess is fine</li>
+            <li>For repairs: a close-up of the damage, plus any leaks, damp, or movement you have noticed</li>
+            <li>Property age and listed status, only if it applies</li>
           </ul>
         </div>
 
@@ -37,8 +51,8 @@ const { name, phone, whatsapp, address, hours } = siteConfig;
           <h2 class="font-display text-2xl text-ink mb-4">What happens next</h2>
           <ol class="space-y-3 text-ink/70 list-decimal list-inside">
             <li><strong class="text-ink">Photo check</strong> - Rob looks at the photos and gives an initial view on likely scope.</li>
-            <li><strong class="text-ink">Survey</strong> - a site visit is arranged if the job needs measuring, structural inspection, or closer assessment.</li>
-            <li><strong class="text-ink">Recommendation</strong> - a clear next step, whether that is fitting, repair, replacement, or a wider carpentry package.</li>
+            <li><strong class="text-ink">Site visit</strong> - arranged if the job needs measuring up, structural inspection, or closer assessment.</li>
+            <li><strong class="text-ink">Recommendation</strong> - a clear next step and price, whether that is new joinery, fitting, repair, or a wider carpentry package.</li>
           </ol>
         </div>
 
