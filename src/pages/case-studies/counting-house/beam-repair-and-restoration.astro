@@ -16,6 +16,54 @@ const articleProps = {
   url: `${url}/case-studies/counting-house/beam-repair-and-restoration`,
   datePublished: '2024-01-01',
 };
+
+const base = '/images/case-studies/counting-house';
+
+// Alternating text/image feature rows
+const features = [
+  {
+    title: 'Split beams pulled back together',
+    body: [
+      'Several old beams in The Counting House had split and opened up over time. The task was to stabilise what was there, keeping the old timber in service while making it sound again.',
+      'The beams were drilled, bolted and pulled back together with threaded bar and washer plates. It was direct, practical restoration carpentry: dealing with timber that had been creaking, cracking and moving, then securing it without stripping the building of its original fabric.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-oak-beam-repair-threaded-bar.webp`, alt: 'Split oak beam drilled and pulled back together with threaded bar at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-oak-beam-repair-threaded-bar-washer.webp`, alt: 'Threaded bar and washer plate securing a repaired oak beam junction at The Counting House', portrait: true },
+    ],
+  },
+  {
+    title: 'Kitchen studwork',
+    body: [
+      'Heritage Joiners also formed the new studwork and plasterboarded the area that became the kitchen, ready for the next stages of fit-out.',
+      'This was part of making the building usable again as a bar and restaurant: first-fix carpentry done cleanly and accurately inside a structure where the surrounding fabric was anything but regular.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-kitchen-studwork-first-fix.webp`, alt: 'New timber studwork and first-fix carpentry forming the kitchen area at The Counting House', portrait: false },
+      { src: `${base}/the-counting-house-kitchen-studwork-plasterboarded.webp`, alt: 'Kitchen area studwork plasterboarded and ready for fit-out at The Counting House', portrait: false },
+    ],
+  },
+  {
+    title: 'Original timber restored',
+    body: [
+      'An original exterior frame had failed at the bottom. Rather than losing the whole piece, the rotten lower section was cut out and a new piece of timber was spliced cleanly into the bottom of the frame, preserving the original above.',
+      'A Victorian door to the downstairs electrical cupboard was also repaired, restored and refitted into new boxing-in. It would have been easy to replace, but keeping it was the better heritage decision — the old door went back into use, carrying its age and character.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-victorian-cupboard-door-restoration.webp`, alt: 'Original Victorian panelled cupboard door being restored and refitted at The Counting House', portrait: true },
+    ],
+  },
+  {
+    title: 'Shaped oak at the bar stair',
+    body: [
+      'Near the bar stair, an oak newel and post detail was shaped, fluted and given an ogee-style moulded detail — a decorative lift that keeps the piece in the building’s traditional language.',
+      'It is the kind of small detail that changes how a room feels. A flat piece would have done the job; shaped oak made it part of the building.',
+    ],
+    images: [
+      { src: `${base}/the-counting-house-oak-bar-stair-fluted-newel.webp`, alt: 'Oak bar stair with shaped and fluted newel post detail at The Counting House', portrait: true },
+    ],
+  },
+];
 ---
 
 <CaseStudyLayout
@@ -23,62 +71,65 @@ const articleProps = {
   description="Beam repairs, kitchen studwork and restoration carpentry at The Counting House in Pontefract, including original timber pieces repaired and refitted."
   breadcrumbs={breadcrumbs}
   articleProps={articleProps}
-
-  ogImage="/images/gallery/wood-splice-repair.webp"
+  ogImage="/images/case-studies/counting-house/the-counting-house-oak-roof-structure.webp"
 >
+  <!-- Hero -->
   <section class="py-16 lg:py-24 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-oak uppercase tracking-wide mb-4">The Counting House — Pontefract</p>
-      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Beam Repair &amp; Restoration Carpentry</h1>
-      <p class="text-xl text-ink/70 max-w-2xl">
-        Practical restoration carpentry at The Counting House: split beams made sound, kitchen studwork formed, and original timber repaired rather than discarded.
-      </p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div>
+          <p class="text-oak uppercase tracking-wide mb-4">The Counting House — Pontefract</p>
+          <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Beam Repair &amp; Restoration Carpentry</h1>
+          <p class="text-xl text-ink/70">
+            Practical restoration carpentry inside centuries-old oak structure: split beams made sound, kitchen studwork formed, and original timber repaired rather than discarded.
+          </p>
+        </div>
+        <img
+          src={`${base}/the-counting-house-oak-roof-structure.webp`}
+          alt="Old oak roof structure with trusses and rafters at The Counting House, Pontefract"
+          width="800"
+          height="1067"
+          fetchpriority="high"
+          class="w-full h-auto rounded-2xl shadow-lg"
+        />
+      </div>
     </div>
   </section>
 
-  <section class="py-16 bg-bone">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-      <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Split beams pulled back together</h2>
-        <p class="text-ink/70 mb-3">
-          Several old beams in The Counting House had split and opened up over time. The task was to stabilise what was there, keeping the old timber in service while making it sound again.
-        </p>
-        <p class="text-ink/70">
-          The beams were drilled, bolted and pulled back together. It was direct, practical restoration carpentry: dealing with timber that had been creaking, cracking and moving, then securing it without stripping the building of its original fabric.
-        </p>
+  <!-- Alternating rows -->
+  <section class="py-16 lg:py-24 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-16 lg:space-y-24">
+        {features.map((f, i) => (
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+            <div class={i % 2 === 1 ? 'lg:order-2' : ''}>
+              <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">{f.title}</h2>
+              {f.body.map((p) => <p class="text-ink/70 mb-3 leading-relaxed">{p}</p>)}
+            </div>
+            <div class={i % 2 === 1 ? 'lg:order-1' : ''}>
+              {f.images.length === 1 ? (
+                f.images[0].portrait ? (
+                  <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+                    <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-full object-cover" />
+                  </div>
+                ) : (
+                  <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
+                )
+              ) : (
+                <div class="grid grid-cols-2 gap-4">
+                  {f.images.map((img) => (
+                    <div class="aspect-square overflow-hidden rounded-lg shadow-md">
+                      <img src={img.src} alt={img.alt} loading="lazy" class="w-full h-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
 
-      <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Kitchen studwork</h2>
-        <p class="text-ink/70 mb-3">
-          Heritage Joiners also formed the new studwork and plasterboarded the area that became the kitchen, ready for the next stages of fit-out.
-        </p>
-        <p class="text-ink/70">
-          This was part of making the building usable again as a bar and restaurant: first-fix carpentry done cleanly and accurately inside a structure where the surrounding fabric was anything but regular.
-        </p>
-      </div>
-
-      <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Original exterior frame repair</h2>
-        <p class="text-ink/70 mb-3">
-          An original exterior frame had failed at the bottom. Rather than losing the whole piece, the rotten lower section was cut out and a new piece of timber was spliced into the bottom of the frame.
-        </p>
-        <p class="text-ink/70">
-          The repair was cut cleanly and fitted properly, preserving the original frame above while giving the base a sound new section.
-        </p>
-      </div>
-
-      <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Original Victorian door restored</h2>
-        <p class="text-ink/70 mb-3">
-          A Victorian door to the downstairs electrical cupboard was repaired, restored and refitted. It would have been easy to replace, but keeping it was the better heritage decision.
-        </p>
-        <p class="text-ink/70">
-          Work like this keeps the building's story intact. The old door went back into use, carrying its age and character rather than being swapped out for something that only looked new.
-        </p>
-      </div>
-
-      <div class="flex flex-wrap gap-6 pt-4 border-t border-ink/10">
+      <div class="flex flex-wrap gap-6 pt-16 mt-16 border-t border-ink/10">
         <a href="/case-studies/counting-house" class="text-oak font-display">← Back to Counting House</a>
         <a href="/services/timber-repair" class="text-oak font-display">Timber Repair &amp; Restoration →</a>
         <a href="/services/first-fix-carpentry" class="text-oak font-display">First Fix Carpentry →</a>
@@ -87,6 +138,7 @@ const articleProps = {
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="py-16 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-display text-3xl text-ink mb-4">Need restoration carpentry?</h2>
