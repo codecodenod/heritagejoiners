@@ -1,6 +1,6 @@
 ---
 title: "How to build a timber stud partition wall: a Doncaster job"
-description: "How Heritage Joiners built a timber stud partition wall in Doncaster — setting out, door framing, noggins, acoustic insulation and plasterboarding, done properly."
+description: "How we built a timber stud partition wall in Doncaster — a West Yorkshire joiner's guide to setting out, stud wall framing, noggins, insulation and plasterboarding."
 pubDate: 2026-07-14
 draft: false
 ---
@@ -115,7 +115,7 @@ With the outer frame and doorway established, the remaining studs went in at the
 
 Every stud was checked for plumb before being fixed. It's also worth sighting along the face of the wall to make sure none of the timbers are twisted or standing proud. Even when the top and bottom measurements are spot on, a twisted or bowed stud causes problems when the plasterboard goes on.
 
-The aim is one flat, straight plane across the whole face of the wall.
+The aim is one flat, straight plane across the whole face of the wall — that, more than anything, is what good stud wall framing comes down to.
 
 <figure>
   <img src="/images/blog/stud-partition/stud-partition-wall-frame-with-double-door-studs-doncaster.webp" alt="Completed stud wall frame with all studs in at 400mm centres" width="1920" height="1080" loading="lazy" />
@@ -196,8 +196,8 @@ Mistakes made at the setting-out stage get more obvious as the job goes on. A fe
 
 The same goes for line and plumb. A small error at the start becomes an uneven doorway, awkward boarding and a visibly crooked wall by the end. Careful setting out saves time later and gives a stronger, neater result. That's [first fix carpentry](/services/first-fix-carpentry) done properly — and it's what makes the [second fix](/services/second-fix-carpentry) look right.
 
-## Stud partition walls in Doncaster and across Yorkshire
+## Stud partition walls in West Yorkshire
 
-Heritage Joiners builds and alters timber stud partition walls for bedrooms, bathrooms, en-suites, offices and refurbishments — for homeowners and for builders. That covers new partition walls, internal door openings, [door linings and door hanging](/services/doors), acoustic insulation, plasterboarding and alterations to existing layouts.
+Heritage Joiners builds and alters internal stud walls and timber partition walls across West Yorkshire, for bedrooms, bathrooms, en-suites, offices and refurbishments — for homeowners and for builders. This job was in Doncaster, and we cover Doncaster alongside our usual patch. That covers new partition walls, internal door openings, [door linings and door hanging](/services/doors), acoustic insulation, plasterboarding and alterations to existing layouts.
 
-For stud wall construction or internal joinery in Doncaster, Pontefract, Wakefield or the surrounding Yorkshire area, [get in touch](/contact) — send a few photos of the room and Rob will give you a practical first view.
+For stud wall construction or internal joinery in Pontefract, Wakefield, Doncaster or the surrounding Yorkshire area, [get in touch](/contact) — send a few photos of the room and Rob will give you a practical first view.
