@@ -93,9 +93,12 @@ const { name, phone, whatsapp, address, hours } = siteConfig;
 
             <!-- Cloudflare Turnstile bot check -->
             <div class="cf-turnstile" data-sitekey="0x4AAAAAAD2hMGTTgLAaOgHC"></div>
+            <p data-turnstile-hint hidden class="text-rust text-sm">
+              Please complete the security check above before sending.
+            </p>
 
             <button type="submit"
-              class="inline-flex items-center justify-center bg-ink text-bone font-display px-8 py-4 text-base rounded-md hover:bg-oak transition-colors">
+              class="inline-flex items-center justify-center bg-ink text-bone font-display px-8 py-4 text-base rounded-md hover:bg-oak transition-colors disabled:opacity-60">
               Send message
             </button>
           </form>
@@ -103,13 +106,72 @@ const { name, phone, whatsapp, address, hours } = siteConfig;
 
         <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
         <script is:inline>
-          // Show success/error banner after redirect back from the form handler
+          // Show success/error banner after redirect back (no-JS fallback path)
           var params = new URLSearchParams(window.location.search);
           var key = params.has('sent') ? 'sent' : params.has('error') ? 'error' : null;
           if (key) {
             var el = document.querySelector('[data-form-banner="' + key + '"]');
             if (el) el.hidden = false;
           }
+
+          // Enhanced submit: never lose what the visitor has typed.
+          // - Blocks submission until the Turnstile check is completed.
+          // - Sends in the background; fields are only cleared on success.
+          (function () {
+            var form = document.querySelector('#contact-form form');
+            if (!form || !window.fetch) return;
+            var hint = document.querySelector('[data-turnstile-hint]');
+            var sentBanner = document.querySelector('[data-form-banner="sent"]');
+            var errorBanner = document.querySelector('[data-form-banner="error"]');
+            var button = form.querySelector('button[type="submit"]');
+
+            function show(banner) {
+              if (sentBanner) sentBanner.hidden = banner !== sentBanner;
+              if (errorBanner) errorBanner.hidden = banner !== errorBanner;
+              if (banner) banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            function resetTurnstile() {
+              try { if (window.turnstile) window.turnstile.reset(); } catch (e) {}
+            }
+
+            form.addEventListener('submit', function (e) {
+              e.preventDefault();
+
+              var tokenField = form.querySelector('[name="cf-turnstile-response"]');
+              if (!tokenField || !tokenField.value) {
+                if (hint) {
+                  hint.hidden = false;
+                  hint.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return; // nothing submitted, nothing lost
+              }
+              if (hint) hint.hidden = true;
+
+              button.disabled = true;
+              var label = button.textContent;
+              button.textContent = 'Sending…';
+
+              fetch(form.action, { method: 'POST', body: new FormData(form) })
+                .then(function (res) {
+                  if (res.url.indexOf('sent=1') !== -1) {
+                    form.reset();
+                    resetTurnstile();
+                    show(sentBanner);
+                  } else {
+                    resetTurnstile();
+                    show(errorBanner); // fields kept
+                  }
+                })
+                .catch(function () {
+                  resetTurnstile();
+                  show(errorBanner); // fields kept
+                })
+                .finally(function () {
+                  button.disabled = false;
+                  button.textContent = label;
+                });
+            });
+          })();
         </script>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
