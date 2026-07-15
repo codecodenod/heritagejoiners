@@ -39,9 +39,9 @@ It's called a ledge and brace gate for a reason — take either part away and it
 
 There's a difference between decorative bracing and a brace that's actually doing something. A brace fixed the wrong way round, or one that's more for show than structure, won't do much for the gate once it's hung and taking its own weight day in, day out. Proper ledged and braced gate construction means the brace is sized, positioned and angled to carry load, not just to look right.
 
-## Why 4x1 Tanalised Timber Was Used
+## Why 4x1 Tanalised Sawn Timber Was Used
 
-This gate was built from 4x1 timber — four inches wide by one inch thick, the standard section for this kind of boarded gate. It's substantial enough to take fixings without splitting and to stand up to being opened and closed for years, without being so heavy it puts unnecessary strain on the hinges and post.
+This gate was built from 4x1 sawn timber — four inches wide by one inch thick, a practical section for this kind of boarded gate. Narrower boards are more cost-effective than wider ones and are less likely to cup as the timber moves outdoors, which helps the face of the gate stay flatter over time.
 
 Tanalised simply means the timber has been pressure treated — the preservative is forced deep into the wood in a sealed vessel, not just brushed onto the surface. That gives it a lot more resistance to rot than untreated softwood, which is why it's the standard choice for a treated timber garden gate. It's worth being clear, though, that pressure treatment isn't a guarantee of zero maintenance. Exposed end grain, particularly at the bottom of the boards, is still where moisture gets in fastest, and the timber will still move seasonally — expanding and contracting with the weather — whatever the treatment. Good construction, decent drainage away from the bottom rail, and periodic maintenance still matter with a 4x1 timber garden gate, tanalised or not.
 
