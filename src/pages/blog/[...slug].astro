@@ -6,6 +6,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
 import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import BlogPostingSchema from '../../components/schema/BlogPosting.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
 import { getCollection, render } from 'astro:content';
 import { siteConfig } from '../../config/site';
 
@@ -23,13 +24,14 @@ const fmt = (d: Date) =>
   d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description} canonical={canonicalUrl}>
+<BaseLayout title={post.data.title} description={post.data.description} canonical={canonicalUrl} ogImage={post.data.ogImage}>
   <BlogPostingSchema
     headline={post.data.title}
     description={post.data.description}
     datePublished={post.data.pubDate.toISOString()}
     url={canonicalUrl}
   />
+  {post.data.faqs && <FAQPageSchema faqs={post.data.faqs} />}
 
   <article class="py-16 lg:py-24 bg-paper">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
