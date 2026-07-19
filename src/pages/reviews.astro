@@ -1,0 +1,74 @@
+---
+/**
+ * Reviews - leave a review (Google first, then Facebook)
+ * Real customer reviews will be added below the buttons as they arrive.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhoneLink from '../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../components/ui/WhatsAppCTA.astro';
+import { siteConfig } from '../config/site';
+
+const { phone, url, social } = siteConfig;
+
+// TODO: Rob — replace with the direct review link from Google Business Profile
+// (Ask for reviews → short g.page/r/... link). Current link opens the business
+// panel on Google where "Write a review" is available.
+const googleReviewUrl = 'https://www.google.com/search?q=Heritage+Joiners+Ackworth+Pontefract';
+const facebookReviewUrl = `${social.facebook}reviews`;
+
+const description =
+  'Had joinery or carpentry work done by Heritage Joiners? Leave a review on Google or Facebook — honest feedback from real jobs in Pontefract and West Yorkshire.';
+---
+
+<BaseLayout title="Reviews" description={description} canonical={`${url}/reviews`}>
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Reviews</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Leave Heritage Joiners a Review</h1>
+        <p class="text-lg text-ink/70">
+          If Rob has done a job for you, a short honest review takes a minute and helps a lot.
+          Google is where reviews help most.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Where to leave your review</h2>
+      <p class="text-ink/70 mb-8">
+        A line or two is all it needs — say what the job was, where it was, and how it went.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href={googleReviewUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block px-8 py-3 bg-oak text-bone font-display rounded-md hover:bg-oak/90 transition-colors"
+        >
+          Review us on Google
+        </a>
+        <a
+          href={facebookReviewUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block px-8 py-3 bg-bone text-ink font-display border border-ink rounded-md hover:bg-paper transition-colors"
+        >
+          Review us on Facebook
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need a joiner in Pontefract or across Yorkshire?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the job first and Rob can usually give an honest first view.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
