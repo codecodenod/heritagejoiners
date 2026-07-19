@@ -27,7 +27,13 @@ const schema = {
   headline: props.headline,
   description: props.description,
   datePublished: props.datePublished,
-  author: organization,
+  author: {
+    '@type': 'Person',
+    name: 'Rob',
+    jobTitle: 'Bench hand joiner (NVQ Level 2, time served)',
+    worksFor: { '@id': 'https://heritagejoiners.co.uk/#organization' },
+    url: 'https://heritagejoiners.co.uk/about',
+  },
   publisher: organization,
   mainEntityOfPage: {
     '@type': 'WebPage',

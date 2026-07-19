@@ -14,7 +14,7 @@ interface Props {
 const { message, variant = 'button', size = 'md' } = Astro.props;
 const { whatsapp } = siteConfig;
 
-const defaultMessage = message || "Hi Heritage Joiners, I'd like to discuss a timber window project";
+const defaultMessage = message || "Hi Heritage Joiners, I'd like to discuss a joinery job";
 const encodedMessage = encodeURIComponent(defaultMessage);
 const separator = whatsapp.link.includes('?') ? '&' : '?';
 const waLink = whatsapp.link ? `${whatsapp.link}${separator}text=${encodedMessage}` : '/contact';

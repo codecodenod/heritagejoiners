@@ -12,61 +12,79 @@ const galleryItems = [
     category: 'Doors',
     image: '/images/gallery/oak-door-counting-house.webp',
     alt: 'Solid oak boarded door with stained-glass detail in a stone surround',
+    width: 619,
+    height: 1100,
   },
   {
     title: 'Timber Windows',
     category: 'Windows',
     image: '/images/gallery/sash-window-repair-pontefract.webp',
     alt: 'Sash bay window with glazing bars on a brick period property',
+    width: 608,
+    height: 800,
   },
   {
     title: 'Splice Repairs',
     category: 'Timber Repair',
     image: '/images/gallery/wood-splice-repair.webp',
     alt: 'New timber section spliced into the corner of an original door frame',
+    width: 1269,
+    height: 1044,
   },
   {
     title: 'Timber Joist Repair',
     category: 'Timber Repair',
     image: '/images/gallery/timber-joist-repair.webp',
     alt: 'New timber floor joists installed across a living room during floor repair',
+    width: 1200,
+    height: 675,
   },
   {
     title: 'Engineered Oak Flooring',
     category: 'Flooring',
     image: '/images/gallery/engineered-oak-wood-flooring.webp',
     alt: 'Engineered oak wood flooring being fitted over underlay in a living room',
+    width: 1200,
+    height: 966,
   },
   {
     title: 'Workshop Joinery',
     category: 'Joinery',
     image: '/images/gallery/workshop-bench-hand-joinery.webp',
     alt: 'Framed oak panel being made on the bench in the Heritage Joiners workshop',
+    width: 1200,
+    height: 794,
   },
   {
     title: 'The Counting House',
     category: 'Case Study',
     image: '/images/case-studies/counting-house/counting-house-hero.webp',
     alt: 'The Counting House case study building',
+    width: 900,
+    height: 640,
   },
   {
     title: 'Counting House Award',
     category: 'Case Study',
     image: '/images/case-studies/counting-house/heritage-award-counting-house.webp',
     alt: 'The Counting House and the Pontefract Civic Society 2025 Design Awards presentation',
+    width: 1479,
+    height: 602,
   },
   {
     title: 'Period Door Detail',
     category: 'Heritage',
     image: '/images/homepage/heritage-oak-door-restoration-yorkshire.webp',
     alt: 'Restored oak door detail',
+    width: 2560,
+    height: 1441,
   },
 ];
 ---
 
 <BaseLayout
   title="Gallery | Heritage Joiners"
-  description="A gallery of carpentry, joinery, timber repair, and heritage work across Pontefract, Wakefield, and West Yorkshire."
+  description="See carpentry, joinery, timber repair and heritage work from Heritage Joiners across Pontefract, Wakefield and West Yorkshire, including doors and windows."
 
   ogImage="/images/gallery/oak-door-counting-house.webp"
 >
@@ -84,7 +102,7 @@ const galleryItems = [
         {galleryItems.map((item) => (
           <article class="group block bg-bone rounded-lg overflow-hidden border border-ink/10 hover:border-oak transition-colors">
             <div class="aspect-[4/3] overflow-hidden">
-              <img src={item.image} alt={item.alt} class="w-full h-full object-cover" loading="lazy" />
+              <img src={item.image} alt={item.alt} width={item.width} height={item.height} class="w-full h-full object-cover" loading="lazy" />
             </div>
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">

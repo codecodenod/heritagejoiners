@@ -28,7 +28,7 @@ const features = [
       'Where a piece of original timber could be reused, it was. A salvaged panelled door was repurposed as the front of a bespoke boxed-in cupboard — old character kept in the building rather than thrown away.',
     ],
     images: [
-      { src: `${base}/the-counting-house-salvaged-panel-door-cupboard.webp`, alt: 'Salvaged Victorian panelled door repurposed as a bespoke boxed-in cupboard front at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-salvaged-panel-door-cupboard.webp`, alt: 'Salvaged Victorian panelled door repurposed as a bespoke boxed-in cupboard front at The Counting House', portrait: true, width: 563, height: 1000 },
     ],
   },
   {
@@ -38,7 +38,7 @@ const features = [
       'Where it suited the room, oak was also shaped and moulded: near the bar stair, a newel and post detail was fluted and given an ogee-style moulding, a small decorative lift that kept the piece in the building’s traditional language.',
     ],
     images: [
-      { src: `${base}/the-counting-house-rustic-sawn-oak-boarding.webp`, alt: 'Rustic sawn-finish oak boarding used for boxing-ins and detailing at The Counting House', portrait: false },
+      { src: `${base}/the-counting-house-rustic-sawn-oak-boarding.webp`, alt: 'Rustic sawn-finish oak boarding used for boxing-ins and detailing at The Counting House', portrait: false, width: 1100, height: 930 },
     ],
   },
   {
@@ -48,14 +48,15 @@ const features = [
       'Good interior joinery in a building like this is not about making everything shout. It is about line, fit, proportion and finish, so the oak looks considered and settled against centuries-old surroundings rather than added late.',
     ],
     images: [
-      { src: `${base}/the-counting-house-original-stone-flagged-floor.webp`, alt: 'Original stone-flagged floor and exposed brick with oak detailing at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-original-stone-flagged-floor.webp`, alt: 'Original stone-flagged floor and exposed brick with oak detailing at The Counting House', portrait: true, width: 750, height: 1000 },
     ],
   },
 ];
 ---
 
+<!-- TODO: Rob to confirm real project dates -->
 <CaseStudyLayout
-  title="Oak Frames, Boxing-ins & Interior Details at The Counting House"
+  title="Oak Frames & Joinery — The Counting House"
   description="Oak frames, boxing-ins and interior joinery at The Counting House in Pontefract, including reused timber, rustic sawn oak, and a fluted ogee-style newel detail."
   breadcrumbs={breadcrumbs}
   articleProps={articleProps}
@@ -98,16 +99,16 @@ const features = [
               {f.images.length === 1 ? (
                 f.images[0].portrait ? (
                   <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
-                    <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-full object-cover" />
+                    <img src={f.images[0].src} alt={f.images[0].alt} width={f.images[0].width} height={f.images[0].height} loading="lazy" class="w-full h-full object-cover" />
                   </div>
                 ) : (
-                  <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
+                  <img src={f.images[0].src} alt={f.images[0].alt} width={f.images[0].width} height={f.images[0].height} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
                 )
               ) : (
                 <div class="grid grid-cols-2 gap-4">
                   {f.images.map((img) => (
                     <div class="aspect-square overflow-hidden rounded-lg shadow-md">
-                      <img src={img.src} alt={img.alt} loading="lazy" class="w-full h-full object-cover" />
+                      <img src={img.src} alt={img.alt} width={img.width} height={img.height} loading="lazy" class="w-full h-full object-cover" />
                     </div>
                   ))}
                 </div>

@@ -28,7 +28,7 @@ const features = [
       'Solid oak gave the staircases the strength, grain and presence the space needed. The aim was not a lightweight modern insert, but stair joinery with the substance and proportion to sit comfortably inside old walls and settled fabric.',
     ],
     images: [
-      { src: `${base}/the-counting-house-oak-staircase-landing-top-view.webp`, alt: 'Looking down the finished solid oak staircase and landing at The Counting House, Pontefract', portrait: true },
+      { src: `${base}/the-counting-house-oak-staircase-landing-top-view.webp`, alt: 'Looking down the finished solid oak staircase and landing at The Counting House, Pontefract', portrait: true, width: 563, height: 1000 },
     ],
   },
   {
@@ -38,9 +38,9 @@ const features = [
       'The oak newels, frame and landing were set out and assembled on site, keeping the staircase strong and safe while making the finished lines feel natural against a building that had moved and settled over time.',
     ],
     images: [
-      { src: `${base}/the-counting-house-oak-newels-forming-landing.webp`, alt: 'Oak newels and frame being set out to form the landing at The Counting House', portrait: true },
-      { src: `${base}/the-counting-house-oak-landing-frame-construction.webp`, alt: 'Oak landing frame under construction with scaffolding at The Counting House', portrait: true },
-      { src: `${base}/the-counting-house-oak-landing-frame-assembled.webp`, alt: 'Assembled solid oak landing frame with newel posts and braces at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-oak-newels-forming-landing.webp`, alt: 'Oak newels and frame being set out to form the landing at The Counting House', portrait: true, width: 750, height: 1000 },
+      { src: `${base}/the-counting-house-oak-landing-frame-construction.webp`, alt: 'Oak landing frame under construction with scaffolding at The Counting House', portrait: true, width: 518, height: 1000 },
+      { src: `${base}/the-counting-house-oak-landing-frame-assembled.webp`, alt: 'Assembled solid oak landing frame with newel posts and braces at The Counting House', portrait: true, width: 750, height: 1000 },
     ],
   },
   {
@@ -50,7 +50,7 @@ const features = [
       'Done well, the metal sits as a practical working detail rather than an afterthought. The oak still leads the eye: grain, weight, landing lines and hand-finished edges all doing their part.',
     ],
     images: [
-      { src: `${base}/the-counting-house-oak-staircase-non-slip-treads-flight.webp`, alt: 'Non-slip metal treads fitted into the solid oak staircase flight at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-oak-staircase-non-slip-treads-flight.webp`, alt: 'Non-slip metal treads fitted into the solid oak staircase flight at The Counting House', portrait: true, width: 750, height: 1000 },
     ],
   },
   {
@@ -60,14 +60,15 @@ const features = [
       'Their success is in the balance between new work and old surroundings. The staircases are clearly made for modern use, but their oak, proportion and finish allow them to feel as though the building was waiting for them.',
     ],
     images: [
-      { src: `${base}/the-counting-house-oak-staircase-tenons-newels-workshop.webp`, alt: 'Solid oak newel posts with cut tenons in the workshop for The Counting House staircase', portrait: true },
+      { src: `${base}/the-counting-house-oak-staircase-tenons-newels-workshop.webp`, alt: 'Solid oak newel posts with cut tenons in the workshop for The Counting House staircase', portrait: true, width: 633, height: 1000 },
     ],
   },
 ];
 ---
 
+<!-- TODO: Rob to confirm real project dates -->
 <CaseStudyLayout
-  title="Oak Staircases & Landings at The Counting House"
+  title="Oak Staircases — The Counting House"
   description="Two large rear staircases and landings in solid oak, made and fitted for The Counting House in Pontefract with non-slip metal treads worked into the design."
   breadcrumbs={breadcrumbs}
   articleProps={articleProps}
@@ -106,16 +107,16 @@ const features = [
               {f.images.length === 1 ? (
                 f.images[0].portrait ? (
                   <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
-                    <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-full object-cover" />
+                    <img src={f.images[0].src} alt={f.images[0].alt} width={f.images[0].width} height={f.images[0].height} loading="lazy" class="w-full h-full object-cover" />
                   </div>
                 ) : (
-                  <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
+                  <img src={f.images[0].src} alt={f.images[0].alt} width={f.images[0].width} height={f.images[0].height} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
                 )
               ) : (
                 <div class="grid grid-cols-2 gap-4">
                   {f.images.map((img) => (
                     <div class="aspect-square overflow-hidden rounded-lg shadow-md">
-                      <img src={img.src} alt={img.alt} loading="lazy" class="w-full h-full object-cover" />
+                      <img src={img.src} alt={img.alt} width={img.width} height={img.height} loading="lazy" class="w-full h-full object-cover" />
                     </div>
                   ))}
                 </div>

@@ -15,28 +15,24 @@ const stages = [
     title: '1. Retain',
     image: '/images/homepage/service-windows.webp',
     trigger: 'Sound timber, minor movement, local wear, failed putty, loose beads, stiff operation, or small areas that do not affect structure.',
-    cost: 'Assessment usually £80-£150. Easing, finishing, or minor works are usually in the low hundreds.',
     link: '/services/windows',
   },
   {
     title: '2. Selective splice',
     image: '/images/homepage/service-rot.webp',
     trigger: 'Decay is localised and can be cut back to sound timber while retaining the original member, profile, and surrounding fabric.',
-    cost: 'Small splice repairs are typically £180-£350 depending on access, profile, and finish.',
     link: '/services/timber-repair',
   },
   {
     title: '3. Partial replacement',
     image: '/images/homepage/service-rot.webp',
     trigger: 'A rail, stile, sill, frame section, or door component is too far gone, but the wider window or door can still be retained.',
-    cost: 'Standard repair jobs are commonly £350-£900 depending on condition and number of affected sections.',
     link: '/services/doors',
   },
   {
     title: '4. Full replacement',
     image: '/images/homepage/service-windows.webp',
     trigger: 'Remaining sound timber is too low for a durable repair, critical zones have failed, or earlier repairs make another repair poor value.',
-    cost: 'Complex repairs can exceed £900. Full replacement can reach £2,500-£4,000 per sash-window equivalent.',
     link: '/services/timber-repair',
   },
 ];
@@ -61,7 +57,7 @@ const description = 'A four-stage repair-or-replace assessment for listed and pe
 ---
 
 <BaseLayout
-  title="Repair or Replace? How We Assess Period Timber"
+  title="Repair or Replace? Period Timber Assessment"
   description={description}
   canonical={`${url}/repair-or-replace`}
 >
@@ -105,12 +101,12 @@ const description = 'A four-stage repair-or-replace assessment for listed and pe
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {stages.map((stage) => (
           <article class="service-card bg-paper overflow-hidden">
-            <img src={stage.image} alt="" class="w-full h-56 object-cover" loading="lazy" />
+            <img src={stage.image} alt="" width="800" height="600" class="w-full h-56 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-display text-2xl text-ink mb-3">{stage.title}</h3>
               <p class="text-ink/70 mb-4">{stage.trigger}</p>
               <p class="text-sm text-ink/80 mb-5">
-                <strong class="text-ink">Typical band:</strong> {stage.cost}
+                No two jobs price the same — send photos for an honest first view.
               </p>
               <a href={stage.link} class="text-oak font-display text-sm">Related service &rarr;</a>
             </div>

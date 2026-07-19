@@ -21,6 +21,8 @@ const caseStudies = [
     location: 'Pontefract, WF8',
     image: '/images/case-studies/counting-house/counting-house-hero.webp',
     imageAlt: 'The Counting House, Pontefract — timber-framed historic building',
+    imageWidth: 900,
+    imageHeight: 640,
   },
 ];
 ---
@@ -50,6 +52,8 @@ const caseStudies = [
               <img
                 src={study.image}
                 alt={study.imageAlt}
+                width={study.imageWidth}
+                height={study.imageHeight}
                 loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />

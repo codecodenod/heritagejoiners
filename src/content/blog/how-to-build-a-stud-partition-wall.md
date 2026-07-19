@@ -1,12 +1,13 @@
 ---
-title: "How to build a timber stud partition wall: a Doncaster job"
+title: "How to Build a Timber Stud Partition Wall"
 description: "How we built a timber stud partition wall in Doncaster — a West Yorkshire joiner's guide to setting out, stud wall framing, noggins, insulation and plasterboarding."
 pubDate: 2026-07-14
 draft: false
+ogImage: "/images/blog/stud-partition/finished-stud-partition-wall-with-internal-door-doncaster.webp"
 ---
 
 <figure>
-  <img src="/images/blog/stud-partition/finished-stud-partition-wall-with-internal-door-doncaster.webp" alt="Finished timber stud partition wall with a new internal door at a Doncaster property" width="1920" height="1080" />
+  <img src="/images/blog/stud-partition/finished-stud-partition-wall-with-internal-door-doncaster.webp" alt="Finished timber stud partition wall with a new internal door at a Doncaster property" width="1500" height="844" />
   <figcaption>The finished stud partition wall and new internal door at the Doncaster property.</figcaption>
 </figure>
 

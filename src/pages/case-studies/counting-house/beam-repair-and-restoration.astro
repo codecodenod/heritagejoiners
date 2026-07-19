@@ -28,8 +28,8 @@ const features = [
       'The beams were drilled, bolted and pulled back together with threaded bar and washer plates. It was direct, practical restoration carpentry: dealing with timber that had been creaking, cracking and moving, then securing it without stripping the building of its original fabric.',
     ],
     images: [
-      { src: `${base}/the-counting-house-oak-beam-repair-threaded-bar.webp`, alt: 'Split oak beam drilled and pulled back together with threaded bar at The Counting House', portrait: true },
-      { src: `${base}/the-counting-house-oak-beam-repair-threaded-bar-washer.webp`, alt: 'Threaded bar and washer plate securing a repaired oak beam junction at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-oak-beam-repair-threaded-bar.webp`, alt: 'Split oak beam drilled and pulled back together with threaded bar at The Counting House', portrait: true, width: 563, height: 1000 },
+      { src: `${base}/the-counting-house-oak-beam-repair-threaded-bar-washer.webp`, alt: 'Threaded bar and washer plate securing a repaired oak beam junction at The Counting House', portrait: true, width: 563, height: 1000 },
     ],
   },
   {
@@ -39,8 +39,8 @@ const features = [
       'This was part of making the building usable again as a bar and restaurant: first-fix carpentry done cleanly and accurately inside a structure where the surrounding fabric was anything but regular.',
     ],
     images: [
-      { src: `${base}/the-counting-house-kitchen-studwork-first-fix.webp`, alt: 'New timber studwork and first-fix carpentry forming the kitchen area at The Counting House', portrait: false },
-      { src: `${base}/the-counting-house-kitchen-studwork-plasterboarded.webp`, alt: 'Kitchen area studwork plasterboarded and ready for fit-out at The Counting House', portrait: false },
+      { src: `${base}/the-counting-house-kitchen-studwork-first-fix.webp`, alt: 'New timber studwork and first-fix carpentry forming the kitchen area at The Counting House', portrait: false, width: 1100, height: 619 },
+      { src: `${base}/the-counting-house-kitchen-studwork-plasterboarded.webp`, alt: 'Kitchen area studwork plasterboarded and ready for fit-out at The Counting House', portrait: false, width: 1100, height: 619 },
     ],
   },
   {
@@ -50,7 +50,7 @@ const features = [
       'A Victorian door to the downstairs electrical cupboard was also repaired, restored and refitted into new boxing-in. It would have been easy to replace, but keeping it was the better heritage decision — the old door went back into use, carrying its age and character.',
     ],
     images: [
-      { src: `${base}/the-counting-house-victorian-cupboard-door-restoration.webp`, alt: 'Original Victorian panelled cupboard door being restored and refitted at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-victorian-cupboard-door-restoration.webp`, alt: 'Original Victorian panelled cupboard door being restored and refitted at The Counting House', portrait: true, width: 707, height: 1000 },
     ],
   },
   {
@@ -60,14 +60,15 @@ const features = [
       'It is the kind of small detail that changes how a room feels. A flat piece would have done the job; shaped oak made it part of the building.',
     ],
     images: [
-      { src: `${base}/the-counting-house-oak-bar-stair-fluted-newel.webp`, alt: 'Oak bar stair with shaped and fluted newel post detail at The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-oak-bar-stair-fluted-newel.webp`, alt: 'Oak bar stair with shaped and fluted newel post detail at The Counting House', portrait: true, width: 563, height: 1000 },
     ],
   },
 ];
 ---
 
+<!-- TODO: Rob to confirm real project dates -->
 <CaseStudyLayout
-  title="Beam Repair & Restoration Carpentry at The Counting House"
+  title="Beam Repair — The Counting House"
   description="Beam repairs, kitchen studwork and restoration carpentry at The Counting House in Pontefract, including original timber pieces repaired and refitted."
   breadcrumbs={breadcrumbs}
   articleProps={articleProps}
@@ -110,16 +111,16 @@ const features = [
               {f.images.length === 1 ? (
                 f.images[0].portrait ? (
                   <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
-                    <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-full object-cover" />
+                    <img src={f.images[0].src} alt={f.images[0].alt} width={f.images[0].width} height={f.images[0].height} loading="lazy" class="w-full h-full object-cover" />
                   </div>
                 ) : (
-                  <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
+                  <img src={f.images[0].src} alt={f.images[0].alt} width={f.images[0].width} height={f.images[0].height} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
                 )
               ) : (
                 <div class="grid grid-cols-2 gap-4">
                   {f.images.map((img) => (
                     <div class="aspect-square overflow-hidden rounded-lg shadow-md">
-                      <img src={img.src} alt={img.alt} loading="lazy" class="w-full h-full object-cover" />
+                      <img src={img.src} alt={img.alt} width={img.width} height={img.height} loading="lazy" class="w-full h-full object-cover" />
                     </div>
                   ))}
                 </div>

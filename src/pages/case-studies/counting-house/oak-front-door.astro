@@ -28,7 +28,7 @@ const features = [
       'On a building like The Counting House, the entrance could not feel thin or shopfront-like. Choosing the right stock at the outset is what lets the finished door carry the weight and presence the building deserved.',
     ],
     images: [
-      { src: `${base}/the-counting-house-oak-door-timber-selection.webp`, alt: 'Solid oak boards selected for the front door at The Counting House, Pontefract', portrait: false },
+      { src: `${base}/the-counting-house-oak-door-timber-selection.webp`, alt: 'Solid oak boards selected for the front door at The Counting House, Pontefract', portrait: false, width: 1100, height: 495 },
     ],
   },
   {
@@ -38,7 +38,7 @@ const features = [
       'That mass was part of the character. The boards, ledges, braces and frame all needed to work together so the finished door felt honest to the building, not decorative for the sake of it.',
     ],
     images: [
-      { src: `${base}/the-counting-house-oak-door-ledged-braced-workshop.webp`, alt: 'Solid oak ledged and braced door with live-edge plank, made in the workshop for The Counting House', portrait: true },
+      { src: `${base}/the-counting-house-oak-door-ledged-braced-workshop.webp`, alt: 'Solid oak ledged and braced door with live-edge plank, made in the workshop for The Counting House', portrait: true, width: 450, height: 1000 },
     ],
   },
   {
@@ -48,14 +48,15 @@ const features = [
       'Once hung, it became one of the centrepieces of The Counting House — a strong oak entrance made to look as though it had always belonged, setting the tone before anyone stepped inside.',
     ],
     images: [
-      { src: `${base}/the-counting-house-oak-door-boards-cramped-bench.webp`, alt: 'Oak door boards cramped up and set out on the bench for The Counting House', portrait: false },
+      { src: `${base}/the-counting-house-oak-door-boards-cramped-bench.webp`, alt: 'Oak door boards cramped up and set out on the bench for The Counting House', portrait: false, width: 1100, height: 495 },
     ],
   },
 ];
 ---
 
+<!-- TODO: Rob to confirm real project dates -->
 <CaseStudyLayout
-  title="Solid Oak Front Door & Frame at The Counting House"
+  title="Oak Front Door — The Counting House"
   description="A full solid oak front door and frame replacement at The Counting House in Pontefract, made as a heavy ledged and braced door over 60mm thick."
   breadcrumbs={breadcrumbs}
   articleProps={articleProps}
@@ -94,16 +95,16 @@ const features = [
               {f.images.length === 1 ? (
                 f.images[0].portrait ? (
                   <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
-                    <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-full object-cover" />
+                    <img src={f.images[0].src} alt={f.images[0].alt} width={f.images[0].width} height={f.images[0].height} loading="lazy" class="w-full h-full object-cover" />
                   </div>
                 ) : (
-                  <img src={f.images[0].src} alt={f.images[0].alt} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
+                  <img src={f.images[0].src} alt={f.images[0].alt} width={f.images[0].width} height={f.images[0].height} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
                 )
               ) : (
                 <div class="grid grid-cols-2 gap-4">
                   {f.images.map((img) => (
                     <div class="aspect-square overflow-hidden rounded-lg shadow-md">
-                      <img src={img.src} alt={img.alt} loading="lazy" class="w-full h-full object-cover" />
+                      <img src={img.src} alt={img.alt} width={img.width} height={img.height} loading="lazy" class="w-full h-full object-cover" />
                     </div>
                   ))}
                 </div>

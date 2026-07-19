@@ -1,6 +1,6 @@
 ---
 title: "What is second fix carpentry?"
-description: "Second fix carpentry is the finishing joinery that goes in once the walls are plastered — doors, skirting, architraves and the details people actually see. Here's what it covers."
+description: "Second fix carpentry explained: doors, skirting, architraves and finishing joinery fitted after plastering, with a practical guide to what the work covers."
 pubDate: 2026-06-29
 draft: false
 ---
