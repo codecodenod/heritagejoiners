@@ -4,15 +4,35 @@
  * Real customer reviews will be added below the buttons as they arrive.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PhoneLink from '../components/ui/PhoneLink.astro';
-import WhatsAppCTA from '../components/ui/WhatsAppCTA.astro';
 import { siteConfig } from '../config/site';
 
-const { phone, url, social } = siteConfig;
+const { url, social } = siteConfig;
 
 // Direct review link from Rob's Google Business Profile — opens the review box immediately
 const googleReviewUrl = 'https://g.page/r/CfrLE3bpw7zmEBM/review';
+const googleReviewsUrl = 'https://www.google.com/maps/place/?q=place_id:ChIJpQJcXBn4m4kR-ssTdunDvOY';
 const facebookReviewUrl = `${social.facebook}reviews`;
+
+// Genuine Google reviews, reproduced verbatim. Add new ones here as they arrive.
+const reviews = [
+  {
+    name: 'Julie Marshall',
+    rating: 5,
+    source: 'Google',
+    job: 'Kitchen strip-out and refit',
+    text: 'I can personally recommend Rob todo a good quality job. He removed a full kitchen to enable an essential damp course be completed. Rob then refitted the kitchen replacing all worktops to give the kitchen a fresh new look. Rob also replaced skirting boards to all rooms. Reliable tradesman turned up on time.',
+  },
+  {
+    name: 'Claire Marsh',
+    rating: 5,
+    source: 'Google',
+    job: 'Side gate',
+    text: 'Rob did my gate at the side of my house excellent work man ship . Excellent quality gate I will be using him again for woodwork on my house .',
+  },
+];
+
+const reviewCount = reviews.length;
+const averageRating = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviewCount).toFixed(1);
 
 const description =
   'Had joinery or carpentry work done by Heritage Joiners? Leave a review on Google or Facebook — honest feedback from real jobs in Pontefract and West Yorkshire.';
@@ -60,12 +80,37 @@ const description =
   </section>
 
   <section class="py-16 bg-paper">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-display text-3xl text-ink mb-4">Need a joiner in Pontefract or across Yorkshire?</h2>
-      <p class="text-ink/70 mb-8 mx-auto">Send photos of the job first and Rob can usually give an honest first view.</p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA />
-        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-3">What customers say</h2>
+        <p class="text-ink/70">
+          <span class="text-oak" aria-hidden="true">★★★★★</span>
+          Rated {averageRating} from {reviewCount} reviews on Google
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {reviews.map((review) => (
+          <article class="bg-bone rounded-lg border border-ink/10 p-6 flex flex-col">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-lg" aria-label={`${review.rating} out of 5 stars`}>
+                <span class="text-oak">{'★'.repeat(review.rating)}</span><span class="text-ink/20">{'★'.repeat(5 - review.rating)}</span>
+              </span>
+              <span class="text-xs text-ink/50 font-display uppercase tracking-wide">via {review.source}</span>
+            </div>
+            <p class="text-ink/80 mb-4 leading-relaxed">{review.text}</p>
+            <div class="mt-auto pt-3 border-t border-ink/10">
+              <p class="font-display text-ink">{review.name}</p>
+              <p class="text-sm text-ink/60">{review.job}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer" class="text-oak font-display">
+          Read all our reviews on Google &rarr;
+        </a>
       </div>
     </div>
   </section>
