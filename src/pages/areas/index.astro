@@ -30,15 +30,29 @@ const travelAreas = [
 >
   <BreadcrumbSchema items={breadcrumbs} />
 
-  <section class="py-16 lg:py-24 bg-paper">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mb-12">
+  <!-- Hero: area coverage map with fade for text legibility -->
+  <section class="relative overflow-hidden bg-bone min-h-[480px] lg:min-h-[600px] flex items-center">
+    <img
+      src="/images/heritage-joiners-areas-covered.webp"
+      alt="Map of the West Yorkshire and South Yorkshire area covered by Heritage Joiners, from Pontefract and Wakefield out to Leeds, Castleford and Doncaster"
+      width="1672"
+      height="941"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover object-bottom"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
         <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Areas we cover</h1>
-        <p class="text-lg text-ink/70">
+        <p class="text-lg text-ink/80">
           Heritage Joiners is Pontefract-based, with WF postcodes as the core patch for carpentry and joinery across West Yorkshire. Rob is a fully qualified apprentice trained bench hand joiner, time served, and travels wider for selected timber-led and heritage projects where that experience is the right fit.
         </p>
       </div>
+    </div>
+  </section>
 
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Local — WF postcodes</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {localAreas.map((area) => (
@@ -58,6 +72,17 @@ const travelAreas = [
           </a>
         ))}
       </div>
+
+      <a href="/case-studies/counting-house" class="group block mt-10 rounded-lg overflow-hidden shadow-md border border-ink/10 hover:border-oak transition-colors">
+        <img
+          src="/images/case-studies/counting-house/heritage-joiners-the-counting-house-pontefract.webp"
+          alt="The timber-framed exterior of The Counting House in Pontefract — weathered oak framing, lime plaster and old brickwork"
+          width="1400"
+          height="630"
+          loading="lazy"
+          class="w-full h-auto"
+        />
+      </a>
     </div>
   </section>
 </BaseLayout>
