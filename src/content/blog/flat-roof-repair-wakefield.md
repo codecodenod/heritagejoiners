@@ -148,6 +148,13 @@ Decking like this isn't just screwed down tight and forgotten. Timber boards mov
 
 The deck was left clean, flat and solid, ready for its new waterproof covering — this time over a sound structure that can actually stay dry.
 
+The GRP covering was laid afterwards by a roofing contractor, over the deck we'd built. That's the part everyone sees — but a covering only lasts as long as the structure underneath it. Get the timber right and the roof has a chance; lay it over wet, rotten boards and you're back where this job started.
+
+<figure>
+  <img src="/images/blog/flat-roof-wakefield/finished-grp-flat-roof-wakefield.webp" alt="Finished GRP flat roof in Wakefield, laid over the new timber deck" width="918" height="1429" loading="lazy" />
+  <figcaption>The finished roof, with its new GRP covering laid over the new deck.</figcaption>
+</figure>
+
 ## Repair or replace a rotten flat roof?
 
 People assume a rotten flat roof means tearing the whole thing off and starting from scratch. Sometimes it does. But often — as here — the sensible answer is to strip back to what's sound, deal with the water, strengthen what needs it and rebuild the parts that have failed.
