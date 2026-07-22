@@ -55,6 +55,11 @@ That's why it kept leaking. Once water is trapped between layers on a flat roof,
 The old OSB deck had been wet for so long it had lost all its strength. It had broken down into a soft, crumbling material — more like damp chippings than a board. We weren't lifting boards off; we were sweeping the old deck up into the bin. That tells you everything about how long the water had been getting in.
 
 <figure>
+  <img src="/images/blog/flat-roof-wakefield/07-flat-roof-stripped-back-joists-exposed.webp" alt="Flat roof stripped back and cleared out, with the joists exposed for inspection" width="1350" height="759" loading="lazy" />
+  <figcaption>Clearing the old roof out and sweeping it back, exposing the joists so they could be properly inspected.</figcaption>
+</figure>
+
+<figure>
   <img src="/images/blog/flat-roof-wakefield/03-water-damaged-flat-roof-timbers-exposed.webp" alt="Water-damaged flat roof timbers exposed after removing the old roof deck" width="1000" height="563" loading="lazy" />
   <figcaption>The deck gone, and the water-damaged timber underneath exposed.</figcaption>
 </figure>
@@ -93,16 +98,11 @@ One honest point worth making: preservative does not put strength back into timb
 Rather than cutting out and splicing short sections, we strengthened the affected joists by fixing full-length 6×2 timbers alongside the existing ones — the full span, bearing properly at both ends, and screwed off at roughly 600mm centres.
 
 <figure>
-  <img src="/images/blog/flat-roof-wakefield/07-full-length-6x2-roof-joist-strengthening.webp" alt="Full-length 6x2 timbers installed alongside existing flat roof joists" width="1350" height="759" loading="lazy" />
-  <figcaption>Full-length 6×2 timbers run in alongside the existing joists, the full span of the roof.</figcaption>
+  <img src="/images/blog/flat-roof-wakefield/10-replacement-firrings-and-flat-roof-insulation.webp" alt="New full-length timbers fitted alongside the existing flat roof joists" width="1350" height="759" loading="lazy" />
+  <figcaption>New full-length timber run in alongside the existing joists, the full span of the roof.</figcaption>
 </figure>
 
 Fixing new timber alongside the old like this — sistering, or partnering — is a recognised repair. Because each new 6×2 runs the full length and sits on solid bearings at both ends, it carries the roof load in its own right. The old joist, decayed end and all, is no longer being relied on to hold the roof up. The new timber does that, and the two are tied together to work as one.
-
-<figure>
-  <img src="/images/blog/flat-roof-wakefield/08-new-6x2-flat-roof-joists-installed.webp" alt="New 6x2 flat roof joists installed to strengthen the roof structure" width="1350" height="759" loading="lazy" />
-  <figcaption>The new full-length joists fixed off, giving the roof its strength back.</figcaption>
-</figure>
 
 That's the difference between a proper repair and a bodge. The load has been transferred onto sound, full-length timber sitting on real bearings — not asked to pass through a few screws across a short patch over a rotten section.
 
@@ -116,20 +116,15 @@ That's the difference between a proper repair and a bodge. The load has been tra
 With the structure sound and treated, we replaced the rotten firrings so the roof had a proper, even fall to shed water — the thing the old roof had never really had.
 
 <figure>
-  <img src="/images/blog/flat-roof-wakefield/10-replacement-firrings-and-flat-roof-insulation.webp" alt="Replacement firrings and new insulation fitted to the flat roof" width="1350" height="759" loading="lazy" />
+  <img src="/images/blog/flat-roof-wakefield/14-new-roof-joists-firrings-and-insulation-detail.webp" alt="Detail of new roof joists, replacement firrings and insulation" width="1350" height="759" loading="lazy" />
   <figcaption>New firrings to restore the fall, with insulation going in.</figcaption>
 </figure>
 
 Then insulation between and over the joists, so the finished roof performs as it should rather than just keeping the weather out.
 
 <figure>
-  <img src="/images/blog/flat-roof-wakefield/09-flat-roof-insulation-between-new-joists.webp" alt="New flat roof insulation fitted between strengthened roof joists" width="1350" height="759" loading="lazy" />
-  <figcaption>Insulation fitted between the strengthened joists.</figcaption>
-</figure>
-
-<figure>
-  <img src="/images/blog/flat-roof-wakefield/14-new-roof-joists-firrings-and-insulation-detail.webp" alt="Detail of new roof joists, replacement firrings and insulation" width="1350" height="759" loading="lazy" />
-  <figcaption>The build-up coming together — sound joists, new firrings and insulation.</figcaption>
+  <img src="/images/blog/flat-roof-wakefield/12-osb-flat-roof-boarding-over-insulation.webp" alt="OSB boarding being laid over the new flat roof insulation" width="759" height="1350" loading="lazy" />
+  <figcaption>Insulation in, and the first boards going down over it.</figcaption>
 </figure>
 
 Then a fresh 18mm OSB deck, screwed down over the top. Along the front edge we fixed a batten to form the drip detail, back into the new full-length timbers — so the finished edge is carried on sound timber, not the old weathered end that had been left behind it.
@@ -144,11 +139,6 @@ Decking like this isn't just screwed down tight and forgotten. Timber boards mov
 <figure>
   <img src="/images/blog/flat-roof-wakefield/20mm-expansion-gap.webp" alt="20mm expansion gap left between the OSB boards on the flat roof deck" width="1250" height="703" loading="lazy" />
   <figcaption>The 20mm expansion gap left around the decking so the boards can move without buckling.</figcaption>
-</figure>
-
-<figure>
-  <img src="/images/blog/flat-roof-wakefield/12-osb-flat-roof-boarding-over-insulation.webp" alt="OSB flat roof boarding fitted over new joists and insulation" width="759" height="1350" loading="lazy" />
-  <figcaption>Decking fitted over the new joists and insulation, flat and solid.</figcaption>
 </figure>
 
 <figure>
