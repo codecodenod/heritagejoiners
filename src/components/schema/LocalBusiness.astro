@@ -22,7 +22,6 @@ const schema = {
   url,
   telephone: telephone,
   ...(sameAs.length ? { sameAs } : {}),
-  logo: `${url}/heritage-joiners-hj-logo-180.webp`,
   address: {
     '@type': 'PostalAddress',
     ...(address.street ? { streetAddress: address.street } : {}),
@@ -57,9 +56,6 @@ const schema = {
   }),
   priceRange: '££',
   image: `${url}/images/case-studies/counting-house/counting-house-hero.webp`,
-  parentOrganization: {
-    '@id': `${url}/#organization`,
-  },
 };
 ---
 

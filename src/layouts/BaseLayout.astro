@@ -11,6 +11,7 @@ import Footer from '../components/layout/Footer.astro';
 import OrganizationSchema from '../components/schema/Organization.astro';
 import LocalBusinessSchema from '../components/schema/LocalBusiness.astro';
 import WebSiteSchema from '../components/schema/WebSite.astro';
+import frauncesFontUrl from '@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2?url';
 
 interface Props {
   title?: string;
@@ -60,15 +61,6 @@ const twitterCard = 'summary_large_image';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Google tag (gtag.js) — GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5BC6EPE36"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-G5BC6EPE36');
-    </script>
-
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
@@ -86,6 +78,18 @@ const twitterCard = 'summary_large_image';
 
     <!-- Description -->
     <meta name="description" content={description} />
+
+    <link rel="preload" href={frauncesFontUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <!-- Google tag (gtag.js) — GA4 -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5BC6EPE36"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-G5BC6EPE36');
+    </script>
 
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
@@ -121,8 +125,14 @@ const twitterCard = 'summary_large_image';
     {schema === 'localbusiness' && <LocalBusinessSchema />}
   </head>
   <body class="min-h-screen flex flex-col bg-bone text-ink">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:px-4 focus:py-3 focus:bg-ink focus:text-bone focus:rounded focus:outline-2 focus:outline-offset-2 focus:outline-oak"
+    >
+      Skip to main content
+    </a>
     <Header />
-    <main class="flex-1">
+    <main id="main-content" class="flex-1">
       <slot />
     </main>
     <Footer />

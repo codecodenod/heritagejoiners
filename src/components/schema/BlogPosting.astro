@@ -12,13 +12,10 @@ interface Props {
 }
 
 const props = Astro.props;
-const { url: siteUrl, name: siteName } = siteConfig;
+const { url: siteUrl } = siteConfig;
 
-const organization = {
-  '@type': 'Organization',
-  '@id': `${siteUrl}/#organization`,
-  name: siteName,
-  url: siteUrl,
+const publisher = {
+  '@id': `${siteUrl}/#localbusiness`,
 };
 
 const schema = {
@@ -31,10 +28,10 @@ const schema = {
     '@type': 'Person',
     name: 'Rob',
     jobTitle: 'Bench hand joiner (NVQ Level 2, time served)',
-    worksFor: { '@id': 'https://heritagejoiners.co.uk/#organization' },
+    worksFor: { '@id': `${siteUrl}/#localbusiness` },
     url: 'https://heritagejoiners.co.uk/about',
   },
-  publisher: organization,
+  publisher,
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id': props.url,

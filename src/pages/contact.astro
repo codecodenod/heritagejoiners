@@ -10,7 +10,7 @@ import { siteConfig } from '../config/site';
 const { name, phone, whatsapp, address, hours } = siteConfig;
 ---
 
-<BaseLayout title="Contact a Joiner in Pontefract & Wakefield" description="Contact a joiner or carpenter in Pontefract, Wakefield, and West Yorkshire for carpentry, joinery, repairs, kitchens, doors, windows, stairs, and heritage timber work.">
+<BaseLayout title="Contact a Joiner in Pontefract & Wakefield" description="Contact a joiner or carpenter in Pontefract, Wakefield and West Yorkshire for joinery, repairs, kitchens, doors, windows, stairs and heritage timber work.">
   <!-- Hero: Yorkshire countryside background with fade for text legibility -->
   <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
     <img
@@ -63,10 +63,10 @@ const { name, phone, whatsapp, address, hours } = siteConfig;
           <h2 class="font-display text-2xl text-ink mb-2">Send a message</h2>
           <p class="text-ink/70 text-sm mb-6">Fill this in and it comes straight through to Rob. For photos, WhatsApp below is easiest.</p>
 
-          <div data-form-banner="sent" hidden class="mb-6 p-4 rounded-md bg-patina/20 border border-patina text-ink">
+          <div data-form-banner="sent" role="status" hidden class="mb-6 p-4 rounded-md bg-patina/20 border border-patina text-ink">
             Thanks — your message has been sent. Rob will get back to you as soon as he can.
           </div>
-          <div data-form-banner="error" hidden class="mb-6 p-4 rounded-md bg-rust/10 border border-rust text-ink">
+          <div data-form-banner="error" role="alert" hidden class="mb-6 p-4 rounded-md bg-rust/10 border border-rust text-ink">
             Sorry — something went wrong sending that. Please try again, or use phone or WhatsApp below.
           </div>
 
@@ -74,17 +74,17 @@ const { name, phone, whatsapp, address, hours } = siteConfig;
             <div>
               <label for="name" class="block font-display text-sm text-ink mb-1">Name</label>
               <input type="text" id="name" name="name" required maxlength="200" autocomplete="name"
-                class="w-full px-4 py-3 rounded-md border border-ink/20 bg-paper text-ink focus:outline-none focus:border-oak" />
+                class="w-full px-4 py-3 rounded-md border border-ink/20 bg-paper text-ink focus:border-oak focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-oak" />
             </div>
             <div>
               <label for="email" class="block font-display text-sm text-ink mb-1">Email</label>
               <input type="email" id="email" name="email" required maxlength="200" autocomplete="email"
-                class="w-full px-4 py-3 rounded-md border border-ink/20 bg-paper text-ink focus:outline-none focus:border-oak" />
+                class="w-full px-4 py-3 rounded-md border border-ink/20 bg-paper text-ink focus:border-oak focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-oak" />
             </div>
             <div>
               <label for="message" class="block font-display text-sm text-ink mb-1">Message</label>
               <textarea id="message" name="message" required rows="6" maxlength="5000"
-                class="w-full px-4 py-3 rounded-md border border-ink/20 bg-paper text-ink focus:outline-none focus:border-oak"></textarea>
+                class="w-full px-4 py-3 rounded-md border border-ink/20 bg-paper text-ink focus:border-oak focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-oak"></textarea>
             </div>
 
             <!-- Honeypot: hidden from humans, bots fill it in -->
@@ -95,7 +95,7 @@ const { name, phone, whatsapp, address, hours } = siteConfig;
 
             <!-- Cloudflare Turnstile bot check -->
             <div class="cf-turnstile" data-sitekey="0x4AAAAAAD2hMGTTgLAaOgHC"></div>
-            <p data-turnstile-hint hidden class="text-rust text-sm">
+            <p data-turnstile-hint role="alert" hidden class="text-rust text-sm">
               Please complete the security check above before sending.
             </p>
 

@@ -1,19 +1,18 @@
 # Cloudflare Cache Rules
+# Path lines take NO trailing colon — that is the documented _headers syntax.
 
-/images/*:
+# Content-hashed build output. Safe to cache forever.
+/_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
-/fonts/*:
-  Cache-Control: public, max-age=31536000, immutable
+# Images use stable descriptive filenames, so they are NOT immutable —
+# a replaced photo at the same filename must be able to expire.
+/images/*
+  Cache-Control: public, max-age=2592000
 
-/_astro/*:
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.html:
-  Cache-Control: no-store, no-cache
-
-/:
-  Cache-Control: no-store, no-cache
-
-/sitemap*.xml:
-  Cache-Control: public, max-age=3600
+# Security header.
+# Note: Cloudflare Pages already sends x-content-type-options: nosniff and
+# referrer-policy: strict-origin-when-cross-origin by default (verified live),
+# so only the clickjacking header is actually missing.
+/*
+  X-Frame-Options: SAMEORIGIN

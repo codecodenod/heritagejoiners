@@ -65,7 +65,7 @@ On period properties, usually yes. Original windows carry things a standard repl
 
 Matching new timber to what's already there is central to that kind of work. Heritage Joiners contributed specialist joinery work to the restoration of [The Counting House in Pontefract](/case-studies/counting-house) — a project later recognised with the Heritage Award at Pontefract Civic Society's 2025 Design Awards — where retaining and matching existing timber detail mattered throughout.
 
-<img src="/images/blog/timber-window-repair/counting-house-pontefract-sash-window-restoration.webp" alt="Restored timber sash window at The Counting House in Pontefract" width="800" height="1422" loading="lazy" />
+<img src="/images/blog/timber-window-repair/counting-house-pontefract-sash-window-restoration.webp" alt="Restored timber sash window at The Counting House in Pontefract" width="1080" height="1434" loading="lazy" />
 
 On listed buildings and in conservation areas, repairing the original windows is often preferred to replacing them, and there may be consent requirements attached. That isn't legal advice: if your property is listed or protected, check what's needed before changing any historic windows.
 
