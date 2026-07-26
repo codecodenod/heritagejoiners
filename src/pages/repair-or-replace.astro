@@ -14,24 +14,28 @@ const stages = [
   {
     title: '1. Retain',
     image: '/images/homepage/service-windows.webp',
+    alt: 'A weathered timber sash window before and after repair and repainting',
     trigger: 'Sound timber, minor movement, local wear, failed putty, loose beads, stiff operation, or small areas that do not affect structure.',
     link: '/services/windows',
   },
   {
     title: '2. Selective splice',
-    image: '/images/homepage/service-rot.webp',
+    image: '/images/heritage-joiners-splice-repair.webp',
+    alt: 'Decayed column base cut back and spliced with new timber, then finished with a matching moulded plinth',
     trigger: 'Decay is localised and can be cut back to sound timber while retaining the original member, profile, and surrounding fabric.',
     link: '/services/timber-repair',
   },
   {
     title: '3. Partial replacement',
     image: '/images/homepage/service-rot.webp',
+    alt: 'Fresh timber let into a decayed window frame where the original section had failed',
     trigger: 'A rail, stile, sill, frame section, or door component is too far gone, but the wider window or door can still be retained.',
     link: '/services/doors',
   },
   {
     title: '4. Full replacement',
     image: '/images/homepage/service-windows.webp',
+    alt: 'A timber sash window beyond economical repair alongside its replacement',
     trigger: 'Remaining sound timber is too low for a durable repair, critical zones have failed, or earlier repairs make another repair poor value.',
     link: '/services/timber-repair',
   },
@@ -101,7 +105,7 @@ const description = 'A four-stage repair-or-replace assessment for listed and pe
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {stages.map((stage) => (
           <article class="service-card bg-paper overflow-hidden">
-            <img src={stage.image} alt="" width="800" height="600" class="w-full h-56 object-cover" loading="lazy" />
+            <img src={stage.image} alt={stage.alt} width="800" height="600" class="w-full h-56 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-display text-2xl text-ink mb-3">{stage.title}</h3>
               <p class="text-ink/70 mb-4">{stage.trigger}</p>
@@ -117,22 +121,32 @@ const description = 'A four-stage repair-or-replace assessment for listed and pe
   </section>
 
   <section class="py-14 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <div>
-        <div class="accent-line mx-0 mb-6"></div>
-        <h2 class="font-display text-3xl lg:text-5xl text-ink mb-6">What we look at</h2>
-        <p class="text-ink/70 mb-8">
-          A good recommendation comes from condition. These are the practical checks behind the advice.
-        </p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <div class="accent-line mx-0 mb-6"></div>
+          <h2 class="font-display text-3xl lg:text-5xl text-ink mb-6">What we look at</h2>
+          <p class="text-ink/70 mb-8">
+            A good recommendation comes from condition. These are the practical checks behind the advice.
+          </p>
+        </div>
+        <ul class="space-y-4">
+          {checks.map((check) => (
+            <li class="flex gap-4 text-ink/80">
+              <span class="text-oak font-display">✓</span>
+              <span>{check}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul class="space-y-4">
-        {checks.map((check) => (
-          <li class="flex gap-4 text-ink/80">
-            <span class="text-oak font-display">✓</span>
-            <span>{check}</span>
-          </li>
-        ))}
-      </ul>
+      <img
+        src="/images/blog/flat-roof-wakefield/05-existing-flat-roof-joists-after-strip-out.webp"
+        alt="Flat roof stripped back to expose the existing joists, decayed timber and old insulation"
+        loading="lazy"
+        width="1000"
+        height="563"
+        class="w-full h-auto rounded-lg mt-12 lg:mt-16"
+      />
     </div>
   </section>
 

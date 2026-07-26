@@ -27,7 +27,10 @@ faqs:
     answer: "Usually whichever way keeps the gate clear of steps, slopes, bins or planting on the other side, and whichever way suits how the latch and any self-closing hardware are meant to work. It's worth checking before the posts and hinges go in, since it's awkward to change afterwards."
 ---
 
-<img src="/images/blog/garden-gate/made-to-measure-wooden-garden-gate-fitted.webp" alt="Bespoke ledged and braced garden gate with an arched top, made to measure and fitted" width="1080" height="1920" fetchpriority="high" />
+<figure>
+  <img src="/images/blog/garden-gate/made-to-measure-wooden-garden-gate-fitted.webp" alt="Bespoke ledged and braced garden gate with an arched top, made to measure and fitted" width="1080" height="1920" fetchpriority="high" />
+  <figcaption>The finished gate, made to measure and hung in its opening.</figcaption>
+</figure>
 
 We recently built a bespoke ledged and braced garden gate to replace an old one that had failed. It's built from 4x1 tanalised timber with an arched top, and made to suit the existing opening rather than a standard off-the-shelf size. It's a traditional way to build a timber gate, and still the right way for most garden and side gates.
 
@@ -51,7 +54,10 @@ A plain square-top gate is straightforward to set out — mark a line, cut it. A
 
 We marked the arch to suit the width of this particular opening, checked it for symmetry before committing to any cuts, then cut and refined the curve until the line ran clean and even across the top rail. It's more setting out than a square-top gate needs, and more time cutting and cleaning up the shape, but it's what gives an arched wooden gate its character rather than it looking like an afterthought bolted onto a standard frame.
 
-<img src="/images/blog/garden-gate/arched-top-tanalised-timber-garden-gate.webp" alt="Arched garden gate built from 4x1 tanalised timber" width="1080" height="1920" loading="lazy" />
+<figure>
+  <img src="/images/blog/garden-gate/arched-top-tanalised-timber-garden-gate.webp" alt="Arched garden gate built from 4x1 tanalised timber" width="1080" height="1920" loading="lazy" />
+  <figcaption>The arched top cut from 4x1 tanalised timber.</figcaption>
+</figure>
 
 ## How the Gate Was Ledged and Braced
 
@@ -83,7 +89,10 @@ Hinges were chosen heavy enough for the size and weight of the gate, and positio
 
 The gate was hung level, with even gaps maintained around the frame, then the swing was checked through its full travel to make sure it moved freely and didn't catch or drag anywhere. The latch was fitted last and adjusted so it engaged cleanly, and everything was checked again once fitted to confirm the gate opened, closed and latched properly under normal use.
 
-<img src="/images/blog/garden-gate/bespoke-ledged-and-braced-garden-gate.webp" alt="Finished ledged and braced garden gate hung and fitted in its opening" width="1080" height="1920" loading="lazy" />
+<figure>
+  <img src="/images/blog/garden-gate/bespoke-ledged-and-braced-garden-gate.webp" alt="Finished ledged and braced garden gate hung and fitted in its opening" width="1080" height="1920" loading="lazy" />
+  <figcaption>Ledged, braced and hung, fitted tight to the frame.</figcaption>
+</figure>
 
 ## How Much Does a Bespoke Wooden Garden Gate Cost?
 

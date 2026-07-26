@@ -19,7 +19,10 @@ faqs:
     answer: "One clear photo of the whole window from outside, plus close-ups of any damaged areas — the sill, the bottom rails, the corners, and any soft or flaking sections. A note of where the property is and which windows are affected helps too. Photos are enough for a first view, but a firm recommendation still needs a proper look in person."
 ---
 
-<img src="/images/blog/timber-window-repair/rotten-timber-sash-window-bottom-rail.webp" alt="Rotten lower section of a traditional timber sash window before repair" width="1024" height="682" fetchpriority="high" />
+<figure>
+  <img src="/images/blog/timber-window-repair/rotten-timber-sash-window-bottom-rail.webp" alt="Rotten lower section of a traditional timber sash window before repair" width="1024" height="682" fetchpriority="high" />
+  <figcaption>Rot in the bottom rail of a sash window — the point where most get written off.</figcaption>
+</figure>
 
 Timber windows get condemned far too quickly. A bit of soft wood at the bottom of a sash, some flaking paint and a draught, and the assumption is that the whole window needs ripping out. Often it doesn't. Where the decay is localised and most of the original frame and sash are still sound, a timber window repair is usually possible — and on an older property that's frequently the better answer, not just the cheaper one.
 
@@ -35,7 +38,10 @@ Rot doesn't appear at random. It goes where water sits and can't dry out, and on
 
 It also follows failure. Where paint has cracked and let water in, where putty has come away from the glass, and — very often — where a previous filler repair has been smeared over soft timber and simply sealed the damp in behind it. Those quick cosmetic fixes are one of the most common reasons a window that could have been repaired properly ends up worse than it started.
 
-<img src="/images/blog/timber-window-repair/damaged-wooden-window-sill-before-repair.webp" alt="Damaged wooden window sill showing decay before a timber repair" width="640" height="480" loading="lazy" />
+<figure>
+  <img src="/images/blog/timber-window-repair/damaged-wooden-window-sill-before-repair.webp" alt="Damaged wooden window sill showing decay before a timber repair" width="640" height="480" loading="lazy" />
+  <figcaption>Decay in a window sill before any repair work started.</figcaption>
+</figure>
 
 ## What a Proper Timber Window Repair Involves
 
@@ -45,7 +51,10 @@ The real process is closer to this. Inspect the affected area and find how far t
 
 None of that is a job to encourage anyone to take on with a tube of filler and hope — it's the [timber rot removal and splice repair](/services/timber-repair) side of the work, where cutting back to viable timber and matching the section is what makes the repair last.
 
-<img src="/images/blog/timber-window-repair/timber-window-frame-splice-repair.webp" alt="Timber splice repair let into an old wooden window frame" width="447" height="447" loading="lazy" />
+<figure>
+  <img src="/images/blog/timber-window-repair/timber-window-frame-splice-repair.webp" alt="Timber splice repair let into an old wooden window frame" width="447" height="447" loading="lazy" />
+  <figcaption>New timber spliced into the frame, cut back to sound wood and matched to the existing section.</figcaption>
+</figure>
 
 ## Timber Splice or Resin Repair?
 
@@ -65,11 +74,17 @@ On period properties, usually yes. Original windows carry things a standard repl
 
 Matching new timber to what's already there is central to that kind of work. Heritage Joiners contributed specialist joinery work to the restoration of [The Counting House in Pontefract](/case-studies/counting-house) — a project later recognised with the Heritage Award at Pontefract Civic Society's 2025 Design Awards — where retaining and matching existing timber detail mattered throughout.
 
-<img src="/images/blog/timber-window-repair/counting-house-pontefract-sash-window-restoration.webp" alt="Restored timber sash window at The Counting House in Pontefract" width="1080" height="1434" loading="lazy" />
+<figure>
+  <img src="/images/blog/timber-window-repair/counting-house-pontefract-sash-window-restoration.webp" alt="Restored timber sash window at The Counting House in Pontefract" width="1080" height="1434" loading="lazy" />
+  <figcaption>Sash window work at The Counting House, Pontefract.</figcaption>
+</figure>
 
 On listed buildings and in conservation areas, repairing the original windows is often preferred to replacing them, and there may be consent requirements attached. That isn't legal advice: if your property is listed or protected, check what's needed before changing any historic windows.
 
-<img src="/images/blog/timber-window-repair/restored-sash-window-after-timber-repair.webp" alt="Restored timber sash window after a timber repair, repainted and reglazed" width="1100" height="825" loading="lazy" />
+<figure>
+  <img src="/images/blog/timber-window-repair/restored-sash-window-after-timber-repair.webp" alt="Restored timber sash window after a timber repair, repainted and reglazed" width="1100" height="825" loading="lazy" />
+  <figcaption>A sash window repaired, repainted and reglazed.</figcaption>
+</figure>
 
 ## What Affects Timber Window Repair Cost?
 

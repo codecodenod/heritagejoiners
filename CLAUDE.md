@@ -4,6 +4,10 @@ Astro static site, deployed via GitHub → Cloudflare Pages. No React, no client
 
 **Golden rule: never invent a new visual pattern. Every new page is built by copying the exemplar file for its type (listed below) and swapping the content.**
 
+The whole site is one theme. Same layouts, same heading scale, same fonts, same section rhythm, same colour tokens — on every page, every time. If a change would make one page look different from the rest, stop and ask first.
+
+**Never edit these:** `src/styles/tokens.css`, `src/styles/typography.css`, `src/styles/components.css`, or the structure of `src/layouts/BaseLayout.astro`. Never add a new colour, font, heading size or spacing value — use the tokens and the scale below. Full detail in `PRIVATE/implementation.md` §0 (some file references in it are out of date, but the rules stand).
+
 ## Hard rules
 
 - **Git:** never run git commands (no add/commit/push/status). When asked for a commit message, output message text only.
@@ -16,6 +20,7 @@ Astro static site, deployed via GitHub → Cloudflare Pages. No React, no client
 
 ## Content guardrails (non-negotiable)
 
+- **Before writing or editing ANY copy on the site, read `PRIVATE/content-guide.md` in full and follow it.** It is the voice guide — tone, canonical phrases to use, clichés to avoid, per-page notes. It beats `PRIVATE/about.md` where they disagree. This applies to every wording change, however small: page copy, headings, card descriptions, alt text, meta titles and descriptions. Read the file, don't work from memory of it.
 - Never write the word **"pine"** — say "original timber", "original exterior frame", "original Victorian door".
 - Award wording, exactly: **"Heritage Award at Pontefract Civic Society's 2025 Design Awards"** — never "restoration award". The **project** won the award, not Rob — never "award-winning joiner".
 - **No testimonials, reviews, star ratings or review schema** until real ones exist and are approved. Never invent quotes, prices, or claims.
@@ -49,8 +54,27 @@ Astro static site, deployed via GitHub → Cloudflare Pages. No React, no client
 
 ## Page types — exemplar files (copy these, swap content)
 
-### Blog post — exemplar: `src/content/blog/what-is-second-fix-carpentry.md`
-Markdown file in `src/content/blog/`. Frontmatter: `title`, `description` (130–165 chars), `pubDate: YYYY-MM-DD`, `draft: false`. Everything else is automatic (page, BlogPosting schema, sitemap, blog index, /sitemap page). No registration needed.
+### Blog post — exemplar: `src/content/blog/flat-roof-repair-wakefield.md`
+**Every blog post must match this structure exactly. Copy the exemplar and swap the content — never restyle a post, never add per-post CSS, never wrap a post in custom markup.** The layout, fonts, heading scale and prose styling all come from `src/pages/blog/[...slug].astro` and are the same for every post; nothing in a post's markdown may override them.
+
+Markdown file in `src/content/blog/`. Frontmatter:
+- `title`, `description` (130–165 chars), `pubDate: YYYY-MM-DD`, `draft: false` — all required
+- `ogImage` — the post's best photo, required whenever the post has images
+- `faqs` — optional `question`/`answer` pairs; adds FAQPage schema and a "Common questions" section automatically
+
+Body rules:
+- Headings in the body start at `##` (h2). The post title is the h1 and is rendered by the layout — never write an `#` h1 in the markdown.
+- **Images always use `<figure>` with a `<figcaption>`**, never a bare `<img>`:
+  ```html
+  <figure>
+    <img src="/images/blog/<topic>/<seo-name>.webp" alt="Meaningful description" width="1500" height="844" />
+    <figcaption>Short plain caption.</figcaption>
+  </figure>
+  ```
+  Always include `alt`, `width` and `height`. Images live in `public/images/blog/<topic>/` and follow the image pipeline above.
+- Everything else is automatic (page, BlogPosting schema, sitemap, blog index, /sitemap page). No registration needed.
+
+Note: `bespoke-ledged-and-braced-garden-gate.md` and `can-timber-windows-be-repaired.md` still use bare `<img>` from before this rule. Don't copy them — follow the exemplar.
 
 ### Case study — exemplars: parent `src/pages/case-studies/counting-house/index.astro`, sub-page `src/pages/case-studies/counting-house/beam-repair-and-restoration.astro`
 Pattern: `CaseStudyLayout` + hero (big landscape image below the title, OR text-left/portrait-image-right grid) + **features array** rendered as alternating text/image rows (single image = `aspect-[4/5]` feature; multiple = `aspect-square` 2-col tile grid) + related-links row + CTA section.
@@ -73,6 +97,8 @@ Use `BaseLayout` with the standard hero section pattern. Check `/sitemap` page p
 
 ## SEO conventions
 
+- **Before writing or editing any page copy, read `PRIVATE/SEO/keyword-strategy.md` and use that page's primary keyword.** It lists the primary keyword, secondary keywords and search volume for all 18 service pages plus the site-wide hire-intent terms. The primary keyword goes in the `title`, the `<h1>` and the opening words of the copy. Secondary keywords go in H2s and body text, written like a joiner talks — never keyword-stuffed. Two notes from the strategy: the heritage/restoration cluster belongs on `/services/windows` and `/services/timber-repair` only, not spread across every page; and `fitted wardrobes` and `wall panelling` are the highest-volume terms on the site by roughly ten to one.
+- **Never drop a town from a page title to shorten it.** Pontefract, Wakefield and West Yorkshire are primary local keywords. Google indexes the full title even when it truncates the display, so trimming a town costs ranking and gains nothing. Shorten the keyword phrasing instead. Measure title length with HTML entities decoded — `&amp;` is one character, not five.
 - Unique `title` ≤ ~60 chars, primary keyword first, suffix `| Heritage Joiners` (layouts append it — check the exemplar).
 - Unique meta `description` 130–165 chars.
 - One H1 matching the title's keyword. H2s carry secondary keywords naturally — written like a joiner talks, not keyword strings.
