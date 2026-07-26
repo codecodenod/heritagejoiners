@@ -29,6 +29,21 @@ const reviews = [
     job: 'Side gate',
     text: 'Rob did my gate at the side of my house excellent work man ship . Excellent quality gate I will be using him again for woodwork on my house .',
   },
+  {
+    name: 'David Arundel',
+    rating: 5,
+    source: 'Google',
+    job: 'Garden gate, driveway repair and summerhouse window',
+    // Paragraph breaks are the reviewer's own; wording is untouched.
+    text: [
+      'Have used Rob on several occasions. Always been pleased with his work.',
+      'Rob is always prompt, professional, communicates well, goes beyond the call of duty and is competitively priced.',
+      'Project 1: I needed a new garden gate. Rob uplifted the existing flagstones, made the gate from scratch, installed the gate and concrete pillars, re-set the flagstones and filled in the mortar. Very pleased with the result.',
+      'Project 2: Had two annoying potholes in the drive. Rob removed all loose debris, cut out the shape to be filled, filled the potholes, smoothed them over and sealed them tight. Potholes have never come back!',
+      'Project 3: Had a rotting window frame on my summerhouse. Other joiners had let me down. Rob removed the window frame, fitted a new window complete with safety glass panels, and ensured it matched the existing style of the other windows. Impressed beyond words & never been happier!',
+      'Will be using him again in the future & can thoroughly recommend Rob for those jobs that need doing.',
+    ].join('\n\n'),
+  },
 ];
 
 const reviewCount = reviews.length;
@@ -98,7 +113,11 @@ const description =
               </span>
               <span class="text-xs text-ink/50 font-display uppercase tracking-wide">via {review.source}</span>
             </div>
-            <p class="text-ink/80 mb-4 leading-relaxed">{review.text}</p>
+            <div class="mb-4 space-y-3">
+              {review.text.split('\n\n').map((paragraph) => (
+                <p class="text-ink/80 leading-relaxed">{paragraph}</p>
+              ))}
+            </div>
             <div class="mt-auto pt-3 border-t border-ink/10">
               <p class="font-display text-ink">{review.name}</p>
               <p class="text-sm text-ink/60">{review.job}</p>
