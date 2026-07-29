@@ -9,6 +9,8 @@ interface Props {
   description: string;
   url: string;
   datePublished: string;
+  /** Post's lead photo. Absolute-ised below — Google needs a full URL here. */
+  image?: string;
 }
 
 const props = Astro.props;
@@ -24,6 +26,7 @@ const schema = {
   headline: props.headline,
   description: props.description,
   datePublished: props.datePublished,
+  ...(props.image ? { image: new URL(props.image, siteUrl).toString() } : {}),
   author: {
     '@type': 'Person',
     name: 'Rob',

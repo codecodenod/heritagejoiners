@@ -30,6 +30,7 @@ const fmt = (d: Date) =>
     description={post.data.description}
     datePublished={post.data.pubDate.toISOString()}
     url={canonicalUrl}
+    image={post.data.ogImage}
   />
   {post.data.faqs && <FAQPageSchema faqs={post.data.faqs} />}
 
