@@ -46,22 +46,32 @@ const maintenanceServices = [
   breadcrumbs={breadcrumbs}
   schemaProps={schemaProps}
 
-  ogImage="/images/homepage/carpentry-maintenance-repairs-yorkshire.webp"
+  ogImage="/images/services/maintenance-repairs/carpentry-maintenance-and-repairs-yorkshire.webp"
 >
   <FAQPageSchema slot="schema" faqs={faqItems} />
 
-  <section class="py-16 lg:py-24 bg-paper">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <p class="text-oak uppercase tracking-wide mb-4">Maintenance and smaller jobs</p>
-        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">General Carpentry Repairs in Pontefract, Wakefield &amp; West Yorkshire</h1>
-        <p class="text-lg text-ink/70 mb-8">
-          Rob also handles the smaller, practical side of the business: general carpentry repairs, door and window adjustments, lock replacement, shelving, snagging, and storm damage repair. These jobs may be small, but they still need a proper joiner rather than guesswork.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA />
-          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
-        </div>
+  <!-- Hero: same pattern as the doors page. -->
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/services/maintenance-repairs/carpentry-maintenance-and-repairs-yorkshire.webp"
+      alt="Timber and scaffolding set up for carpentry repair work on a house frontage"
+      width="1448"
+      height="1086"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+          <p class="text-oak uppercase tracking-wide mb-4">Maintenance and smaller jobs</p>
+          <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">General Carpentry Repairs in Pontefract, Wakefield &amp; West Yorkshire</h1>
+          <p class="text-lg text-ink/80 mb-8">
+            Rob also handles the smaller, practical side of the business: general carpentry repairs, door and window adjustments, lock replacement, shelving, snagging, and storm damage repair. These jobs may be small, but they still need a proper joiner rather than guesswork.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <WhatsAppCTA />
+            <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+          </div>
       </div>
     </div>
   </section>

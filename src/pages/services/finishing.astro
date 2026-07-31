@@ -45,21 +45,32 @@ const finishingServices = [
   serviceName="Finishing & Specialist"
   breadcrumbs={breadcrumbs}
   schemaProps={schemaProps}
+  ogImage="/images/services/finishing/joinery-workshop-bench-finishing-pontefract.webp"
 >
   <FAQPageSchema slot="schema" faqs={faqItems} />
 
-  <section class="py-16 lg:py-24 bg-paper">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <p class="text-oak uppercase tracking-wide mb-4">Timber finishing and matching</p>
-        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Wood Staining in Pontefract, Wakefield &amp; West Yorkshire</h1>
-        <p class="text-lg text-ink/70 mb-8">
-          Rob carries out wood staining, wood oiling, timber finishing, French polishing, and sanding and refinishing across West Yorkshire. On straightforward jobs that means careful preparation and the right finish system. On heritage work it can mean closing the visual gap between old timber and repaired sections.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <WhatsAppCTA />
-          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
-        </div>
+  <!-- Hero: same pattern as the doors page. -->
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/services/finishing/joinery-workshop-bench-finishing-pontefract.webp"
+      alt="Oak framed and boarded door on the workshop bench with tools to hand"
+      width="1600"
+      height="1059"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+          <p class="text-oak uppercase tracking-wide mb-4">Timber finishing and matching</p>
+          <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Wood Staining in Pontefract, Wakefield &amp; West Yorkshire</h1>
+          <p class="text-lg text-ink/80 mb-8">
+            Rob carries out wood staining, wood oiling, timber finishing, French polishing, and sanding and refinishing across West Yorkshire. On straightforward jobs that means careful preparation and the right finish system. On heritage work it can mean closing the visual gap between old timber and repaired sections.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <WhatsAppCTA />
+            <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+          </div>
       </div>
     </div>
   </section>
