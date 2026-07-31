@@ -80,8 +80,38 @@ Note: `bespoke-ledged-and-braced-garden-gate.md` and `can-timber-windows-be-repa
 Pattern: `CaseStudyLayout` + hero (big landscape image below the title, OR text-left/portrait-image-right grid) + **features array** rendered as alternating text/image rows (single image = `aspect-[4/5]` feature; multiple = `aspect-square` 2-col tile grid) + related-links row + CTA section.
 Register: add a card to `src/pages/case-studies/index.astro`, and images in `public/images/case-studies/<name>/`.
 
-### Service page — exemplar: `src/pages/services/staircases.astro`
-Pattern: `ServiceLayout` (auto-provides breadcrumbs, Service schema, AreaLinks band) + `FAQPageSchema slot="schema"` + intro section + 2–3 content sections whose H2s carry secondary keywords + FAQ section + coverage + CTA.
+### Service page — exemplar: `src/pages/services/doors.astro`
+**Doors is the template for all 18 service pages. Copy its structure exactly and swap the content.** The other 17 are being brought up to it as photos become available — until then some are still text-only, so copy doors, not whichever page you happen to open.
+
+Pattern: `ServiceLayout` (auto-provides breadcrumbs, Service schema, AreaLinks band) + `FAQPageSchema slot="schema"` + **hero section with a background image** + 2–3 content sections whose H2s carry secondary keywords + FAQ section + coverage + CTA.
+
+**Hero** — identical to the contact and areas pages, no variation:
+```astro
+<section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+  <img src="/images/..." alt="..." width="1500" height="844" fetchpriority="high"
+       class="absolute inset-0 w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+    <div class="max-w-2xl">
+      <p class="text-oak uppercase tracking-wide mb-4">Eyebrow</p>
+      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">…</h1>
+      <p class="text-lg text-ink/80 mb-8">…</p>
+      <div class="flex flex-wrap gap-4"><WhatsAppCTA … /><PhoneLink … variant="secondary" /></div>
+    </div>
+  </div>
+</section>
+```
+Hero image ~1500×850 landscape. `fetchpriority="high"`, never `loading="lazy"` — it is the LCP element. Intro text is `text-ink/80` (not `/70`) so it reads over the photo, and the text column is `max-w-2xl`. Set the page's `ogImage` to the same hero image.
+
+**Body images** — one to five per page, placed beside the copy they illustrate, not dropped in at random. Put them in the right-hand column of an existing `lg:grid-cols-2` content section. Portrait images use the case-study container:
+```astro
+<div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+  <img src="…" alt="…" width="563" height="1000" loading="lazy" class="w-full h-full object-cover" />
+</div>
+```
+Landscape body images use `class="w-full h-auto rounded-xl shadow-lg"` instead. All body images are `loading="lazy"` with explicit `width`/`height`.
+
+Images live in `public/images/services/<service-slug>/`. Resize per the pipeline before use — portraits cap at `800x1000>`, heroes ~1500px wide. Never drop a raw phone photo (e.g. 2268×4032) straight in.
 Title/H1 lead with the page's primary keyword: `"<Primary Keyword> in Pontefract, Wakefield & West Yorkshire | Heritage Joiners"` (keyword data lives in the owner's local `PRIVATE/SEO/keyword-strategy.md` — ask Rob for targets if unavailable).
 Register: add entries to `src/pages/services/index.astro` and the footer `serviceLinks` in `src/components/layout/Footer.astro`.
 

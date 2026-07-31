@@ -48,16 +48,27 @@ const windowServices = [
   breadcrumbs={breadcrumbs}
   schemaProps={schemaProps}
 
-  ogImage="/images/homepage/timber-sash-window-stone-surround.webp"
+  ogImage="/images/services/windows/yorkshire-stone-building-timber-sash-windows.webp"
 >
   <FAQPageSchema slot="schema" faqs={faqItems} />
 
-  <section class="py-16 lg:py-24 bg-paper">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
+  <!-- Hero: timber sash windows on a Yorkshire stone building, with fade for
+       text legibility. Same pattern as the doors page. -->
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/services/windows/yorkshire-stone-building-timber-sash-windows.webp"
+      alt="Timber sash windows in a Yorkshire gritstone building at golden hour, with open countryside beyond"
+      width="2880"
+      height="1440"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
         <p class="text-oak uppercase tracking-wide mb-4">Timber windows and sash work</p>
         <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Sash Window Repair in Pontefract, Wakefield &amp; West Yorkshire</h1>
-        <p class="text-lg text-ink/70 mb-8">
+        <p class="text-lg text-ink/80 mb-8">
           Rob covers sash window repair, timber window repairs, wooden window repair, and full timber window restoration across West Yorkshire. The work starts with condition: cords, pulleys, staff beads, cills, rails, boxes, glazing beds and draughts all tell you what the window needs.
         </p>
         <div class="flex flex-wrap gap-4">
@@ -92,15 +103,32 @@ const windowServices = [
         <p class="text-ink/70">
           Not sure whether your existing windows can be saved? Read our guide on <a href="/blog/can-timber-windows-be-repaired" class="text-oak underline">whether timber windows can be repaired, restored or replaced</a>.
         </p>
-      </div>
-      <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Draught proofing windows and comfort</h2>
+
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4 mt-10">Draught proofing windows and comfort</h2>
         <p class="text-ink/70 mb-3">
           Many people searching for timber window repairs are really trying to solve draughts, failed cords, rattles, or windows that no longer open cleanly. Draught-proofing, easing, correct setting out, and secondary glazing often solve that without changing the look of the building.
         </p>
         <p class="text-ink/70">
           Window work follows the same rule as every heritage joinery decision: keep what is sound, replace only what has genuinely failed, and make the new timber sit properly with the building.
         </p>
+      </div>
+      <div class="space-y-8">
+        <img
+          src="/images/blog/timber-window-repair/damaged-wooden-window-sill-before-repair.webp"
+          alt="Damaged wooden window sill showing decay before a timber repair"
+          width="640"
+          height="480"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+        <img
+          src="/images/homepage/timber-sash-window-stone-surround.webp"
+          alt="White-painted timber sash window set in a stone surround"
+          width="800"
+          height="533"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
       </div>
     </div>
   </section>
