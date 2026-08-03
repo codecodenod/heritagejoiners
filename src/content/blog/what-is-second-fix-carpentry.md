@@ -3,6 +3,7 @@ title: "What is second fix carpentry?"
 description: "Second fix carpentry explained: doors, skirting, architraves and finishing joinery fitted after plastering, with a practical guide to what the work covers."
 pubDate: 2026-06-29
 draft: false
+ogImage: "/images/services/bespoke-joinery/bespoke-joinery-workshop-bench-pontefract.webp"
 ---
 
 If you've had building work quoted, you've probably seen the job split into "first fix" and "second fix" carpentry. It's worth knowing what the second fix actually is, because it's the part you live with every day.

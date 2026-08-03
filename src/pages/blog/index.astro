@@ -39,23 +39,28 @@ const fmt = (d: Date) =>
     </div>
   </section>
 
-  <section class="py-16 lg:py-24 bg-paper">
+  <section class="py-16 lg:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {posts.length === 0 ? (
         <p class="text-ink/60">Posts are on the way — check back soon.</p>
       ) : (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <a
-              href={`/blog/${post.id}`}
-              class="group block bg-bone rounded-lg overflow-hidden border border-ink/10 hover:border-oak transition-colors p-6"
-            >
-              <p class="text-xs text-ink/40 mb-3">{fmt(post.data.pubDate)}</p>
-              <h2 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">
-                {post.data.title}
-              </h2>
-              <p class="text-ink/70 text-sm">{post.data.description}</p>
-              <span class="inline-block mt-4 text-oak font-display text-sm">Read more &rarr;</span>
+            <a href={`/blog/${post.id}`} class="service-card group relative">
+              {post.data.ogImage && (
+                /* alt="" is deliberate: the post title sits directly beneath and
+                   is the accessible name for this link, so describing the photo
+                   again would just repeat it for screen reader users. */
+                <img src={post.data.ogImage} alt="" loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
+              )}
+              <div class="service-card-content">
+                <p class="text-xs text-ink/40 mb-3">{fmt(post.data.pubDate)}</p>
+                <h2 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
+                  {post.data.title}
+                </h2>
+                <p class="text-ink/70 text-sm mb-4 leading-relaxed">{post.data.description}</p>
+                <span class="mt-auto text-oak font-display text-xs">Read more &rarr;</span>
+              </div>
             </a>
           ))}
         </div>
