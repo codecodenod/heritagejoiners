@@ -28,7 +28,7 @@ function label(route: string): string {
 }
 
 const groups: { title: string; match: (r: string) => boolean }[] = [
-  { title: 'Main pages', match: (r) => !r.startsWith('/services') && !r.startsWith('/areas') && !r.startsWith('/case-studies') && !r.startsWith('/blog') },
+  { title: 'Main pages', match: (r) => !r.startsWith('/services') && !r.startsWith('/areas') && !r.startsWith('/case-studies') && !r.startsWith('/blog') && !r.startsWith('/guides') },
   { title: 'Services', match: (r) => r.startsWith('/services') },
   { title: 'Areas we cover', match: (r) => r.startsWith('/areas') },
   { title: 'Case studies', match: (r) => r.startsWith('/case-studies') },
@@ -39,6 +39,11 @@ const blogLinks = [
   { href: '/blog', text: 'Blog' },
   ...posts.map((p) => ({ href: `/blog/${p.id.replace(/\.md$/, '')}`, text: p.data.title || label(p.id) })),
 ];
+
+const guideLinks = routes
+  .filter((route) => route.startsWith('/guides'))
+  .sort((a, b) => a.localeCompare(b))
+  .map((route) => ({ href: route, text: route === '/guides' ? 'Guides' : label(route) }));
 ---
 
 <BaseLayout
@@ -75,6 +80,16 @@ const blogLinks = [
             {blogLinks.map((l) => (
               <li>
                 <a href={l.href} class="text-oak hover:text-ink transition-colors">{l.text}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-display text-xl text-ink mb-4 pb-2 border-b border-ink/10">Guides</h2>
+          <ul class="space-y-2">
+            {guideLinks.map((link) => (
+              <li>
+                <a href={link.href} class="text-oak hover:text-ink transition-colors">{link.text}</a>
               </li>
             ))}
           </ul>

@@ -23,12 +23,12 @@ const { phone } = siteConfig;
         />
         <div class="flex flex-col">
           <span style="font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400;" class="text-xs sm:text-xl lg:text-2xl text-ink tracking-wider uppercase whitespace-nowrap">Heritage Joiners</span>
-          <span style="font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400;" class="text-[10px] tracking-widest text-oak uppercase whitespace-nowrap hidden sm:block lg:hidden xl:block">Specialist Joinery &middot; Period Restoration &middot; Fine Craftsmanship</span>
+          <span style="font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400;" class="text-[10px] tracking-widest text-oak uppercase whitespace-nowrap hidden sm:block">Specialist Joinery &middot; Period Restoration &middot; Fine Craftsmanship</span>
         </div>
       </a>
 
       <!-- Desktop nav + phone -->
-      <div class="hidden lg:flex items-center gap-4 xl:gap-6">
+      <div class="hidden xl:flex items-center gap-4 xl:gap-6">
         <Nav />
         <PhoneLink
           phone={phone.tel}
@@ -39,7 +39,7 @@ const { phone } = siteConfig;
 
       <!-- Mobile menu button -->
       <button
-        class="lg:hidden p-2 text-ink -mr-5"
+        class="xl:hidden p-2 text-ink -mr-5"
         aria-label="Open menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -67,7 +67,7 @@ const { phone } = siteConfig;
 <!-- Mobile nav panel — MUST be outside <header> so backdrop-filter doesn't trap fixed positioning -->
 <div
   id="mobile-menu"
-  class="lg:hidden hidden fixed inset-0 z-[9999] mobile-nav-panel"
+  class="xl:hidden hidden fixed inset-0 z-[9999] mobile-nav-panel"
 >
   <div class="flex flex-col h-full p-6 relative" style="z-index:1">
     <div class="flex items-center justify-between mb-6">
@@ -143,7 +143,7 @@ const { phone } = siteConfig;
     }
   });
 
-  window.matchMedia('(min-width: 1024px)').addEventListener('change', (event) => {
+  window.matchMedia('(min-width: 1280px)').addEventListener('change', (event) => {
     if (event.matches && !mobileMenu?.classList.contains('hidden')) {
       closeMenu();
     }

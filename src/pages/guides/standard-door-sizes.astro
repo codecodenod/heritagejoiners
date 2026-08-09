@@ -1,0 +1,500 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
+import ArticleSchema from '../../components/schema/Article.astro';
+import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+const title = 'Standard Door Sizes UK';
+const description = 'Standard door sizes UK guide with internal, external, fire-door and metric dimensions, plus clear advice on measuring openings, linings and safe trimming.';
+const canonicalUrl = `${url}/guides/standard-door-sizes`;
+const heroImage = '/images/case-studies/counting-house/the-counting-house-oak-front-door-in-situ.webp';
+
+const breadcrumbs = [
+  { name: 'Home', url: `${url}/` },
+  { name: 'Guides', url: `${url}/guides` },
+  { name: title, url: canonicalUrl },
+];
+
+const faqItems = [
+  {
+    question: 'What is the most common internal door size in the UK?',
+    answer:
+      'There is no single size for every house. Frequently stocked imperial leaves include 1981 × 762 × 35mm and 1981 × 838 × 35mm. Metric ranges commonly use a 2040mm height with widths from 526mm to 926mm, usually at 100mm steps. Check the exact range before altering the opening.',
+  },
+  {
+    question: 'Is the door size the same as the opening size?',
+    answer:
+      "No. A quoted door size normally means the leaf itself. The lining or frame, fitting clearances, threshold and packing space make the structural opening larger. Use the doorset maker's opening schedule or have the opening set out for the chosen leaf and lining.",
+  },
+  {
+    question: 'How much can be trimmed off an internal door?',
+    answer:
+      "There is no universal trimming allowance. It depends on the construction and the lippings fitted around that particular door. Read the manufacturer's current instructions before cutting, and do not exceed the certified allowance on a fire door.",
+  },
+  {
+    question: 'Are fire doors a standard size?',
+    answer:
+      'Certified fire-door leaves are sold in many familiar imperial and metric sizes, but size and thickness alone do not establish the rating. The leaf, frame, seals, ironmongery, glazing and installation must follow the evidence and instructions for that doorset.',
+  },
+  {
+    question: 'What door width is needed for wheelchair access?',
+    answer:
+      'Accessibility guidance works to the clear opening with the door open, not the nominal leaf width. The required width depends on the building, the approach and the applicable rules. For work in England, check the current Approved Document M and the requirements for the particular project before choosing a leaf.',
+  },
+  {
+    question: 'When is a bespoke door needed?',
+    answer:
+      'A bespoke door is sensible when a sound opening cannot take a stocked size without poor proportions or excessive alteration, or where an existing period door, moulding, pair, frame or timber specification has to be matched. Measure the whole assembly before deciding.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  ogImage={heroImage}
+>
+  <BreadcrumbSchema items={breadcrumbs} />
+  <FAQPageSchema faqs={faqItems} />
+  <ArticleSchema
+    headline={title}
+    description={description}
+    url={canonicalUrl}
+    image={`${url}${heroImage}`}
+    datePublished="2026-08-07"
+  />
+
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src={heroImage}
+      alt="Finished solid oak front door in place at the entrance of The Counting House, Pontefract"
+      width="1500"
+      height="844"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Doors &amp; Windows guide</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Standard Door Sizes UK</h1>
+        <p class="text-lg text-ink/80 mb-8">
+          Standard door sizes in the UK are a set of commonly stocked leaf dimensions, not one universal size. The useful question is not only which door will fit between the stops. It is whether the leaf, lining, clear opening, floor clearance, ironmongery and any fire or access requirement work together.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a door job" />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Standard door sizes UK: quick answer</h2>
+      <p class="text-ink/70 mb-6">
+        Dimensions below are shown as height × width, with thickness added where it matters. They are door-leaf sizes unless the text says otherwise.
+      </p>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Door type</th>
+              <th>Common leaf examples</th>
+              <th>Common thickness</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Internal, imperial</td>
+              <td>1981 × 762mm and 1981 × 838mm</td>
+              <td>35mm</td>
+            </tr>
+            <tr>
+              <td>Internal, metric</td>
+              <td>2040 × 726mm and 2040 × 826mm</td>
+              <td>40mm</td>
+            </tr>
+            <tr>
+              <td>External timber leaf</td>
+              <td>1981 × 838mm and 1981 × 914mm</td>
+              <td>Often 44mm</td>
+            </tr>
+            <tr>
+              <td>FD30 fire door</td>
+              <td>Imperial and metric sizes are available</td>
+              <td>Commonly 44mm; certified exceptions exist</td>
+            </tr>
+            <tr>
+              <td>FD60 fire door</td>
+              <td>Imperial and metric sizes are available</td>
+              <td>Commonly 54mm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-ink/70 mt-6">
+        This is a starting point, not an order sheet. Availability changes between designs and constructions. Check the actual product or doorset before changing a lining or forming a new opening.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Common internal door sizes in millimetres, inches and feet</h2>
+        <p class="text-ink/70 mb-6">
+          Older UK houses usually have openings set around imperial door leaves. The dimensions are now marked in millimetres, but the width still lands on a whole number of inches. A 1981mm-high door is the familiar 78-inch, or 6-foot-6-inch, leaf.
+        </p>
+        <div class="overflow-x-auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Leaf size in millimetres</th>
+                <th>Size in inches</th>
+                <th>Size in feet and inches</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1981 × 457mm</td><td>78 × 18in</td><td>6ft 6in × 1ft 6in</td></tr>
+              <tr><td>1981 × 533mm</td><td>78 × 21in</td><td>6ft 6in × 1ft 9in</td></tr>
+              <tr><td>1981 × 610mm</td><td>78 × 24in</td><td>6ft 6in × 2ft 0in</td></tr>
+              <tr><td>1981 × 686mm</td><td>78 × 27in</td><td>6ft 6in × 2ft 3in</td></tr>
+              <tr><td>1981 × 711mm</td><td>78 × 28in</td><td>6ft 6in × 2ft 4in</td></tr>
+              <tr><td>1981 × 762mm</td><td>78 × 30in</td><td>6ft 6in × 2ft 6in</td></tr>
+              <tr><td>2032 × 813mm</td><td>80 × 32in</td><td>6ft 8in × 2ft 8in</td></tr>
+              <tr><td>1981 × 838mm</td><td>78 × 33in</td><td>6ft 6in × 2ft 9in</td></tr>
+              <tr><td>1981 × 864mm</td><td>78 × 34in</td><td>6ft 6in × 2ft 10in</td></tr>
+              <tr><td>1981 × 914mm</td><td>78 × 36in</td><td>6ft 6in × 3ft 0in</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-ink/70 mt-6">
+          The four widths seen most often in ordinary internal ranges are 610, 686, 762 and 838mm. Narrower and wider leaves, including 711, 813, 864 and 914mm, are available in some ranges but may be limited to particular designs or made to order. That is why the door should be chosen before the opening is altered.
+        </p>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4 mt-10">Metric door sizes</h2>
+        <p class="text-ink/70 mb-6">
+          Metric doors are a separate family rather than rounded imperial sizes. A common metric range uses a 2040mm height, widths increasing in 100mm steps and a 40mm non-fire thickness.
+        </p>
+        <div class="overflow-x-auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Metric leaf size</th>
+                <th>Common non-fire thickness</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>2040 × 526mm</td><td>40mm</td></tr>
+              <tr><td>2040 × 626mm</td><td>40mm</td></tr>
+              <tr><td>2040 × 726mm</td><td>40mm</td></tr>
+              <tr><td>2040 × 826mm</td><td>40mm</td></tr>
+              <tr><td>2040 × 926mm</td><td>40mm</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-ink/70 mt-6">
+          Do not mix a 40mm metric leaf with a lining rebated for a 35mm imperial door and expect the stops, hinges and latch to land correctly. The whole set needs checking.
+        </p>
+      </div>
+      <div>
+        <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+          <img
+            src="/images/guides/standard-door-sizes/standard-internal-door-sizes-uk-measurement-v3.webp"
+            alt="A white four-panel internal door with a tape measure across its width"
+            width="800"
+            height="1000"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Common door thicknesses</h2>
+        <p class="text-ink/70 mb-6">
+          Thickness affects the lining rebate, hinge position, latch, stops and clear opening. It is part of the size, not a detail to sort out later.
+        </p>
+        <div class="overflow-x-auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Leaf type</th>
+                <th>Common thickness</th>
+                <th>Important qualification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Imperial internal, non-fire</td><td>35mm</td><td>Check the selected range</td></tr>
+              <tr><td>Metric internal, non-fire</td><td>40mm</td><td>Some products differ</td></tr>
+              <tr><td>External timber door</td><td>44mm</td><td>Check whether it is a leaf or complete doorset</td></tr>
+              <tr><td>FD30 fire door</td><td>Commonly 44mm</td><td>Some certified FD30 leaves are 35mm</td></tr>
+              <tr><td>FD60 fire door</td><td>Commonly 54mm</td><td>The certificate controls the complete assembly</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-ink/70 mt-6">
+          A thick door is not automatically a fire door. Fire performance belongs to a tested or assessed assembly: leaf, frame, hinges, closer where required, latch, seals, glazing and the way it is fitted.
+        </p>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4 mt-10">Standard fire-door sizes and specifications</h2>
+        <p class="text-ink/70 mb-3">
+          FD30 and FD60 leaves are made in many of the same imperial and metric face sizes shown above. The familiar convention is a 44mm FD30 leaf and a 54mm FD60 leaf, but certified products do exist outside that convention. Never identify a rating from thickness alone.
+        </p>
+        <p class="text-ink/70 mb-3">
+          For a real opening, confirm the required rating and use the certificate or data sheet for that leaf or doorset. It sets permitted leaf size, frame material and section, gaps, seals, hinges, closer, latch, glazing and trimming. The <a href="https://firedoors.bwf.org.uk/knowledge-centre/fire-door-installation/" class="text-oak underline">Fire Door Alliance installation guidance</a> is clear that the product-specific instructions and compatible components matter.
+        </p>
+        <p class="text-ink/70">
+          This guide does not set the fire-door requirement for a building. That depends on the building, location of the opening and current fire strategy or Building Regulations guidance.
+        </p>
+      </div>
+      <div>
+        <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+          <img
+            src="/images/guides/standard-door-sizes/fd30-fire-door-edge-intumescent-seal-44mm.webp"
+            alt="Steel rule held against the edge of a fire door, showing its thickness and the intumescent seal in the groove"
+            width="800"
+            height="1000"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Standard external door sizes</h2>
+        <p class="text-ink/70 mb-6">Stock timber exterior ranges commonly include these leaf sizes:</p>
+        <div class="overflow-x-auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Leaf size in millimetres</th>
+                <th>Imperial size</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1981 × 686mm</td><td>6ft 6in × 2ft 3in</td></tr>
+              <tr><td>1981 × 762mm</td><td>6ft 6in × 2ft 6in</td></tr>
+              <tr><td>2032 × 813mm</td><td>6ft 8in × 2ft 8in</td></tr>
+              <tr><td>1981 × 838mm</td><td>6ft 6in × 2ft 9in</td></tr>
+              <tr><td>1981 × 914mm</td><td>6ft 6in × 3ft 0in</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-ink/70 mt-6">
+          A complete external doorset also has a frame, sill, weather seals and sometimes a mobility threshold, fanlight or sidelight. Order it by the maker's overall frame and structural-opening dimensions, not the leaf size alone. Security, weather performance and accessibility can all affect the specification.
+        </p>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4 mt-10">Door pairs and French doors</h2>
+        <p class="text-ink/70 mb-3">
+          There is no single standard width for a pair. Two nominal leaf widths do not tell you the complete frame size because the jambs, meeting stiles, rebate, gaps and threshold still have to be allowed for.
+        </p>
+        <p class="text-ink/70">
+          Factory French doorsets are sold in system-specific module sizes. Treat the frame schedule and fitting instructions as the controlling dimensions. If separate leaves are being paired in a joinery frame, set out the active leaf, passive leaf, meeting detail, bolts, stops and clear opening together. For accessible work, the leading leaf may have to provide the required clear width on its own.
+        </p>
+      </div>
+      <div>
+        <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+          <img
+            src="/images/guides/standard-door-sizes/timber-french-doorset-frame-threshold.webp"
+            alt="Timber French doorset in a brick opening with one leaf open, showing the frame and threshold"
+            width="800"
+            height="1000"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Door leaf, lining and structural opening</h2>
+      <p class="text-ink/70 mb-6">These three measurements are often confused.</p>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>What it means</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Door leaf or slab</td><td>The moving timber panel. Catalogue sizes normally describe this.</td></tr>
+            <tr><td>Lining or frame</td><td>The head and jambs the door hangs in, including the rebate or planted stops.</td></tr>
+            <tr><td>Overall doorset</td><td>The outside dimension of the assembled frame, sometimes including a sill depending on the schedule.</td></tr>
+            <tr><td>Structural opening</td><td>The opening in the wall that receives the frame, with the specified fitting space around it.</td></tr>
+            <tr><td>Clear opening</td><td>The usable width left when the fitted door is open, measured to the relevant obstruction.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-ink/70 mt-6 mb-3">
+        There is no safe universal sum to add to a leaf. Linings have different sections, fire frames are different from ordinary linings, and exterior sills alter the height. A manufacturer's doorset schedule gives the right structural opening for that system. For a site-made lining, the joiner sets out the actual leaf, clearances, lining thickness and packing space.
+      </p>
+      <p class="text-ink/70">
+        This is part of <a href="/services/second-fix-carpentry" class="text-oak underline">second fix carpentry</a>. The lining has to be plumb, square and firm before the leaf is hung; the <a href="/services/skirting-architrave" class="text-oak underline">skirting and architrave</a> then finishes the joint between lining and wall.
+      </p>
+      </div>
+      <div>
+        <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+          <img
+            src="/images/guides/standard-door-sizes/timber-door-lining-structural-opening-before-architrave.webp"
+            alt="Timber door lining fitted into a plasterboarded structural opening before the architrave goes on"
+            width="800"
+            height="1000"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">How to measure a door opening</h2>
+        <p class="text-ink/70 mb-4">
+          First decide what is staying. Measuring between the stops is useful if only the leaf is being replaced. It is not enough if the lining is coming out or a complete doorset is being ordered.
+        </p>
+        <p class="text-ink/70 mb-2">For an existing lining:</p>
+        <ul class="space-y-2 text-ink/70 list-disc list-inside mb-6">
+          <li>Measure the old leaf's height, width and thickness if it is still available.</li>
+          <li>Measure between the jambs at the top, middle and bottom.</li>
+          <li>Measure from the finished floor or threshold to the underside of the head at both jambs and in the middle.</li>
+          <li>Check both diagonals. Equal diagonals help show whether the opening is square, but the jambs still need checking for plumb and twist.</li>
+          <li>Measure the lining depth and rebate or stop position.</li>
+          <li>Note the swing, hinge side, latch position and any floor-level change across the opening.</li>
+        </ul>
+        <p class="text-ink/70 mb-2">For a structural opening:</p>
+        <ul class="space-y-2 text-ink/70 list-disc list-inside mb-6">
+          <li>Expose enough of the opening to know where the masonry or timber stud actually is.</li>
+          <li>Measure width at top, middle and bottom, and height in several places.</li>
+          <li>Check the wall thickness, finished floor level, lintel or head, and whether the opening is plumb and square.</li>
+          <li>Identify any fire, acoustic, security, weather or accessibility requirement before selecting the doorset.</li>
+          <li>Use the chosen manufacturer's structural-opening schedule before altering the opening.</li>
+        </ul>
+        <p class="text-ink/70">
+          Old openings are often narrower at one end, out of plumb or twisted through the depth. That is where practical <a href="/services/doors" class="text-oak underline">door hanging</a> judgement matters: the measurements have to describe the opening that is really there, not the one it looks like from the architrave.
+        </p>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4 mt-10">Accessible door-opening widths</h2>
+        <p class="text-ink/70 mb-3">
+          An accessible clear opening is not the same as the leaf width. The open door, frame stop and hinge-side projection reduce the usable width, while the approach angle and corridor width affect how much clear opening is needed.
+        </p>
+        <p class="text-ink/70 mb-3">
+          For Category 1 dwellings in England, the current <a href="https://www.gov.uk/government/publications/access-to-and-use-of-buildings-approved-document-m" class="text-oak underline">Approved Document M, Volume 1</a> gives a 775mm minimum clear opening at the principal private entrance. Its internal-door table uses 750mm for a head-on approach from a 900mm corridor, and larger clear openings where the approach is not head-on and the corridor is tighter. It also notes that a standard 826mm leaf up to 44mm thick is deemed to provide up to 775mm clear opening.
+        </p>
+        <p class="text-ink/70">
+          Those figures are not a specification for every job. Categories 2 and 3, communal entrances, buildings other than dwellings, different UK nations and particular planning requirements may differ. Check the current guidance and project documents before the opening is formed.
+        </p>
+      </div>
+      <div>
+        <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+          <img
+            src="/images/guides/standard-door-sizes/joiner-measuring-door-opening-diagonal.webp"
+            alt="Joiner checking the diagonal of a lined door opening with a tape measure"
+            width="800"
+            height="1000"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Can a standard door be trimmed?</h2>
+        <p class="text-ink/70 mb-4">
+          Often, but only within the allowance for that exact door. A hollow or engineered leaf may have narrow lippings around the core. Take too much off and there may be too little sound material left for hinges or a lock, or the face can separate from the core.
+        </p>
+        <p class="text-ink/70 mb-2">The maker's current instructions should state:</p>
+        <ul class="space-y-2 text-ink/70 list-disc list-inside mb-6">
+          <li>how much may come off the top and bottom;</li>
+          <li>how much may come off each long edge;</li>
+          <li>whether material must be removed evenly;</li>
+          <li>where the lock block is;</li>
+          <li>how cut edges must be sealed; and</li>
+          <li>whether trimming changes any guarantee or certification.</li>
+        </ul>
+        <p class="text-ink/70">
+          Do not carry an allowance from one range to another. Fire doors in particular must stay within the certified limit. If the opening needs more alteration than the leaf permits, alter or replace the lining where suitable, choose another stocked size, or have the door made for the opening.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">When a bespoke door is the right answer</h2>
+        <p class="text-ink/70 mb-4">
+          An off-the-shelf leaf can save a considerable amount against a bespoke door when the opening, lining, clearance, fire rating and permitted trim all work. It is false economy when making it fit would leave poor margins, weakened edges or an opening that no longer works properly.
+        </p>
+        <p class="text-ink/70 mb-2">A bespoke door is usually the sounder choice when:</p>
+        <ul class="space-y-2 text-ink/70 list-disc list-inside mb-6">
+          <li>a period opening is well outside stocked sizes and should not be needlessly cut about;</li>
+          <li>an original Victorian door, frame or moulding has to be matched;</li>
+          <li>the head, pair, fanlight or sidelight needs a particular proportion;</li>
+          <li>an unusual thickness, construction or ironmongery position is required;</li>
+          <li>a certified doorset must be made to a project specification; or</li>
+          <li>the work calls for a particular timber and matching <a href="/services/timber-hardwoods" class="text-oak underline">oak joinery</a>.</li>
+        </ul>
+        <p class="text-ink/70">
+          If you are weighing up a standard leaf against a made-to-measure one, <a href="/contact" class="text-oak underline">send photos of the opening</a>, the existing lining and the old door if it is still there. Include a tape measure in the photographs and note the smallest width and height you find.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Sources checked for the dimensions</h2>
+      <p class="text-ink/70">
+        The size tables above were checked against UK manufacturer product data and technical doorset schedules available when this guide was prepared, including <a href="https://lpddoors.co.uk/products/white-mexicano/" class="text-oak underline">internal leaf sizes and thicknesses</a>, <a href="https://www.jeld-wen.co.uk/getmedia/e4bc4d4e-3f46-43ef-8d8d-ed8a65633e82/JWD4207-JELD-WEN-Internal-Doorsets-Technical-Brochure-%282%29.pdf.aspx?ext=.pdf" class="text-oak underline">internal doorset and clear-opening data</a> and <a href="https://jeld-wen.co.uk/getmedia/33e7c81c-1190-4290-9f2c-0c84c636a68e/External-Joinery-Technical-Specification-Guide.pdf.aspx" class="text-oak underline">exterior frame sizes</a>. Accessibility figures were checked against the government publication linked above. Always use the latest data for the particular door being fitted.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Common questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Door fitting across West Yorkshire</h2>
+      <p class="text-ink/70">
+        Based in Ackworth, covering <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a> for door fitting, repairs, and second-fix joinery.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need a door fitted or repaired?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send a photo of the opening, the door, and any frame issue and Rob will point you in the right direction.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a door job" />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

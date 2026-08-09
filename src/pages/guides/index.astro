@@ -1,0 +1,128 @@
+---
+/**
+ * Guides overview page
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
+import { siteConfig } from '../../config/site';
+
+const { url } = siteConfig;
+const breadcrumbs = [
+  { name: 'Home', url: `${url}/` },
+  { name: 'Guides', url: `${url}/guides` },
+];
+
+const categories = [
+  'Doors & Windows',
+  'Skirting, Architrave & Mouldings',
+  'Timber & Sheet Materials',
+  'Wood Finishing',
+  'Timber Problems & Repairs',
+  'Carpentry Explained',
+] as const;
+
+const guideCards: {
+  href: string;
+  title: string;
+  description: string;
+  category: (typeof categories)[number];
+  image?: string;
+  alt?: string;
+}[] = [
+  {
+    href: '/guides/standard-door-sizes',
+    title: 'Standard Door Sizes UK',
+    description: 'Standard door sizes UK guide with internal, external, fire-door and metric dimensions, plus clear advice on measuring openings, linings and safe trimming.',
+    category: 'Doors & Windows',
+    image: '/images/case-studies/counting-house/the-counting-house-oak-front-door-in-situ.webp',
+    alt: 'Finished solid oak front door in place at the entrance of The Counting House, Pontefract',
+  },
+];
+
+const guideGroups = categories
+  .map((category) => ({
+    category,
+    guides: guideCards.filter((guide) => guide.category === category),
+  }))
+  .filter((group) => group.guides.length > 0);
+const orderedGuides = guideGroups.flatMap((group) => group.guides);
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: orderedGuides.map((guide, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: guide.title,
+    item: new URL(guide.href, url).toString(),
+  })),
+};
+---
+
+<BaseLayout
+  title="Carpentry & Joinery Guides"
+  description="Practical carpentry and joinery guides covering door sizes, timber, mouldings, finishing and repairs, written from workshop and site experience."
+>
+  <BreadcrumbSchema items={breadcrumbs} />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+
+  <!-- Hero: same pattern as the services and doors pages. -->
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/guides/carpentry-and-joinery-guides-workshop-bench.webp"
+      alt="Chisels, a tape measure, speed square, spirit level, hammer and hand saw laid out on a workshop bench"
+      width="1408"
+      height="768"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Guides</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Carpentry &amp; Joinery Guides</h1>
+        <p class="text-lg text-ink/80">
+          Practical carpentry and joinery advice based on more than 35 years of hands-on experience. These guides explain things clearly, helping you understand the work involved, make informed decisions and get the details right.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-ink/70 mb-12 max-w-3xl">
+        These are the answers Rob gives on jobs, written down. Measurements you can work to, trade terms explained, and the reasons behind them. A standard door size still has to fit an opening that is out of square. A stain still has to suit the timber it goes on. Read them for your own work, or to understand what a joiner is telling you.
+      </p>
+
+      {guideGroups.map((group) => (
+        <>
+          <h2 class="font-display text-2xl text-ink mb-4 mt-8 pb-2 border-b border-ink/10">{group.category}</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+            {group.guides.map((guide) => {
+              const image = guide.image;
+              return (
+                <a href={guide.href} class="service-card group relative">
+                  {image && (
+                    <img
+                      src={image}
+                      alt={guide.alt ?? guide.title}
+                      loading="lazy"
+                      width="600"
+                      height="192"
+                      class="service-card-image w-full object-cover"
+                    />
+                  )}
+                  <div class="service-card-content">
+                    <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">{guide.title}</h3>
+                    <p class="text-ink/70 text-sm mb-4 leading-relaxed">{guide.description}</p>
+                    <span class="mt-auto text-oak font-display text-xs">Read the guide &rarr;</span>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
