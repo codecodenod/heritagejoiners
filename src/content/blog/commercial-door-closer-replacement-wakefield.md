@@ -39,12 +39,6 @@ The replacement closers had already been supplied, so the work was to strip out 
 
 ## Replacing and setting up the door closers
 
-<figure>
-  <img src="/images/blog/commercial-door-closers/old-door-closer-before-replacement-wakefield.webp" alt="Old overhead door closer and arm on an office door before it was taken off" width="1080" height="1920" loading="lazy" />
-  <figcaption>The second failed unit before it came off.</figcaption>
-</figure>
-
-
 All three were replaced and adjusted so each door closed at a controlled speed and latched every time.
 
 Setting them up is the part that takes the time. Closing speed set too hard and the door still slams, even on a new unit. Set it too soft and the door drifts to a stop short of the frame and sits there, which is worse than useless on a door meant to stay shut. Then the latch speed on top of that, so it engages cleanly without a bang.
