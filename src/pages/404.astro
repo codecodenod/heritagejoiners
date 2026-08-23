@@ -11,12 +11,12 @@ const { pathname } = Astro.url;
 <BaseLayout title="Page Not Found" noindex>
   <section class="py-20 lg:py-32 bg-paper">
     <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="font-display text-6xl lg:text-8xl text-ink mb-4" aria-hidden="true">404</p>
+      <p class="font-display text-6xl lg:text-8xl text-ink mb-4 mx-auto" aria-hidden="true">404</p>
       <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Page not found</h1>
-      <p class="text-xl text-ink/70 mb-8">
+      <p class="text-xl text-ink/70 mb-8 mx-auto">
         The page "{pathname}" wasn't found.
       </p>
-      <p class="text-ink/60 mb-12">
+      <p class="text-ink/60 mb-12 mx-auto">
         It may have moved while the site was being reorganised around Rob's wider joinery and carpentry services.
       </p>
       <Button href="/" variant="primary">Return home</Button>

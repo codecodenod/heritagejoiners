@@ -1,0 +1,540 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
+import ArticleSchema from '../../components/schema/Article.astro';
+import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+const title = 'Skirting, Architrave & Moulding Profiles';
+const description = 'Identify standard skirting board, architrave and timber moulding profiles — torus, ogee, ovolo, bullnose, lamb’s tongue, scotia and quadrant explained.';
+const canonicalUrl = `${url}/guides/skirting-architrave-timber-moulding-profiles`;
+
+const heroImage = '/images/guides/skirting-architrave-profiles/skirting-board-architrave-plinth-block.webp';
+
+const breadcrumbs = [
+  { name: 'Home', url: `${url}/` },
+  { name: 'Guides', url: `${url}/guides` },
+  { name: title, url: canonicalUrl },
+];
+
+const faqItems = [
+  {
+    question: 'What are the most common skirting board profiles?',
+    answer:
+      'Torus, ogee, bullnose, pencil round and square edge cover most of what is stocked. Torus and ogee are the traditional-looking pair and are the two you will find in most merchants. Pencil round and square edge are the modern equivalents. Ovolo and lamb’s tongue turn up in period work and are stocked less widely.',
+  },
+  {
+    question: 'What is the difference between torus and ogee?',
+    answer:
+      'A torus is a bold convex bulge, usually sitting above a step. An ogee is an S-curve — concave flowing into convex — so it looks lighter and more drawn out. Side by side the torus reads as rounder and heavier, the ogee as more scrolled. Both are traditional, and many MDF boards are machined with one on each face.',
+  },
+  {
+    question: 'Is bullnose the same as pencil round?',
+    answer:
+      'No, though they are often confused. A bullnose is a full rounded top edge, a single generous radius across the thickness of the board. A pencil round is a much smaller radius, just enough to take the sharpness off the corner. Bullnose reads as a curve; pencil round reads as a square edge that has been softened.',
+  },
+  {
+    question: 'What is the difference between scotia and quadrant?',
+    answer:
+      'They are opposites. Scotia is concave — it curves inwards, like a hollow. Quadrant is convex — a quarter of a circle bulging outwards. Both are used to cover the junction between a floor and a skirting, or an expansion gap, so they get mixed up constantly. Look at the face: hollow is scotia, round is quadrant.',
+  },
+  {
+    question: 'Should skirting and architrave match?',
+    answer:
+      'They do not have to, but the moulded detail should relate. The usual approach is the same profile family on both, with the architrave narrower than the skirting is tall. What matters more is the thickness where they meet: if the skirting is thicker than the architrave it will stand proud at the junction, which shows badly unless it is dealt with, often with a plinth block.',
+  },
+  {
+    question: 'Is MDF or timber better for skirting?',
+    answer:
+      'For painted work in a dry room, primed MDF is stable, takes paint well and holds a crisp profile. Timber is the better choice where it may get wet, where it needs to be stained or clear finished, where it has to be scribed hard into old uneven walls, and in period properties where it is being matched to existing joinery. Moisture-resistant MDF sits between the two.',
+  },
+  {
+    question: 'Can an old moulding profile be copied?',
+    answer:
+      'Usually, yes. A clean end section can be run as a bespoke moulding, though it may mean new cutter tooling, which is why it costs more than an off-the-shelf length and is worth doing on a whole room rather than a metre. For small patches, salvaged material or a close stock profile is often the sensible answer.',
+  },
+  {
+    question: 'What profile suits a Victorian or period property?',
+    answer:
+      'Look at what is already there rather than picking from a catalogue. Victorian skirtings tend to be tall with a bold moulded top — torus and ogee both sit comfortably. Lamb’s tongue and ovolo turn up in older and finer work. The height matters as much as the profile: a short modern board under a period ceiling looks wrong whatever shape is machined on it.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  ogImage={heroImage}
+>
+  <BreadcrumbSchema items={breadcrumbs} />
+  <FAQPageSchema faqs={faqItems} />
+  <ArticleSchema
+    headline={title}
+    description={description}
+    url={canonicalUrl}
+    image={`${url}${heroImage}`}
+    datePublished="2026-08-13"
+  />
+
+  {/* HERO — placeholder image 1 goes here, see comment block above.
+       When the photo arrives: set heroImage, pass ogImage={heroImage} to
+       BaseLayout and image={`${url}${heroImage}`} to ArticleSchema, then
+       restore the <img>/gradient exactly as on standard-door-sizes.astro. */}
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src={heroImage}
+      alt="White moulded skirting board running into a plinth block at a door architrave"
+      width="1080"
+      height="784"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Skirting, Architrave &amp; Mouldings guide</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Standard Skirting, Architrave and Timber Moulding Profiles</h1>
+        <p class="text-lg text-ink/80 mb-8">
+          A moulding is a length of timber or MDF with a shape machined along its edge. Skirting covers the joint where the wall meets the floor, architrave covers the joint where a door lining meets the wall, and the smaller beads and trims cover everything else. This is how to tell one profile from another, what each is used for, and whether you can buy it off the shelf.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA message="Hi Heritage Joiners, I'd like help matching a moulding profile" />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Profile identification: quick answer</h2>
+      <p class="text-ink/70 mb-6">
+        Look at the moulding end-on. That is the only reliable way to identify it — from the front, several profiles look much the same once they have four coats of paint on them.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[38rem] text-left border-collapse">
+          <thead>
+            <tr>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Profile</th>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">What you are looking at</th>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Where it is used</th>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Usually stocked?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Torus</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Bold convex bulge, usually above a step</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Skirting and architrave</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Yes</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Ogee</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">S-curve, concave running into convex</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Skirting and architrave</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Yes</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Bullnose</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Full rounded top edge, one large radius</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Skirting, boards, window boards</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Yes</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Pencil round</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Small radius, just off the sharp corner</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Modern skirting and architrave</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Yes</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Square edge</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Plain rectangle, no moulding at all</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Modern interiors</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Yes</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Chamfered</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Flat angled cut across the corner</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Skirting and architrave</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Yes</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Ovolo</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Convex quarter-round, usually between flats</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Skirting, architrave, glazing beads</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Sometimes</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Lamb&rsquo;s tongue</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Tapered run into a small rounded return</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Period skirting and architrave</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Sometimes</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Scotia</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Concave quarter curve — a hollow</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Floor edges, stair nosings</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Yes</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Quadrant</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Convex quarter circle — a round</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Floor edges, corners, gaps</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Yes</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Half round</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Semicircle on a flat back</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Covering joints, decorative work</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Yes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-ink/70 mt-6">
+        Two warnings before you order from that table. Names are not standardised between manufacturers, so one merchant&rsquo;s ogee is not always the same shape as another&rsquo;s. And a profile with the right name can still be the wrong size — the moulded detail may start at a different height up the board.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Understanding skirting board profiles</h2>
+        <p class="text-ink/70 mb-3">
+          Skirting does two jobs. It covers the junction where the plaster stops and the floor starts, which is never as neat as it looks, and it takes the knocks that the bottom of a wall gets from feet, furniture and vacuum cleaners.
+        </p>
+        <p class="text-ink/70 mb-3">
+          The profile is machined on the top edge and, on most boards, the face below it is flat. That flat is what gets scribed to an uneven floor, so the deeper the moulded section, the less room you have to scribe before you cut into the detail.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Height matters as much as shape. A tall board with a modest profile suits a period room better than a short board with an elaborate one. Look at the ceiling height and at whatever original joinery survives before choosing.
+        </p>
+        <p class="text-ink/70">
+          Many MDF boards are machined <strong class="text-ink">reversible</strong> — one profile on each face, commonly torus on one side and ogee on the other. That is worth knowing before you order twice as much as you need.
+        </p>
+
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4 mt-10">Modern and traditional profiles</h2>
+        <p class="text-ink/70 mb-3">
+          The split is straightforward. Square edge, pencil round and chamfered read as modern. Torus, ogee, ovolo and lamb&rsquo;s tongue read as traditional. Bullnose sits in the middle and goes with most things.
+        </p>
+        <p class="text-ink/70">
+          There is no rule that says a Victorian house must have a Victorian profile. But a bold moulded skirting in a room with plain modern doors looks like an afterthought, and so does the reverse.
+        </p>
+      </div>
+      <div>
+        <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg">
+          <img src="/images/guides/skirting-architrave-profiles/large-custom-skirting-board-fitted.webp" alt="Tall moulded skirting board fitted around an internal corner beside fitted wardrobes" width="1080" height="1080" loading="lazy" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Skirting board profiles, one by one</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div>
+          <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg mb-4">
+            <img src="/images/guides/skirting-architrave-profiles/torus-skirting-board-profile.webp" alt="Torus skirting board profile, a bold rounded bead above a step, on a softwood offcut" width="950" height="950" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">Torus skirting board</h3>
+          <p class="text-ink/70">The most widely stocked traditional profile. A torus is a bold convex bulge running along the top of the board, usually sitting on a small step or fillet. It reads as heavy and rounded, and it suits Victorian and Edwardian rooms without looking fussy. It is made in MDF, softwood and hardwood, and pine torus skirting is one of the most commonly stocked timber mouldings in the country. The deep curve holds paint well but collects dust in the hollow above the step.</p>
+        </div>
+        <div>
+          <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg mb-4">
+            <img src="/images/guides/skirting-architrave-profiles/ogee-skirting-board-profile.webp" alt="Ogee skirting board profile showing the S-curve running from concave into convex" width="750" height="750" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">Ogee skirting board</h3>
+          <p class="text-ink/70">The other half of the traditional pair. An ogee is an S-curve: the profile runs concave, then rolls over into convex. It looks lighter and more drawn out than a torus and casts a finer shadow line. Very widely stocked, usually alongside torus and often on the reverse face of the same board. The tighter curves take slightly more care when painting and more care again when cutting an external mitre.</p>
+        </div>
+        <div>
+          <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg mb-4">
+            <img src="/images/guides/skirting-architrave-profiles/bullnose-skirting-board-profile.webp" alt="Bullnose skirting board profile, a single rounded radius across the whole top edge" width="750" height="750" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">Bullnose skirting board</h3>
+          <p class="text-ink/70">A single generous radius across the whole top edge, with no step and no second curve. Simple, hard-wearing and easy to paint because there is nowhere for a brush to catch. It sits comfortably in modern and traditional rooms alike, which is why it is stocked everywhere in MDF, softwood and oak.</p>
+        </div>
+        <div>
+          <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg mb-4">
+            <img src="/images/guides/skirting-architrave-profiles/pencil-round-skirting-board-profile.webp" alt="Pencil round skirting board profile, a small radius taken off the top corner" width="750" height="750" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">Pencil round skirting board</h3>
+          <p class="text-ink/70">A small radius taken off the top corner — sometimes both corners — and nothing else. The modern default. Quick to fit, quick to decorate, and it disappears into the wall rather than announcing itself. Widely stocked in MDF and softwood. If you want a plain look but a square edge feels too stark, this is the one.</p>
+        </div>
+        <div>
+          <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg mb-4">
+            <img src="/images/guides/skirting-architrave-profiles/square-edge-skirting-board-profile.webp" alt="Square edge skirting board, a plain rectangular section with no moulded detail" width="750" height="750" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">Square edge skirting board</h3>
+          <p class="text-ink/70">No moulding at all: a plain rectangular board. Common in contemporary interiors, and often specified tall so the plain face becomes the feature. The one thing to watch is that a square edge shows every imperfection in the wall behind it, because there is no detail to distract the eye.</p>
+        </div>
+        <div>
+          <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg mb-4">
+            <img src="/images/guides/skirting-architrave-profiles/ovolo-skirting-board-profile.webp" alt="Ovolo skirting board profile, a convex quarter-round set between flat fillets" width="750" height="750" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">Ovolo skirting board</h3>
+          <p class="text-ink/70">A convex quarter-round, usually set between two flat fillets. Classical in origin, and the same shape turns up as a glazing bead on period windows. Less widely stocked than torus or ogee in skirting form, so worth checking availability before specifying it across a whole house.</p>
+        </div>
+        <div>
+          <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg mb-4">
+            <img src="/images/guides/skirting-architrave-profiles/lambs-tongue-skirting-board-profile.webp" alt="Lamb&rsquo;s tongue skirting board profile, a tapered run finishing in a rounded return" width="750" height="750" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">Lamb&rsquo;s tongue skirting</h3>
+          <p class="text-ink/70">A tapered run that finishes in a small rounded return, named for the shape of the section. It is a period profile and a fine one, common in better Georgian and Victorian work. Stocked by some suppliers, not all, and the exact shape varies more between makers than the commoner profiles do — so if you are matching existing lamb&rsquo;s tongue, compare the actual section rather than trusting the name.</p>
+        </div>
+        <div>
+          <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg mb-4">
+            <img src="/images/guides/skirting-architrave-profiles/chamfered-skirting-board-profile.webp" alt="Chamfered skirting board profile, a flat angled cut across the top corner" width="750" height="750" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">Chamfered, and chamfered and rounded</h3>
+          <p class="text-ink/70">A chamfer is a flat angled cut across the top corner. Chamfered-and-rounded puts a chamfer on one face and a rounded edge on the other, making a cheap reversible board that covers two looks. Both are budget profiles, widely stocked, and perfectly serviceable where the skirting is not meant to be noticed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Choosing between skirting profiles</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[38rem] text-left border-collapse">
+          <thead>
+            <tr>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Profile</th>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Reads as</th>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Detail</th>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Painting</th>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Availability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Square edge</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Modern</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">None</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Easiest</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Wide</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Pencil round</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Modern</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Minimal</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Easy</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Wide</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Chamfered</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Modern / plain</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Low</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Easy</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Wide</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Bullnose</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Either</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Low</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Easy</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Wide</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Torus</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Traditional</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Medium</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Straightforward</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Wide</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Ogee</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Traditional</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Higher</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Takes more care</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Wide</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Ovolo</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Traditional</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Medium</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Straightforward</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Narrower</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Lamb&rsquo;s tongue</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Period</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Higher</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Takes more care</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Narrower</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-ink/70 mt-6">
+        Availability is the column people ignore and then regret. A profile that is easy to buy today is also easy to buy in two years when a radiator gets moved and you need another three metres.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Understanding architrave profiles</h2>
+        <p class="text-ink/70 mb-3">
+          Architrave covers the joint between a door lining and the wall. That joint is never clean — the lining is packed and fixed, the plaster runs up to it, and something has to hide the gap and the movement.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Because it is doing the same job as skirting, the same profiles are machined for it: torus architrave and ogee architrave are the two most asked for, with pencil round, square edge, bullnose, ovolo, chamfered and lamb&rsquo;s tongue all available in some ranges.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Architrave is normally narrower than the skirting is tall, and normally the same thickness or thinner. It has to stand off the lining edge by a consistent margin all the way round, and that margin is set out, not guessed.
+        </p>
+        <p class="text-ink/70">
+          Sets are sold as two legs and a head. A double set covers both faces of a lining, which is what you need on any opening you can see from both sides — which is most of them.
+        </p>
+
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4 mt-10">Mitres and detailed profiles</h2>
+        <p class="text-ink/70 mb-3">
+          The more detail there is on an architrave, the more an inaccurate mitre shows. On a square edge you can get away with a hair&rsquo;s breadth. On an ogee the curves have to meet exactly or the eye goes straight to it.
+        </p>
+        <p class="text-ink/70">
+          That is worth knowing when choosing a profile for a house full of doors. A detailed architrave is a better-looking job and a slower one.
+        </p>
+      </div>
+      <div>
+        <img src="/images/guides/skirting-architrave-profiles/edwardian-style-white-skirting-board.webp" alt="White skirting board and door architrave meeting in a decorated room" width="600" height="315" loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Matching skirting and architrave</h2>
+      <p class="text-ink/70 mb-3">
+        This is where most jobs come unstuck, and it is rarely the profile that causes it.
+      </p>
+      <p class="text-ink/70 mb-3">
+        <strong class="text-ink">Do they have to match?</strong> No. But they should belong to each other. The usual approach is the same profile on both, with the architrave narrower than the skirting is tall. Mixing a torus skirting with an ogee architrave is not a crime — plenty of period houses do exactly that — but it wants to look deliberate rather than accidental.
+      </p>
+      <p class="text-ink/70 mb-3">
+        <strong class="text-ink">Thickness is the real problem.</strong> If the skirting is thicker than the architrave, the skirting will stand proud where the two meet at the bottom of the door. There is no neat way to cut that away. The usual answers are to specify both the same thickness, to use a thinner skirting, or to fit a plinth block at the foot of the architrave — a plain block, thicker than both, that the skirting dies into and the architrave sits on.
+      </p>
+      <p class="text-ink/70 mb-3">
+        <strong class="text-ink">Height of the moulded detail.</strong> Two profiles can have the same name and start their moulding at different heights up the section. Where a new architrave meets an old skirting, that mismatch shows as a step in the detail even though both are, on paper, torus.
+      </p>
+      <p class="text-ink/70 mb-3">
+        <strong class="text-ink">Matching new work to old.</strong> In a period house the honest options are: find a stock profile close enough that nobody but a joiner would notice, have the existing profile run as a bespoke moulding, or lift salvaged material from a cupboard or a back bedroom where it will not be missed and use it in the room that matters.
+      </p>
+      <p class="text-ink/70">
+        <strong class="text-ink">Discontinued profiles.</strong> Ranges change. If a house has been done in a profile that is no longer made, matching it means either a bespoke run or accepting a near match. Which is reasonable depends on whether the two will ever be seen in the same eyeline.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Smaller timber mouldings and beads</h2>
+      <p class="text-ink/70 mb-6">
+        Beyond skirting and architrave there is a whole family of small sections, most of them stocked in short and long lengths and most of them doing the same basic job: covering a joint, a gap or an edge.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[38rem] text-left border-collapse">
+          <thead>
+            <tr>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Moulding</th>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Section</th>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">What it is for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Scotia</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Concave quarter curve</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Floor-to-skirting junction, under stair nosings</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Quadrant</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Convex quarter circle</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Floor edges, internal corners, expansion gaps</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Half round</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Semicircle on a flat back</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Covering board joints, decorative work</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">D-section</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Flat back, rounded face, flatter than half round</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Edging and covering joints</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Angle / corner</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">L-shaped</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">External corners, protecting arrises</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Cover strip</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Flat, square or slightly eased edges</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Covering a butt joint between boards or panels</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Glazing bead</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Small moulded section, often ovolo</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Holding glass into a rebate</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Staff bead</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Moulded, fixed to the frame</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Holds the inner sash in a box sash window</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Parting bead</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Plain rectangular strip</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Separates the two sashes in a box sash window</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Door stop</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Plain or eased strip</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Planted on a lining for the door to close against</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Dado rail</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Moulded rail, various profiles</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Horizontal rail at chair height</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Picture rail</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Moulded rail with a lip</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">High-level rail for hanging from</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Panel moulding</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Small moulded section</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Forming panels on walls and doors</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Scotia or quadrant?</h2>
+        <p class="text-ink/70 mb-3">
+          These two get confused more than any other pair, because they do the same job in the same place and only differ in which way the curve goes.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Scotia is concave.</strong> The face curves inward, like a hollow scooped out of the corner. Held end-on it looks like a quarter of a circle taken away.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Quadrant is convex.</strong> The face bulges outward — a quarter of a circle added on. It is the fatter of the two and takes up more floor.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Both are used to cover the expansion gap left around a wood or laminate floor, and both come in timber, MDF and plastic. Which you choose is mostly about how much gap you need to cover and whether you want the trim to be noticed.
+        </p>
+        <p class="text-ink/70">
+          Check the actual section before ordering. Two mouldings sold under the same name can differ by several millimetres, and the gap you are covering does not care what the label says.
+        </p>
+      </div>
+      <div>
+        <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg">
+          <img src="/images/guides/skirting-architrave-profiles/scotia-quadrant-ovolo-chamfer-beading-profiles.webp" alt="Oak beading profiles labelled scotia, ovolo, quadrant, two step ovolo, chamfer and square" width="400" height="400" loading="lazy" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Materials</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[38rem] text-left border-collapse">
+          <thead>
+            <tr>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Material</th>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Suits</th>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Watch out for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Primed MDF</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Painted work in dry rooms; holds a crisp profile and takes paint evenly</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Swells badly if it gets wet; cut ends need sealing</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Moisture-resistant MDF</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Kitchens, utilities, bathrooms where it will still be painted</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Resistant, not waterproof</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Softwood / redwood</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Painted or stained work; scribes and repairs well</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Knots can bleed through paint unless properly sealed</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Oak and other hardwoods</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Clear-finished and stained work, harder wearing</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Costs more; wants pre-drilling and careful fixing</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Veneered</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">A hardwood look at lower cost</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Very little to sand back; damage is hard to make good</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Plastic / composite</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Floor trims in wet areas</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Never looks like timber close up</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-ink/70 mt-6">
+        The short version: MDF for painted work in dry rooms, timber where it will get wet, get stained, get scribed hard into an old wall, or has to sit alongside existing joinery in a period house.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Commonly stocked sizes</h2>
+      <p class="text-ink/70 mb-6">
+        These are sizes you will frequently find on a shelf. They are <strong class="text-ink">not standards</strong>. Ranges differ between manufacturers and merchants, and they change. Measure what you have and check what is actually available before ordering or altering anything.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[38rem] text-left border-collapse">
+          <thead>
+            <tr>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Item</th>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Commonly stocked</th>
+              <th class="border-b border-ink/20 py-3 pr-6 font-display font-normal text-ink align-bottom">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Skirting height</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">95mm, 119mm, 144mm, 169mm, 219mm in MDF ranges</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Softwood is often sold to nominal sizes such as 100, 150, 175 and 225mm</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Skirting thickness</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">15mm, 18mm, 25mm</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">18mm is the common default; 25mm gives a heavier period look</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Architrave width</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">58mm, 69mm, 95mm</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">69mm is the usual default</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Architrave thickness</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">15mm, 18mm, 25mm</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Match to the skirting thickness where they meet</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Scotia</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">15mm, 18mm, 20mm, 25mm</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Sized by the leg, so a 20mm scotia covers roughly a 20mm gap</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Quadrant</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">15mm, 18mm, 20mm, 25mm</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Same convention as scotia</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Dado rail</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Various; commonly around 40&ndash;70mm on the face</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Height on the wall matters more than the section</td></tr>
+            <tr><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Picture rail</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Various; commonly around 40&ndash;70mm on the face</td><td class="border-b border-ink/10 py-3 pr-6 text-ink/70 align-top">Needs a lip to hang from</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-ink/70 mt-6">
+        People do search for specific sizes — 169mm torus skirting, 150mm torus, 100mm pencil round, 58mm ogee architrave, 25mm quadrant beading. Those are all real, commonly available sizes. They are still worth checking against the actual range before you commit.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">How to identify an unknown moulding</h2>
+        <p class="text-ink/70 mb-3">Work through it in order:</p>
+        <ol class="text-ink/70 mb-3 list-decimal list-inside space-y-2">
+          <li>Find a cut end, or make one somewhere it will not show. You cannot identify a profile from the front.</li>
+          <li>Scrape or strip the paint off that end. Decades of paint round a curve completely changes the shape.</li>
+          <li>Measure the overall height and thickness.</li>
+          <li>Measure from the bottom to where the moulded section starts.</li>
+          <li>Note the order of the shapes going up: flat, step, convex, concave, and so on.</li>
+          <li>Photograph the end square-on with a rule alongside it, in good light.</li>
+          <li>Compare against stock profiles and see whether anything current is close.</li>
+        </ol>
+        <p class="text-ink/70">
+          If nothing matches, that is worth knowing too — it means a bespoke run or a near match, and the sooner you know that the sooner you can plan around it.
+        </p>
+      </div>
+      <div>
+        <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+          <img src="/images/guides/skirting-architrave-profiles/identifying-an-unknown-moulding-profile.webp" alt="Hand holding the cut end of an unknown moulding, showing its profile" width="768" height="1024" loading="lazy" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Standard or bespoke?</h2>
+      <p class="text-ink/70 mb-3">
+        An off-the-shelf profile is cheaper, quicker and easier to add to later. If a stock moulding suits the room and matches what is already there closely enough, use it. That is the sensible answer far more often than people expect.
+      </p>
+      <p class="text-ink/70 mb-3">
+        Bespoke makes sense when the existing profile matters and no stock section is close: a period room where the original joinery is intact, a run that has to continue into an existing wall, or a section nobody makes any more. Having a moulding run to match means new cutter tooling, which is why it costs what it does and why it is worth doing for a whole room rather than a single length.
+      </p>
+      <p class="text-ink/70 mb-3">
+        For a short patch, salvage is often the better answer — a length lifted from inside a cupboard, or from a room where the mismatch will never be noticed, moved to where it will.
+      </p>
+      <p class="text-ink/70">
+        Heritage Joiners fits stock mouldings and matches existing ones. If you are weighing up a close match against a bespoke run, the decision is easier once someone has looked at the actual section.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Common questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Skirting and architrave across West Yorkshire</h2>
+      <p class="text-ink/70 mb-3">
+        Heritage Joiners fits <a href="/services/skirting-architrave" class="text-oak underline">skirting board and architrave</a> across Pontefract, Wakefield and the wider West Yorkshire area, as part of <a href="/services/second-fix-carpentry" class="text-oak underline">second fix carpentry</a> or on its own.
+      </p>
+      <p class="text-ink/70 mb-3">
+        Related reading: <a href="/guides/standard-door-sizes" class="text-oak underline">standard door sizes</a> covers the linings these architraves finish against, <a href="/services/doors" class="text-oak underline">door hanging</a> covers the doors that hang in them, and <a href="/services/timber-repair" class="text-oak underline">timber repair</a> covers making good where old mouldings have been damaged.
+      </p>
+      <p class="text-ink/70">
+        For period work where an existing profile has to be matched, see <a href="/repair-or-replace" class="text-oak underline">the repair-or-replace framework</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Trying to match an existing moulding?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">
+        Send a photograph of the cut end, square-on with a rule alongside it, and the overall height and thickness. That is usually enough for an honest first view on whether it can be matched off the shelf or wants running bespoke.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA message="Hi Heritage Joiners, I'd like help matching a moulding profile" />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -21,7 +21,7 @@ The whole site is one theme. Same layouts, same heading scale, same fonts, same 
 ## Content guardrails (non-negotiable)
 
 - **Before writing or editing ANY copy on the site, read `PRIVATE/content-guide.md` in full and follow it.** It is the voice guide — tone, canonical phrases to use, clichés to avoid, per-page notes. It beats `PRIVATE/about.md` where they disagree. This applies to every wording change, however small: page copy, headings, card descriptions, alt text, meta titles and descriptions. Read the file, don't work from memory of it.
-- Never write the word **"pine"** — say "original timber", "original exterior frame", "original Victorian door".
+- **"Pine" is a keyword-only word.** In ordinary prose never write it — say "original timber", "original exterior frame", "original Victorian door", "softwood" or "redwood". The single exception is where it is genuinely the search term people use for a product (e.g. "pine skirting" on the mouldings guide). Even then, use it sparingly and in a materials context, never as general description. If in doubt, write softwood.
 - Award wording, exactly: **"Heritage Award at Pontefract Civic Society's 2025 Design Awards"** — never "restoration award". The **project** won the award, not Rob — never "award-winning joiner".
 - **No testimonials, reviews, star ratings or review schema** until real ones exist and are approved. Never invent quotes, prices, or claims.
 - Never name competitors.
@@ -114,6 +114,38 @@ Landscape body images use `class="w-full h-auto rounded-xl shadow-lg"` instead. 
 Images live in `public/images/services/<service-slug>/`. Resize per the pipeline before use — portraits cap at `800x1000>`, heroes ~1500px wide. Never drop a raw phone photo (e.g. 2268×4032) straight in.
 Title/H1 lead with the page's primary keyword: `"<Primary Keyword> in Pontefract, Wakefield & West Yorkshire | Heritage Joiners"` (keyword data lives in the owner's local `PRIVATE/SEO/keyword-strategy.md` — ask Rob for targets if unavailable).
 Register: add entries to `src/pages/services/index.astro` and the footer `serviceLinks` in `src/components/layout/Footer.astro`.
+
+### Guide page — exemplar: `src/pages/guides/standard-door-sizes.astro`
+**Every guide follows this file exactly — same format, same style. Copy it and swap the content.** Guides are `.astro` pages, not Markdown. They are reference material (sizes, profiles, timber types, finishes, timber problems), and they are laid out like a service page, not like a blog post.
+
+Pattern: `BaseLayout` + `ArticleSchema` + `BreadcrumbSchema` + `FAQPageSchema` + hero with background image + content sections in alternating `bg-bone` / `bg-white` / `bg-paper` bands, each with a real `<h2>` + FAQ section + CTA section.
+
+**Do not use `ServiceLayout`** — it injects Service schema and the AreaLinks band, neither of which belongs on a guide. Build the breadcrumbs yourself: Home → Guides → guide title.
+
+Frontmatter-equivalent consts at the top of the file: `title`, `description` (130–165 chars), `canonicalUrl`, `heroImage`, `breadcrumbs`, `faqItems`.
+
+**Hero** — identical to the doors page, no variation. `min-h-[380px] lg:min-h-[480px]`, cream `from-bone/95 via-bone/75 to-transparent` fade, `fetchpriority="high"` and never `loading="lazy"` (it is the LCP element), text column `max-w-2xl`, intro at `text-ink/80`, WhatsApp + phone CTA buttons.
+
+**Images** — portrait images go in the right-hand column of a `lg:grid-cols-2` section, in the case-study container:
+```astro
+<div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+  <img src="…" alt="…" width="800" height="1000" loading="lazy" class="w-full h-full object-cover" />
+</div>
+```
+Landscape body images use `class="w-full h-auto rounded-xl shadow-lg"`. All body images lazy with explicit `width`/`height`. Images live in `public/images/guides/<guide-slug>/`.
+
+**Tables** — every table wrapped in `<div class="overflow-x-auto">` so it scrolls on a phone instead of breaking the layout. Check at 375px.
+
+**Title** — `title` is used for both the `<h1>` and the `<title>` tag, so it must work as both and stay near 60 characters once `| Heritage Joiners` is appended. Do not write a separate SEO title; there is nowhere to put it.
+
+**URLs** — `/guides/<slug>`, never a trailing slash (`astro.config.mjs` sets `trailingSlash: 'never'`).
+
+**Accuracy** — guides are reference pages people act on. Only publish figures you can verify; leave one out rather than approximate it. Do not state regulations as fact beyond common convention, and say that the specification for a given job should be confirmed. Link the sources you actually used.
+
+Register: add an entry to the `guideCards` array in `src/pages/guides/index.astro` — `href`, `title`, `description`, `category`, and optional `image` / `alt`. The card then appears automatically. `category` must match one of these strings exactly:
+`Doors & Windows` · `Skirting, Architrave & Mouldings` · `Timber & Sheet Materials` · `Wood Finishing` · `Timber Problems & Repairs` · `Carpentry Explained`
+
+Do not create two guides answering the same question — one definitive page per topic, or they cannibalise each other.
 
 ### Area page — exemplar: `src/pages/areas/pontefract.astro`
 Pattern: `BaseLayout`, H1 `"Carpenter & Joiner in <Town>"`, local intro, links to all service pages, CTA.
