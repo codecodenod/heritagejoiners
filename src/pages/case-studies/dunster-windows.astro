@@ -1,0 +1,401 @@
+---
+/**
+ * Dunster Windows — sash & timber window refurbishment, Pontefract
+ *
+ * Job confirmed COMPLETE by Rob, 25 Aug 2026.
+ *
+ * TODO before publishing:
+ *  - Confirm permission to name Dunster Consulting and use identifiable building photos.
+ *  - Finished front elevation shot by Rob 27 Aug 2026 and now in place as the hero.
+ *  - Client quotes are held back deliberately until approved — see the note by the outcome section.
+ *
+ * Heritage facts are sourced from Wakefield Council's Pontefract Castle Conservation Area
+ * Appraisal & Management Plan (adopted 25 Nov 2010), §2.4.5 and §2.4.6, and from the
+ * Pontefract Civic Society blue plaque on the building. Do not add unsourced Perfect-family
+ * detail. Do not call the building listed — the appraisal confirms it is not.
+ */
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [
+  { name: 'Dunster Windows', url: `${url}/case-studies/dunster-windows` },
+];
+
+const articleProps = {
+  headline: 'Sash & Timber Window Refurbishment — Dunster Consulting, Pontefract',
+  url: `${url}/case-studies/dunster-windows`,
+  datePublished: '2026-08-25',
+};
+
+const base = '/images/case-studies/dunster-windows';
+
+// Alternating text/image feature rows — H2s carry the secondary keywords
+const features = [
+  {
+    title: 'Assessing the weathered timber windows',
+    body: [
+      'The windows are timber sliding sashes hung on spring balances, with 16mm double-glazed units. Dunster Consulting took the building on in 2008, and nothing had been done to them in the eighteen years since.',
+      'By the time we looked at them the translucent finish had worn thin or failed completely on the exposed elevations, and the timber underneath was dry and grey. Sills, bottom corners and glazing beads had taken the worst of it. The sealant between the timber frames and the surrounding masonry had cracked and pulled away, leaving open joints where water could get in behind the frame, and several areas had local decay, old filler, or previous repairs that had failed.',
+      'Before anything else we set out a repair schedule for every numbered window. That separated straightforward maintenance from the larger repairs and the defects still hidden, so there was a clear picture to work from rather than a guess.',
+    ],
+    images: [
+      { src: `${base}/timber-window-survey-numbered-front-elevation-pontefract.webp`, alt: 'Front elevation of the former Perfect’s Hospital on Micklegate, Pontefract, with the six front timber windows numbered for the repair schedule', portrait: false, width: 1920, height: 1080 },
+      { src: `${base}/timber-window-survey-numbered-rear-elevation-pontefract.webp`, alt: 'Rear elevation timber windows numbered seven to eleven for the repair schedule in Pontefract', portrait: false, width: 1920, height: 1080 },
+    ],
+  },
+  {
+    title: 'Repairing rotten window frames and cills',
+    body: [
+      'The worst of the decay was around the exposed lower corners and cill details, where water had been sitting. Most of it could be dealt with locally — the failed material was cut out, the timber underneath treated, and the defect filled with a two-part exterior filler, then shaped and sanded to follow the existing profile.',
+      'That decision depends on what you find. A shallow hole in sound timber does not need the same treatment as a corner that has gone soft all the way through. The aim is to keep as much of the original timber in the window as possible, without pretending a filler will hold something that has nothing left to hold on to.',
+    ],
+    images: [
+      { src: `${base}/rotten-window-sill-timber-decay-pontefract.webp`, alt: 'Rotten timber raked out of a window bottom rail and lying on the stone sill below, Pontefract', portrait: false, width: 1920, height: 1080 },
+    ],
+  },
+  {
+    title: 'Sapele splice repairs to decayed timber',
+    body: [
+      'On two of the front windows the cills and the bottoms of the stiles were past filling. The rotten timber was cut back to a firm base and new pieces of sapele were shaped to match the existing cill and stile profiles, then fitted, bonded, prepared and coated as part of the window.',
+      'A splice repair like that keeps the window. The alternative is a new one, and there was no reason to go to it here — the rest of the timber was sound. These were repairs to specific defects, not a rebuild of every window on the building.',
+    ],
+    images: [
+      { src: `${base}/sapele-window-splice-repair-pontefract.webp`, alt: 'New sapele pieces shaped and dry-fitted along the bottom of a decayed timber window sill before bonding', portrait: false, width: 1920, height: 1080 },
+    ],
+  },
+  {
+    title: 'Releasing seized sliding sashes',
+    body: [
+      'Six of the upper sliding sashes were reported as not opening. Each accessible sash was checked for binding, debris, failed seals and mechanical problems, and the front upper sashes were released and put back into working order during the first stage of the work.',
+      'The inspection also turned up worn springs and sash balances. That is mechanical work needing the correct components, so it is being handled separately from the exterior maintenance rather than bodged in alongside it.',
+    ],
+    images: [
+      { src: `${base}/released-sliding-sash-timber-window-pontefract.webp`, alt: 'Upper sliding sash slid open again after being freed on a timber sash window in Pontefract', portrait: true, width: 1080, height: 1920 },
+    ],
+  },
+  {
+    title: 'Preparing the timber before refinishing',
+    body: [
+      'A finish is only ever as good as the preparation underneath it. Loose coating was scraped off and the timber sanded back to a firm edge, with failed material and debris cleared out of cill corners, lower rails and the other exposed areas.',
+      'Bare and repaired timber was treated before filling and coating. This is the part nobody sees and the part that decides how long the job lasts. No shortcut workmanship — if the surface underneath is soft or dirty, the coating will lift off it inside a season or two.',
+    ],
+    images: [
+      { src: `${base}/treating-rotten-timber-wood-preserver-pontefract.webp`, alt: 'Wood preserver brushed into the bare bottom corner of a timber window frame before filling and coating', portrait: true, width: 1080, height: 1920 },
+    ],
+  },
+  {
+    title: 'Renewing failed window frame sealant',
+    body: [
+      'The old perimeter sealant had failed all round. It was cut out of the accessible joints and renewed after preparation, closing the junction between the timber frame and the surrounding brickwork.',
+      'Failed bedding around the sides and lower glazing beads was attended to as well. These details matter more than they look — coating the face of a window does nothing to stop water getting in behind it through an open joint. One short section beside a repaired lintel had to wait for the adjacent cement work to cure before it could be sealed, and was finished on the last visit.',
+    ],
+    images: [
+      { src: `${base}/old-failed-window-frame-sealant-removed-pontefract.webp`, alt: 'Old failed window frame sealant cut out and lying on the stone sill before the joint was renewed, Pontefract', portrait: false, width: 1920, height: 1080 },
+      { src: `${base}/new-silicone-window-frame-sealant-pontefract.webp`, alt: 'New silicone sealant bead closing the joint between a finished timber window frame and the brickwork in Pontefract', portrait: true, width: 1080, height: 1920 },
+    ],
+  },
+  {
+    title: 'Exterior timber window finishing and protection',
+    body: [
+      'A mahogany/red-brown Sadolin exterior woodstain was chosen to stay close to the building’s established appearance, and two full coats were applied to the specified system.',
+      'It protects the timber without turning it into an opaque painted surface, so the grain and the natural variation still show. A third coat was considered and we advised against it — it would have darkened the windows and hidden more of the grain for no practical gain. Recommend what the timber needs; don’t add work because it can be charged for.',
+    ],
+    images: [
+      { src: `${base}/finished-timber-sash-window-mahogany-finish-pontefract.webp`, alt: 'Finished timber sliding sash window in an even mahogany woodstain, with clean profiles and renewed sealant, Pontefract', portrait: true, width: 1080, height: 1920 },
+    ],
+  },
+];
+---
+
+<CaseStudyLayout
+  title="Sash Window Refurbishment in Pontefract"
+  description="Sash and timber window refurbishment in Pontefract. See how 11 weathered windows were repaired, sealed and refinished, including local cill and splice repairs."
+  breadcrumbs={breadcrumbs}
+  articleProps={articleProps}
+  ogImage={`${base}/sash-window-refurbishment-pontefract.webp`}
+>
+  <article>
+    <!-- Hero -->
+    <section class="py-16 lg:py-24 bg-paper">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-oak uppercase tracking-wide mb-4">Timber window refurbishment — Pontefract</p>
+        <h1 class="font-display text-4xl lg:text-6xl text-ink mb-6">
+          Sash &amp; Timber Window Refurbishment in Pontefract
+        </h1>
+        <p class="text-xl text-ink/70 max-w-2xl mb-4">
+          Dunster Consulting, Micklegate — 11 timber windows and the main entrance door repaired, prepared, sealed and refinished.
+        </p>
+        <p class="text-ink/70 max-w-2xl mb-10">
+          The external finish had broken down, the frame sealant had failed and several opening sashes were seized. The windows were kept in service rather than replaced.
+        </p>
+        <img
+          src={`${base}/sash-window-refurbishment-pontefract.webp`}
+          alt="The finished front elevation of the former Perfect&rsquo;s Hospital at 18-22 Micklegate, Pontefract, with six refurbished timber sash windows and the main entrance door"
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+          class="w-full h-auto rounded-2xl shadow-lg"
+        />
+      </div>
+    </section>
+
+    <!-- Project facts -->
+    <section class="py-16 bg-bone" aria-label="Project facts">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 bg-paper rounded-lg border border-ink/10">
+            <dt class="text-ink/60 text-sm mb-2">Location</dt>
+            <dd class="text-ink">Micklegate, Pontefract, West Yorkshire</dd>
+          </div>
+          <div class="p-6 bg-paper rounded-lg border border-ink/10">
+            <dt class="text-ink/60 text-sm mb-2">Building</dt>
+            <dd class="text-ink">The former Perfect&rsquo;s Hospital, now commercial offices</dd>
+          </div>
+          <div class="p-6 bg-paper rounded-lg border border-ink/10">
+            <dt class="text-ink/60 text-sm mb-2">Joinery</dt>
+            <dd class="text-ink">11 external timber windows and the main entrance door</dd>
+          </div>
+          <div class="p-6 bg-paper rounded-lg border border-ink/10">
+            <dt class="text-ink/60 text-sm mb-2">Finish</dt>
+            <dd class="text-ink">Two-coat exterior woodstain, mahogany/red-brown</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Establish subject + location -->
+    <section class="py-16 bg-bone">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Timber and sash window refurbishment in Pontefract</h2>
+        <p class="text-ink/70 mb-3">
+          <a href="https://www.dunsterconsulting.com/" target="_blank" rel="noopener" class="text-oak hover:underline">Dunster Consulting</a> asked Heritage Joiners to look at the timber windows at their offices at 18&ndash;22 Micklegate in Pontefract &mdash; the former Perfect&rsquo;s Hospital. The external finish had broken down, the frame sealant had failed and several of the opening sashes were seized. Some of the timber was badly weathered, with local decay in the worst-exposed areas.
+        </p>
+        <p class="text-ink/70">
+          The job covered 11 timber windows across the front and rear elevations, together with the main entrance door. The aim throughout was to keep the existing joinery in service — repair what could be repaired, get proper weather protection back onto the timber, and leave the windows working rather than replacing them.
+        </p>
+      </div>
+    </section>
+
+    <!-- Heritage / conservation area — facts from the adopted Wakefield appraisal + the plaque -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+          <div>
+            <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">A historic building in the Pontefract Castle Conservation Area</h2>
+            <p class="text-ink/70 mb-3 leading-relaxed">
+              18&ndash;22 Micklegate is the former Perfect&rsquo;s Hospital. Wakefield Council&rsquo;s adopted conservation area appraisal names it directly &mdash; "No.&rsquo;s 18-22 Micklegate are the former Perfects Hospital which is shown on the 1852 town plan" &mdash; and lists it among the key unlisted buildings that carry the character of the area. It is not a listed building. The Council&rsquo;s position is that in this part of Pontefract, every building that pre-dates the twentieth century, altered or not, makes a significant contribution.
+            </p>
+            <p class="text-ink/70 mb-3 leading-relaxed">
+              There is a blue plaque above the door, put up by Pontefract Civic Society in 2025. Five generations of the Perfect family were market gardeners here in the 17th and 18th century, supplying plants and trees to the great houses of the north, and Perfect&rsquo;s Hospital was bequeathed to the people of Pontefract as an almshouse in 1767.
+            </p>
+            <p class="text-ink/70 mb-3 leading-relaxed">
+              Micklegate remains the principal route to the castle from the town to the west. The appraisal names replacement windows among the alterations that have undermined what surviving historic buildings contribute here, and its management plan asks that opportunities be taken to retain architectural features and details &mdash; windows included.
+            </p>
+            <p class="text-ink/70 leading-relaxed">
+              These particular windows are not 18th-century, and it would be daft to pretend otherwise: they are timber sliding sashes on spring balances with 16mm double-glazed units, a modern window in a traditional pattern. The principle still holds. Repairing them keeps timber sashes on a building where they belong, instead of starting the cycle of replacement the appraisal warns about.
+            </p>
+          </div>
+          <div>
+            <img
+              src={`${base}/perfects-of-pontefract-blue-plaque-micklegate.webp`}
+              alt="Pontefract Civic Society blue plaque above the door at 18-22 Micklegate marking the former Perfect's Hospital"
+              width="1180"
+              height="1080"
+              loading="lazy"
+              class="w-full h-auto rounded-xl shadow-lg"
+            />
+            <p class="text-ink/60 text-sm mt-3">
+              The Pontefract Civic Society blue plaque above the door, unveiled in 2025.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The work — alternating rows -->
+    <section class="py-16 lg:py-24 bg-paper">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="space-y-16 lg:space-y-24">
+          {features.map((f, i) => (
+            <div class={`grid grid-cols-1 gap-8 lg:gap-14 items-center ${f.images.length ? 'lg:grid-cols-2' : ''}`}>
+              <div class={f.images.length && i % 2 === 1 ? 'lg:order-2' : ''}>
+                <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">{f.title}</h2>
+                {f.body.map((p) => <p class="text-ink/70 mb-3 leading-relaxed">{p}</p>)}
+              </div>
+              {f.images.length > 0 && (
+                <div class={i % 2 === 1 ? 'lg:order-1' : ''}>
+                  {f.images.length === 1 ? (
+                    f.images[0].portrait ? (
+                      <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+                        <img src={f.images[0].src} alt={f.images[0].alt} width={f.images[0].width} height={f.images[0].height} loading="lazy" class="w-full h-full object-cover" />
+                      </div>
+                    ) : (
+                      <img src={f.images[0].src} alt={f.images[0].alt} width={f.images[0].width} height={f.images[0].height} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
+                    )
+                  ) : f.images.every((im) => !im.portrait) ? (
+                    <div class="space-y-4">
+                      {f.images.map((img) => (
+                        <img src={img.src} alt={img.alt} width={img.width} height={img.height} loading="lazy" class="w-full h-auto rounded-xl shadow-lg" />
+                      ))}
+                    </div>
+                  ) : (
+                    <div class="grid grid-cols-2 gap-4">
+                      {f.images.map((img) => (
+                        <div class="aspect-square overflow-hidden rounded-lg shadow-md">
+                          <img src={img.src} alt={img.alt} width={img.width} height={img.height} loading="lazy" class="w-full h-full object-cover" />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!--
+      Outcome. Job confirmed complete 25 Aug 2026.
+      NOTE: the client's own comments on the colour are held back until approved for publication.
+      NOTE: the sash spring balance work is a separate later job — that wording is correct, leave it.
+    -->
+    <section class="py-16 lg:py-24 bg-bone">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+          <div>
+            <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The completed sash and timber window refurbishment</h2>
+            <p class="text-ink/70 mb-3 leading-relaxed">
+              The work is finished. Timber that looked dry, grey and neglected now carries an even mahogany finish, clean profiles and proper weather protection &mdash; across all 11 windows and the main entrance door, front and rear.
+            </p>
+            <p class="text-ink/70 mb-3 leading-relaxed">
+              The windows have been kept rather than replaced. Eighteen years of neglect has been pulled back with preparation, local repair and two coats, and the building keeps the timber sashes it had. The client was pleased with the colour and the improvement visible while the work was going on.
+            </p>
+            <p class="text-ink/70 leading-relaxed">
+              Worn spring balances were identified on some of the sashes while the work was going on. That is mechanical work needing the correct components, and it sits outside this maintenance package rather than being bodged in alongside it.
+            </p>
+          </div>
+          <div>
+            <img
+              src={`${base}/refurbished-timber-sash-windows-micklegate-pontefract.webp`}
+              alt="Refurbished timber sash windows along the Micklegate elevation of the former Perfect&rsquo;s Hospital, Pontefract"
+              width="1920"
+              height="1080"
+              loading="lazy"
+              class="w-full h-auto rounded-xl shadow-lg"
+            />
+            <p class="text-ink/60 text-sm mt-3">
+              The finished windows along the Micklegate frontage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Repair vs replace — internal link opportunity -->
+    <section class="py-16 lg:py-24 bg-paper">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+          <div>
+            <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Can old timber windows be repaired instead of replaced?</h2>
+            <p class="text-ink/70 mb-3 leading-relaxed">
+              Old timber windows do not automatically need replacing. Whether you are looking at sash window restoration, refurbishment or renovation, the question underneath is the same one: how much of the existing timber is still sound, where is the water getting in, and can the failed section be repaired properly.
+            </p>
+            <p class="text-ink/70 mb-3 leading-relaxed">
+              On this job the answer was yes for all 11 windows. Sometimes it is no, and it is better to say so. On a building inside a conservation area it is worth asking the question properly before anyone reaches for a replacement quote. <a href="/blog/can-timber-windows-be-repaired" class="text-oak hover:underline">Can timber windows be repaired?</a> goes through how that decision gets made, <a href="/services/windows" class="text-oak hover:underline">sash window repair and timber window restoration</a> covers the work in more detail, and <a href="/services/timber-repair" class="text-oak hover:underline">timber rot and splice repair</a> explains where a splice is the right answer.
+            </p>
+            <p class="text-ink/70 leading-relaxed">
+              Send clear photographs of the whole window and of the damaged areas, and Rob can give you an honest first view before arranging a site visit.
+            </p>
+          </div>
+          <div>
+            <img
+              src={`${base}/rotten-timber-cut-out-of-window-sash-pontefract.webp`}
+              alt="Decayed timber raked out of the bottom of a sash and stile, showing how far the rot had gone before repair"
+              width="1920"
+              height="1080"
+              loading="lazy"
+              class="w-full h-auto rounded-xl shadow-lg"
+            />
+            <p class="text-ink/60 text-sm mt-3">
+              How far the rot had gone on one window &mdash; cut back to sound timber before deciding between filler and a splice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview + related -->
+    <section class="py-16 bg-bone">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 p-6 bg-paper rounded-lg border border-ink/10">
+          <h3 class="font-display text-lg text-ink mb-4">Project overview</h3>
+          <dl class="space-y-3 text-sm">
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-ink/10 pb-2">
+              <dt class="text-ink/60">Client</dt>
+              <dd class="text-ink sm:text-right">
+                <a href="https://www.dunsterconsulting.com/" target="_blank" rel="noopener" class="text-oak hover:underline">Dunster Consulting Ltd</a>, civil &amp; structural engineers
+              </dd>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-ink/10 pb-2">
+              <dt class="text-ink/60">Location</dt>
+              <dd class="text-ink sm:text-right">Micklegate, Pontefract, West Yorkshire</dd>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-ink/10 pb-2">
+              <dt class="text-ink/60">Building</dt>
+              <dd class="text-ink sm:text-right sm:max-w-md">The former Perfect&rsquo;s Hospital, 18&ndash;22 Micklegate &mdash; a key unlisted building in the Pontefract Castle Conservation Area</dd>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-ink/10 pb-2">
+              <dt class="text-ink/60">Work</dt>
+              <dd class="text-ink sm:text-right">Timber window maintenance, repair and refinishing</dd>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-ink/10 pb-2">
+              <dt class="text-ink/60">Main defects</dt>
+              <dd class="text-ink sm:text-right sm:max-w-md">Failed coatings, failed frame sealant, local timber decay and seized upper sliding sashes</dd>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-ink/10 pb-2">
+              <dt class="text-ink/60">Repairs</dt>
+              <dd class="text-ink sm:text-right sm:max-w-md">Local two-part filler repairs throughout; shaped sapele splice repairs to cills and stile bottoms on two front windows</dd>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-ink/10 pb-2">
+              <dt class="text-ink/60">Finish</dt>
+              <dd class="text-ink sm:text-right">Two-coat Sadolin exterior woodstain, mahogany/red-brown</dd>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-1">
+              <dt class="text-ink/60">Approach</dt>
+              <dd class="text-ink sm:text-right sm:max-w-md">Retain sound timber, repair local defects, avoid unnecessary replacement</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="p-6 bg-paper rounded-lg border border-ink/10">
+          <h3 class="font-display text-lg text-ink mb-3">Related service pages</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services/windows" class="text-oak hover:underline">Sash &amp; Timber Window Repair</a></li>
+            <li><a href="/services/timber-repair" class="text-oak hover:underline">Timber Repair &amp; Restoration</a></li>
+            <li><a href="/services/finishing" class="text-oak hover:underline">Finishing</a></li>
+            <li><a href="/repair-or-replace" class="text-oak hover:underline">Repair or replace?</a></li>
+            <li><a href="/blog/can-timber-windows-be-repaired" class="text-oak hover:underline">Can timber windows be repaired?</a></li>
+            <li><a href="/areas/pontefract" class="text-oak hover:underline">Joiner in Pontefract</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-ink text-bone">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="font-display text-3xl mb-4">Need sash window repair or refurbishment in Pontefract?</h2>
+        <p class="text-bone/70 mb-8 max-w-2xl mx-auto">Send a few photographs of the window and the damaged areas. Rob will give you a practical first view on whether it can be repaired before arranging a site visit.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <WhatsAppCTA />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </section>
+  </article>
+</CaseStudyLayout>

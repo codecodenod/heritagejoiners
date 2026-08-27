@@ -46,9 +46,15 @@ The whole site is one theme. Same layouts, same heading scale, same fonts, same 
 
 1. Source images live outside the repo; converted copies go in `public/images/<area>/` (`homepage/`, `about/`, `gallery/`, `case-studies/<case-study-name>/`).
 2. Filename: kebab-case, descriptive, SEO-bearing (e.g. `the-counting-house-oak-staircase.webp`). Respect content guardrails in filenames too.
-3. Convert with ImageMagick — strip metadata, resize to display size, target ≤ ~120 KB:
-   `convert in.jpg -auto-orient -strip -resize "1100x1100>" -quality 80 out.webp`
-   (heroes ~1500px wide; portraits cap `800x1000>`; tiles ~800px)
+3. **NEVER resize, convert or re-encode an image Rob gives you. Copy it across as-is and rename it.**
+   Rob processes his own photos before handing them over — they arrive as `.webp` at roughly 100 KB,
+   already sized. Re-encoding an already-compressed webp only throws away quality for nothing.
+   `cp "$SRC/original.webp" "public/images/<area>/<seo-name>.webp"` — that is the whole job.
+   - Check the file size. If it is around 100 KB, do nothing but rename it.
+   - If it is **not** around 100 KB (e.g. a raw phone photo at 4032px / several MB), **stop and flag it
+     to Rob**. Do not silently fix it. He will re-export it himself.
+   - Read the real dimensions with `identify` and put those exact numbers in `width`/`height`.
+   - Never run `convert ... -resize ...` on his images. Never lower `-quality` to hit a size target.
 4. Every `<img>` gets meaningful `alt`. Below-the-fold images get `loading="lazy"`; a page's hero image gets `fetchpriority="high"` and explicit `width`/`height`.
 5. Pass a real photo as `ogImage` on the layout when the page has one; otherwise the default social card is used automatically.
 
