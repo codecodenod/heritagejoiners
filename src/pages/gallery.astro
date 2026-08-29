@@ -6,80 +6,83 @@ import { siteConfig } from '../config/site';
 
 const { phone } = siteConfig;
 
-const galleryItems = [
-  {
-    title: 'Timber Doors',
-    category: 'Doors',
-    image: '/images/gallery/oak-door-counting-house.webp',
-    alt: 'Solid oak boarded door with stained-glass detail in a stone surround',
-    width: 619,
-    height: 1100,
-  },
-  {
-    title: 'Timber Windows',
-    category: 'Windows',
-    image: '/images/gallery/sash-window-repair-pontefract.webp',
-    alt: 'Sash bay window with glazing bars on a brick period property',
-    width: 608,
-    height: 800,
-  },
-  {
-    title: 'Splice Repairs',
-    category: 'Timber Repair',
-    image: '/images/gallery/wood-splice-repair.webp',
-    alt: 'New timber section spliced into the corner of an original door frame',
-    width: 1269,
-    height: 1044,
-  },
-  {
-    title: 'Timber Joist Repair',
-    category: 'Timber Repair',
-    image: '/images/gallery/timber-joist-repair.webp',
-    alt: 'New timber floor joists installed across a living room during floor repair',
-    width: 1200,
-    height: 675,
-  },
-  {
-    title: 'Engineered Oak Flooring',
-    category: 'Flooring',
-    image: '/images/gallery/engineered-oak-wood-flooring.webp',
-    alt: 'Engineered oak wood flooring being fitted over underlay in a living room',
-    width: 1200,
-    height: 966,
-  },
-  {
-    title: 'Workshop Joinery',
-    category: 'Joinery',
-    image: '/images/gallery/workshop-bench-hand-joinery.webp',
-    alt: 'Framed oak panel being made on the bench in the Heritage Joiners workshop',
-    width: 1200,
-    height: 794,
-  },
-  {
-    title: 'The Counting House',
-    category: 'Case Study',
-    image: '/images/case-studies/counting-house/counting-house-hero.webp',
-    alt: 'The Counting House case study building',
-    width: 900,
-    height: 640,
-  },
-  {
-    title: 'Counting House Award',
-    category: 'Case Study',
-    image: '/images/case-studies/counting-house/heritage-award-counting-house.webp',
-    alt: 'The Counting House and the Pontefract Civic Society 2025 Design Awards presentation',
-    width: 1479,
-    height: 602,
-  },
-  {
-    title: 'Period Door Detail',
-    category: 'Heritage',
-    image: '/images/homepage/heritage-oak-door-restoration-yorkshire.webp',
-    alt: 'Restored oak door detail',
-    width: 2560,
-    height: 1441,
-  },
+const categories = [
+  'Doors',
+  'Windows',
+  'Staircases',
+  'Timber Repair',
+  'Wall Panelling & Cladding',
+  'Skirting, Architrave & Mouldings',
+  'Gates & Outdoor Carpentry',
+  'Roofing Carpentry',
+  'Stud Partitions & First Fix',
+  'Flooring',
+  'Workshop & Bench Joinery',
+  'The Counting House',
+  'Dunster Windows',
+] as const;
+
+const galleryItems: { category: (typeof categories)[number]; title: string; image: string; alt: string; width: number; height: number }[] = [
+  { category: 'Doors', title: 'Solid Oak Front Door', image: '/images/case-studies/counting-house/the-counting-house-oak-front-door-in-situ.webp', alt: 'Bespoke solid oak front door hung in a stone surround at The Counting House, Pontefract', width: 1500, height: 844 },
+  { category: 'Doors', title: 'Ledged & Braced Oak Door', image: '/images/case-studies/counting-house/the-counting-house-oak-ledged-braced-door-interior.webp', alt: 'Interior face of a solid oak ledged and braced door with stained-glass light above, The Counting House, Pontefract', width: 563, height: 1000 },
+  { category: 'Doors', title: 'Timber Doors', image: '/images/blog/stud-partition/finished-stud-partition-wall-with-internal-door-doncaster.webp', alt: 'Internal timber door hung and finished in a new stud partition wall in Doncaster', width: 1500, height: 844 },
+  { category: 'Doors', title: 'Victorian Door Restoration', image: '/images/case-studies/counting-house/the-counting-house-victorian-cupboard-door-restoration.webp', alt: 'Original Victorian panelled cupboard door repaired, restored and refitted', width: 707, height: 1000 },
+  { category: 'Windows', title: 'Refinished Timber Sash Window', image: '/images/case-studies/dunster-windows/finished-timber-sash-window-mahogany-finish-pontefract.webp', alt: 'Timber sliding sash window finished in mahogany woodstain with clean profiles and renewed sealant', width: 1080, height: 1920 },
+  { category: 'Windows', title: 'Refurbished Sash Windows', image: '/images/case-studies/dunster-windows/refurbished-timber-sash-windows-micklegate-pontefract.webp', alt: 'Repaired and refinished timber sash windows along a Micklegate elevation in Pontefract', width: 1920, height: 1080 },
+  { category: 'Windows', title: 'Timber Windows', image: '/images/gallery/sash-window-repair-pontefract.webp', alt: 'Sash bay window with glazing bars on a brick period property', width: 608, height: 800 },
+  { category: 'Windows', title: 'Restored Sash Window', image: '/images/homepage/restored-sash-window-period-property-pontefract.webp', alt: 'Restored timber sash window on a period property in Pontefract', width: 1100, height: 404 },
+  { category: 'Windows', title: 'Timber Sash Windows', image: '/images/services/windows/yorkshire-stone-building-timber-sash-windows.webp', alt: 'Timber sash windows in a Yorkshire stone building', width: 2880, height: 1440 },
+  { category: 'Windows', title: 'Sash Window After Repair', image: '/images/blog/timber-window-repair/restored-sash-window-after-timber-repair.webp', alt: 'Timber sash window restored after localised timber repair', width: 1100, height: 825 },
+  { category: 'Windows', title: 'Oak Window Surround', image: '/images/case-studies/counting-house/the-counting-house-rustic-oak-window-surround-reveals.webp', alt: 'Rustic oak internal window surround with oak reveals, lintel and window board', width: 563, height: 1000 },
+  { category: 'Staircases', title: 'Oak Staircase', image: '/images/case-studies/counting-house/the-counting-house-oak-staircase.webp', alt: 'Solid oak staircase and landing with non-slip treads at The Counting House, Pontefract', width: 563, height: 1000 },
+  { category: 'Staircases', title: 'External Oak Staircase', image: '/images/case-studies/counting-house/the-counting-house-external-oak-staircase-non-slip-treads.webp', alt: 'External solid oak staircase with non-slip metal treads', width: 563, height: 1000 },
+  { category: 'Staircases', title: 'Oak Staircase & Courtyard', image: '/images/case-studies/counting-house/the-counting-house-oak-staircase-courtyard.webp', alt: 'Rear external solid oak staircase rising to the first floor from a courtyard', width: 1100, height: 619 },
+  { category: 'Staircases', title: 'Oak Staircase & Landing', image: '/images/case-studies/counting-house/the-counting-house-rear-oak-staircase-finished.webp', alt: 'Finished rear solid oak staircase and landing in a historic Pontefract building', width: 1500, height: 844 },
+  { category: 'Staircases', title: 'Oak Landing', image: '/images/case-studies/counting-house/the-counting-house-oak-staircase-landing-top-view.webp', alt: 'Solid oak staircase landing viewed from above', width: 563, height: 1000 },
+  { category: 'Staircases', title: 'Fitted Oak Staircase', image: '/images/services/staircases/oak-staircase-fitted-pontefract.webp', alt: 'Bespoke oak staircase made and fitted in Pontefract', width: 1600, height: 898 },
+  { category: 'Staircases', title: 'Oak Handrails & Spindles', image: '/images/homepage/oak-staircase-handrails-spindles.webp', alt: 'Oak staircase handrails and turned spindles', width: 800, height: 600 },
+  { category: 'Timber Repair', title: 'Splice Repairs', image: '/images/gallery/sapele-splice-repair-window-sill-pontefract.webp', alt: 'New sapele shaped and fitted into the decayed bottom of a timber window sill in Pontefract', width: 1920, height: 1080 },
+  { category: 'Timber Repair', title: 'Sapele Splice Repair', image: '/images/case-studies/dunster-windows/sapele-splice-repair-window-stile-and-sill-pontefract.webp', alt: 'Sapele spliced into the bottom of a window stile and along the sill, cut in flush before coating', width: 1080, height: 1920 },
+  { category: 'Timber Repair', title: 'Rotten Window Sill', image: '/images/case-studies/dunster-windows/rotten-window-sill-timber-decay-pontefract.webp', alt: 'Decayed timber raked off a window sill, soft and fibrous after years of trapped water', width: 1920, height: 1080 },
+  { category: 'Timber Repair', title: 'Oak Beam Repair', image: '/images/case-studies/counting-house/the-counting-house-oak-beam-repair-threaded-bar.webp', alt: 'Split oak beam drilled and pulled back together with threaded bar', width: 563, height: 1000 },
+  { category: 'Timber Repair', title: 'Door Frame Splice Repair', image: '/images/case-studies/counting-house/the-counting-house-victorian-door-splice-repair.webp', alt: 'Original exterior door frame repaired with a clean bottom splice', width: 563, height: 1000 },
+  { category: 'Timber Repair', title: 'Window Frame Splice Repair', image: '/images/blog/timber-window-repair/timber-window-frame-splice-repair.webp', alt: 'New timber spliced into a decayed section of a timber window frame', width: 447, height: 447 },
+  { category: 'Timber Repair', title: 'Timber Joist Repair', image: '/images/gallery/timber-joist-repair.webp', alt: 'New timber floor joists installed across a living room during floor repair', width: 1200, height: 675 },
+  { category: 'Wall Panelling & Cladding', title: 'Fitted Wall Panelling', image: '/images/services/cladding-panelling/wall-panelling-fitted-doncaster.webp', alt: 'Timber wall panelling made and fitted in Doncaster', width: 1600, height: 900 },
+  { category: 'Wall Panelling & Cladding', title: 'External Timber Cladding', image: '/images/blog/timber-cladding/external-timber-cladding-castleford-finished.webp', alt: 'Finished external timber cladding on a property in Castleford', width: 1080, height: 1440 },
+  { category: 'Wall Panelling & Cladding', title: 'Timber Garage Cladding', image: '/images/blog/timber-cladding/finished-garage-wall-cladding.webp', alt: 'Finished vertical timber cladding to a garage wall', width: 1080, height: 1440 },
+  { category: 'Wall Panelling & Cladding', title: 'Bathroom Wall Panels', image: '/images/blog/bathroom-wall-panels/completed-bathroom-wall-cladding-doncaster.webp', alt: 'Completed PVC bathroom wall cladding fitted in a Doncaster ensuite', width: 1920, height: 1080 },
+  { category: 'Wall Panelling & Cladding', title: 'Marble-Effect Wall Panels', image: '/images/blog/bathroom-wall-panels/marble-effect-pvc-bathroom-wall-panels-doncaster.webp', alt: 'Marble-effect PVC bathroom wall panels fitted around a bath', width: 1920, height: 1080 },
+  { category: 'Skirting, Architrave & Mouldings', title: 'Custom Skirting Board', image: '/images/guides/skirting-architrave-profiles/large-custom-skirting-board-fitted.webp', alt: 'Large custom-profile skirting board made and fitted to a period room', width: 1080, height: 856 },
+  { category: 'Skirting, Architrave & Mouldings', title: 'Skirting, Architrave & Plinth Block', image: '/images/guides/skirting-architrave-profiles/skirting-board-architrave-plinth-block.webp', alt: 'Moulded skirting board running into a plinth block at a door architrave', width: 1080, height: 784 },
+  { category: 'Skirting, Architrave & Mouldings', title: 'Edwardian Skirting Board', image: '/images/guides/skirting-architrave-profiles/edwardian-style-white-skirting-board.webp', alt: 'Edwardian-style moulded skirting board painted white', width: 600, height: 315 },
+  { category: 'Skirting, Architrave & Mouldings', title: 'Torus Skirting Board', image: '/images/services/skirting-architrave/torus-skirting-board-fitted-yorkshire.webp', alt: 'Torus profile skirting board fitted in a Yorkshire property', width: 1600, height: 1062 },
+  { category: 'Gates & Outdoor Carpentry', title: 'Bespoke Garden Gate', image: '/images/blog/garden-gate/bespoke-ledged-and-braced-garden-gate.webp', alt: 'Bespoke ledged and braced timber garden gate made to measure', width: 1080, height: 1920 },
+  { category: 'Gates & Outdoor Carpentry', title: 'Arched Timber Gate', image: '/images/blog/garden-gate/arched-top-tanalised-timber-garden-gate.webp', alt: 'Arched top tanalised timber garden gate', width: 1080, height: 1920 },
+  { category: 'Gates & Outdoor Carpentry', title: 'Made-to-Measure Gate', image: '/images/blog/garden-gate/made-to-measure-wooden-garden-gate-fitted.webp', alt: 'Made-to-measure wooden garden gate fitted and hung on heavy ironmongery', width: 1080, height: 1920 },
+  { category: 'Gates & Outdoor Carpentry', title: 'Oak Framed Gate', image: '/images/case-studies/counting-house/the-counting-house-oak-framed-ledged-braced-gate.webp', alt: 'Solid oak framed, ledged and braced gate on black ironmongery', width: 563, height: 1000 },
+  { category: 'Roofing Carpentry', title: 'Oak Roof Trusses', image: '/images/homepage/oak-roof-trusses-timber-rafters.webp', alt: 'Oak roof trusses and timber rafters in a traditional cut roof', width: 600, height: 800 },
+  { category: 'Roofing Carpentry', title: 'Roof Carpentry & Joists', image: '/images/services/roofing-carpentry/roof-carpentry-new-timber-joists-wakefield.webp', alt: 'New timber roof joists fitted during roofing carpentry in Wakefield', width: 1600, height: 900 },
+  { category: 'Roofing Carpentry', title: 'Hipped Roof Extension', image: '/images/about/heritage-joiners-hipped-roof-extension.webp', alt: 'Hipped roof extension carpentry with new rafters and trimmers', width: 1200, height: 678 },
+  { category: 'Stud Partitions & First Fix', title: 'Stud Wall Frame', image: '/images/blog/stud-partition/stud-wall-frame-with-door-opening-doncaster.webp', alt: 'Timber stud wall frame set out with a door opening formed', width: 1920, height: 1080 },
+  { category: 'Stud Partitions & First Fix', title: 'First Fix Carpentry', image: '/images/services/first-fix-carpentry/first-fix-carpentry-stud-partition-frame-yorkshire.webp', alt: 'First fix carpentry stud partition frame in Yorkshire', width: 1600, height: 900 },
+  { category: 'Flooring', title: 'Engineered Oak Flooring', image: '/images/gallery/engineered-oak-wood-flooring.webp', alt: 'Engineered oak wood flooring laid in a living room', width: 1200, height: 966 },
+  { category: 'Flooring', title: 'Original Stone Flagged Floor', image: '/images/case-studies/counting-house/the-counting-house-original-stone-flagged-floor.webp', alt: 'Original stone flagged floor retained in a historic Pontefract building', width: 750, height: 1000 },
+  { category: 'Workshop & Bench Joinery', title: 'Workshop Joinery', image: '/images/gallery/workshop-bench-hand-joinery.webp', alt: 'Bench hand joinery being made in the workshop', width: 1200, height: 794 },
+  { category: 'Workshop & Bench Joinery', title: 'Hand-Cut Dovetails', image: '/images/about/heritage-joiners-hand-cut-dovetails-furniture.webp', alt: 'Hand-cut dovetail joints in a piece of bench-made furniture', width: 748, height: 1000 },
+  { category: 'Workshop & Bench Joinery', title: 'Staircase Tenons & Newels', image: '/images/case-studies/counting-house/the-counting-house-oak-staircase-tenons-newels-workshop.webp', alt: 'Oak staircase tenons and newels set out on the workshop bench', width: 633, height: 1000 },
+  { category: 'Workshop & Bench Joinery', title: 'Oak Door On The Bench', image: '/images/case-studies/counting-house/the-counting-house-oak-door-ledged-braced-workshop.webp', alt: 'Solid oak ledged and braced door being made on the workshop bench', width: 450, height: 1000 },
+  { category: 'Workshop & Bench Joinery', title: 'Joinery Workshop', image: '/images/homepage/timber-joinery-workshop-pontefract.webp', alt: 'Timber joinery workshop in Pontefract', width: 2560, height: 1441 },
+  { category: 'Workshop & Bench Joinery', title: 'Stacked Oak Boards', image: '/images/services/timber-hardwoods/oak-boards-stacked-workshop-yorkshire.webp', alt: 'Sawn oak boards stacked in the workshop ready for machining', width: 1600, height: 900 },
+  { category: 'The Counting House', title: 'The Counting House', image: '/images/case-studies/counting-house/counting-house-hero.webp', alt: 'The Counting House, Pontefract — a historic timber-framed and stone town-centre building', width: 900, height: 640 },
+  { category: 'The Counting House', title: 'Heritage Award', image: '/images/case-studies/counting-house/heritage-award-counting-house.webp', alt: 'Heritage Joiners receiving the Heritage Award for The Counting House at the Pontefract Civic Society 2025 Design Awards', width: 1479, height: 602 },
+  { category: 'Dunster Windows', title: 'Dunster Windows', image: '/images/case-studies/dunster-windows/sash-window-refurbishment-pontefract.webp', alt: 'The former Perfect’s Hospital, 18-22 Micklegate, Pontefract, after all eleven timber sash windows were repaired and refinished', width: 1920, height: 1080 },
+  { category: 'Dunster Windows', title: 'The Perfects of Pontefract', image: '/images/case-studies/dunster-windows/perfects-of-pontefract-blue-plaque-micklegate.webp', alt: 'Pontefract Civic Society blue plaque marking the former Perfect’s Hospital at 18-22 Micklegate', width: 1180, height: 1080 },
 ];
+// Sections, in the order above. Empty categories drop out on their own.
+const groups = categories
+  .map((category) => ({ category, items: galleryItems.filter((g) => g.category === category) }))
+  .filter((group) => group.items.length > 0);
 ---
 
 <BaseLayout
@@ -94,25 +97,47 @@ const galleryItems = [
         <p class="text-oak uppercase tracking-wide mb-4">Recent work</p>
         <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Carpentry &amp; Joinery Work Across West Yorkshire</h1>
         <p class="text-lg text-ink/70">
-          A working gallery of carpentry, joinery, heritage repair, and timber details across West Yorkshire. The point is simple: let the timber, the repairs, and the fitting details speak for the work while the gallery grows with more doors, kitchens, stairs, roofs, and built-in joinery.
+          Doors, windows, staircases, timber repairs, panelling, gates, roofs and bench joinery from jobs across Pontefract, Wakefield and the wider West Yorkshire area. Click any photo to see it full size.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {galleryItems.map((item) => (
-          <article class="group block bg-bone rounded-lg overflow-hidden border border-ink/10 hover:border-oak transition-colors">
-            <div class="aspect-[4/3] overflow-hidden">
-              <img src={item.image} alt={item.alt} width={item.width} height={item.height} class="w-full h-full object-cover" loading="lazy" />
+      <div id="gallery-grid">
+        {groups.map((group) => (
+          <section class="mb-14 last:mb-0">
+            <h2 class="font-display text-2xl text-ink mb-6 pb-2 border-b border-ink/10">{group.category}</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {group.items.map((item) => (
+                <article class="group block bg-bone rounded-lg overflow-hidden border border-ink/10 hover:border-oak transition-colors">
+                  <a
+                    href={item.image}
+                    class="block gallery-open focus:outline-none focus-visible:ring-2 focus-visible:ring-oak"
+                    data-index={galleryItems.indexOf(item)}
+                    aria-label={`Enlarge: ${item.title}`}
+                  >
+                    <div class="aspect-[4/3] overflow-hidden">
+                      <img src={item.image} alt={item.alt} width={item.width} height={item.height} class="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                  </a>
+                  <div class="p-5">
+                    <h3 class="font-display text-lg text-ink group-hover:text-oak transition-colors">{item.title}</h3>
+                  </div>
+                </article>
+              ))}
             </div>
-            <div class="p-6">
-              <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs text-oak uppercase tracking-wide">{item.category}</span>
-              </div>
-              <h2 class="font-display text-xl text-ink mb-2 group-hover:text-oak transition-colors">{item.title}</h2>
-            </div>
-          </article>
+          </section>
         ))}
       </div>
+
+      <!-- Lightbox: native <dialog>, no library. Tiles stay plain links if JS never runs. -->
+      <dialog id="lightbox" aria-label="Gallery image" class="lightbox">
+        <button type="button" class="lb-close" data-lb="close" aria-label="Close">&times;</button>
+        <button type="button" class="lb-nav lb-prev" data-lb="prev" aria-label="Previous image">&#8249;</button>
+        <button type="button" class="lb-nav lb-next" data-lb="next" aria-label="Next image">&#8250;</button>
+        <figure>
+          <img id="lb-img" src="" alt="" />
+          <figcaption><span id="lb-title"></span> <span id="lb-count"></span></figcaption>
+        </figure>
+      </dialog>
     </div>
   </section>
 
@@ -126,4 +151,61 @@ const galleryItems = [
       </div>
     </div>
   </section>
+
+<script is:inline define:vars={{ items: galleryItems.map((g) => ({ src: g.image, title: g.title, alt: g.alt })) }}>
+  const dlg = document.getElementById('lightbox');
+  if (dlg && typeof dlg.showModal === 'function') {
+    const img = document.getElementById('lb-img');
+    const title = document.getElementById('lb-title');
+    const count = document.getElementById('lb-count');
+    let i = 0;
+    const show = (n) => {
+      i = (n + items.length) % items.length;
+      img.src = items[i].src;
+      img.alt = items[i].alt;
+      title.textContent = items[i].title;
+      count.textContent = `(${i + 1} of ${items.length})`;
+    };
+    document.getElementById('gallery-grid').addEventListener('click', (e) => {
+      const a = e.target.closest('.gallery-open');
+      if (!a) return;
+      e.preventDefault();
+      show(Number(a.dataset.index));
+      dlg.showModal();
+    });
+    dlg.addEventListener('click', (e) => {
+      const act = e.target.dataset ? e.target.dataset.lb : null;
+      if (act === 'next') show(i + 1);
+      else if (act === 'prev') show(i - 1);
+      else if (act === 'close') dlg.close();
+      // anything that is not the photo itself closes: dialog box, figure, caption
+      else if (e.target.id !== 'lb-img') dlg.close();
+    });
+    dlg.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); show(i + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); show(i - 1); }
+    });
+    dlg.addEventListener('close', () => { img.src = ''; });
+  }
+</script>
+
+<style>
+  /* Dark ground is on the dialog itself, not ::backdrop — Astro scopes ::backdrop
+     out and the page shows through behind the photo. Dialog fills the viewport. */
+  .lightbox { border: 0; padding: 0; background: rgb(28 22 17 / 0.975); max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; overflow: hidden; }
+  .lightbox::backdrop { background: rgb(28 22 17 / 0.975); }
+  .lightbox figure { margin: 0; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; padding: 3.5rem 1rem 1.5rem; }
+  .lightbox img { max-width: 100%; max-height: calc(100vh - 8rem); width: auto; height: auto; object-fit: contain; border-radius: .5rem; }
+  .lightbox figcaption { color: #f4efe6; font-size: .95rem; text-align: center; }
+  .lightbox figcaption span + span { opacity: .6; margin-left: .4rem; }
+  .lb-close, .lb-nav { position: absolute; background: rgb(244 239 230 / 0.1); color: #f4efe6; border: 0; cursor: pointer; line-height: 1; border-radius: .4rem; }
+  .lb-close:hover, .lb-nav:hover { background: rgb(244 239 230 / 0.22); }
+  .lb-close:focus-visible, .lb-nav:focus-visible { outline: 2px solid #b5854b; outline-offset: 2px; }
+  .lb-close { top: .75rem; right: .75rem; width: 2.75rem; height: 2.75rem; font-size: 1.9rem; }
+  .lb-nav { top: 50%; transform: translateY(-50%); width: 2.75rem; height: 4rem; font-size: 2.2rem; }
+  .lb-prev { left: .75rem; }
+  .lb-next { right: .75rem; }
+  @media (prefers-reduced-motion: no-preference) { .lightbox[open] { animation: lb-in .18s ease-out; } }
+  @keyframes lb-in { from { opacity: 0 } to { opacity: 1 } }
+</style>
 </BaseLayout>
