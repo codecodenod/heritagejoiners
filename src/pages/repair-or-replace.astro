@@ -13,8 +13,10 @@ const { phone, url } = siteConfig;
 const stages = [
   {
     title: '1. Retain',
-    image: '/images/homepage/service-windows.webp',
-    alt: 'A weathered timber sash window before and after repair and repainting',
+    image: '/images/case-studies/dunster-windows/old-failed-window-frame-sealant-removed-pontefract.webp',
+    alt: 'Failed perimeter sealant cut out of a sound timber window frame, ready to be renewed with the window retained',
+    width: 1920,
+    height: 1080,
     trigger: 'Sound timber, minor movement, local wear, failed putty, loose beads, stiff operation, or small areas that do not affect structure.',
     link: '/services/windows',
   },
@@ -22,20 +24,26 @@ const stages = [
     title: '2. Selective splice',
     image: '/images/heritage-joiners-splice-repair.webp',
     alt: 'Decayed column base cut back and spliced with new timber, then finished with a matching moulded plinth',
+    width: 1766,
+    height: 1076,
     trigger: 'Decay is localised and can be cut back to sound timber while retaining the original member, profile, and surrounding fabric.',
     link: '/services/timber-repair',
   },
   {
     title: '3. Partial replacement',
-    image: '/images/homepage/service-rot.webp',
-    alt: 'Fresh timber let into a decayed window frame where the original section had failed',
+    image: '/images/case-studies/dunster-windows/sapele-window-splice-repair-pontefract.webp',
+    alt: 'New sapele shaped and fitted where a decayed window sill section had failed, with the rest of the window retained',
+    width: 1920,
+    height: 1080,
     trigger: 'A rail, stile, sill, frame section, or door component is too far gone, but the wider window or door can still be retained.',
     link: '/services/doors',
   },
   {
     title: '4. Full replacement',
-    image: '/images/homepage/service-windows.webp',
-    alt: 'A timber sash window beyond economical repair alongside its replacement',
+    image: '/images/repair-or-replace/timber-sash-windows-beyond-economical-repair.webp',
+    alt: 'Timber sash windows with paint flaking away and eroded, decayed frames and sills — past economical repair',
+    width: 900,
+    height: 600,
     trigger: 'Remaining sound timber is too low for a durable repair, critical zones have failed, or earlier repairs make another repair poor value.',
     link: '/services/timber-repair',
   },
@@ -105,7 +113,7 @@ const description = 'A four-stage repair-or-replace assessment for listed and pe
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {stages.map((stage) => (
           <article class="service-card bg-paper overflow-hidden">
-            <img src={stage.image} alt={stage.alt} width="800" height="600" class="w-full h-56 object-cover" loading="lazy" />
+            <img src={stage.image} alt={stage.alt} width={stage.width} height={stage.height} class="w-full h-56 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-display text-2xl text-ink mb-3">{stage.title}</h3>
               <p class="text-ink/70 mb-4">{stage.trigger}</p>
