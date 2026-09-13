@@ -8,6 +8,7 @@ import '../styles/components.css';
 import { siteConfig } from '../config/site';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import WhatsAppCTA from '../components/ui/WhatsAppCTA.astro';
 import OrganizationSchema from '../components/schema/Organization.astro';
 import LocalBusinessSchema from '../components/schema/LocalBusiness.astro';
 import WebSiteSchema from '../components/schema/WebSite.astro';
@@ -138,6 +139,9 @@ const twitterCard = 'summary_large_image';
       <slot />
     </main>
     <Footer />
+
+    <!-- Floating WhatsApp button, every page. Deliberately WhatsApp green — see WhatsAppCTA.astro -->
+    <WhatsAppCTA variant="floating" />
 
     <script>
       // Scroll-reveal (site-wide): fade section content in as it enters the
