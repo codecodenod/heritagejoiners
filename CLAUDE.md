@@ -172,6 +172,18 @@ Use `BaseLayout` with the standard hero section pattern. Check `/sitemap` page p
 - One H1 matching the title's keyword. H2s carry secondary keywords naturally — written like a joiner talks, not keyword strings.
 - Internal links: every new page links to related service pages; case studies link back to their parent.
 
+## Sitemap lastmod
+
+Per-page last-modified dates live in **`src/data/lastmod.json`**, committed to the repo, and are read by `astro.config.mjs` at build time. A route missing from the map gets **no** `lastmod` at all — saying nothing is better than stamping today's date on a page that has not changed, which teaches Google to ignore the field.
+
+**This is automatic.** `npm run build` runs it first via the `prebuild` hook, so a normal local build keeps the dates current. To run it on its own: `npm run lastmod`.
+
+It only ever moves a date forward, so touching a file without changing it cannot rewrite history.
+
+**In CI it skips itself.** A fresh clone resets every mtime, which would stamp the whole site with today's date and recreate the bug. The script detects that and exits cleanly without touching anything — `lastmod.json` is committed precisely so CI never needs to compute it.
+
+The one gap: if a page is edited and committed **without a local build**, its date lags until the next build.
+
 ## Verify before finishing (all must pass)
 
 ```bash
