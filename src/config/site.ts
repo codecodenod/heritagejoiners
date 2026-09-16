@@ -54,6 +54,7 @@ export const siteConfig = {
     'Knottingley',
     'Normanton',
     'Leeds',
+    'Bradford',
     'West Yorkshire',
     'Yorkshire',
   ],

@@ -62,6 +62,19 @@ There's no single right method — it depends on the damage. A timber splice sui
 
 Resin has its place too, in selected, limited repairs — consolidating an edge, filling a small defect. What it should never be is trowelled over wet, soft or unsound timber to save cutting the rot out. Used that way it just seals the problem in. The right choice comes down to the location, the depth and how structural the damaged area is, and some repairs sensibly use a combination of the two. Neither method is automatically better than the other.
 
+## A Real Example: The Window the Customer Thought Needed Replacing
+
+A recent job on a Grade II listed cottage on Carr Bottom Road in Greengates, Bradford. The owner had already decided the window was beyond saving and was expecting to replace it.
+
+It wasn't. The decay was confined to the bottom rail of the opening casement. The stiles, the top rail and the original leaded glazing were all sound. The rot was cut back to firm timber, new timber was let in along the rail to match the existing profile, and the casement went back on its hinges and back into use. The glazing never came out of it.
+
+<figure>
+  <img src="/images/blog/timber-window-repair/repaired-casement-window-listed-cottage-greengates.webp" alt="Repaired casement window back in use in a Grade II listed cottage in Greengates, Bradford" width="1920" height="1080" loading="lazy" />
+  <figcaption>The repaired casement back on its stay and painted — the new timber is in the bottom rail.</figcaption>
+</figure>
+
+That is the point of asking the question before reaching for a quote. The answer here was a rail, not a window. The full job, including what needed consent and what did not, is written up in [listed casement window repair in Bradford](/blog/listed-casement-window-repair-bradford). More on how we approach [casement and sash window repair](/services/windows), and on [repair or replace](/repair-or-replace) as a decision.
+
 ## When a Timber Window Should Be Replaced
 
 Replacement should be a reasoned decision, not the automatic response to one soft corner. It becomes the sensible route when decay has got through several of the main structural members, when the frame or sash is badly distorted, when the joints have failed across the whole unit, or when there's simply not enough sound timber left to carry a reliable repair. Repeated poor-quality repairs can push it that way too — at some point another patch is throwing good money after bad.
