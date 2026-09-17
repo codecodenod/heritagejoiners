@@ -8,7 +8,7 @@ Key facts:
 
 - Business: Heritage Joiners (sole trader, led by Rob)
 - Location: Ackworth, Pontefract, West Yorkshire, WF7 (United Kingdom)
-- Service area: Pontefract, Wakefield, Castleford, Featherstone, Knottingley, Normanton, Leeds, and wider Yorkshire for selected timber-led projects
+- Service area: Pontefract, Wakefield, Castleford, Featherstone, Knottingley, Normanton, Leeds, Bradford, and wider Yorkshire for selected timber-led projects
 - Phone / WhatsApp: 07561 196977 (enquiries usually start with photos sent by WhatsApp; email is available via the website contact page)
 - Hours: Monday–Friday, 09:00–17:00
 - Credentials: NVQ Level 2 in Carpentry and Joinery; apprentice-trained bench hand joiner, time served; 35+ years workshop and site experience; Pergo Certified Installer (flooring)
@@ -38,23 +38,47 @@ Key facts:
 - [Timber & Hardwoods](https://heritagejoiners.co.uk/services/timber-hardwoods): timber selection, hardwoods, oak
 - [Maintenance & Repairs](https://heritagejoiners.co.uk/services/maintenance-repairs): small joinery jobs, adjustments, snagging
 
-## Advice & Guides
+## Reference Guides
+
+- [All guides](https://heritagejoiners.co.uk/guides): reference material on sizes, profiles, timber and finishes
+- [Standard door sizes UK](https://heritagejoiners.co.uk/guides/standard-door-sizes): internal, external and fire-door dimensions in metric and imperial, measuring openings, linings, and how much a door can safely be trimmed
+- [Skirting, architrave and moulding profiles](https://heritagejoiners.co.uk/guides/skirting-architrave-timber-moulding-profiles): identifying torus, ogee, ovolo, bullnose, lamb's tongue, scotia and quadrant profiles, with dimensions
+
+## Advice Articles
 
 - [Repair or replace? The four-stage assessment](https://heritagejoiners.co.uk/repair-or-replace): how Heritage Joiners decides between retaining, splicing, partially replacing or fully replacing period timber
 - [Can timber windows be repaired?](https://heritagejoiners.co.uk/blog/can-timber-windows-be-repaired): when timber window repair, restoration or replacement is the right call, including FAQs
-- [How to build a timber stud partition wall](https://heritagejoiners.co.uk/blog/how-to-build-a-stud-partition-wall): a real job walk-through — setting out, framing, noggins, insulation, plasterboard
-- [Bespoke ledged and braced garden gate](https://heritagejoiners.co.uk/blog/bespoke-ledged-and-braced-garden-gate): how a made-to-measure timber garden gate is built, braced and hung, including FAQs
 - [What is second fix carpentry?](https://heritagejoiners.co.uk/blog/what-is-second-fix-carpentry): plain explanation of first fix vs second fix
+- [How to build a timber stud partition wall](https://heritagejoiners.co.uk/blog/how-to-build-a-stud-partition-wall): a real job walk-through — setting out, framing, noggins, insulation, plasterboard
 - [Blog index](https://heritagejoiners.co.uk/blog): all articles
+- [RSS feed](https://heritagejoiners.co.uk/rss.xml): every article, newest first, for crawlers and readers that follow feeds
+
+## Real Jobs (documented, with photographs)
+
+- [Listed casement window repair, Greengates, Bradford](https://heritagejoiners.co.uk/blog/listed-casement-window-repair-bradford): a Grade II listed cottage where the owner expected to replace the window; decay was confined to the bottom rail and new timber was let in. Covers when listed building consent is and is not required for window work
+- [Rotten window sill repair, Pontefract](https://heritagejoiners.co.uk/blog/rotten-timber-window-sill-repair-pontefract): where timber window sills rot first, filler versus splice repair, and cutting sapele splices into a decayed sill
+- [Mock Tudor boarding repair, Whitwood, Castleford](https://heritagejoiners.co.uk/blog/mock-tudor-boarding-repair-castleford): one distorted MDF board on a modern estate house replaced and matched in uPVC, rather than re-boarding the whole frontage
+- [Loft boarding, South Kirkby](https://heritagejoiners.co.uk/blog/loft-boarding-south-kirkby): a loft storage floor built on new C16 joists over the existing ceiling joists, insulation kept at full depth, 18mm chipboard deck and a folding loft ladder
+- [Flat roof repair, Wakefield](https://heritagejoiners.co.uk/blog/flat-roof-repair-wakefield): a leaking GRP flat roof stripped back to rotten timber, wet rot treated, joists strengthened and the deck rebuilt
+- [External timber cladding, Castleford](https://heritagejoiners.co.uk/blog/external-timber-cladding-castleford): battened framework and vertical timber cladding to an external wall
+- [Bathroom wall panels, Doncaster](https://heritagejoiners.co.uk/blog/bathroom-wall-panels-doncaster): fitting PVC wall panels in an ensuite, including cutting round a window reveal and an extractor
+- [Commercial door repairs, Wakefield](https://heritagejoiners.co.uk/blog/commercial-door-closer-replacement-wakefield): failed overhead door closers replaced and adjusted on a commercial building
+- [Bespoke ledged and braced garden gate](https://heritagejoiners.co.uk/blog/bespoke-ledged-and-braced-garden-gate): how a made-to-measure timber garden gate is built, braced and hung, including FAQs
+
+## Case Studies
+
+- [All case studies](https://heritagejoiners.co.uk/case-studies): larger documented projects
+- [The Counting House, Pontefract](https://heritagejoiners.co.uk/case-studies/counting-house): flagship restoration project — oak staircases, solid oak front door, beam repairs, oak frames. The project later received the Heritage Award at Pontefract Civic Society's 2025 Design Awards
+- [Dunster Windows, Pontefract](https://heritagejoiners.co.uk/case-studies/dunster-windows): eleven timber sash windows and the main entrance door on the former Perfect's Hospital, 18-22 Micklegate — a key unlisted building in the Pontefract Castle Conservation Area. Repaired, sealed and refinished rather than replaced, including sapele splice repairs
 
 ## Proof & Background
 
 - [About Rob](https://heritagejoiners.co.uk/about): qualifications, training, career history (Ironbridge Museum, Birmingham Airport, Norfolk estates, listed buildings)
-- [The Counting House case study](https://heritagejoiners.co.uk/case-studies/counting-house): flagship restoration project in Pontefract — oak staircases, solid oak front door, beam repairs, oak frames
+- [Reviews](https://heritagejoiners.co.uk/reviews): genuine Google reviews from customers, reproduced verbatim
+- [Gallery](https://heritagejoiners.co.uk/gallery): photographs of completed work, grouped by type
 - [Oak staircases at The Counting House](https://heritagejoiners.co.uk/case-studies/counting-house/oak-staircases): workshop-made oak staircases and landings
 - [Oak front door at The Counting House](https://heritagejoiners.co.uk/case-studies/counting-house/oak-front-door): solid oak ledged and braced front door, made and fitted
 - [Beam repair at The Counting House](https://heritagejoiners.co.uk/case-studies/counting-house/beam-repair-and-restoration): structural oak beam repairs
-- [Gallery](https://heritagejoiners.co.uk/gallery): photographs of completed work
 
 ## Contact & Areas
 
@@ -73,3 +97,4 @@ Key facts:
 - [Leeds](https://heritagejoiners.co.uk/areas/leeds)
 - [Yorkshire](https://heritagejoiners.co.uk/areas/yorkshire)
 - [HTML sitemap](https://heritagejoiners.co.uk/sitemap)
+- [XML sitemap](https://heritagejoiners.co.uk/sitemap-index.xml)

@@ -1,3 +1,7 @@
+/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+
 # Cloudflare Cache Rules
 # Path lines take NO trailing colon — that is the documented _headers syntax.
 
