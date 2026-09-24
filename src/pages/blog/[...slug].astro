@@ -38,9 +38,9 @@ const fmt = (d: Date) =>
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <a href="/blog" class="text-oak font-display text-sm">&larr; All posts</a>
       <p class="text-xs text-ink/40 mt-6 mb-3">{fmt(post.data.pubDate)}</p>
-      <p class="text-sm text-ink/70 mb-3">By <a href="/about" class="text-oak">Rob</a> — bench hand joiner, time served</p>
+      <p class="text-sm text-ink/70 mb-3">By <a href="/about" class="text-oak underline">Rob</a> — bench hand joiner, time served</p>
       <h1 class="font-display text-3xl lg:text-5xl text-ink mb-8">{post.data.title}</h1>
-      <div class="prose prose-lg max-w-none text-ink/80 prose-headings:font-display prose-headings:text-ink prose-a:text-oak">
+      <div class="prose max-w-none text-ink/80">
         <Content />
       </div>
     </div>
@@ -76,3 +76,18 @@ const fmt = (d: Date) =>
     </div>
   </section>
 </BaseLayout>
+
+<style is:global>
+  /* Blog body links. @tailwindcss/typography is not installed, so the prose-a:*
+     variants never applied and markdown links inherited body colour with no
+     underline. Scoped to .prose so it only touches post bodies, and matched to
+     the text-oak underline used on every other page. */
+  .prose a {
+    color: var(--color-oak);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .prose a:hover {
+    text-decoration-thickness: 2px;
+  }
+</style>

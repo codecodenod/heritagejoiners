@@ -1,6 +1,6 @@
 ---
-title: "Herringbone Laminate Flooring in a Hallway"
-description: "Grey oak herringbone laminate fitted in a hallway — levelling the subfloor, fibreboard underlay, undercutting the door linings and gluing the joints."
+title: "Herringbone Laminate Floor in Pontefract"
+description: "Grey oak herringbone laminate flooring fitted in a Pontefract hallway — levelling the subfloor, fibreboard underlay, undercutting the linings and gluing the joints."
 pubDate: 2026-09-24
 draft: false
 ogImage: "/images/blog/herringbone-laminate-flooring-hallway/grey-oak-herringbone-laminate-flooring-hallway.webp"
@@ -18,13 +18,13 @@ faqs:
 ---
 
 <figure>
-  <img src="/images/blog/herringbone-laminate-flooring-hallway/grey-oak-herringbone-laminate-flooring-hallway.webp" alt="Grey oak herringbone laminate flooring running the length of a hallway towards the front door" width="1080" height="1920" fetchpriority="high" />
+  <img src="/images/blog/herringbone-laminate-flooring-hallway/grey-oak-herringbone-laminate-flooring-hallway.webp" alt="Grey oak herringbone laminate flooring running the length of a Pontefract hallway towards the front door" width="1080" height="1920" fetchpriority="high" />
   <figcaption>The finished hallway. Grey oak herringbone laminate, skirtings back on, no trim anywhere.</figcaption>
 </figure>
 
 A hallway is the hardest room in the house to floor well and the easiest to floor badly. It is narrow, so everything is on show. It has more doorways per square metre than anywhere else. And it takes every pair of wet boots that comes through the front door.
 
-This one was fitted in grey oak herringbone laminate. Herringbone puts the pattern on display, which means a narrow hallway is unforgiving of anything out of true — so most of the work happened before a single board went down.
+This one, in a house in Pontefract, was fitted in grey oak herringbone laminate. Herringbone puts the pattern on display, which means a narrow hallway is unforgiving of anything out of true — so most of the work happened before a single board went down.
 
 ## Getting the subfloor level first
 
@@ -32,7 +32,7 @@ This is the step people skip, and it is the one that decides whether the floor i
 
 Laminate is a floating floor. It is not fixed down, so it sits on whatever is underneath and follows it. A high spot means the boards rock over it every time somebody walks across, and that working back and forth is what eventually opens the joints. Underlay will absorb a little, but it is there to take up small irregularities, not to bridge a hollow.
 
-So the subfloor was checked and levelled before anything else was brought in.
+So the subfloor was checked and levelled before anything else was brought in. That is the part of a [flooring](/services/flooring) job nobody photographs and everybody feels later.
 
 ## Fibreboard underlay
 
@@ -49,7 +49,7 @@ You can see in that photograph that the skirtings are already off and the boards
 
 Two jobs here, and between them they are the reason the finished floor has no beading anywhere.
 
-**The skirtings came off.** A floating floor needs an expansion gap round every edge, and you have two options for hiding it: scotia beading round the whole room, or take the skirtings off and put them back down on top of the new floor. Beading is quicker. It also looks like beading. With the skirtings off, the gap sits behind them and the floor simply runs to the wall.
+**The [skirtings](/services/skirting-architrave) came off.** A floating floor needs an expansion gap round every edge, and you have two options for hiding it: scotia beading round the whole room, or take the skirtings off and put them back down on top of the new floor. Beading is quicker. It also looks like beading. With the skirtings off, the gap sits behind them and the floor simply runs to the wall.
 
 **The door linings were undercut.** Rather than trying to scribe boards round the shape of a lining and architrave — which is difficult at the best of times and worse on a herringbone where the cuts fall across the angle — you cut the bottom off the lining instead and slide the floor underneath.
 
@@ -78,7 +78,7 @@ Most click laminate is laid dry and that is normally the right thing to do. A ha
 ## The finished floor
 
 <figure>
-  <img src="/images/blog/herringbone-laminate-flooring-hallway/grey-oak-herringbone-laminate-floor-finished-hallway.webp" alt="Finished grey oak herringbone laminate floor in a hallway with white skirtings refitted" width="1080" height="1920" loading="lazy" />
+  <img src="/images/blog/herringbone-laminate-flooring-hallway/grey-oak-herringbone-laminate-floor-finished-hallway.webp" alt="Finished grey oak herringbone laminate floor in a Pontefract hallway with white skirtings refitted" width="1080" height="1920" loading="lazy" />
   <figcaption>Pattern running true down the length of the hallway, skirtings back on over the expansion gap.</figcaption>
 </figure>
 
@@ -91,9 +91,9 @@ The things worth looking at in those two are the edges. The floor meets the skir
 
 That is the difference between a floor that has been laid and a floor that has been fitted, and nearly all of it comes from the preparation rather than the laying.
 
-## Laminate and timber flooring across West Yorkshire
+## Laminate and timber flooring in Pontefract and West Yorkshire
 
-Rob is a Pergo Certified Installer, and fits laminate, engineered and solid timber flooring across [Pontefract](/areas/pontefract), [Wakefield](/areas/wakefield), [Castleford](/areas/castleford), [Normanton](/areas/normanton), [Knottingley](/areas/knottingley), [Featherstone](/areas/featherstone) and the wider West Yorkshire area.
+This floor was fitted in Pontefract. Rob is a Pergo Certified Installer, and fits laminate, engineered and solid timber flooring across [Pontefract](/areas/pontefract), [Wakefield](/areas/wakefield), [Castleford](/areas/castleford), [Normanton](/areas/normanton), [Knottingley](/areas/knottingley), [Featherstone](/areas/featherstone) and the wider West Yorkshire area.
 
 More on what that work involves on the [flooring](/services/flooring) page, and on [second fix carpentry](/services/second-fix-carpentry) for the skirting and architrave side of it.
 

@@ -67,7 +67,7 @@ const guideLinks = routes
               <ul class="space-y-2">
                 {items.map((r) => (
                   <li>
-                    <a href={r} class="text-oak hover:text-ink transition-colors">{label(r)}</a>
+                    <a href={r} class="text-oak underline hover:text-ink transition-colors">{label(r)}</a>
                   </li>
                 ))}
               </ul>
@@ -79,7 +79,7 @@ const guideLinks = routes
           <ul class="space-y-2">
             {blogLinks.map((l) => (
               <li>
-                <a href={l.href} class="text-oak hover:text-ink transition-colors">{l.text}</a>
+                <a href={l.href} class="text-oak underline hover:text-ink transition-colors">{l.text}</a>
               </li>
             ))}
           </ul>
@@ -89,7 +89,7 @@ const guideLinks = routes
           <ul class="space-y-2">
             {guideLinks.map((link) => (
               <li>
-                <a href={link.href} class="text-oak hover:text-ink transition-colors">{link.text}</a>
+                <a href={link.href} class="text-oak underline hover:text-ink transition-colors">{link.text}</a>
               </li>
             ))}
           </ul>
