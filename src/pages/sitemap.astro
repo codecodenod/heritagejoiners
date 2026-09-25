@@ -16,7 +16,10 @@ function toRoute(file: string): string {
 
 const routes = pageFiles
   .map(toRoute)
-  .filter((r) => !r.includes('[') && r !== '/404' && r !== '/sitemap');
+  // Legal pages for the Meta app integration are deliberately kept off the
+  // customer-facing sitemap. They stay publicly reachable and are linked from
+  // the footer; they are noindex and excluded from the XML sitemap too.
+  .filter((r) => !r.includes('[') && !['/404', '/sitemap', '/privacy-policy', '/facebook-data-deletion'].includes(r));
 
 function label(route: string): string {
   if (route === '/') return 'Home';

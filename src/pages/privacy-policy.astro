@@ -1,0 +1,179 @@
+---
+/**
+ * Privacy Policy.
+ * noindex, follow + excluded from the XML sitemap (see astro.config.mjs filter).
+ * Deliberately reachable without login and NOT disallowed in robots.txt, because
+ * Meta must be able to fetch it for the "heritage integration" app review.
+ *
+ * Everything described here reflects what the project actually does:
+ *   - GA4 via gtag (BaseLayout)
+ *   - Cloudflare Pages hosting + Cloudflare Turnstile on the contact form
+ *   - Resend, used by functions/api/contact.ts to deliver enquiries
+ * Plausible is present in the config but disabled (empty domain), so it is not
+ * described. Fonts are self-hosted, so there are no third-party font requests.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/site';
+
+const { url, name } = siteConfig;
+const updated = '25 September 2026';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="How Heritage Joiners handles personal information from website enquiries, analytics and the Heritage Joiners Facebook Page integration."
+  canonical={`${url}/privacy-policy`}
+  noindex
+  robots="noindex, follow"
+  schema="none"
+>
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-oak uppercase tracking-wide mb-4">Legal</p>
+      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Privacy Policy</h1>
+      <p class="text-lg text-ink/70">
+        How {name} handles personal information collected through this website and through our Facebook Page integration.
+      </p>
+      <p class="text-sm text-ink/60 mt-4">Last updated: {updated}</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Who we are</h2>
+        <p class="text-ink/70 mb-3">
+          {name} is a carpentry and joinery business based in Pontefract, West Yorkshire, operating this website at {url}. We are the data controller for personal information collected through this site.
+        </p>
+        <p class="text-ink/70">
+          If you have any question about this policy or about information we hold, please get in touch through our <a href="/contact" class="text-oak underline">contact form</a>.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Information you give us</h2>
+        <p class="text-ink/70 mb-3">
+          When you make an enquiry through the contact form on this website, we collect the name, email address and message you provide. If you contact us by phone or WhatsApp instead, we hold whatever you choose to tell us in that conversation, including your phone number.
+        </p>
+        <p class="text-ink/70">
+          We only ask for what we need to answer the enquiry. You do not need to create an account to use this website, and we do not take payments through it.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Information collected automatically</h2>
+        <p class="text-ink/70 mb-3">
+          Like most websites, this site records basic technical information when you visit: your IP address, browser and device type, the pages you view, and the site or search that referred you. This is standard server and analytics data.
+        </p>
+        <p class="text-ink/70">
+          This website is hosted on Cloudflare Pages. Cloudflare processes requests to the site, including IP addresses, as part of delivering and protecting it.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Cookies and analytics</h2>
+        <p class="text-ink/70 mb-3">
+          We use <strong class="text-ink">Google Analytics 4</strong> to understand how the site is used &mdash; which pages people read, roughly where visitors are from, and how they arrived. Google Analytics sets cookies in your browser to do this. We use it to improve the website, not to identify individuals.
+        </p>
+        <p class="text-ink/70 mb-3">
+          The contact form is protected by <strong class="text-ink">Cloudflare Turnstile</strong>, which checks that submissions come from a person rather than an automated script. Turnstile may set a short-lived cookie as part of that check.
+        </p>
+        <p class="text-ink/70">
+          We do not use advertising cookies, remarketing pixels or cross-site tracking on this website. You can block or delete cookies through your browser settings; the site will still work.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">How we use your information</h2>
+        <ul class="text-ink/70 space-y-2 list-disc pl-5">
+          <li>To answer your enquiry and discuss the work you are asking about</li>
+          <li>To quote for, arrange and carry out joinery and carpentry work</li>
+          <li>To keep ordinary business records of work done and enquiries received</li>
+          <li>To run and maintain this website and keep it secure</li>
+          <li>To understand how the website is used, in aggregate</li>
+        </ul>
+        <p class="text-ink/70 mt-3">
+          We do not sell your information, and we do not use it for advertising or profiling.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Service providers we share with</h2>
+        <p class="text-ink/70 mb-3">
+          We share personal information only where it is necessary to run the website or respond to you:
+        </p>
+        <ul class="text-ink/70 space-y-2 list-disc pl-5">
+          <li><strong class="text-ink">Cloudflare</strong> &mdash; website hosting, security, and the Turnstile check on the contact form</li>
+          <li><strong class="text-ink">Resend</strong> &mdash; delivers contact form enquiries to us by email</li>
+          <li><strong class="text-ink">Google</strong> &mdash; website analytics</li>
+          <li><strong class="text-ink">Meta</strong> &mdash; in connection with our Facebook Page and the integration described below</li>
+        </ul>
+        <p class="text-ink/70 mt-3">
+          We do not pass your details to anyone else for their own marketing.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Facebook and Meta Integration</h2>
+        <p class="text-ink/70 mb-3">
+          {name} operates an internal Facebook integration called <strong class="text-ink">&ldquo;heritage integration&rdquo;</strong>. It is used solely to manage and publish content to the {name} Facebook Page and is not offered as a service to other users or businesses.
+        </p>
+        <p class="text-ink/70 mb-3">
+          The integration may process limited Facebook Page information necessary to operate it, such as Page identifiers, access permissions, and the information required to publish or manage content on the Page.
+        </p>
+        <ul class="text-ink/70 space-y-2 list-disc pl-5">
+          <li>Facebook data is <strong class="text-ink">not sold</strong>.</li>
+          <li>Facebook data is <strong class="text-ink">not used for advertising, profiling or any unrelated purpose</strong>.</li>
+          <li>Data is used <strong class="text-ink">only as necessary</strong> to operate the {name} Facebook Page integration.</li>
+          <li>Any data retained for the integration is kept <strong class="text-ink">only as long as reasonably necessary</strong> for that purpose.</li>
+        </ul>
+        <p class="text-ink/70 mt-3">
+          If you believe the integration holds personal data relating to you, you can contact us about it, or request deletion. See the <a href="/facebook-data-deletion" class="text-oak underline">Facebook data deletion instructions</a>.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">How long we keep it</h2>
+        <p class="text-ink/70">
+          Enquiries are kept for as long as needed to deal with them and to keep a reasonable record of work quoted or carried out. Analytics data is retained according to the settings in Google Analytics. Information held for the Facebook integration is kept only as long as the integration needs it. When information is no longer needed, it is deleted.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Keeping it secure</h2>
+        <p class="text-ink/70">
+          The website is served over HTTPS. Access to enquiry records and to the Facebook integration is limited to those who need it to run the business. No system is perfectly secure, but we take reasonable steps to protect the information we hold.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Your rights</h2>
+        <p class="text-ink/70 mb-3">
+          Under UK data protection law you have the right to ask us for a copy of the personal information we hold about you, to have it corrected if it is wrong, to have it deleted, to restrict or object to how we use it, and in some cases to receive it in a portable format.
+        </p>
+        <p class="text-ink/70 mb-3">
+          To make any of those requests, use our <a href="/contact" class="text-oak underline">contact form</a> and tell us what you are asking for. We will respond within the time allowed by law.
+        </p>
+        <p class="text-ink/70">
+          If you are unhappy with how we have handled your information, you can complain to the Information Commissioner's Office at <a href="https://ico.org.uk/" target="_blank" rel="noopener" class="text-oak underline">ico.org.uk</a>.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Changes to this policy</h2>
+        <p class="text-ink/70">
+          If this policy changes, the updated version will be posted on this page with a new date at the top.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Contact</h2>
+        <p class="text-ink/70">
+          For any privacy or data protection question, including anything relating to the &ldquo;heritage integration&rdquo; Facebook application, please use our <a href="/contact" class="text-oak underline">contact form</a>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

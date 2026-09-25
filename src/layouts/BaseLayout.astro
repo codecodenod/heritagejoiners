@@ -19,6 +19,8 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   noindex?: boolean;
+  /** Overrides the robots meta when noindex is set. Defaults to 'noindex, nofollow'. */
+  robots?: string;
   schema?: 'organization' | 'localbusiness' | 'none';
 }
 
@@ -30,6 +32,7 @@ const {
   canonical,
   ogImage: pageOgImage,
   noindex = false,
+  robots,
   schema = 'localbusiness',
 } = props;
 
@@ -95,7 +98,7 @@ const twitterCard = 'summary_large_image';
       gtag('config', 'G-G5BC6EPE36');
     </script>
 
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {noindex && <meta name="robots" content={robots ?? "noindex, nofollow"} />}
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />

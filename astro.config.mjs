@@ -23,6 +23,10 @@ export default defineConfig({
   devToolbar: { enabled: false },
   integrations: [sitemap({
     changefreq: 'weekly',
+    // Legal pages for the Meta app integration. Publicly reachable and not
+    // disallowed in robots.txt (Meta must fetch them), but kept out of the
+    // XML sitemap and marked noindex, follow on the pages themselves.
+    filter: (page) => !/\/(privacy-policy|facebook-data-deletion)\/?$/.test(page),
     serialize(item) {
       const path = new URL(item.url).pathname;
       const key = path !== '/' && path.endsWith('/') ? path.slice(0, -1) : path;

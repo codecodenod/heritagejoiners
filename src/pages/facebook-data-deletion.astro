@@ -1,0 +1,78 @@
+---
+/**
+ * Facebook Data Deletion Instructions.
+ * Required by Meta for the private "heritage integration" app.
+ * noindex, follow + excluded from the XML sitemap (see astro.config.mjs filter).
+ * Publicly reachable without login and NOT disallowed in robots.txt, because
+ * Meta must be able to fetch it.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/site';
+
+const { url, name } = siteConfig;
+const updated = '25 September 2026';
+---
+
+<BaseLayout
+  title="Facebook Data Deletion Instructions"
+  description="How to request deletion of personal data held by the Heritage Joiners 'heritage integration' Facebook application."
+  canonical={`${url}/facebook-data-deletion`}
+  noindex
+  robots="noindex, follow"
+  schema="none"
+>
+  <section class="py-16 lg:py-24 bg-paper">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-oak uppercase tracking-wide mb-4">Legal</p>
+      <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Facebook Data Deletion Instructions</h1>
+      <p class="text-lg text-ink/70">
+        How to request deletion of personal data held by the {name} Facebook integration.
+      </p>
+      <p class="text-sm text-ink/60 mt-4">Last updated: {updated}</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Requesting deletion</h2>
+        <p class="text-ink/70 mb-3">
+          {name} operates an internal Facebook integration called <strong class="text-ink">&ldquo;heritage integration&rdquo;</strong>. It is used solely to manage and publish content to the {name} Facebook Page and is not offered as a service to other users or businesses.
+        </p>
+        <p class="text-ink/70">
+          If you believe this integration holds personal data relating to you, you can ask us to delete it.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">How to make a request</h2>
+        <ol class="text-ink/70 space-y-3 list-decimal pl-5">
+          <li>Go to our <a href="/contact" class="text-oak underline">contact form</a>.</li>
+          <li>
+            State clearly that your request relates to the <strong class="text-ink">&ldquo;heritage integration&rdquo;</strong> Facebook application.
+          </li>
+          <li>Tell us what data you believe is held, and give us enough detail to identify it &mdash; for example the Facebook account or Page the data relates to.</li>
+        </ol>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">What happens next</h2>
+        <p class="text-ink/70 mb-3">
+          We will look into what, if anything, is held for the operation of the integration. Any applicable personal information held specifically for the operation of the &ldquo;heritage integration&rdquo; application will be deleted where we are required to do so.
+        </p>
+        <p class="text-ink/70">
+          We will confirm the outcome to you, and we will respond within the time allowed by applicable data protection law.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Related</h2>
+        <p class="text-ink/70">
+          For a fuller explanation of what the integration does and how we handle information generally, see our <a href="/privacy-policy" class="text-oak underline">Privacy Policy</a>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
