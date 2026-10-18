@@ -15,15 +15,25 @@ const breadcrumbs = [
 ];
 ---
 
-<BaseLayout title="Carpenter & Joiner in Pontefract" description="Carpenter and joiner in Pontefract for kitchens, doors, windows, staircases, flooring, roofing carpentry, repairs, and heritage timber work.">
+<BaseLayout title="Carpenter & Joiner in Pontefract" description="Carpenter and joiner in Pontefract for kitchens, doors, windows, staircases, flooring, roofing carpentry, repairs, and heritage timber work."
+  ogImage="/images/case-studies/counting-house/the-counting-house-pontefract-historic-building.webp">
   <BreadcrumbSchema items={breadcrumbs} />
 
-  <section class="py-16 lg:py-24 bg-paper">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/case-studies/counting-house/the-counting-house-pontefract-historic-building.webp"
+      alt="Timber framed historic building in Pontefract with traditional oak framing and joinery"
+      width="1450"
+      height="816"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
         <p class="text-oak uppercase tracking-wide mb-4">Pontefract WF7, WF8 &amp; WF9</p>
-        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Carpenter &amp; Joiner in Pontefract</h1>
-        <p class="text-lg text-ink/70 mb-8">
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Carpenter &amp; Joiner in Pontefract</h1>
+        <p class="text-lg text-ink/80 mb-8">
           Heritage Joiners is based locally, so Pontefract is the heart of the patch for general carpentry and joinery. Rob covers kitchens, doors, windows, staircases, flooring, roof carpentry, maintenance repairs, and heritage timber work where older buildings need a more careful approach.
         </p>
         <div class="flex flex-wrap gap-4">

@@ -15,15 +15,25 @@ const breadcrumbs = [
 ];
 ---
 
-<BaseLayout title="Carpenter & Joiner Across Yorkshire" description="Carpentry and joinery across Yorkshire for timber-led projects, with West Yorkshire as the core service area and heritage repair kept as a specialism.">
+<BaseLayout title="Carpenter & Joiner Across Yorkshire" description="Carpentry and joinery across Yorkshire for timber-led projects, with West Yorkshire as the core service area and heritage repair kept as a specialism."
+  ogImage="/images/services/windows/yorkshire-stone-building-timber-sash-windows.webp">
   <BreadcrumbSchema items={breadcrumbs} />
 
-  <section class="py-16 lg:py-24 bg-paper">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/services/windows/yorkshire-stone-building-timber-sash-windows.webp"
+      alt="Yorkshire stone building with traditional timber sash windows"
+      width="2880"
+      height="1440"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
         <p class="text-oak uppercase tracking-wide mb-4">Yorkshire-wide timber work</p>
-        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-6">Carpenter &amp; Joiner Across Yorkshire</h1>
-        <p class="text-lg text-ink/70 mb-8">
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Carpenter &amp; Joiner Across Yorkshire</h1>
+        <p class="text-lg text-ink/80 mb-8">
           West Yorkshire is the core patch for the business, but Rob also travels wider across Yorkshire for the right timber-led work. That includes general joinery, structural carpentry, bespoke timber jobs, and heritage repair where experience with older fabric really matters.
         </p>
         <div class="flex flex-wrap gap-4">
