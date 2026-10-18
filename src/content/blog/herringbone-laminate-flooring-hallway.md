@@ -4,6 +4,7 @@ description: "Grey oak herringbone laminate flooring fitted in a Pontefract hall
 pubDate: 2026-09-24
 draft: false
 ogImage: "/images/blog/herringbone-laminate-flooring-hallway/grey-oak-herringbone-laminate-flooring-hallway.webp"
+areas: ["Pontefract"]
 faqs:
   - question: "Should you take the skirting boards off to fit laminate flooring?"
     answer: "If you want the best finish, yes. The alternative is leaving the skirtings on and covering the expansion gap with scotia or quadrant beading round the whole room, which reads as an afterthought and gives you another edge to clean. Taking the skirtings off means the flooring runs to the wall with its expansion gap hidden behind the skirting when it goes back on. It is more work, and in a hallway with several doorways it is noticeably more work, but the floor then looks like part of the house rather than something laid on top of it."

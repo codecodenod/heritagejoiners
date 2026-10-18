@@ -4,6 +4,7 @@ description: "A rotten timber window sill on a Pontefract office building — ho
 pubDate: 2026-08-27
 draft: false
 ogImage: "/images/blog/timber-window-sill-repair/repaired-timber-window-sill-finished-pontefract.webp"
+areas: ["Pontefract"]
 faqs:
   - question: "Can a rotten window sill be repaired instead of replaced?"
     answer: "Usually, yes. A window sill rots from the top and the front edge first, where water sits, and it often does that long before the rest of the window is in any trouble. If the decay is local and there is firm timber to work back to, the failed section can be cut out and new timber spliced in. You only need a new sill — or a new window — when the rot has gone right through and there is nothing sound left to join onto."
