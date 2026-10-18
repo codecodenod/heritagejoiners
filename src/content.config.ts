@@ -9,6 +9,10 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     draft: z.boolean().optional(),
     ogImage: z.string().optional(),
+    /** Towns this job was in, e.g. ["Wakefield"]. Drives the
+        "Recent work in <town>" section on the matching area page.
+        Optional — posts without it simply never appear in one. */
+    areas: z.array(z.string()).optional(),
     faqs: z
       .array(
         z.object({

@@ -83,6 +83,35 @@ Body rules:
   Always include `alt`, `width` and `height`. Images live in `public/images/blog/<topic>/` and follow the image pipeline above.
 - Everything else is automatic (page, BlogPosting schema, sitemap, blog index, /sitemap page). No registration needed.
 
+**`areas` — tag every job post with its town. This is your job, never Rob's.**
+Any post about a job done in a real place gets an `areas` array in its frontmatter:
+```yaml
+areas: ["Wakefield"]          # one town
+areas: ["Castleford", "Normanton"]   # or more than one
+```
+That is what puts the job into the **"Recent work in <town>"** section on the matching area page,
+via `src/components/sections/RecentWorkInArea.astro`. Newest first, three max, cards built from the
+post's own `ogImage`, `title` and `description` — nothing is written twice.
+
+- Tag with the town the work was actually in, not the nearest big name. If the job was in East
+  Ardsley and the post says Wakefield because that is the district, tag `["Wakefield"]` — but never
+  tag a town the job was not in.
+- General explainers with no location (`what-is-second-fix-carpentry`, `can-timber-windows-be-repaired`)
+  get **no** `areas` field. The field is optional and untagged posts simply never appear.
+- **Tag it even if that town's area page is not showing the section yet.** Tagging costs nothing and
+  the page picks it up the moment the component is added.
+
+**Area pages currently showing the section:** `wakefield` only. To switch another on, add the import
+and one line to that area page:
+```astro
+import RecentWorkInArea from '../../components/sections/RecentWorkInArea.astro';
+...
+<RecentWorkInArea area="Castleford" background="bg-bone" />
+```
+Place it after the "Common work we take on in <town>" section and before the services list, and pick
+the `background` that keeps the page's band rhythm alternating. The component renders nothing when no
+posts match, so it is safe to add before any post is tagged.
+
 Note: `bespoke-ledged-and-braced-garden-gate.md` and `can-timber-windows-be-repaired.md` still use bare `<img>` from before this rule. Don't copy them — follow the exemplar.
 
 ### Case study — exemplars: parent `src/pages/case-studies/counting-house/index.astro`, sub-page `src/pages/case-studies/counting-house/beam-repair-and-restoration.astro`

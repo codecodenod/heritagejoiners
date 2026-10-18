@@ -1,0 +1,81 @@
+---
+/**
+ * RecentWorkInArea — "Recent work in <town>" cards on an area page.
+ *
+ * Reads the blog collection and shows posts whose frontmatter `areas` array
+ * contains this town. Tag a post by adding to its frontmatter:
+ *     areas: ["Wakefield"]
+ * A post can list more than one town. Posts with no `areas` field never appear.
+ *
+ * Renders nothing at all when there are no matching posts, so it is safe to
+ * drop onto an area page before any posts are tagged for it.
+ *
+ * Card markup is the same `service-card` pattern used on the blog index —
+ * no new visual pattern.
+ */
+import { getCollection } from 'astro:content';
+
+interface Props {
+  /** Town name, matched case-insensitively against the posts' `areas` array. */
+  area: string;
+  /** Section background, to fit the page's band rhythm. */
+  background?: 'bg-paper' | 'bg-bone' | 'bg-white';
+  /** Max cards to show. Newest first. */
+  limit?: number;
+}
+
+const { area, background = 'bg-bone', limit = 3 } = Astro.props;
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .filter((post) => (post.data.areas ?? []).some((a) => a.toLowerCase() === area.toLowerCase()))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, limit);
+
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+
+/**
+ * Alt text for a job card. Most post titles already name the town, so only
+ * append it when it is missing — otherwise the alt reads "… in Wakefield —
+ * joinery work by Heritage Joiners in Wakefield".
+ */
+const altFor = (title: string) =>
+  title.toLowerCase().includes(area.toLowerCase())
+    ? `${title} — a job by Heritage Joiners`
+    : `${title} — a job by Heritage Joiners in ${area}`;
+---
+
+{posts.length > 0 && (
+  <section class={`py-16 ${background}`}>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Recent work in {area}</h2>
+      <p class="text-ink/70 mb-8 max-w-2xl">
+        Real jobs in {area}, written up with photographs from the day.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map((post) => (
+          <a href={`/blog/${post.id}`} class="service-card group relative">
+            {post.data.ogImage && (
+              <img
+                src={post.data.ogImage}
+                alt={altFor(post.data.title)}
+                loading="lazy"
+                width="600"
+                height="192"
+                class="service-card-image w-full object-cover"
+              />
+            )}
+            <div class="service-card-content">
+              <p class="text-xs text-ink/40 mb-3">{fmt(post.data.pubDate)}</p>
+              <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">
+                {post.data.title}
+              </h3>
+              <p class="text-ink/70 text-sm mb-4 leading-relaxed">{post.data.description}</p>
+              <span class="mt-auto text-oak font-display text-xs">Read the full job &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

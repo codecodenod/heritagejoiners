@@ -4,6 +4,7 @@ description: "A leaking GRP flat roof in Wakefield stripped back to rotten, sodd
 pubDate: 2026-07-21
 draft: false
 ogImage: "/images/blog/flat-roof-wakefield/15-completed-flat-roof-timber-deck-wakefield.webp"
+areas: ["Wakefield"]
 faqs:
   - question: "Can a rotten flat roof be repaired instead of fully replaced?"
     answer: "Often, yes. If the decay is confined to part of the structure and most of the joists are still sound, the roof can be stripped back, the wet timber dealt with, the affected joists strengthened and the deck rebuilt — without tearing out the whole structure. It stops being worth repairing when the joists have lost their strength across the whole roof, or when previous bodged repairs have left too little sound timber to work with."

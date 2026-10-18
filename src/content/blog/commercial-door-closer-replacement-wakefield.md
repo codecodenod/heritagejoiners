@@ -4,6 +4,7 @@ description: "Three failed overhead door closers replaced and a loose staircase 
 pubDate: 2026-08-12
 draft: false
 ogImage: "/images/blog/commercial-door-closers/new-commercial-door-closer-fitted-wakefield.webp"
+areas: ["Wakefield"]
 faqs:
   - question: "What does a door closer actually do?"
     answer: "It brings the door back to the frame under control, then gives it enough push at the end of the travel to engage the latch. Those are two different jobs, and a closer has separate adjustments for them. Get the balance wrong and the door either slams or stops short and sits open."
