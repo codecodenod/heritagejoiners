@@ -4,6 +4,7 @@ description: "A practical look at fitting marble-effect PVC bathroom wall panels
 pubDate: 2026-07-29
 draft: false
 ogImage: "/images/blog/bathroom-wall-panels/completed-bathroom-wall-cladding-doncaster.webp"
+areas: ["Doncaster"]
 faqs:
   - question: "How are bathroom wall panels fitted?"
     answer: "The panels are bonded straight onto prepared walls with adhesive, working out from one panel that has been set plumb. Each following panel interlocks into the edge of the last, so it takes its line from the panel before it. Cut-outs for doorways, baths, pipework and extractor vents are measured off the fixed panel next door and cut before the board goes on the wall."

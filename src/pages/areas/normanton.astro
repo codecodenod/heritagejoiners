@@ -4,6 +4,7 @@ import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
 import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
 import PhoneLink from '../../components/ui/PhoneLink.astro';
 import AreaLinks from '../../components/sections/AreaLinks.astro';
+import RecentWorkInArea from '../../components/sections/RecentWorkInArea.astro';
 import { siteConfig } from '../../config/site';
 
 const { phone, url } = siteConfig;
@@ -54,6 +55,8 @@ const breadcrumbs = [
       </div>
     </div>
   </section>
+
+  <RecentWorkInArea area="Normanton" background="bg-paper" />
 
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

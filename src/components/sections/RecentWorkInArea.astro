@@ -22,12 +22,21 @@ interface Props {
   background?: 'bg-paper' | 'bg-bone' | 'bg-white';
   /** Max cards to show. Newest first. */
   limit?: number;
+  /**
+   * Catch-all mode, for a wider-area page such as /areas/yorkshire.
+   * Shows the newest located jobs from anywhere rather than one town, so the
+   * posts themselves do not need tagging with the wider region as well.
+   */
+  matchAny?: boolean;
 }
 
-const { area, background = 'bg-bone', limit = 3 } = Astro.props;
+const { area, background = 'bg-bone', limit = 3, matchAny = false } = Astro.props;
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft))
-  .filter((post) => (post.data.areas ?? []).some((a) => a.toLowerCase() === area.toLowerCase()))
+  .filter((post) => {
+    const areas = post.data.areas ?? [];
+    return matchAny ? areas.length > 0 : areas.some((a) => a.toLowerCase() === area.toLowerCase());
+  })
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, limit);
 
@@ -49,7 +58,9 @@ const altFor = (title: string) =>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Recent work in {area}</h2>
       <p class="text-ink/70 mb-8 max-w-2xl">
-        Real jobs in {area}, written up with photographs from the day.
+        {matchAny
+          ? `Real jobs from across ${area}, written up with photographs from the day.`
+          : `Real jobs in ${area}, written up with photographs from the day.`}
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

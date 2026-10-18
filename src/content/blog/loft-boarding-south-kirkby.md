@@ -4,6 +4,7 @@ description: "Loft boarding and loft ladder installation in South Kirkby — a n
 pubDate: 2026-09-13
 draft: false
 ogImage: "/images/blog/loft-boarding-south-kirkby/boarded-loft-floor-for-storage-south-kirkby.webp"
+areas: ["South Kirkby"]
 faqs:
   - question: "How much does loft boarding cost?"
     answer: "It depends on the loft, so anyone quoting a figure before they have seen it is guessing. What moves the price is the floor area, how you get up there, the size and condition of the existing ceiling joists, how much insulation is already down and how deep it is, whether the hatch needs enlarging, and whether a ladder is going in at the same time. A small square loft with easy access and a decent hatch is a straightforward job. A cut roof full of struts and purlins, or a hatch too small to get boards through, is not. Send photos and you can have a sensible answer rather than a number plucked out of the air."

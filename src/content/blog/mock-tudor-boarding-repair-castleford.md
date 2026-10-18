@@ -4,6 +4,7 @@ description: "One bowed board on a mock-Tudor frontage in Whitwood, Castleford. 
 pubDate: 2026-09-17
 draft: false
 ogImage: "/images/blog/mock-tudor-boarding-castleford/replacement-upvc-tudor-board-fitted-castleford.webp"
+areas: ["Castleford"]
 faqs:
   - question: "Can you replace just one mock Tudor board?"
     answer: "Yes, and usually you should. The boards are fixed individually, so a single failed board can be taken off and a new one fitted without disturbing the ones around it. The hard part is not the fitting, it is finding a replacement that matches the rest — width, thickness, colour and grain all have to be close enough that the eye does not pick out the new one. Replacing a whole frontage because one board has failed is an expensive way of solving a matching problem."

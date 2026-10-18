@@ -4,6 +4,7 @@ description: "See how Heritage Joiners fitted vertical external timber cladding 
 pubDate: 2026-08-03
 draft: false
 ogImage: "/images/blog/timber-cladding/finished-garage-wall-cladding.webp"
+areas: ["Castleford"]
 faqs:
   - question: "How is external timber cladding fitted?"
     answer: "The boards are not fixed straight onto the wall. A treated timber batten framework goes up first, set out to give consistent fixing points across the whole elevation and to hold the boarding off the original surface. The cladding boards are then measured, cut and fixed individually to those battens, with the edges finished off at the top and base."

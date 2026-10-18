@@ -4,6 +4,7 @@ description: "A Grade II listed cottage in Greengates, Bradford. The owner expec
 pubDate: 2026-09-16
 draft: false
 ogImage: "/images/blog/listed-casement-window-repair-bradford/repaired-casement-window-back-in-use-greengates.webp"
+areas: ["Bradford"]
 faqs:
   - question: "Does repairing a window in a listed building need listed building consent?"
     answer: "The legal test is in section 7 of the Planning (Listed Buildings and Conservation Areas) Act 1990: consent is needed for alteration that would affect the building's character as one of special architectural or historic interest. A like-for-like repair that puts back what was there, in the same timber and the same profile, does not normally alter that character, so it is generally treated as repair rather than alteration. Replacement is different. Bradford Council's guidance is that the replacement of a door or window will always require Listed Building Consent, because that counts as an alteration. The test involves judgement and it varies with the building, so confirm anything you are unsure about with the council's conservation team before work starts."
