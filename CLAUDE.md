@@ -44,7 +44,7 @@ The whole site is one theme. Same layouts, same heading scale, same fonts, same 
 
 ## Images — mandatory pipeline
 
-1. Source images live outside the repo; converted copies go in `public/images/<area>/` (`homepage/`, `about/`, `gallery/`, `case-studies/<case-study-name>/`).
+1. Source images live outside the repo; copies go in `public/images/<area>/` (`homepage/`, `about/`, `gallery/`, `case-studies/<case-study-name>/`).
 2. Filename: kebab-case, descriptive, SEO-bearing (e.g. `the-counting-house-oak-staircase.webp`). Respect content guardrails in filenames too.
 3. **NEVER resize, convert or re-encode an image Rob gives you. Copy it across as-is and rename it.**
    Rob processes his own photos before handing them over — they arrive as `.webp` at roughly 100 KB,
@@ -55,6 +55,9 @@ The whole site is one theme. Same layouts, same heading scale, same fonts, same 
      to Rob**. Do not silently fix it. He will re-export it himself.
    - Read the real dimensions with `identify` and put those exact numbers in `width`/`height`.
    - Never run `convert ... -resize ...` on his images. Never lower `-quality` to hit a size target.
+   - **File size and display size are different things.** The file on disk is never altered. How large
+     the image *appears* is controlled by the `width`/`height` attributes and the CSS classes — that
+     part is yours to set, and it is how an image is shown at the right size without touching the file.
 4. Every `<img>` gets meaningful `alt`. Below-the-fold images get `loading="lazy"`; a page's hero image gets `fetchpriority="high"` and explicit `width`/`height`.
 5. Pass a real photo as `ogImage` on the layout when the page has one; otherwise the default social card is used automatically.
 
@@ -117,7 +120,7 @@ Hero image ~1500×850 landscape. `fetchpriority="high"`, never `loading="lazy"` 
 ```
 Landscape body images use `class="w-full h-auto rounded-xl shadow-lg"` instead. All body images are `loading="lazy"` with explicit `width`/`height`.
 
-Images live in `public/images/services/<service-slug>/`. Resize per the pipeline before use — portraits cap at `800x1000>`, heroes ~1500px wide. Never drop a raw phone photo (e.g. 2268×4032) straight in.
+Images live in `public/images/services/<service-slug>/`. Copy them across as-is — never resize or re-encode (see the image pipeline above). Put the file's real dimensions in `width`/`height`, and control how large it appears with the CSS classes, never by altering the file.
 Title/H1 lead with the page's primary keyword: `"<Primary Keyword> in Pontefract, Wakefield & West Yorkshire | Heritage Joiners"` (keyword data lives in the owner's local `PRIVATE/SEO/keyword-strategy.md` — ask Rob for targets if unavailable).
 Register: add entries to `src/pages/services/index.astro` and the footer `serviceLinks` in `src/components/layout/Footer.astro`.
 
@@ -158,7 +161,7 @@ Pattern: `BaseLayout`, H1 `"Carpenter & Joiner in <Town>"`, local intro, links t
 Register: add to `src/pages/areas/index.astro`, footer `areaLinks`, and (if a main coverage town) `siteConfig.serviceArea` + the LocalBusiness `areaServed` follows from it.
 
 ### Gallery entry — file: `src/pages/gallery.astro`
-Append to the `galleryItems` array: `{ title, category, image: '/images/gallery/<seo-name>.webp', alt }`. Convert the image per the pipeline. Nothing else to register.
+Append to the `galleryItems` array: `{ title, category, image: '/images/gallery/<seo-name>.webp', alt, width, height }`. Copy the image across as-is per the pipeline — never resize it. Nothing else to register.
 
 ### One-off pages
 Use `BaseLayout` with the standard hero section pattern. Check `/sitemap` page picks it up automatically (it does, from the pages folder).
