@@ -1,6 +1,9 @@
 ---
 /**
  * The Counting House - parent case study
+ *
+ * The quote below is Guy Lister's own public Google review, reproduced verbatim from
+ * src/pages/reviews.astro. Line breaks are the reviewer's own. Do not edit or shorten it.
  */
 import CaseStudyLayout from '../../../layouts/CaseStudyLayout.astro';
 import WhatsAppCTA from '../../../components/ui/WhatsAppCTA.astro';
@@ -123,6 +126,29 @@ const features = [
           fetchpriority="high"
           class="w-full h-auto rounded-2xl shadow-lg"
         />
+
+        <!-- Client review, verbatim from Google. Card matches src/pages/reviews.astro -->
+        <article class="mt-10 max-w-3xl bg-bone rounded-lg border border-ink/10 p-6 lg:p-7">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-lg" aria-label="5 out of 5 stars">
+              <span class="text-oak">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </span>
+            <span class="text-xs text-ink/50 font-display uppercase tracking-wide">via Google</span>
+          </div>
+          <blockquote class="mb-4 space-y-3">
+            <p class="text-ink/80 leading-relaxed">Many thanks to Rob at Heritage Joiners.</p>
+            <p class="text-ink/80 leading-relaxed">He dry-lined a room for us, then continued with the construction of external oak staircases and doors.</p>
+            <p class="text-ink/80 leading-relaxed">Great joinery skills.</p>
+            <p class="text-ink/80 leading-relaxed">Would definitely recommend to others and will use again next time &#128076;</p>
+          </blockquote>
+          <div class="pt-3 border-t border-ink/10 flex flex-wrap items-baseline justify-between gap-2">
+            <div>
+              <p class="font-display text-ink">Guy Lister</p>
+              <p class="text-sm text-ink/60">Dry lining, external oak staircases and doors</p>
+            </div>
+            <a href="/reviews" class="text-oak font-display text-sm hover:underline">More reviews &rarr;</a>
+          </div>
+        </article>
       </div>
     </section>
 

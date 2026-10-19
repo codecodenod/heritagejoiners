@@ -87,6 +87,8 @@ On period properties, usually yes. Original windows carry things a standard repl
 
 Matching new timber to what's already there is central to that kind of work. Heritage Joiners contributed specialist joinery work to the restoration of [The Counting House in Pontefract](/case-studies/counting-house) — a project later recognised with the Heritage Award at Pontefract Civic Society's 2025 Design Awards — where retaining and matching existing timber detail mattered throughout.
 
+A fuller example of the repair-first approach on a whole building is the [sash and timber window refurbishment in Pontefract](/case-studies/dunster-windows), where eleven weathered windows and the main entrance door were repaired, sealed and refinished rather than replaced — including shaped sapele splices let into the cills and stile bottoms on the two worst ones.
+
 <figure>
   <img src="/images/blog/timber-window-repair/counting-house-pontefract-sash-window-restoration.webp" alt="Restored timber sash window at The Counting House in Pontefract" width="1080" height="1434" loading="lazy" />
   <figcaption>Sash window work at The Counting House, Pontefract.</figcaption>
