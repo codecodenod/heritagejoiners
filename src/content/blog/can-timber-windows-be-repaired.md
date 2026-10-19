@@ -34,7 +34,7 @@ A window has to be judged as one thing. The frame, sill, sashes and joints work 
 
 ## Which Parts of a Timber Window Commonly Rot
 
-Rot doesn't appear at random. It goes where water sits and can't dry out, and on most timber windows that's the same handful of places: the external sill — or cill, in the joiner's spelling — which takes the weather head-on; the bottom rails of the sashes; the lower sections of the frame; the ends of the glazing bars; and the joints, particularly the bottom corners, where end grain meets end grain and moisture gets trapped.
+Rot doesn't appear at random. It goes where water sits and can't dry out, and on most timber windows that's the same handful of places: the external sill, which takes the weather head-on; the bottom rails of the sashes; the lower sections of the frame; the ends of the glazing bars; and the joints, particularly the bottom corners, where end grain meets end grain and moisture gets trapped.
 
 It also follows failure. Where paint has cracked and let water in, where putty has come away from the glass, and — very often — where a previous filler repair has been smeared over soft timber and simply sealed the damp in behind it. Those quick cosmetic fixes are one of the most common reasons a window that could have been repaired properly ends up worse than it started.
 
@@ -87,7 +87,7 @@ On period properties, usually yes. Original windows carry things a standard repl
 
 Matching new timber to what's already there is central to that kind of work. Heritage Joiners contributed specialist joinery work to the restoration of [The Counting House in Pontefract](/case-studies/counting-house) — a project later recognised with the Heritage Award at Pontefract Civic Society's 2025 Design Awards — where retaining and matching existing timber detail mattered throughout.
 
-A fuller example of the repair-first approach on a whole building is the [sash and timber window refurbishment in Pontefract](/case-studies/dunster-windows), where eleven weathered windows and the main entrance door were repaired, sealed and refinished rather than replaced — including shaped sapele splices let into the cills and stile bottoms on the two worst ones.
+A fuller example of the repair-first approach on a whole building is the [sash and timber window refurbishment in Pontefract](/case-studies/dunster-windows), where eleven weathered windows and the main entrance door were repaired, sealed and refinished rather than replaced — including shaped sapele splices let into the sills and stile bottoms on the two worst ones.
 
 <figure>
   <img src="/images/blog/timber-window-repair/counting-house-pontefract-sash-window-restoration.webp" alt="Restored timber sash window at The Counting House in Pontefract" width="1080" height="1434" loading="lazy" />

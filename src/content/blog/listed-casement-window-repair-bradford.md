@@ -129,7 +129,7 @@ On this job the owner expected to lose the window and pay for a new one. What th
 
 ## Timber window repairs in Bradford and West Yorkshire
 
-This one was in Greengates, Bradford. Heritage Joiners takes on casement and sash window repair, rotten bottom rail and cill repairs, splice repairs and timber window restoration across Bradford, Leeds, Wakefield, Pontefract and the wider West Yorkshire area, including listed and period properties.
+This one was in Greengates, Bradford. Heritage Joiners takes on casement and sash window repair, rotten bottom rail and sill repairs, splice repairs and timber window restoration across Bradford, Leeds, Wakefield, Pontefract and the wider West Yorkshire area, including listed and period properties.
 
 If you have got a window someone has told you needs replacing, [send Rob some photos](/contact) before you agree to anything — the whole window, and a close-up of the rotten area — and he will give you an honest view on whether it is a rail or a window.
 
