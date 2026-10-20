@@ -4,6 +4,7 @@ description: "Bespoke ledged and braced garden gate built from 4x1 tanalised tim
 pubDate: 2026-07-15
 draft: false
 ogImage: "/images/blog/garden-gate/made-to-measure-wooden-garden-gate-fitted.webp"
+areas: ["Pontefract"]
 faqs:
   - question: "What is a ledged and braced garden gate?"
     answer: "It's a gate built from vertical boards fixed to horizontal ledges, with a diagonal brace running between the ledges to stop the frame racking out of shape. It's one of the oldest and most reliable ways to build a solid timber gate, and it's still the standard construction for garden and side gates."
