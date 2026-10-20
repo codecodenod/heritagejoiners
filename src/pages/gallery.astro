@@ -104,14 +104,79 @@ const galleryItems: { category: (typeof categories)[number]; title: string; imag
   { category: 'Flooring', title: 'Finished Herringbone Hallway', image: '/images/blog/herringbone-laminate-flooring-hallway/grey-oak-herringbone-laminate-floor-finished-hallway.webp', alt: 'Finished grey oak herringbone laminate floor in a Pontefract hallway with the skirtings refitted', width: 1080, height: 1920 },
   { category: 'Flooring', title: 'Flooring Under Door Linings', image: '/images/blog/herringbone-laminate-flooring-hallway/herringbone-laminate-flooring-at-door-linings.webp', alt: 'Herringbone laminate flooring running beneath undercut door linings with no trim or beading', width: 1080, height: 1920 },
 ];
+// A line of context per section, and the page the work belongs to. Keeps the
+// gallery linked into the rest of the site instead of being a dead end.
+const categoryMeta: Record<(typeof categories)[number], { blurb: string; href: string; linkText: string }> = {
+  'Doors': {
+    blurb: 'Door hanging and fitting, from bespoke solid oak entrance doors made on the bench to internal doors, linings and the ironmongery that goes with them.',
+    href: '/services/doors', linkText: 'Door hanging and fitting',
+  },
+  'Windows': {
+    blurb: 'Sash and casement window repair on period and listed buildings — rotten bottom rails and sills cut back and spliced, sashes released, then prepared and refinished.',
+    href: '/services/windows', linkText: 'Sash and timber window repair',
+  },
+  'Staircases': {
+    blurb: 'Solid oak staircases, landings, newels, handrails and spindles, set out and cut so the geometry works before anything is fixed.',
+    href: '/services/staircases', linkText: 'Staircase fitting and repair',
+  },
+  'Kitchens': {
+    blurb: 'Kitchen fitting and worktops, from bespoke oak cabinetry to a cost-effective refit set out around an existing splashback.',
+    href: '/services/kitchens', linkText: 'Kitchen fitting',
+  },
+  'Timber Repair': {
+    blurb: 'Wet rot and dry rot repair, splice and let-in repairs, beam repairs and decayed sills — cutting back to firm timber and letting new timber in to match.',
+    href: '/services/timber-repair', linkText: 'Timber repair and restoration',
+  },
+  'Wall Panelling & Cladding': {
+    blurb: 'Wall panelling, tongue and groove, and external timber cladding over treated battens, set out so the boards run true across the elevation.',
+    href: '/services/cladding-panelling', linkText: 'Wall panelling and cladding',
+  },
+  'Skirting, Architrave & Mouldings': {
+    blurb: 'Skirting board fitting, architrave and profile-matched mouldings, scribed to rooms that are rarely square.',
+    href: '/services/skirting-architrave', linkText: 'Skirting and architrave fitting',
+  },
+  'Gates & Outdoor Carpentry': {
+    blurb: 'Wooden garden gates made to measure, ledged and braced, hung to openings that are almost never the size they are supposed to be.',
+    href: '/services/outdoor-carpentry', linkText: 'Gates and outdoor carpentry',
+  },
+  'Roofing Carpentry': {
+    blurb: 'Roof carpentry and timber roof repairs — rafters, joists, firrings and decks, including flat roofs stripped back to sound timber and rebuilt.',
+    href: '/services/roofing-carpentry', linkText: 'Roof carpentry',
+  },
+  'Stud Partitions & First Fix': {
+    blurb: 'Timber stud partition walls set out at proper centres, with noggins, insulation and door openings formed before boarding.',
+    href: '/services/first-fix-carpentry', linkText: 'First fix carpentry',
+  },
+  'Lofts & Storage': {
+    blurb: 'Loft boarding on a new timber floor structure over the ceiling joists, with insulation kept at full depth and a ladder and hatch fitted.',
+    href: '/services/extensions-conversions', linkText: 'Lofts and conversions',
+  },
+  'Flooring': {
+    blurb: 'Timber and laminate flooring, including herringbone laid over a levelled subfloor and run under undercut door linings with no beading.',
+    href: '/services/flooring', linkText: 'Flooring and floor sanding',
+  },
+  'Workshop & Bench Joinery': {
+    blurb: 'Bench work — hand-cut joints, doors and staircase components made in the workshop before they ever reach site.',
+    href: '/services/bespoke-joinery', linkText: 'Bespoke and built-in joinery',
+  },
+  'The Counting House': {
+    blurb: 'One of Pontefract’s oldest buildings. Heritage Joiners contributed oak joinery and restoration carpentry to a project later recognised with the Heritage Award at Pontefract Civic Society’s 2025 Design Awards.',
+    href: '/case-studies/counting-house', linkText: 'The Counting House case study',
+  },
+  'Dunster Windows': {
+    blurb: 'Eleven timber sash windows and the main entrance door on Micklegate in Pontefract, repaired, sealed and refinished rather than replaced.',
+    href: '/case-studies/dunster-windows', linkText: 'Dunster Windows case study',
+  },
+};
+
 // Sections, in the order above. Empty categories drop out on their own.
 const groups = categories
-  .map((category) => ({ category, items: galleryItems.filter((g) => g.category === category) }))
+  .map((category) => ({ category, items: galleryItems.filter((g) => g.category === category), meta: categoryMeta[category] }))
   .filter((group) => group.items.length > 0);
 ---
 
 <BaseLayout
-  title="Gallery | Heritage Joiners"
+  title="Carpentry & Joinery Gallery in West Yorkshire"
   description="See carpentry, joinery, timber repair and heritage work from Heritage Joiners across Pontefract, Wakefield and West Yorkshire, including doors and windows."
 
   ogImage="/images/gallery/oak-door-counting-house.webp"
@@ -129,7 +194,11 @@ const groups = categories
       <div id="gallery-grid">
         {groups.map((group) => (
           <section class="mb-14 last:mb-0">
-            <h2 class="font-display text-2xl text-ink mb-6 pb-2 border-b border-ink/10">{group.category}</h2>
+            <h2 class="font-display text-2xl text-ink mb-2 pb-2 border-b border-ink/10">{group.category}</h2>
+            <p class="text-ink/70 mb-6 max-w-3xl">
+              {group.meta.blurb}{' '}
+              <a href={group.meta.href} class="text-oak underline">{group.meta.linkText}&nbsp;&rarr;</a>
+            </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {group.items.map((item) => (
                 <article class="group block bg-bone rounded-lg overflow-hidden border border-ink/10 hover:border-oak transition-colors">

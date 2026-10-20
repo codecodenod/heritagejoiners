@@ -4,6 +4,7 @@ description: "How we built a timber stud partition wall in Doncaster — a West 
 pubDate: 2026-07-14
 draft: false
 ogImage: "/images/blog/stud-partition/finished-stud-partition-wall-with-internal-door-doncaster.webp"
+areas: ["Doncaster"]
 ---
 
 <figure>

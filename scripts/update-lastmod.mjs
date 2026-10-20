@@ -17,7 +17,8 @@ import { readFileSync, writeFileSync, statSync } from 'node:fs';
 import { globSync } from 'node:fs';
 
 const MAP = 'src/data/lastmod.json';
-const day = (p) => new Date(statSync(p).mtimeMs).toISOString().slice(0, 10);
+const dayOf = (ms) => new Date(ms).toISOString().slice(0, 10);
+const mtime = (p) => statSync(p).mtimeMs;
 
 const files = [
   ...globSync('src/pages/**/*.astro'),
@@ -40,12 +41,40 @@ if (times.length > 5 && Math.max(...times) - Math.min(...times) < 10_000) {
   process.exit(0);
 }
 
+/**
+ * Some routes render the blog collection rather than only their own file, so a
+ * new or edited post changes what they show without touching their source.
+ * Those routes take the newest of their own mtime and their dependencies'.
+ *   /blog and /sitemap   list every published post
+ *   /areas/<town>        shows "Recent work in <town>" for posts tagged with it
+ *   /areas/yorkshire     uses matchAny, so any post with an areas tag counts
+ */
+const posts = globSync('src/content/blog/*.md')
+  .map((f) => ({ f, src: readFileSync(f, 'utf8') }))
+  .filter(({ src }) => !/^draft:\s*true\s*$/m.test(src))
+  .map(({ f, src }) => {
+    const m = src.match(/^areas:\s*\[(.*)\]\s*$/m);
+    const areas = m ? [...m[1].matchAll(/["']([^"']+)["']/g)].map((x) => x[1]) : [];
+    return { f, areas };
+  });
+
+const slug = (s) => s.toLowerCase().replace(/\s+/g, '-');
+
+const dependenciesOf = (route) => {
+  if (route === '/blog' || route === '/sitemap') return posts;
+  const town = route.match(/^\/areas\/([a-z-]+)$/)?.[1];
+  if (!town) return [];
+  if (town === 'yorkshire') return posts.filter((p) => p.areas.length > 0);
+  return posts.filter((p) => p.areas.some((a) => slug(a) === town));
+};
+
 const map = JSON.parse(readFileSync(MAP, 'utf8'));
 const changed = [];
 for (const f of files) {
   const route = routeFor(f);
   if (!route) continue;
-  const d = day(f);
+  const newest = dependenciesOf(route).reduce((a, p) => Math.max(a, mtime(p.f)), mtime(f));
+  const d = dayOf(newest);
   if (!map[route] || d > map[route]) {
     changed.push(`${route}  ${map[route] ?? '(new)'} -> ${d}`);
     map[route] = d;
