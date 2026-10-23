@@ -87,6 +87,8 @@ It is practical outdoor carpentry rather than fine joinery, but it still comes d
 
 This wall was in Castleford. Heritage Joiners fits [external timber cladding](/services/cladding-panelling), garden screening, fencing, gates and other [outdoor carpentry](/services/outdoor-carpentry) across Castleford, Pontefract, Wakefield and the wider West Yorkshire area, as a [joiner in Castleford](/areas/castleford) and across the surrounding towns.
 
+Treated timber outdoors is the same material question either way — another example is this [bespoke ledged and braced garden gate](/blog/bespoke-ledged-and-braced-garden-gate), built from 4x1 tanalised timber with an arched top to suit an existing opening.
+
 The work is done by a fully qualified apprentice trained bench hand joiner, time served, with over 35 years' workshop and site experience.
 
 If you have a wall you are thinking of cladding, [send photographs for an honest first opinion](/contact) — the wall itself, what is around it, and anything the boarding will have to work around.

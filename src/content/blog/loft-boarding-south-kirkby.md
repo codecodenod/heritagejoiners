@@ -38,6 +38,8 @@ Here is the bit that gets missed. The timbers you can see in an ordinary loft ar
 
 So the floor gets built, not just covered. New 4x2 C16 structural timber was run across the existing ceiling joists, picking up bearing at the walls, to form a proper floor deck above the old ones.
 
+It is the same first-fix discipline as [building a timber stud partition wall](/blog/how-to-build-a-stud-partition-wall) — set out properly, sized for the load it will actually take, and got right before anything covers it up.
+
 <figure>
   <img src="/images/blog/loft-boarding-south-kirkby/4x2-c16-joists-over-existing-ceiling-joists.webp" alt="New 4x2 C16 timber joists running across the existing ceiling joists to form a loft floor" width="1920" height="1080" loading="lazy" />
   <figcaption>New 4x2 C16 running across the existing ceiling joists — a floor in its own right.</figcaption>
