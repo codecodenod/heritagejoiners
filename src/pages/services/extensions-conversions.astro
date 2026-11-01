@@ -7,70 +7,92 @@ import { siteConfig } from '../../config/site';
 
 const { phone, url } = siteConfig;
 
-const breadcrumbs = [{ name: 'Extensions, Conversions & Structural', url: `${url}/services/extensions-conversions` }];
+const breadcrumbs = [{ name: 'Loft Conversions', url: `${url}/services/extensions-conversions` }];
 const schemaProps = {
-  description: 'Attic conversion, loft conversion, timber frame construction, and structural carpentry across Pontefract, Wakefield, and West Yorkshire.',
+  description: 'Complete loft conversions across Pontefract, Wakefield and West Yorkshire — structure, roof, dormers, staircase, plastering, electrics, plumbing and finishing.',
   url: `${url}/services/extensions-conversions`,
   priceRange: '£££',
 };
 
 const faqItems = [
   {
-    question: 'What affects the cost of attic conversion with dormer work?',
+    question: 'Do you carry out the whole loft conversion, or just the carpentry?',
     answer:
-      'The cost of attic conversion with dormer work depends on structure, steel, stair position, insulation build-up, and whether the roof needs wider carpentry changes.',
+      'The whole conversion. Heritage Joiners takes the job from the first survey through to a finished room you can move into — the structural work and steels, the roof alterations, the dormer or rooflights, the new floor, the staircase, insulation, plasterboarding and plastering, the electrics, the plumbing if there is an ensuite, and all of the joinery and finishing. We have the full team of trades for it, so you deal with one person for the whole project rather than coordinating six.',
   },
   {
-    question: 'What should I send first for an attic conversion or structural enquiry?',
+    question: 'Does a loft conversion need planning permission?',
     answer:
-      'Plans, sketches, or roof void photos are the best way to start the conversation, especially if the building is older or the structure has already been altered.',
+      'Often not. Many loft conversions are permitted development, where the Planning Portal sets a volume allowance of 40 cubic metres of additional roof space on a terraced house and 50 cubic metres on a detached or semi-detached house, including anything a previous owner added. The roof must not go above the existing ridge. There are important exceptions: permitted development does not apply on designated land such as conservation areas, it does not apply to flats or maisonettes, and an Article 4 Direction can remove the rights altogether. We check the position for your specific property before any design work starts, and apply for permission where it is needed.',
+  },
+  {
+    question: 'Does a loft conversion need Building Regulations approval?',
+    answer:
+      'Yes, always, with no exceptions — that is separate from planning permission and it applies even when the conversion is permitted development. Building Control inspect the work at stages and issue a completion certificate at the end, which you will need when you come to sell. We deal with the application and the inspections as part of the job.',
+  },
+  {
+    question: 'What stops a loft from being converted?',
+    answer:
+      'Head height is the usual one. You need enough height for a habitable room once the new floor and the insulated roof build-up have taken their share, and that gets measured before anything is promised. After that it is where the staircase can land, because the stairs have to come off a landing and meet the headroom rules, and a loft that works structurally can still be awkward if there is nowhere sensible to put the stairs. Modern trussed roofs need more structural work than older cut roofs, but they are converted all the time. We will tell you plainly if a loft is not worth converting.',
+  },
+  {
+    question: 'Do I need an architect and a structural engineer?',
+    answer:
+      'A structural engineer, almost always — the new floor and any steels carrying the roof need calculating and signing off, and Building Control will expect those calculations. An architect is not always necessary for a straightforward conversion, though drawings are needed for the Building Regulations application and for planning if it is required. We arrange the design and engineering as part of the project, so it is not something you have to go and organise separately.',
+  },
+  {
+    question: 'How long does a loft conversion take?',
+    answer:
+      'From first survey to finished room it is usually a matter of weeks rather than days, and the honest answer depends on the type of conversion, the design and approvals stage before anything starts on site, and whether an ensuite is going in. A rooflight conversion is quicker than a dormer, and a dormer is quicker than a hip-to-gable. We give you a programme at the quote stage and tell you where the waiting is, because most of the unpredictable time sits with approvals rather than the building work.',
   },
 ];
 
-const structuralServices = [
-  'Attic conversion and loft conversion carpentry',
-  'Dormer loft conversion structure',
-  'Extensions and structural carpentry elements',
-  'Garage conversions and internal structural changes',
-  'Timber frame construction and timber frame carpentry',
-  'Timber frame joinery and timber frame repair',
-  'Structural timber, joists, and floor structures',
-  'Oak frame carpentry company level work on selected projects',
-  'Garden room builder and outbuilding timber structures',
-  'Steel beam boxing and joinery integration',
+const loftServices = [
+  'Complete loft conversions, managed from survey to finished room',
+  'Dormer loft conversions, including rear and double dormers',
+  'Velux and rooflight loft conversions',
+  'Hip-to-gable loft conversions',
+  'Mansard conversions and bungalow loft conversions',
+  'Trussed roof conversions and structural alterations',
+  'Steels, new floor structures and load-bearing work',
+  'Staircases, landings and balustrades made and fitted',
+  'Insulation, plasterboarding and plastering',
+  'Electrics, lighting and plumbing for loft ensuites',
+  'Rooflights, dormer windows and external finishes',
+  'Building Regulations applications and Building Control sign-off',
 ];
 ---
 
 <ServiceLayout
-  title="Attic Conversion in Pontefract & Wakefield"
-  description="Attic conversion, loft conversion, timber frame construction, and structural carpentry across Pontefract, Wakefield and West Yorkshire."
-  serviceName="Extensions, Conversions & Structural"
+  title="Loft Conversions in Pontefract & Wakefield"
+  description="Complete loft conversions across Pontefract, Wakefield and West Yorkshire. We handle the structure, roof, dormers, staircase, plastering, electrics and finishing."
+  serviceName="Loft Conversions"
   breadcrumbs={breadcrumbs}
   schemaProps={schemaProps}
-  ogImage="/images/services/extensions-conversions/hipped-roof-extension-carpentry-yorkshire.webp"
+  ogImage="/images/services/extensions-conversions/loft-conversion-large-dormer-window-exterior.webp"
 >
   <FAQPageSchema slot="schema" faqs={faqItems} />
 
   <!-- Hero: same pattern as the doors page. -->
   <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
     <img
-      src="/images/services/extensions-conversions/hipped-roof-extension-carpentry-yorkshire.webp"
-      alt="Hipped roof timbers going up on a scaffolded house extension"
-      width="1535"
-      height="867"
+      src="/images/services/extensions-conversions/loft-conversion-large-dormer-window-exterior.webp"
+      alt="Large rear dormer loft conversion seen from outside, tiled and finished into the existing roof"
+      width="1672"
+      height="941"
       fetchpriority="high"
       class="absolute inset-0 w-full h-full object-cover"
     />
     <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
       <div class="max-w-2xl">
-          <p class="text-oak uppercase tracking-wide mb-4">Conversions and structural carpentry</p>
-          <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Attic Conversion in Pontefract, Wakefield &amp; West Yorkshire</h1>
+          <p class="text-oak uppercase tracking-wide mb-4">Complete loft conversions</p>
+          <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Loft Conversions in Pontefract, Wakefield &amp; West Yorkshire</h1>
           <p class="text-lg text-ink/80 mb-8">
-            Rob covers attic conversion, loft conversion, timber frame construction, and structural carpentry across West Yorkshire. This is where workshop-trained and site-proven joinery matters: awkward roof geometry, existing timbers, new openings, trimmers, joists and finishes all have to be made to work together.
+            Heritage Joiners takes on complete loft conversions &mdash; the whole project, not one trade of it. Structure and steels, the roof and the dormer, the staircase, insulation and plastering, electrics and plumbing, through to the joinery and the finish. One team, one point of contact, and a room you can move into at the end of it.
           </p>
           <div class="flex flex-wrap gap-4">
-            <WhatsAppCTA />
+            <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a loft conversion" />
             <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
           </div>
       </div>
@@ -79,9 +101,9 @@ const structuralServices = [
 
   <section class="py-16 bg-bone">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Attic conversions and timber frame carpentry</h2>
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What a complete loft conversion includes</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {structuralServices.map((item) => (
+        {loftServices.map((item) => (
           <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
         ))}
       </div>
@@ -89,24 +111,30 @@ const structuralServices = [
   </section>
 
   <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Structural timber work with proper judgement</h2>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Loft conversion builders who do the whole job</h2>
         <p class="text-ink/70 mb-3">
-          This is the structural and conversion side of the business. Some jobs are straightforward build carpentry from drawings. Others involve existing timber frames, older joists, weak framing or awkward roof geometry where old-building experience is genuinely useful, especially when a <a href="/services/first-fix-carpentry" class="text-oak underline">first fix joiner</a> is needed to sort the structure before the wider conversion starts.
+          The thing that goes wrong with a loft conversion is rarely the carpentry. It is the gaps between trades &mdash; the electrician who turns up before the plasterboard is on, the plumber who needs a wall that nobody has built yet, the stair that was ordered before anyone checked where it lands.
+        </p>
+        <p class="text-ink/70 mb-3">
+          We run the whole thing. Heritage Joiners has the full team for a loft conversion, so the structural work, the roofing, the plastering, the electrics, the plumbing and the joinery are all sequenced by one person who knows what has to happen next. You get one number to ring and one person answerable for the job.
         </p>
         <p class="text-ink/70">
-          That crossover is why structural timber, timber frame construction and repair-led carpentry sit naturally in this service.
+          The joinery side of it is Rob's own trade. He is a fully qualified apprentice trained bench hand joiner, time served, with over 35 years in workshops and on site &mdash; which is why the staircase, the balustrade, the eaves storage and the trim in a Heritage Joiners loft are made to fit the room rather than bought in a size that nearly does.
         </p>
       </div>
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Lofts, dormers and timber frame extensions</h2>
-        <p class="text-ink/70 mb-3">
-          Loft conversion cost, dormer attic conversion, attic conversion price, and timber frame extensions are useful starting points, but pricing always comes back to structure, access, stair position, rooflight or dormer set-out, and the level of finish required.
-        </p>
-        <p class="text-ink/70">
-          Rob can review plans and advise when an existing structural timber issue should be solved before the wider conversion work begins. Rooflights, dormers and attic use are best considered during the roof set-out, while rafters, trimmers and reveals can still be formed properly.
-         If it is storage rather than a conversion you are after, <a href="/blog/loft-boarding-south-kirkby" class="text-oak underline">boarding a loft for storage</a> is a far smaller piece of work.
+        <img
+          src="/images/services/extensions-conversions/loft-conversion-staircase-and-landing-balustrade.webp"
+          alt="Timber staircase and landing balustrade fitted in a finished loft conversion"
+          width="1672"
+          height="941"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+        <p class="text-ink/60 text-sm mt-3">
+          The staircase and landing balustrade in a finished conversion &mdash; made and fitted rather than ordered in.
         </p>
       </div>
     </div>
@@ -114,7 +142,122 @@ const structuralServices = [
 
   <section class="py-16 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Attic conversion questions</h2>
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Types of loft conversion</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <p class="text-ink/70 mb-3">
+            <strong class="text-ink">Dormer loft conversion.</strong> A box built out from the roof slope, giving full head height and a flat ceiling across most of the new room. It is the conversion that adds the most usable space, and on a terraced or semi-detached house a rear dormer is usually the one that makes an unusable loft into a proper bedroom.
+          </p>
+          <p class="text-ink/70 mb-3">
+            <strong class="text-ink">Velux or rooflight conversion.</strong> No change to the shape of the roof &mdash; rooflights go into the existing slope and the work happens inside. It is the quickest and least disruptive option, and the one least likely to need planning permission, but it only works where the loft already has the head height.
+          </p>
+          <p class="text-ink/70 mb-3">
+            <strong class="text-ink">Hip-to-gable.</strong> On a house with a hipped roof, the sloping end is built up square to form a gable, which turns a cramped triangular loft into a usable rectangular one. Often combined with a rear dormer on a 1930s semi.
+          </p>
+          <p class="text-ink/70">
+            <strong class="text-ink">Mansard and bungalow conversions.</strong> A mansard reconstructs the roof with a steep near-vertical slope to maximise the space, and is the biggest structural option. Bungalow conversions are a different proposition again, because converting the loft makes it a two-storey house and the fire and escape requirements change with it.
+          </p>
+        </div>
+        <div>
+          <img
+            src="/images/services/extensions-conversions/loft-conversion-large-dormer-window-interior.webp"
+            alt="Inside a finished dormer loft conversion with a large dormer window and full head height"
+            width="1672"
+            height="941"
+            loading="lazy"
+            class="w-full h-auto rounded-xl shadow-lg mb-3"
+          />
+          <img
+            src="/images/services/extensions-conversions/loft-conversion-timber-balustrade-and-eaves-storage.webp"
+            alt="Timber balustrade and built-in eaves storage in a completed loft conversion"
+            width="1672"
+            height="941"
+            loading="lazy"
+            class="w-full h-auto rounded-xl shadow-lg"
+          />
+          <p class="text-ink/60 text-sm mt-3">
+            Inside the same dormer conversion, and the eaves storage built into the low part of the room where the headroom runs out.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Design, structural engineer and Building Control</h2>
+        <p class="text-ink/70 mb-3">
+          A loft conversion is a structural job and it is approved as one. The new floor has to carry a room rather than a ceiling, and where the roof load is taken off the existing structure it usually needs steels, which have to be calculated and signed off by a structural engineer. We arrange the design and the engineering as part of the project rather than leaving you to organise it.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Building Regulations approval is always required</strong>, with no exceptions, and it is separate from planning permission. Building Control inspect at stages and issue a completion certificate at the end &mdash; the document you will be asked for when you sell the house. We handle the application and the inspections.
+        </p>
+        <p class="text-ink/70">
+          <strong class="text-ink">Planning permission often is not required.</strong> Many conversions fall under permitted development, where the Planning Portal sets an allowance of 40 cubic metres of extra roof space on a terraced house and 50 cubic metres on a detached or semi-detached one, counting anything a previous owner added, with the new roof no higher than the existing ridge. It does not apply on designated land such as conservation areas, and an Article 4 Direction can remove the rights. Rules change and every property is different, so we confirm the position for yours before any design work begins rather than relying on a general answer.
+        </p>
+      </div>
+      <div>
+        <img
+          src="/images/services/extensions-conversions/loft-conversion-interior-with-roof-window.webp"
+          alt="Finished loft conversion interior lit by a roof window in the sloping ceiling"
+          width="941"
+          height="1672"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Stairs, fire and head height</h2>
+        <p class="text-ink/70 mb-3">
+          Three things shape the design of almost every loft conversion, and they are worth understanding before you fall in love with a layout.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Head height</strong> decides whether the loft is convertible at all. What matters is the height left once the new floor structure and the insulated roof build-up have taken their share, not what you can stand up in today.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">The staircase</strong> has to come off an existing landing, meet the pitch and headroom rules in Approved Document K, and land somewhere that does not ruin the room below. Approved Document K allows a reduced headroom over a loft stair where space is tight, which is often what makes a difficult loft work. It is frequently the stair, not the roof, that sets the whole layout.
+        </p>
+        <p class="text-ink/70">
+          <strong class="text-ink">Fire escape</strong> changes what the rest of the house needs. Converting the loft of a two-storey house normally means forming a protected stairway down to the front door, with fire doors to the rooms off it and mains-wired alarms, rather than relying on an escape window. A bungalow is treated differently again. These are the requirements as they are generally applied &mdash; the specification for your house is confirmed with Building Control as part of the application.
+        </p>
+      </div>
+      <div>
+        <img
+          src="/images/services/extensions-conversions/loft-conversion-shaped-doorway-and-landing.webp"
+          alt="Shaped doorway and landing formed at the top of a loft conversion staircase"
+          width="1672"
+          height="941"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+        <p class="text-ink/60 text-sm mt-3">
+          The head of the stairs, with the doorway shaped to the roofline rather than squared off and boxed in.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Extensions, garage conversions and structural timber</h2>
+      <p class="text-ink/70 mb-3">
+        Loft conversions are the main part of this service, but the same team and the same structural carpentry take on extensions, garage conversions, timber frame construction and structural openings. Where a job is really a structural timber problem rather than a conversion, <a href="/services/first-fix-carpentry" class="text-oak underline">first fix carpentry</a> covers joists, partitions and floor structures, and <a href="/services/timber-repair" class="text-oak underline">timber repair</a> covers decayed beams and roof timbers.
+      </p>
+      <p class="text-ink/70">
+        If it is storage you are after rather than a habitable room, that is a much smaller job &mdash; see <a href="/blog/loft-boarding-south-kirkby" class="text-oak underline">boarding a loft for storage in South Kirkby</a>, where a new timber floor went in over the ceiling joists without the loft becoming a conversion. A <a href="/services/staircases" class="text-oak underline">staircase</a> for a finished loft, and the <a href="/services/roofing-carpentry" class="text-oak underline">roof carpentry</a> behind a dormer, are both covered in more detail on their own pages.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Loft conversion questions</h2>
       {faqItems.map((faq) => (
         <div class="mb-6 last:mb-0">
           <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
@@ -126,19 +269,19 @@ const structuralServices = [
 
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Timber frame carpentry across West Yorkshire</h2>
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Loft conversion builders across West Yorkshire</h2>
       <p class="text-ink/70">
-        Extensions and conversions are available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>, with selected larger projects across wider <a href="/areas/yorkshire" class="text-oak underline">Yorkshire</a>.
+        Complete loft conversions, extensions and structural carpentry are available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>, with selected larger projects across wider <a href="/areas/yorkshire" class="text-oak underline">Yorkshire</a>.
       </p>
     </div>
   </section>
 
   <section class="py-16 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-display text-3xl text-ink mb-4">Planning an extension or conversion?</h2>
-      <p class="text-ink/70 mb-8 mx-auto">Send plans, rough dimensions, or clear roof and room photos and Rob can advise on the carpentry scope.</p>
+      <h2 class="font-display text-3xl text-ink mb-4">Thinking about converting your loft?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send a few photos of the loft, the landing below it and the outside of the house, and Rob will give you an honest first view on whether it converts and what it would involve.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <WhatsAppCTA />
+        <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a loft conversion" />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
       </div>
     </div>
