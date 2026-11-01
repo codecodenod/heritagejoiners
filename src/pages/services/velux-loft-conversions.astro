@@ -1,0 +1,239 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Velux & Rooflight Loft Conversions', url: `${url}/services/velux-loft-conversions` }];
+const schemaProps = {
+  description: 'Velux and rooflight loft conversions across Pontefract, Wakefield and West Yorkshire — the quickest conversion where the loft already has the head height.',
+  url: `${url}/services/velux-loft-conversions`,
+  priceRange: '£££',
+};
+
+const faqItems = [
+  {
+    question: 'What is a Velux loft conversion?',
+    answer:
+      'A conversion where the shape of the roof is left exactly as it is and windows go into the existing slope, so all the work happens inside. It is often called a Velux conversion after the best-known make of roof window, but the correct general term is a rooflight conversion and any make of window can be used. Because nothing is built out from the roof, it is the quickest and least disruptive type of conversion and the one least likely to need planning permission.',
+  },
+  {
+    question: 'Is a rooflight conversion cheaper than a dormer?',
+    answer:
+      'Generally yes, because there is no structural box to build out, no new roof covering, no external finishes and usually no planning application. The saving is real, but it only counts if the loft suits it. Paying less for a conversion that leaves you with a room you can only stand up in down the middle is not a saving. The right question is whether your loft has the head height, and that is settled with a tape measure before anything is quoted.',
+  },
+  {
+    question: 'How do I know if my loft has enough head height for a rooflight conversion?',
+    answer:
+      'What matters is the height left once the new floor structure and the insulated roof build-up have taken their share, not what you can measure between the existing joists and the ridge today. Both of those are substantial, and both come out of the middle of the room where the height is. There is no single magic number because floor and roof build-ups vary with the structure, so it is measured properly on a survey rather than guessed. If it is marginal, a dormer is usually the honest answer.',
+  },
+  {
+    question: 'Do rooflights need planning permission?',
+    answer:
+      'Usually not. The Planning Portal states that rooflights and skylights normally do not need planning permission provided they project no more than 150mm beyond the plane of the roof slope and sit no higher than the highest part of the roof. Windows in a side-facing roof slope must be obscure-glazed and either non-opening or more than 1.7 metres above floor level. Permitted development does not apply to flats or maisonettes, and an Article 4 Direction can remove the rights, so we check the position for your property. Building Regulations approval is a separate matter and is always required for a conversion.',
+  },
+  {
+    question: 'Can you fit an ensuite in a rooflight conversion?',
+    answer:
+      'Yes, and it is one of the most common requests. The things that decide it are where the soil stack is, whether the floor structure will take the additional loading, and finding a corner with enough head height for a shower, which usually means putting it under the slope rather than in the middle of the room. We handle the plumbing as part of the project rather than leaving you to arrange it, and the ventilation and electrics come under the same Building Regulations application.',
+  },
+  {
+    question: 'How long does a rooflight loft conversion take?',
+    answer:
+      'Less than a dormer, because there is no external structure to build and usually no planning application to wait for. The work is a new floor structure, insulation, plasterboarding and plastering, the rooflights themselves, the staircase, electrics, any plumbing, and the joinery and finishing. We give you a programme at the quote stage. As with any conversion, most of the unpredictable time sits with approvals rather than the building work.',
+  },
+];
+
+const rooflightServices = [
+  'Velux and rooflight loft conversions, start to finish',
+  'Roof window installation into the existing slope',
+  'New floor structures and structural alterations',
+  'Insulation, plasterboarding and plastering',
+  'Staircases, landings and balustrades made and fitted',
+  'Loft ensuites, plumbing and electrics',
+  'Eaves storage built into the low part of the room',
+  'Building Regulations applications and Building Control sign-off',
+];
+---
+
+<ServiceLayout
+  title="Velux Loft Conversions in Pontefract & Wakefield"
+  description="Velux and rooflight loft conversions across Pontefract, Wakefield and West Yorkshire. The quickest conversion where the loft already has the head height."
+  serviceName="Velux & Rooflight Loft Conversions"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+  ogImage="/images/services/extensions-conversions/loft-conversion-staircase-and-landing-balustrade.webp"
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <!-- Hero: same pattern as the doors page. -->
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/services/extensions-conversions/loft-conversion-staircase-and-landing-balustrade.webp"
+      alt="Timber staircase and landing balustrade in a finished loft conversion"
+      width="1672"
+      height="941"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+          <p class="text-oak uppercase tracking-wide mb-4">Loft conversions</p>
+          <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Velux &amp; Rooflight Loft Conversions in Pontefract, Wakefield &amp; West Yorkshire</h1>
+          <p class="text-lg text-ink/80 mb-8">
+            Where a loft already has the head height, a rooflight conversion is the quickest way to get a proper room out of it. No change to the shape of the roof, no scaffolding for weeks, usually no planning application &mdash; and Heritage Joiners handles the whole job, from the new floor structure through to the finished room.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a Velux loft conversion" />
+            <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What a rooflight conversion includes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {rooflightServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">What a Velux conversion actually is</h2>
+        <p class="text-ink/70 mb-3">
+          Velux is a make of roof window, not a type of conversion &mdash; it has just become the word everybody uses, the way people say Hoover. The proper term is a rooflight conversion, and any make of window will do the job.
+        </p>
+        <p class="text-ink/70 mb-3">
+          What defines it is what does not happen: the roof keeps its existing shape. Windows go into the slope rather than out of it, so there is no box built off the roof, no new roof covering, no external render or tiling, and no scaffolding standing for weeks. The work is a new floor structure, insulation, the rooflights, the staircase, plastering, electrics, and the finishing.
+        </p>
+        <p class="text-ink/70">
+          That makes it the cleanest conversion to live through, and the cheapest of the lot. It also makes it the one that depends entirely on whether your loft suits it.
+        </p>
+      </div>
+      <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+        <img
+          src="/images/services/extensions-conversions/loft-conversion-interior-with-roof-window.webp"
+          alt="Loft room lit by a roof window set into the sloping ceiling, with the eaves running down to a low wall"
+          width="941"
+          height="1672"
+          loading="lazy"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The head height test &mdash; and the honest answer</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          A rooflight conversion does not create head height. It only uses what is already there. So the whole decision comes down to one measurement, and it is not the one most people take.
+        </p>
+        <p class="text-ink/70 mb-3">
+          What matters is not the height from the existing joists to the ridge today. It is what is left after the new floor structure has gone in on top of the ceiling joists, and after the insulated roof build-up has come down off the rafters. Both take a real amount, and both take it out of the middle of the room where the height actually is.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Then there is the shape of what is left. In an unconverted roof you can only stand upright in a strip under the ridge, and everything either side slopes away to nothing. A rooflight conversion keeps that shape exactly. You get light, you get a floor, you get a room &mdash; but the usable area is whatever the existing roof gives you.
+        </p>
+        <p class="text-ink/70">
+          Which is why the useful thing we can tell you is when <strong class="text-ink">not</strong> to have one. If the measurement is marginal, a <a href="/services/dormer-loft-conversions" class="text-oak underline">dormer conversion</a> is the honest answer, because it creates head height rather than borrowing it. Paying less for a room you can only stand up in down the middle is not a saving, and we would rather say so at the survey than at the handover.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Planning permission for rooflights</h2>
+        <p class="text-ink/70 mb-3">
+          This is the one genuine advantage a rooflight conversion has on paper, and it holds up.
+        </p>
+        <p class="text-ink/70 mb-3">
+          The Planning Portal states that rooflights and skylights normally do not need planning permission, provided they project <strong class="text-ink">no more than 150mm beyond the plane of the roof slope</strong> and sit <strong class="text-ink">no higher than the highest part of the roof</strong>. Because a rooflight conversion creates no additional roof volume, the volume allowances that govern dormers do not come into it.
+        </p>
+        <p class="text-ink/70 mb-3">
+          The conditions worth knowing: windows in a side-facing roof slope must be obscure-glazed and either non-opening or more than 1.7 metres above the floor. The allowances apply to houses, not flats or maisonettes. And an Article 4 Direction can withdraw permitted development rights, which is particularly worth checking on older streets.
+        </p>
+        <p class="text-ink/70">
+          <strong class="text-ink">Building Regulations approval is a separate matter and is always required</strong>, rooflights or not. Rules change and every property is different, so we confirm the position for your house and deal with the application and the Building Control inspections as part of the job.
+        </p>
+      </div>
+      <div>
+        <img
+          src="/images/services/extensions-conversions/loft-conversion-timber-balustrade-and-eaves-storage.webp"
+          alt="Timber balustrade and built-in eaves storage in a finished loft conversion"
+          width="1672"
+          height="941"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+        <p class="text-ink/60 text-sm mt-3">
+          A rooflight conversion keeps the original slope, so the low space at the eaves stays. It is worth building into rather than boarding over.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Loft ensuites and making the low space work</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl">
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">An ensuite in a rooflight conversion</h3>
+          <p class="text-ink/70">Entirely doable, and one of the most common requests. What decides it is where the soil stack runs, whether the new floor structure takes the loading, and finding a corner with head height for a shower &mdash; usually tucked under the slope, which is exactly the space you would otherwise waste. The plumbing, ventilation and electrics are all part of the same project and the same Building Regulations application.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">Eaves storage and built-in joinery</h3>
+          <p class="text-ink/70">Because the original slope stays, a rooflight conversion always leaves low space running down to the wall plate. Boarded flat and forgotten, that is dead floor area. Built into properly it becomes wardrobes, drawers and storage that no freestanding furniture would fit. This is where Rob's own trade earns its keep &mdash; a fully qualified apprentice trained bench hand joiner, time served, making it to the room rather than buying something that nearly fits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Velux loft conversion questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Rooflight loft conversions across West Yorkshire</h2>
+      <p class="text-ink/70 mb-3">
+        Velux and rooflight loft conversions are available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a> and <a href="/areas/leeds" class="text-oak underline">Leeds</a>, with selected projects across wider <a href="/areas/yorkshire" class="text-oak underline">Yorkshire</a>.
+      </p>
+      <p class="text-ink/70">
+        See <a href="/services/extensions-conversions" class="text-oak underline">complete loft conversions</a> for the whole service, or <a href="/services/dormer-loft-conversions" class="text-oak underline">dormer loft conversions</a> if the head height is not there. The <a href="/services/staircases" class="text-oak underline">staircase</a>, the <a href="/services/first-fix-carpentry" class="text-oak underline">new floor structure</a> and the <a href="/services/bespoke-joinery" class="text-oak underline">built-in eaves joinery</a> are each covered in more detail on their own pages.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Not sure if your loft has the height?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the loft and a rough measurement from the ceiling joists up to the ridge, and Rob will tell you honestly whether a rooflight conversion will give you a room worth having or whether you need a dormer.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a Velux loft conversion" />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
