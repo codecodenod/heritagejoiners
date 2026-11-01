@@ -12,36 +12,48 @@ const breadcrumbs = [
   { name: 'Services', url: `${url}/services` },
 ];
 
+// Sections on this page, in display order. Cards are grouped by name rather than
+// by array position, so inserting a new service cannot silently move others between
+// sections the way index slices did.
+const serviceGroups = [
+  'Core Joinery & Carpentry',
+  'Interiors',
+  'Loft Conversions',
+  'Structural, Roofing & Exterior',
+  'Heritage Repair & Specialist Work',
+] as const;
+
 // `image` / `alt` are optional — a card renders without a picture until one is set.
 const serviceCards: {
   href: string;
   title: string;
   description: string;
+  group: (typeof serviceGroups)[number];
   image?: string;
   alt?: string;
 }[] = [
-  { href: '/services/doors', title: 'Doors', description: 'Door hanging, internal and external door fitting, fire doors and door frame repair. Old openings are rarely square, so doors get hung to the opening they are going in.', image: '/images/homepage/oak-ledged-and-braced-front-door.webp', alt: 'Oak front door with a small glazed panel in a stone opening' },
-  { href: '/services/windows', title: 'Windows', description: 'Sash window repair, timber window repairs, draught-proofing and new timber windows. Rot gets cut back to sound timber and spliced, not filled over.', image: '/images/homepage/timber-sash-window-stone-surround.webp', alt: 'White-painted timber sash window set in a stone surround' },
-  { href: '/services/first-fix-carpentry', title: 'First Fix Carpentry', description: 'First fix joiner work: floor joists, stud partition walls, door linings and structural timber. Extra noggins go in to stiffen the frame before it is boarded.', image: '/images/blog/stud-partition/stud-partition-wall-frame-with-double-door-studs-doncaster.webp', alt: 'Timber stud partition frame with door studs and noggins in a stripped-back room' },
-  { href: '/services/second-fix-carpentry', title: 'Second Fix Carpentry', description: 'Second fix carpenter work: hanging doors, skirting, architrave, window boards, boxing-in and ironmongery. The stage where margins and scribes show.', image: '/images/blog/stud-partition/finished-internal-door-in-stud-partition-wall-doncaster.webp', alt: 'Timber door lining fitted in a plasterboarded stud partition wall' },
-  { href: '/services/staircases', title: 'Staircases', description: 'Staircase fitter for new staircases, loft stairs, handrails, spindles and under-stair storage. Set out to the building rather than to a standard rise and going.', image: '/images/homepage/oak-staircase-handrails-spindles.webp', alt: 'Oak staircase with square spindles and newel posts' },
-  { href: '/services/kitchens', title: 'Kitchens', description: 'Kitchen fitter work: units, timber worktops, cabinetry and pantry joinery, scribed into walls that are rarely straight.', image: '/images/homepage/fitted-oak-kitchen-pontefract.webp', alt: 'Oak kitchen cabinets and worktops with a Belfast sink' },
-  { href: '/services/skirting-architrave', title: 'Skirting, Architrave & Trim', description: 'Skirting board fitting, architrave, picture rails, dado rails and profile-matched mouldings, cut to rooms that are rarely square.', image: '/images/case-studies/counting-house/the-counting-house-oak-interior-boxing-in-window.webp', alt: 'Timber boxing-in and panelling beneath a window in a period interior' },
-  { href: '/services/flooring', title: 'Flooring', description: 'Floor sanding, parquet, floorboard replacement and timber floor refinishing. Boards get checked for movement and fixings before the sander comes out.', image: '/images/gallery/engineered-oak-wood-flooring.webp', alt: 'Engineered oak flooring part-laid over underlay in a room being fitted out' },
-  { href: '/services/bespoke-joinery', title: 'Built-in & Bespoke Joinery', description: 'Fitted wardrobes, alcove units, shelving, media units and window seats, made to the room rather than bought in a size that nearly fits.', image: '/images/services/bespoke-joinery/bespoke-joinery-workshop-bench-pontefract.webp', alt: 'A traditional hand plane and fresh wood shavings on the workshop bench' },
-  { href: '/services/roofing-carpentry', title: 'Roofing & Roof Carpentry', description: 'Roof carpenter work: cut roofs, rafters, trusses, dormers and soffits. Ridge, purlins and rafter centres are set out before anything is cut.', image: '/images/homepage/oak-roof-trusses-timber-rafters.webp', alt: 'Oak roof frame with trusses and exposed rafters' },
-  { href: '/services/extensions-conversions', title: 'Loft Conversions', description: 'Complete loft conversions managed start to finish — structure and steels, dormers and rooflights, staircase, plastering, electrics and plumbing. Extensions and garage conversions too.', image: '/images/services/extensions-conversions/loft-conversion-large-dormer-window-exterior.webp', alt: 'Large rear dormer loft conversion seen from outside, tiled and finished into the existing roof' },
-  { href: '/services/dormer-loft-conversions', title: 'Dormer Loft Conversions', description: 'Rear, full-width, double and L-shaped dormers. The conversion that creates head height where the roof slopes away, built and finished as one complete project.', image: '/images/services/extensions-conversions/loft-conversion-large-dormer-window-interior.webp', alt: 'Inside a finished dormer loft conversion with a large dormer window and full head height' },
-  { href: '/services/velux-loft-conversions', title: 'Velux & Rooflight Loft Conversions', description: 'The quickest conversion where the loft already has the head height. No change to the roof shape, usually no planning application, and all the work inside.', image: '/images/services/extensions-conversions/loft-conversion-interior-with-roof-window.webp', alt: 'Loft room lit by a roof window set into the sloping ceiling' },
-  { href: '/services/hip-to-gable-loft-conversions', title: 'Hip to Gable Loft Conversions', description: 'Squaring off a hipped roof so the triangular loft becomes a rectangular room. The conversion that makes a 1930s semi worth converting, usually paired with a rear dormer.', image: '/images/services/extensions-conversions/loft-conversion-shaped-doorway-and-landing.webp', alt: 'Shaped doorway and landing at the head of the staircase in a finished loft conversion' },
-  { href: '/services/loft-conversion-costs', title: 'Loft Conversion Costs', description: 'What actually moves the price — conversion type, roof structure, steels, where the staircase lands, access and ensuite — and how to compare quotes properly.', image: '/images/services/extensions-conversions/loft-conversion-staircase-and-landing-balustrade.webp', alt: 'Timber staircase and landing balustrade in a finished loft conversion' },
-  { href: '/services/outdoor-carpentry', title: 'Outdoor & Landscape Carpentry', description: 'Wooden garden gates, fences, decking, pergolas and screening, built from timber chosen to stand out in Yorkshire weather.', image: '/images/blog/garden-gate/made-to-measure-wooden-garden-gate-fitted.webp', alt: 'Arched-top timber garden gate hung between brick walls' },
-  { href: '/services/cladding-panelling', title: 'Cladding & Panelling', description: 'Wall panelling, tongue and groove panelling, feature walls and external timber cladding. Board widths are set out so the panel lands right at both ends.', image: '/images/case-studies/counting-house/the-counting-house-rustic-sawn-oak-boarding.webp', alt: 'Rustic sawn oak boarding fixed as vertical cladding' },
-  { href: '/services/timber-repair', title: 'Timber Repair & Restoration', description: 'Timber repair for wet rot, dry rot and splice repairs. Decayed sections are cut back to sound timber and matched, keeping the original that is still good.', image: '/images/homepage/service-rot.webp', alt: 'Fresh timber splice fitted into a decayed window frame' },
-  { href: '/services/woodworm-treatment', title: 'Woodworm & Treatment', description: 'Woodworm treatment and timber treatment, with damaged sections replaced where the strength has gone. Assessed first, before anything is sprayed.', image: '/images/blog/flat-roof-wakefield/06-treating-retained-roof-timbers-for-wet-rot.webp', alt: 'Timber treatment being applied to retained roof joists' },
-  { href: '/services/finishing', title: 'Finishing & Specialist', description: 'Wood staining, oiling, waxing, French polishing and colour matching. Test boards first, because stain reads differently on every piece of timber.', image: '/images/gallery/workshop-bench-hand-joinery.webp', alt: 'Oak framed and boarded door on the workshop bench with tools to hand' },
-  { href: '/services/timber-hardwoods', title: 'Timber & Hardwoods', description: 'Oak joinery, reclaimed timber, Accoya, iroko and other hardwoods and softwoods, with straight advice on what actually suits the job.', image: '/images/about/heritage-joiners-oak-specialists.webp', alt: 'Oak boards and sections stacked in the workshop' },
-  { href: '/services/maintenance-repairs', title: 'Maintenance & Repairs', description: 'Carpentry repairs, lock and hinge replacement, shelving, snagging and the small joinery jobs that keep getting put off.', image: '/images/homepage/carpentry-maintenance-repairs-yorkshire.webp', alt: 'Timber roof frame under repair on a scaffolded house extension' },
+  { href: '/services/doors', title: 'Doors', group: 'Core Joinery & Carpentry', description: 'Door hanging, internal and external door fitting, fire doors and door frame repair. Old openings are rarely square, so doors get hung to the opening they are going in.', image: '/images/homepage/oak-ledged-and-braced-front-door.webp', alt: 'Oak front door with a small glazed panel in a stone opening' },
+  { href: '/services/windows', title: 'Windows', group: 'Core Joinery & Carpentry', description: 'Sash window repair, timber window repairs, draught-proofing and new timber windows. Rot gets cut back to sound timber and spliced, not filled over.', image: '/images/homepage/timber-sash-window-stone-surround.webp', alt: 'White-painted timber sash window set in a stone surround' },
+  { href: '/services/first-fix-carpentry', title: 'First Fix Carpentry', group: 'Core Joinery & Carpentry', description: 'First fix joiner work: floor joists, stud partition walls, door linings and structural timber. Extra noggins go in to stiffen the frame before it is boarded.', image: '/images/blog/stud-partition/stud-partition-wall-frame-with-double-door-studs-doncaster.webp', alt: 'Timber stud partition frame with door studs and noggins in a stripped-back room' },
+  { href: '/services/second-fix-carpentry', title: 'Second Fix Carpentry', group: 'Core Joinery & Carpentry', description: 'Second fix carpenter work: hanging doors, skirting, architrave, window boards, boxing-in and ironmongery. The stage where margins and scribes show.', image: '/images/blog/stud-partition/finished-internal-door-in-stud-partition-wall-doncaster.webp', alt: 'Timber door lining fitted in a plasterboarded stud partition wall' },
+  { href: '/services/staircases', title: 'Staircases', group: 'Interiors', description: 'Staircase fitter for new staircases, loft stairs, handrails, spindles and under-stair storage. Set out to the building rather than to a standard rise and going.', image: '/images/homepage/oak-staircase-handrails-spindles.webp', alt: 'Oak staircase with square spindles and newel posts' },
+  { href: '/services/kitchens', title: 'Kitchens', group: 'Interiors', description: 'Kitchen fitter work: units, timber worktops, cabinetry and pantry joinery, scribed into walls that are rarely straight.', image: '/images/homepage/fitted-oak-kitchen-pontefract.webp', alt: 'Oak kitchen cabinets and worktops with a Belfast sink' },
+  { href: '/services/skirting-architrave', title: 'Skirting, Architrave & Trim', group: 'Interiors', description: 'Skirting board fitting, architrave, picture rails, dado rails and profile-matched mouldings, cut to rooms that are rarely square.', image: '/images/case-studies/counting-house/the-counting-house-oak-interior-boxing-in-window.webp', alt: 'Timber boxing-in and panelling beneath a window in a period interior' },
+  { href: '/services/flooring', title: 'Flooring', group: 'Interiors', description: 'Floor sanding, parquet, floorboard replacement and timber floor refinishing. Boards get checked for movement and fixings before the sander comes out.', image: '/images/gallery/engineered-oak-wood-flooring.webp', alt: 'Engineered oak flooring part-laid over underlay in a room being fitted out' },
+  { href: '/services/bespoke-joinery', title: 'Built-in & Bespoke Joinery', group: 'Interiors', description: 'Fitted wardrobes, alcove units, shelving, media units and window seats, made to the room rather than bought in a size that nearly fits.', image: '/images/services/bespoke-joinery/bespoke-joinery-workshop-bench-pontefract.webp', alt: 'A traditional hand plane and fresh wood shavings on the workshop bench' },
+  { href: '/services/roofing-carpentry', title: 'Roofing & Roof Carpentry', group: 'Structural, Roofing & Exterior', description: 'Roof carpenter work: cut roofs, rafters, trusses, dormers and soffits. Ridge, purlins and rafter centres are set out before anything is cut.', image: '/images/homepage/oak-roof-trusses-timber-rafters.webp', alt: 'Oak roof frame with trusses and exposed rafters' },
+  { href: '/services/extensions-conversions', title: 'Loft Conversions', group: 'Loft Conversions', description: 'Complete loft conversions managed start to finish — structure and steels, dormers and rooflights, staircase, plastering, electrics and plumbing. Extensions and garage conversions too.', image: '/images/services/extensions-conversions/loft-conversion-large-dormer-window-exterior.webp', alt: 'Large rear dormer loft conversion seen from outside, tiled and finished into the existing roof' },
+  { href: '/services/dormer-loft-conversions', title: 'Dormer Loft Conversions', group: 'Loft Conversions', description: 'Rear, full-width, double and L-shaped dormers. The conversion that creates head height where the roof slopes away, built and finished as one complete project.', image: '/images/services/extensions-conversions/loft-conversion-large-dormer-window-interior.webp', alt: 'Inside a finished dormer loft conversion with a large dormer window and full head height' },
+  { href: '/services/velux-loft-conversions', title: 'Velux & Rooflight Loft Conversions', group: 'Loft Conversions', description: 'The quickest conversion where the loft already has the head height. No change to the roof shape, usually no planning application, and all the work inside.', image: '/images/services/extensions-conversions/loft-conversion-interior-with-roof-window.webp', alt: 'Loft room lit by a roof window set into the sloping ceiling' },
+  { href: '/services/hip-to-gable-loft-conversions', title: 'Hip to Gable Loft Conversions', group: 'Loft Conversions', description: 'Squaring off a hipped roof so the triangular loft becomes a rectangular room. The conversion that makes a 1930s semi worth converting, usually paired with a rear dormer.', image: '/images/services/extensions-conversions/loft-conversion-shaped-doorway-and-landing.webp', alt: 'Shaped doorway and landing at the head of the staircase in a finished loft conversion' },
+  { href: '/services/loft-conversion-costs', title: 'Loft Conversion Costs', group: 'Loft Conversions', description: 'What actually moves the price — conversion type, roof structure, steels, where the staircase lands, access and ensuite — and how to compare quotes properly.', image: '/images/services/extensions-conversions/loft-conversion-staircase-and-landing-balustrade.webp', alt: 'Timber staircase and landing balustrade in a finished loft conversion' },
+  { href: '/services/outdoor-carpentry', title: 'Outdoor & Landscape Carpentry', group: 'Structural, Roofing & Exterior', description: 'Wooden garden gates, fences, decking, pergolas and screening, built from timber chosen to stand out in Yorkshire weather.', image: '/images/blog/garden-gate/made-to-measure-wooden-garden-gate-fitted.webp', alt: 'Arched-top timber garden gate hung between brick walls' },
+  { href: '/services/cladding-panelling', title: 'Cladding & Panelling', group: 'Structural, Roofing & Exterior', description: 'Wall panelling, tongue and groove panelling, feature walls and external timber cladding. Board widths are set out so the panel lands right at both ends.', image: '/images/case-studies/counting-house/the-counting-house-rustic-sawn-oak-boarding.webp', alt: 'Rustic sawn oak boarding fixed as vertical cladding' },
+  { href: '/services/timber-repair', title: 'Timber Repair & Restoration', group: 'Heritage Repair & Specialist Work', description: 'Timber repair for wet rot, dry rot and splice repairs. Decayed sections are cut back to sound timber and matched, keeping the original that is still good.', image: '/images/homepage/service-rot.webp', alt: 'Fresh timber splice fitted into a decayed window frame' },
+  { href: '/services/woodworm-treatment', title: 'Woodworm & Treatment', group: 'Heritage Repair & Specialist Work', description: 'Woodworm treatment and timber treatment, with damaged sections replaced where the strength has gone. Assessed first, before anything is sprayed.', image: '/images/blog/flat-roof-wakefield/06-treating-retained-roof-timbers-for-wet-rot.webp', alt: 'Timber treatment being applied to retained roof joists' },
+  { href: '/services/finishing', title: 'Finishing & Specialist', group: 'Heritage Repair & Specialist Work', description: 'Wood staining, oiling, waxing, French polishing and colour matching. Test boards first, because stain reads differently on every piece of timber.', image: '/images/gallery/workshop-bench-hand-joinery.webp', alt: 'Oak framed and boarded door on the workshop bench with tools to hand' },
+  { href: '/services/timber-hardwoods', title: 'Timber & Hardwoods', group: 'Heritage Repair & Specialist Work', description: 'Oak joinery, reclaimed timber, Accoya, iroko and other hardwoods and softwoods, with straight advice on what actually suits the job.', image: '/images/about/heritage-joiners-oak-specialists.webp', alt: 'Oak boards and sections stacked in the workshop' },
+  { href: '/services/maintenance-repairs', title: 'Maintenance & Repairs', group: 'Heritage Repair & Specialist Work', description: 'Carpentry repairs, lock and hinge replacement, shelving, snagging and the small joinery jobs that keep getting put off.', image: '/images/homepage/carpentry-maintenance-repairs-yorkshire.webp', alt: 'Timber roof frame under repair on a scaffolded house extension' },
 ];
 
 const serviceItems = serviceCards.map((service) => ({
@@ -95,69 +107,35 @@ const itemListSchema = {
         Good joinery is problem-solving. Walls out of plumb, openings out of square, floors that are not level, awkward angles, or timber that has gone — the skill is finding the way that works. If your job involves older or decayed timber, <a href="/repair-or-replace" class="text-oak underline">read the repair-or-replace framework</a> first.
       </p>
 
-      <h2 class="font-display text-2xl text-ink mb-4 mt-8 pb-2 border-b border-ink/10">Core Joinery &amp; Carpentry</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-        {serviceCards.slice(0, 4).map((s) => (
-          <a href={s.href} class="service-card group relative">
-            {s.image && (
-              <img src={s.image} alt={s.alt} loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
-            )}
-            <div class="service-card-content">
-              <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">{s.title}</h3>
-              <p class="text-ink/70 text-sm mb-4 leading-relaxed">{s.description}</p>
-              <span class="mt-auto text-oak font-display text-xs">Learn more &rarr;</span>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Interiors</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-        {serviceCards.slice(4, 9).map((s) => (
-          <a href={s.href} class="service-card group relative">
-            {s.image && (
-              <img src={s.image} alt={s.alt} loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
-            )}
-            <div class="service-card-content">
-              <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">{s.title}</h3>
-              <p class="text-ink/70 text-sm mb-4 leading-relaxed">{s.description}</p>
-              <span class="mt-auto text-oak font-display text-xs">Learn more &rarr;</span>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Structural, Roofing &amp; Exterior</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-        {serviceCards.slice(9, 13).map((s) => (
-          <a href={s.href} class="service-card group relative">
-            {s.image && (
-              <img src={s.image} alt={s.alt} loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
-            )}
-            <div class="service-card-content">
-              <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">{s.title}</h3>
-              <p class="text-ink/70 text-sm mb-4 leading-relaxed">{s.description}</p>
-              <span class="mt-auto text-oak font-display text-xs">Learn more &rarr;</span>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <h2 class="font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10">Heritage Repair &amp; Specialist Work</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {serviceCards.slice(13).map((s) => (
-          <a href={s.href} class="service-card group relative">
-            {s.image && (
-              <img src={s.image} alt={s.alt} loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
-            )}
-            <div class="service-card-content">
-              <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">{s.title}</h3>
-              <p class="text-ink/70 text-sm mb-4 leading-relaxed">{s.description}</p>
-              <span class="mt-auto text-oak font-display text-xs">Learn more &rarr;</span>
-            </div>
-          </a>
-        ))}
-      </div>
+      {serviceGroups.map((group, gi) => (
+        <>
+          <h2 class={`font-display text-2xl text-ink mb-4 pb-2 border-b border-ink/10${gi === 0 ? ' mt-8' : ''}`}>{group}</h2>
+          {group === 'Loft Conversions' && (
+            <p class="text-ink/70 mb-6 max-w-3xl">
+              Complete loft conversions run start to finish &mdash; structure and steels, roof and dormer, staircase, plastering, electrics and plumbing. Start with <a href="/services/extensions-conversions" class="text-oak underline">complete loft conversions</a>, or go straight to the type that suits your roof.
+            </p>
+          )}
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+            {serviceCards.filter((s) => s.group === group).map((s) => (
+              <a href={s.href} class="service-card group relative">
+                {s.image && (
+                  <img src={s.image} alt={s.alt} loading="lazy" width="600" height="192" class="service-card-image w-full object-cover" />
+                )}
+                <div class="service-card-content">
+                  <h3 class="font-display text-xl text-ink mb-3 group-hover:text-oak transition-colors">{s.title}</h3>
+                  <p class="text-ink/70 text-sm mb-4 leading-relaxed">{s.description}</p>
+                  <span class="mt-auto text-oak font-display text-xs">Learn more &rarr;</span>
+                </div>
+              </a>
+            ))}
+          </div>
+          {group === 'Loft Conversions' && (
+            <p class="text-ink/70 mb-10 max-w-3xl">
+              Before you start, two reference guides: <a href="/guides/loft-conversion-planning-permission" class="text-oak underline">loft conversion planning permission</a> &mdash; when it is permitted development and when it is not &mdash; and <a href="/guides/loft-conversion-building-regulations" class="text-oak underline">loft conversion Building Regulations</a>, which always apply.
+            </p>
+          )}
+        </>
+      ))}
     </div>
   </section>
 </BaseLayout>
