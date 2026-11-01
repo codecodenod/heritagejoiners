@@ -1,0 +1,287 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
+import ArticleSchema from '../../components/schema/Article.astro';
+import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+const title = 'Loft Conversion Planning Permission';
+const description = 'When a loft conversion needs planning permission and when it is permitted development — volume allowances, dormers, rooflights, conservation areas and Article 4.';
+const canonicalUrl = `${url}/guides/loft-conversion-planning-permission`;
+const heroImage = '/images/services/extensions-conversions/loft-conversion-large-dormer-window-exterior.webp';
+
+const breadcrumbs = [
+  { name: 'Home', url: `${url}/` },
+  { name: 'Guides', url: `${url}/guides` },
+  { name: title, url: canonicalUrl },
+];
+
+const faqItems = [
+  {
+    question: 'Does a loft conversion need planning permission?',
+    answer:
+      'Often not. Many loft conversions are permitted development, which means they can be built without a planning application provided they stay inside a set of conditions — principally a volume allowance of 40 cubic metres of additional roof space on a terraced house or 50 on a semi-detached or detached one, and a roof no higher than the existing ridge. The main exceptions are dormers on an elevation fronting a highway, properties on designated land such as conservation areas, flats and maisonettes, and anywhere an Article 4 Direction has removed the rights. Building Regulations approval is always required either way.',
+  },
+  {
+    question: 'How much roof space can I add without planning permission?',
+    answer:
+      'The Planning Portal sets the allowance at 40 cubic metres of additional roof space for a terraced house and 50 cubic metres for a detached or semi-detached house. Two things catch people out. The first is that it counts any previous enlargement, including work done by a previous owner that you may know nothing about. The second is that a hip to gable and a rear dormer both draw on the same allowance, so where the two are combined the total is what counts — which is why they are designed together rather than one at a time.',
+  },
+  {
+    question: 'Do rooflights need planning permission?',
+    answer:
+      'Normally not. The Planning Portal states that rooflights and skylights do not generally need permission provided they project no more than 150mm beyond the plane of the roof slope and sit no higher than the highest part of the roof. Because they create no additional roof volume, the volume allowance that governs dormers does not apply to them. Windows in a side-facing roof slope must be obscure-glazed and either non-opening or more than 1.7 metres above the floor.',
+  },
+  {
+    question: 'Can I put a dormer on the front of my house?',
+    answer:
+      'Usually only with planning permission. The Planning Portal is explicit that an extension beyond the plane of the existing roof slope on the principal elevation fronting a highway is not permitted development. That is the rule that catches front dormers. It does not mean you cannot have one — it means it needs an application, and whether it is granted depends on local policy and how the street looks.',
+  },
+  {
+    question: 'What is a lawful development certificate and should I get one?',
+    answer:
+      'It is a formal confirmation from the council that the work you are proposing, or have already carried out, is lawful and did not need planning permission. It is not compulsory. It is genuinely worth having, because when you come to sell, a buyer’s solicitor asking whether the conversion was permitted development is answered by a document rather than an opinion. On anything near the volume limits, or on an older street where Article 4 might apply, it removes a future argument cheaply.',
+  },
+  {
+    question: 'Does the Party Wall Act apply to a loft conversion?',
+    answer:
+      'Often, yes — and it is separate from both planning and Building Regulations. If the work involves cutting into a party wall, inserting a beam into it, or building up off it, as a hip to gable or many terraced and semi-detached conversions do, you generally have to notify the adjoining owner in advance. It is a legal requirement rather than a courtesy, and the notice periods mean it is worth starting early rather than the week before the scaffold goes up.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  ogImage={heroImage}
+>
+  <BreadcrumbSchema items={breadcrumbs} />
+  <FAQPageSchema faqs={faqItems} />
+  <ArticleSchema
+    headline={title}
+    description={description}
+    url={canonicalUrl}
+    image={`${url}${heroImage}`}
+    datePublished="2026-11-01"
+  />
+
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src={heroImage}
+      alt="Large rear dormer loft conversion seen from outside, tiled and finished into the existing roof"
+      width="1672"
+      height="941"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Carpentry Explained guide</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Loft Conversion Planning Permission</h1>
+        <p class="text-lg text-ink/80 mb-8">
+          Most loft conversions do not need planning permission, because they fall under permitted development. The useful thing is knowing where the lines are &mdash; the volume allowance, the rule that catches front dormers, and the designations that remove the rights altogether.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a loft conversion" />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The short answer</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          A rear dormer, a hip to gable or a rooflight conversion on an ordinary house, inside the volume allowance and not on designated land, is usually <strong class="text-ink">permitted development</strong> and needs no planning application.
+        </p>
+        <p class="text-ink/70 mb-3">
+          A front-facing dormer, a conversion on a property in a conservation area, a flat or maisonette, or anything on a street with an Article 4 Direction, usually <strong class="text-ink">does need permission</strong>.
+        </p>
+        <p class="text-ink/70">
+          And whichever applies, <strong class="text-ink">Building Regulations approval is always required</strong> — that is a separate system and permitted development has no bearing on it. See the <a href="/guides/loft-conversion-building-regulations" class="text-oak underline">Building Regulations guide</a> for that side.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The volume allowance</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-6">This is the main condition, and the one people most often get wrong.</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-ink/20">
+              <th class="py-3 pr-6 font-display text-ink">House type</th>
+              <th class="py-3 pr-6 font-display text-ink">Additional roof space allowed</th>
+              <th class="py-3 font-display text-ink">Notes</th>
+            </tr>
+          </thead>
+          <tbody class="text-ink/70">
+            <tr class="border-b border-ink/10"><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink">Terraced house</td><td class="py-3 pr-6">40 cubic metres</td><td class="py-3">Includes end-terraces.</td></tr>
+            <tr class="border-b border-ink/10"><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink">Semi-detached</td><td class="py-3 pr-6">50 cubic metres</td><td class="py-3">The Planning Portal groups semis with detached houses.</td></tr>
+            <tr class="border-b border-ink/10"><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink">Detached</td><td class="py-3 pr-6">50 cubic metres</td><td class="py-3">A double hip to gable can use this up quickly.</td></tr>
+            <tr><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink">Flat or maisonette</td><td class="py-3 pr-6">Not permitted development</td><td class="py-3">The allowances apply to houses only.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="max-w-4xl mt-6">
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">It counts what was there before you.</strong> The allowance covers any previous enlargement of the roof space, including work a previous owner carried out. If a dormer was added in the 1990s, that volume has already been spent. You may not know it has happened, which is one of the reasons it is worth checking rather than assuming.
+        </p>
+        <p class="text-ink/70">
+          <strong class="text-ink">It is a single pot.</strong> A hip to gable and a rear dormer both draw on the same allowance, so on a conversion that combines the two it is the total that matters. That is why they get designed together.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">The other conditions</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">No higher than the existing ridge</h3>
+          <p class="text-ink/70 mb-5">The new roof must not exceed the highest part of the existing roof. This is what rules out raising a ridge to gain head height under permitted development.</p>
+
+          <h3 class="font-display text-xl text-ink mb-2">Nothing beyond the roof plane on the principal elevation fronting a highway</h3>
+          <p class="text-ink/70 mb-5">The rule that catches front dormers. If the elevation faces the road, an extension beyond the existing roof slope is not permitted development and needs an application.</p>
+
+          <h3 class="font-display text-xl text-ink">Set back at least 20cm from the original eaves</h3>
+          <p class="text-ink/70">Roof extensions must be set back as far as practicable and no less than 200mm from the original eaves. The government technical guidance allows this to be relaxed where practical or structural considerations make it impossible — and <strong class="text-ink">hip to gable conversions are specifically excepted</strong> from the requirement.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">No overhang of the wall below</h3>
+          <p class="text-ink/70 mb-5">The enlargement cannot overhang the outer face of the wall of the original house.</p>
+
+          <h3 class="font-display text-xl text-ink mb-2">Side-facing windows obscure-glazed</h3>
+          <p class="text-ink/70 mb-5">Windows in a wall or roof slope forming a side elevation must be obscure-glazed, and either non-opening or openable only more than 1.7 metres above the floor of the room.</p>
+
+          <h3 class="font-display text-xl text-ink mb-2">Materials similar in appearance</h3>
+          <p class="text-ink/70 mb-5">The materials used should be similar in appearance to the existing house.</p>
+
+          <h3 class="font-display text-xl text-ink">Verandas, balconies and raised platforms</h3>
+          <p class="text-ink/70">Not permitted development as part of a roof extension.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">When the rights do not apply at all</h2>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Designated land.</strong> Permitted development for roof extensions does not apply in conservation areas, national parks, the Broads, Areas of Outstanding Natural Beauty or World Heritage Sites. Plenty of older streets around Pontefract and Wakefield sit inside conservation areas without the owners realising.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Article 4 Directions.</strong> A council can remove permitted development rights from a particular area or type of work. Where one applies, you need an application for work that would otherwise have been allowed. These are local and are not obvious from the street, so they have to be checked with the council.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Listed buildings.</strong> A different system again. Listed building consent is required for alterations affecting the building’s special interest, and a loft conversion to a listed building is a significant alteration. That is specialist territory and the starting point is a conversation with the conservation officer.
+        </p>
+        <p class="text-ink/70">
+          <strong class="text-ink">Flats and maisonettes.</strong> The permitted development allowances apply to houses. They do not extend to flats or maisonettes.
+        </p>
+      </div>
+      <div>
+        <img
+          src="/images/services/extensions-conversions/loft-conversion-timber-balustrade-and-eaves-storage.webp"
+          alt="Timber balustrade and built-in eaves storage in a finished loft conversion"
+          width="1672"
+          height="941"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">By conversion type</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-ink/20">
+              <th class="py-3 pr-6 font-display text-ink">Conversion</th>
+              <th class="py-3 pr-6 font-display text-ink">Usual position</th>
+              <th class="py-3 font-display text-ink">The thing to watch</th>
+            </tr>
+          </thead>
+          <tbody class="text-ink/70">
+            <tr class="border-b border-ink/10"><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink"><a href="/services/velux-loft-conversions" class="text-oak underline">Rooflight</a></td><td class="py-3 pr-6">Normally permitted development</td><td class="py-3">Must project no more than 150mm beyond the roof plane and sit no higher than the highest part of the roof.</td></tr>
+            <tr class="border-b border-ink/10"><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink"><a href="/services/dormer-loft-conversions" class="text-oak underline">Rear dormer</a></td><td class="py-3 pr-6">Often permitted development</td><td class="py-3">Volume allowance, 20cm eaves setback, no overhang.</td></tr>
+            <tr class="border-b border-ink/10"><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink">Front dormer</td><td class="py-3 pr-6">Usually needs permission</td><td class="py-3">Beyond the roof plane on an elevation fronting a highway.</td></tr>
+            <tr class="border-b border-ink/10"><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink"><a href="/services/hip-to-gable-loft-conversions" class="text-oak underline">Hip to gable</a></td><td class="py-3 pr-6">Often permitted development</td><td class="py-3">Uses a lot of the volume allowance. Excepted from the eaves setback.</td></tr>
+            <tr><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink">Mansard</td><td class="py-3 pr-6">Usually needs permission</td><td class="py-3">Substantially reconstructs the roof, so rarely sits inside the conditions.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-ink/60 text-sm mt-4">General positions only. Whether your conversion is permitted development depends on your property and your council.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Two things worth doing even when you do not need permission</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">A lawful development certificate.</strong> Not compulsory, and genuinely useful. It is the council confirming formally that your work was permitted development. When you sell, a buyer’s solicitor will ask how you know the conversion did not need permission, and a certificate answers that with a document rather than an opinion. On anything close to the volume limits, or on an older street where an Article 4 might apply, it is cheap insurance against a future argument.
+        </p>
+        <p class="text-ink/70">
+          <strong class="text-ink">A party wall notice.</strong> Separate from planning and from Building Regulations, and frequently overlooked. Where the work involves cutting into a party wall, putting a beam into it, or building up off it — which covers most terraced and semi-detached conversions and virtually every hip to gable — the adjoining owner generally has to be notified in advance. It is a legal requirement with notice periods attached, so it belongs at the start of the programme rather than the end.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Common questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Check the position for your own property</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          Permitted development rules are revised from time to time, and whether they apply depends on your property, its planning history and any local direction. Treat this guide as an orientation and confirm the position for your own house with the local planning authority or your designer before relying on it.
+        </p>
+        <p class="text-ink/70 mb-3">
+          On a Heritage Joiners <a href="/services/extensions-conversions" class="text-oak underline">loft conversion</a> we check the position for your property and handle any application as part of the project. See the <a href="/guides/loft-conversion-building-regulations" class="text-oak underline">Building Regulations guide</a> for the approvals that always apply, and <a href="/services/loft-conversion-costs" class="text-oak underline">loft conversion costs</a> for how planning affects the programme.
+        </p>
+        <p class="text-ink/70">
+          <strong class="text-ink">Sources used:</strong> <a href="https://www.planningportal.co.uk/permission/common-projects/loft-conversion/planning-permission/" class="text-oak underline" target="_blank" rel="noopener noreferrer">Planning Portal &mdash; Loft conversion planning permission</a> &middot; <a href="https://www.planningportal.co.uk/permission/common-projects/roof/" class="text-oak underline" target="_blank" rel="noopener noreferrer">Planning Portal &mdash; Roof</a> &middot; <a href="https://www.gov.uk/government/publications/permitted-development-rights-for-householders-technical-guidance" class="text-oak underline" target="_blank" rel="noopener noreferrer">Permitted development rights for householders: technical guidance</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Not sure where your house stands?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the loft and the outside of the house and Rob will give you an honest first view on whether it is likely to be permitted development or whether it needs an application.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a loft conversion" />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

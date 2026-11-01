@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
+import ArticleSchema from '../../components/schema/Article.astro';
+import BreadcrumbSchema from '../../components/schema/Breadcrumb.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+const title = 'Loft Conversion Building Regulations';
+const description = 'Which Building Regulations apply to a loft conversion — structure, fire escape, stairs, insulation, ventilation and electrics — and how approval works.';
+const canonicalUrl = `${url}/guides/loft-conversion-building-regulations`;
+const heroImage = '/images/services/extensions-conversions/loft-conversion-shaped-doorway-and-landing.webp';
+
+const breadcrumbs = [
+  { name: 'Home', url: `${url}/` },
+  { name: 'Guides', url: `${url}/guides` },
+  { name: title, url: canonicalUrl },
+];
+
+const faqItems = [
+  {
+    question: 'Does a loft conversion always need Building Regulations approval?',
+    answer:
+      'Yes. Converting a loft into a habitable room is building work under the Building Regulations, and approval is required with no exceptions. It is entirely separate from planning permission — a conversion can be permitted development, needing no planning application at all, and still require full Building Control approval. The two are different systems run under different legislation, and being told you do not need planning permission says nothing about Building Regulations.',
+  },
+  {
+    question: 'What is a completion certificate and why does it matter?',
+    answer:
+      'It is the document Building Control issue once the work has been inspected and signed off. It matters most when you sell. A conveyancing solicitor will ask for it, and an unsigned-off loft conversion is a recognised problem on a sale — buyers ask for a retrospective regularisation application or a price reduction, and some lenders take an interest. Getting the certificate is the point of the process, not a formality at the end of it.',
+  },
+  {
+    question: 'Can I use the existing ceiling joists as the new floor?',
+    answer:
+      'Almost never. The timbers in an ordinary loft were sized to hold up a plasterboard ceiling and the weight of insulation, not people and furniture. A new floor structure is normally installed to carry the habitable loading, often new joists spanning between load-bearing walls or onto steel beams, with the old ceiling joists left doing their original job. What is needed on your roof is calculated by a structural engineer rather than assumed.',
+  },
+  {
+    question: 'Why does converting a loft mean fire doors on the floor below?',
+    answer:
+      'Because adding a storey changes how everyone gets out. In a two-storey house the new stair means the escape route now runs from the top floor all the way down, so that route generally has to be protected — fire-resisting doors to the rooms opening onto it, the enclosure made good, and mains-wired interlinked alarms. It feels like the regulations are reaching into rooms you are not touching, and that is exactly what is happening, because those rooms now sit on somebody’s escape route.',
+  },
+  {
+    question: 'Can I just put in a loft ladder and call it a room?',
+    answer:
+      'No. A fixed staircase is required for a habitable room, and a loft ladder or a pull-down stair will not satisfy the requirements. If you only want storage, that is a different and much smaller job that does not create a habitable room at all — but then it cannot be described or sold as a bedroom, and it is worth being clear which one you are doing before you start.',
+  },
+  {
+    question: 'What happens if work was done without approval?',
+    answer:
+      'It can usually be put right. A regularisation application asks Building Control to inspect and certify work carried out without approval, which may mean opening up parts of the construction so it can be seen. It is more disruptive and less certain than doing it properly first time, and some things are hard to prove retrospectively. If you have bought a house with an unsigned-off conversion, speak to Building Control early rather than at the point of sale.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  ogImage={heroImage}
+>
+  <BreadcrumbSchema items={breadcrumbs} />
+  <FAQPageSchema faqs={faqItems} />
+  <ArticleSchema
+    headline={title}
+    description={description}
+    url={canonicalUrl}
+    image={`${url}${heroImage}`}
+    datePublished="2026-11-01"
+  />
+
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src={heroImage}
+      alt="Shaped doorway and landing at the head of the staircase in a finished loft conversion"
+      width="1672"
+      height="941"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Carpentry Explained guide</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Loft Conversion Building Regulations</h1>
+        <p class="text-lg text-ink/80 mb-8">
+          Every loft conversion needs Building Regulations approval, with no exceptions, and it is a separate thing from planning permission. This is a plain guide to which parts apply, what each one is actually trying to achieve, and how the approval process runs.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a loft conversion" />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Building Regulations and planning permission are not the same thing</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          This is the single most common confusion, so it is worth settling first.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Planning permission</strong> is about whether you are allowed to change the appearance of the building and how that affects the street and your neighbours. Many loft conversions do not need it, because they fall under permitted development.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Building Regulations</strong> are about whether the finished work is safe and sound — the structure, fire escape, the stairs, insulation, ventilation and the electrics. <strong class="text-ink">Approval is always required for a loft conversion</strong>, regardless of planning.
+        </p>
+        <p class="text-ink/70">
+          So "you don't need planning for that" is often true and tells you nothing about Building Control. Planning permission is covered separately in our <a href="/guides/loft-conversion-planning-permission" class="text-oak underline">loft conversion planning permission guide</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Which parts apply to a loft conversion</h2>
+      <p class="text-ink/70 mb-6 max-w-4xl">The Building Regulations are divided into parts, each covered by an Approved Document. These are the ones that bear on a typical conversion.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-ink/20">
+              <th class="py-3 pr-6 font-display text-ink">Part</th>
+              <th class="py-3 pr-6 font-display text-ink">Subject</th>
+              <th class="py-3 font-display text-ink">What it means in a loft</th>
+            </tr>
+          </thead>
+          <tbody class="text-ink/70">
+            <tr class="border-b border-ink/10"><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink">Part A</td><td class="py-3 pr-6">Structure</td><td class="py-3">A new floor able to carry a room, steels where roof load is transferred, and calculations from a structural engineer.</td></tr>
+            <tr class="border-b border-ink/10"><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink">Part B</td><td class="py-3 pr-6">Fire safety</td><td class="py-3">A protected escape route, fire-resisting doors, and mains-wired interlinked alarms. Usually the part with the widest effect on the rest of the house.</td></tr>
+            <tr class="border-b border-ink/10"><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink">Part K</td><td class="py-3 pr-6">Stairs and falling</td><td class="py-3">Staircase pitch, headroom, rise and going, and balustrade height to the new landing.</td></tr>
+            <tr class="border-b border-ink/10"><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink">Part L</td><td class="py-3 pr-6">Conservation of fuel and power</td><td class="py-3">Insulation to the roof, dormer cheeks and any new walls, to the standards current when the work is carried out.</td></tr>
+            <tr class="border-b border-ink/10"><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink">Part F</td><td class="py-3 pr-6">Ventilation</td><td class="py-3">Purge and background ventilation to the new room, extract to any ensuite, and condensation control in what is left of the roof void.</td></tr>
+            <tr class="border-b border-ink/10"><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink">Part P</td><td class="py-3 pr-6">Electrical safety</td><td class="py-3">New circuits designed, installed, inspected and tested by a competent person, with a certificate issued.</td></tr>
+            <tr><td class="py-3 pr-6 whitespace-nowrap font-medium text-ink">Part E</td><td class="py-3 pr-6">Sound</td><td class="py-3">Sound resistance between the new room and the rooms below it.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-ink/60 text-sm mt-4">Approved Documents are revised from time to time and the version that applies is the one current when the work is done. Treat this table as an orientation, not a specification.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Structure: the floor is the first problem</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          The timbers you can see in an ordinary loft are ceiling joists. They were sized to hold a plasterboard ceiling and some insulation, and nothing else. They are not a floor.
+        </p>
+        <p class="text-ink/70 mb-3">
+          So a conversion normally gets a new floor structure capable of carrying habitable loading — commonly new joists spanning between load-bearing walls, or onto steel beams where the span or the layout needs it, with the original ceiling joists left to carry the ceiling as before. Where the existing roof structure is doing a structural job that has to be removed or altered, that job has to be taken over by something else before anything comes out.
+        </p>
+        <p class="text-ink/70 mb-3">
+          That is particularly true of modern trussed roofs. The W-shaped webs filling the loft are not there for convenience; they are holding the roof in shape. Converting a trussed roof means introducing new structure first, which is one of the reasons it costs more than converting an older cut roof.
+        </p>
+        <p class="text-ink/70">
+          None of this is guesswork or rule of thumb. It is calculated by a structural engineer, and Building Control will expect to see the calculations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Fire safety: the part that reaches into the rest of the house</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          This is the one that surprises people, because it affects rooms you were not planning to touch.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Adding a habitable storey changes the escape route for the whole house. Where you previously had a first floor with windows low enough to get out of, you now have a top floor where that is not an option, and everyone has to come down the stairs to get out.
+        </p>
+        <p class="text-ink/70 mb-3">
+          For the loft conversion of a <strong class="text-ink">two-storey house</strong>, the usual approach is a protected stairway: the stair enclosure from the top floor to the final exit made fire-resisting, fire doors to the habitable rooms opening onto it, and mains-wired interlinked smoke alarms. Council Building Control guidance commonly describes 30 minutes' fire resistance to the enclosure, with fire doors to the rooms off the stair. Escape windows are generally not accepted as a substitute in this situation.
+        </p>
+        <p class="text-ink/70 mb-3">
+          A <strong class="text-ink">bungalow</strong> is treated differently, because converting the loft effectively creates a new two-storey house with habitable rooms at first floor for the first time, and escape window provision comes into it.
+        </p>
+        <p class="text-ink/70">
+          The exact requirement depends on the layout of your house, where the stair lands and what rooms open onto it. This is the area where a conversation with Building Control at design stage saves the most money, because designing the escape route in is straightforward and retro-fitting it is not.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Stairs and headroom</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          A habitable loft room needs a fixed staircase. A loft ladder, a pull-down stair or a spiral in place of a proper stair will not do, however tight the space is.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Approved Document K sets the general expectation of <strong class="text-ink">2 metres of headroom over a staircase</strong>, which a loft frequently cannot provide where the stair rises into the roof slope. For that situation the Approved Document allows a reduction specifically for loft conversions, shown in its Diagram 1.4: <strong class="text-ink">1.9 metres at the centre of the stair, reducing to 1.8 metres at the side</strong>. That allowance is often exactly what makes a difficult loft workable. Some Building Control teams expect it to be agreed in advance rather than assumed.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Approved Document K also sets a <strong class="text-ink">maximum pitch of 42 degrees</strong> for a stair in a loft conversion, along with requirements for rise and going, handrails and guarding to the new landing.
+        </p>
+        <p class="text-ink/70">
+          In practice the stair is often what determines whether a conversion is possible at all. It has to come off an existing landing, meet these requirements, and land somewhere that does not wreck the room below. It is worth settling early — see <a href="/services/staircases" class="text-oak underline">staircase fitting</a> for the joinery side of it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Insulation, ventilation and electrics</h2>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Insulation.</strong> Part L sets the thermal performance required of the new roof, any dormer cheeks and new walls. The required figures are revised periodically and differ depending on where the insulation sits in the construction, so the number that applies is the one current when the work is carried out — confirm it with Building Control rather than relying on a figure from an article. What matters practically is that the insulated build-up takes real thickness out of your head height, which is why it has to be settled before anyone promises you a ceiling height.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Ventilation.</strong> Part F covers purge ventilation to the new habitable room, commonly provided by openable windows sized in proportion to the floor area, background ventilation, and mechanical extract to an ensuite. There is a second ventilation issue people miss: once the roof is insulated at rafter level, the remaining void still has to be able to breathe, and council guidance notes this is harder on traditional hipped roofs where cross ventilation is difficult to achieve.
+        </p>
+        <p class="text-ink/70">
+          <strong class="text-ink">Electrics.</strong> Part P requires electrical work to be designed, installed, inspected and tested by someone competent to do it, with the appropriate certificate issued. Building Control will normally want that certificate before they will sign the job off.
+        </p>
+      </div>
+      <div>
+        <img
+          src="/images/services/extensions-conversions/loft-conversion-interior-with-roof-window.webp"
+          alt="Loft room lit by a roof window set into the sloping ceiling, with the eaves running down to a low wall"
+          width="941"
+          height="1672"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">How the approval process runs</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          There are two routes. A <strong class="text-ink">full plans application</strong> submits drawings and structural calculations for checking before work starts, and you get a decision on the design. A <strong class="text-ink">building notice</strong> is a shorter route with no plan check, where everything is judged on site as it goes up.
+        </p>
+        <p class="text-ink/70 mb-3">
+          For a loft conversion, full plans is usually the sensible choice. The structural design and the fire escape strategy both benefit from being agreed on paper rather than discovered halfway through, and having an approval in writing is worth having if anything is questioned later.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Building Control then inspect at stages as the work proceeds — commonly the structural work, before insulation is covered, and at completion. At the end, provided everything satisfies them and the electrical certificate is in, they issue a <strong class="text-ink">completion certificate</strong>.
+        </p>
+        <p class="text-ink/70">
+          Keep that certificate. It is the document a conveyancing solicitor asks for when you sell, and an unsigned-off conversion is a well-known problem at that point. Getting it is the whole purpose of the exercise.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Common questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Check before you build</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          This guide describes how the requirements are generally applied. It is not a specification for your house. Approved Documents are revised, local Building Control teams interpret some points differently, and what your conversion needs depends on its structure, its layout and where the stair lands. Confirm the specification for your own job with Building Control or your designer before anything is ordered or built.
+        </p>
+        <p class="text-ink/70">
+          <strong class="text-ink">Sources used:</strong> <a href="https://assets.publishing.service.gov.uk/media/60d5bdcde90e07716f516cfd/Approved_Document_K.pdf" class="text-oak underline" target="_blank" rel="noopener noreferrer">Approved Document K &mdash; Protection from falling, collision and impact</a> &middot; <a href="https://assets.publishing.service.gov.uk/media/60114f91e90e07143c6dafe7/AD_L_1.pdf" class="text-oak underline" target="_blank" rel="noopener noreferrer">Approved Document L &mdash; Conservation of fuel and power, Volume 1: dwellings</a> &middot; <a href="https://www.planningportal.co.uk/permission/common-projects/loft-conversion/planning-permission/" class="text-oak underline" target="_blank" rel="noopener noreferrer">Planning Portal &mdash; Loft conversion</a> &middot; local authority Building Control loft conversion guidance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">We handle the approvals as part of the job</h2>
+      <p class="text-ink/70 max-w-4xl">
+        On a Heritage Joiners <a href="/services/extensions-conversions" class="text-oak underline">loft conversion</a> the structural engineer, the Building Regulations application and the Building Control inspections are all arranged as part of the project &mdash; you are not left to organise them. See <a href="/guides/loft-conversion-planning-permission" class="text-oak underline">loft conversion planning permission</a> for the other half of the approvals picture, and <a href="/services/loft-conversion-costs" class="text-oak underline">loft conversion costs</a> for how the structural requirements feed into the price.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Planning a loft conversion?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the loft and the landing below it and Rob will give you an honest first view on what it converts to and what the regulations will ask of it.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a loft conversion" />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
