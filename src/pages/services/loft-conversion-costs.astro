@@ -1,0 +1,269 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Loft Conversion Costs', url: `${url}/services/loft-conversion-costs` }];
+const schemaProps = {
+  description: 'What drives the cost of a loft conversion in West Yorkshire — conversion type, structure, steels, staircase, ensuite and access — and how to compare quotes properly.',
+  url: `${url}/services/loft-conversion-costs`,
+  priceRange: '£££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does a loft conversion cost?',
+    answer:
+      'We do not publish a figure, and we would be guessing if we did. Two houses on the same street can differ substantially for the same room, because the cost is set by the roof structure, the type of conversion the house needs, how many steels are involved, where the staircase can land, whether there is an ensuite and how the materials get in. Anyone quoting you a number before they have been up into your loft is quoting an average, not your house. What we can do is survey it properly and give you a fixed written quote, broken down so you can see what you are paying for.',
+  },
+  {
+    question: 'Which type of loft conversion costs the most?',
+    answer:
+      'As a general order, a rooflight conversion is the cheapest because the roof is not altered, a dormer costs more because there is a structure to build and finish externally, a hip to gable costs more again because a gable wall is built and the roof extended over it, and a mansard is usually the most expensive because the roof is substantially reconstructed. That order holds most of the time, but it is not a rule — a straightforward hip to gable on a sound roof can work out below an awkward dormer on a house with difficult access.',
+  },
+  {
+    question: 'Is a cost per square metre a useful guide?',
+    answer:
+      'Not really, and it is worth understanding why. A loft conversion is not priced like a floor covering. A large proportion of the cost is fixed regardless of the area — the staircase, the structural work, the steels, the Building Regulations application, the scaffolding and the services. Spreading those across the floor area produces a number that looks precise and tells you very little. A small conversion with an ensuite and difficult access can cost more per square metre than a large straightforward one.',
+  },
+  {
+    question: 'What makes one loft conversion cost more than another?',
+    answer:
+      'Mainly the structure and the access. A modern trussed roof needs more structural work than an older cut roof, because the trusses are doing a job that has to be taken over by something else. Steels add cost, and getting them into a terraced house with no side access adds more. Where the staircase can land affects both the cost and what it does to the floor below. An ensuite brings plumbing, loading and ventilation with it. A planning application adds time rather than much money, but it adds time.',
+  },
+  {
+    question: 'What should a loft conversion quote include?',
+    answer:
+      'All of it, itemised. Structural engineer calculations and drawings, the Building Regulations application and Building Control fees, scaffolding, the structural work and steels, the roof alterations, insulation, plasterboarding and plastering, the staircase, electrics, plumbing, joinery and finishing, and making good. If any of those are missing from the quote they have not gone away — they turn up later as extras. Our quotes say what is included and what is not, in writing, before anyone starts.',
+  },
+  {
+    question: 'Do you charge for a quote or a survey?',
+    answer:
+      'No. Send some photos first and we can tell you quickly whether the loft is worth converting, which saves everyone a wasted visit. If it looks viable, Rob comes out, measures properly, looks at the roof structure, works out where the stairs can go, and then puts a written quote together. You are not committed to anything by asking.',
+  },
+];
+
+const costDrivers = [
+  'Type of conversion — rooflight, dormer, hip to gable or mansard',
+  'Existing roof structure — traditional cut roof or modern trusses',
+  'Head height available before the floor and roof build-ups',
+  'How many steels are needed and how they get into the house',
+  'Where the staircase lands and what it takes from the floor below',
+  'Whether an ensuite is going in, and how far from the soil stack',
+  'Access for materials, scaffolding and waste removal',
+  'Whether planning permission is required or it is permitted development',
+  'Level of finish, joinery and built-in storage',
+  'Condition of the existing house — wiring, heating, boiler position',
+];
+---
+
+<ServiceLayout
+  title="Loft Conversion Costs in West Yorkshire"
+  description="What actually drives the cost of a loft conversion — conversion type, roof structure, steels, staircase, ensuite and access — and how to compare quotes properly."
+  serviceName="Loft Conversion Costs"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+  ogImage="/images/services/extensions-conversions/loft-conversion-large-dormer-window-exterior.webp"
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <!-- Hero: same pattern as the doors page. -->
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/services/extensions-conversions/loft-conversion-large-dormer-window-exterior.webp"
+      alt="Large rear dormer loft conversion seen from outside, tiled and finished into the existing roof"
+      width="1672"
+      height="941"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+          <p class="text-oak uppercase tracking-wide mb-4">Loft conversions</p>
+          <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Loft Conversion Costs in Pontefract, Wakefield &amp; West Yorkshire</h1>
+          <p class="text-lg text-ink/80 mb-8">
+            We do not put a price on this page, because any figure we printed would be wrong for most houses that read it. What we can do is tell you exactly what moves the cost up and down, so you can work out roughly where your house sits before anyone comes out &mdash; and judge the quotes you get properly.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <WhatsAppCTA message="Hi Heritage Joiners, I'd like a quote for a loft conversion" />
+            <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What sets the cost of a loft conversion</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {costDrivers.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Why we will not print a number</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          Every other page you have looked at today probably gave you a range. Here is why ours does not.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Two houses on the same street, same age, same footprint, can come out a long way apart for the same finished room. One has a traditional cut roof and the other has modern trusses. One has side access for a steel and the other means bringing it through the hall. One can land a staircase on the existing landing and the other loses a bedroom corner to do it. None of that is visible from the street and none of it is in an average.
+        </p>
+        <p class="text-ink/70 mb-3">
+          A published range is not useless because it is dishonest. It is useless because it is an average of jobs that are not yours. If your house is at the cheap end you will overestimate and may not bother enquiring. If it is at the expensive end you will get a nasty shock later, which is worse.
+        </p>
+        <p class="text-ink/70">
+          So instead of a number, below is the actual list of things that decide it. Read it against your own house and you will have a far better sense of where you sit than any range would give you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">The things that actually move the price</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">The type of conversion</h3>
+          <p class="text-ink/70 mb-5">The biggest single factor. A <a href="/services/velux-loft-conversions" class="text-oak underline">rooflight conversion</a> costs least because the roof is never altered. A <a href="/services/dormer-loft-conversions" class="text-oak underline">dormer</a> costs more because there is a structure to build, roof, weather and finish externally. A <a href="/services/hip-to-gable-loft-conversions" class="text-oak underline">hip to gable</a> costs more again, with a gable wall built and the roof extended over it. A mansard is usually the most, because the roof is largely rebuilt.</p>
+
+          <h3 class="font-display text-xl text-ink mb-2">Cut roof or trussed roof</h3>
+          <p class="text-ink/70 mb-5">Older houses tend to have a cut roof — rafters, purlins and a ridge, with an open void underneath. Houses from roughly the 1960s on usually have trussed rafters, where the W-shaped webs fill the loft and are structurally doing a job. Converting a trussed roof means taking that job over with new structure before the trusses can come out, and that costs more than working with a cut roof.</p>
+
+          <h3 class="font-display text-xl text-ink mb-2">Steels, and how they get in</h3>
+          <p class="text-ink/70 mb-5">Most conversions need at least a couple of steel beams to carry the new floor and the roof load. The beams themselves are a known quantity. Getting them into a mid-terrace with no side access, up through the house and into position, is the part that varies — and on a tight site it can cost more than the steel.</p>
+
+          <h3 class="font-display text-xl text-ink">Where the staircase lands</h3>
+          <p class="text-ink/70">Frequently the thing that decides the whole layout. If it comes neatly off the existing landing, that is the cheap answer. If it has to take a corner out of a bedroom, or a section of the landing has to be reconfigured, that is additional work on the floor below as well as the floor above.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">Ensuite or no ensuite</h3>
+          <p class="text-ink/70 mb-5">An ensuite brings plumbing, additional floor loading, ventilation and a second set of electrics with it. How far the new bathroom sits from the existing soil stack makes a real difference, because the further it runs the more structure the pipework has to get through.</p>
+
+          <h3 class="font-display text-xl text-ink mb-2">Access and scaffolding</h3>
+          <p class="text-ink/70 mb-5">Everything has to get in, and the waste has to get out. A detached house with a drive is straightforward. A terrace with a shared ginnel and on-street parking is not, and the difference shows up in labour and in how long the scaffolding stands.</p>
+
+          <h3 class="font-display text-xl text-ink mb-2">Planning permission</h3>
+          <p class="text-ink/70 mb-5">Costs less than people expect and takes longer than they expect. If the conversion is permitted development you skip the application entirely. If it is a front-facing dormer or the house is in a conservation area, it is an application and a wait. The main cost of planning is the programme, not the fee.</p>
+
+          <h3 class="font-display text-xl text-ink">What the room is for</h3>
+          <p class="text-ink/70">A plastered room with a light fitting and a plain staircase is one thing. Built-in eaves storage, a made staircase and balustrade, fitted wardrobes and a higher level of joinery are another. This is the part you have most control over, and the part worth spending on last rather than first.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Why cost per square metre misleads</h2>
+        <p class="text-ink/70 mb-3">
+          It is a figure people look for because it feels comparable, and it is one of the least useful numbers in the whole subject.
+        </p>
+        <p class="text-ink/70 mb-3">
+          A loft conversion is not priced like carpet. A large share of the cost does not scale with floor area at all — the staircase costs what it costs whether the room is small or large, and so do the structural calculations, the steels, the Building Regulations application, the scaffolding, the electrics and the plumbing. Divide those fixed costs by a small floor area and the rate per square metre looks terrible. Divide them by a large one and it looks like a bargain.
+        </p>
+        <p class="text-ink/70">
+          The result is that a modest conversion with an ensuite and awkward access can come out at a higher rate per square metre than a large straightforward one, while being a smaller job in every other sense. If you are comparing quotes, compare the scope and the total, not the rate.
+        </p>
+      </div>
+      <div>
+        <img
+          src="/images/services/extensions-conversions/loft-conversion-staircase-and-landing-balustrade.webp"
+          alt="Timber staircase and landing balustrade in a finished loft conversion"
+          width="1672"
+          height="941"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+        <p class="text-ink/60 text-sm mt-3">
+          The staircase costs roughly the same whether the room above it is large or small, which is one reason a rate per square metre tells you so little.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">How to compare loft conversion quotes</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          Get more than one quote. Then check that they are quoting for the same job, because very often they are not, and the cheapest is usually the one with the most left out.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Check what is included.</strong> Structural engineer's calculations and drawings. The Building Regulations application and the Building Control fees. Scaffolding. Steels. Electrics and plumbing. Plastering. The staircase. Making good on the floor below. If any of those are absent they have not disappeared — you will pay for them later, at a point when you have no leverage.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Check who is doing the work.</strong> Ask who is actually on site and who is managing it. A conversion goes wrong in the gaps between trades, so it matters whether one person is sequencing it or whether you are expected to coordinate six.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Check the programme and the payment stages.</strong> A sensible quote says roughly how long and what triggers each payment. Be wary of a large payment up front.
+        </p>
+        <p class="text-ink/70">
+          <strong class="text-ink">Check they have been in the loft.</strong> A quote produced without anyone going up and looking at the roof structure is an estimate dressed up as a price, and it will move.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">What you get from us instead of a price on a page</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          Send photos first &mdash; the loft, the landing below it and the outside of the house. That costs you nothing and takes five minutes, and it is usually enough for Rob to tell you whether the loft is worth converting and roughly what sort of conversion it would want. If the answer is that it is not worth doing, you will get that answer too.
+        </p>
+        <p class="text-ink/70 mb-3">
+          If it looks viable, Rob comes out and surveys it properly: measures the head height, looks at the roof structure, works out where a staircase can land and what that does to the floor below, and checks the access. Then you get a written quote that says what is included and what is not.
+        </p>
+        <p class="text-ink/70">
+          There is no charge for any of that and no obligation at the end of it. <a href="/services/extensions-conversions" class="text-oak underline">Complete loft conversions</a> sets out what the work involves, and the <a href="/reviews" class="text-oak underline">reviews</a> page is where customers describe how the jobs actually went.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Loft conversion cost questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Loft conversion quotes across West Yorkshire</h2>
+      <p class="text-ink/70 mb-3">
+        Quotes and surveys are available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a> and <a href="/areas/leeds" class="text-oak underline">Leeds</a>, with selected projects across wider <a href="/areas/yorkshire" class="text-oak underline">Yorkshire</a>.
+      </p>
+      <p class="text-ink/70">
+        Costs differ by conversion type &mdash; see <a href="/services/dormer-loft-conversions" class="text-oak underline">dormer</a>, <a href="/services/velux-loft-conversions" class="text-oak underline">Velux and rooflight</a> and <a href="/services/hip-to-gable-loft-conversions" class="text-oak underline">hip to gable</a> conversions for what each one involves.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Want to know what yours would cost?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the loft, the landing below it and the outside of the house. Rob will give you an honest first view, and a proper written quote if it is worth going further. No charge and no obligation.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA message="Hi Heritage Joiners, I'd like a quote for a loft conversion" />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
