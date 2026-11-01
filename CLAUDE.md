@@ -24,6 +24,13 @@ The whole site is one theme. Same layouts, same heading scale, same fonts, same 
 - **"Pine" is a keyword-only word.** In ordinary prose never write it — say "original timber", "original exterior frame", "original Victorian door", "softwood" or "redwood". The single exception is where it is genuinely the search term people use for a product (e.g. "pine skirting" on the mouldings guide). Even then, use it sparingly and in a materials context, never as general description. If in doubt, write softwood.
 - Award wording, exactly: **"Heritage Award at Pontefract Civic Society's 2025 Design Awards"** — never "restoration award". The **project** won the award, not Rob — never "award-winning joiner".
 - **No testimonials, reviews, star ratings or review schema** until real ones exist and are approved. Never invent quotes, prices, or claims.
+- **No prices anywhere on the site**, with one exception. No £ figures, price bands or
+  estimates on any page — steer to "send photos for an honest first view" instead.
+  **The single exception is `/services/loft-conversion-costs`**, which carries broad
+  industry guide ranges by conversion type. That is a deliberate, Rob-approved exception
+  for loft conversions only; never extend it to another page. Verification:
+  `grep -rE "£[0-9]" dist` should match only `dist/services/loft-conversion-costs.html`.
+  The `priceRange` schema value is not a figure and is expected site-wide.
 - Never name competitors.
 - Voice: plain, proud, traditional Yorkshire trade voice. Concrete and physical (timber, oak, setting out, fitting). No marketing hype, no "best in", no "master craftsman".
 
@@ -216,11 +223,61 @@ It only ever moves a date forward, so touching a file without changing it cannot
 
 The one gap: if a page is edited and committed **without a local build**, its date lags until the next build.
 
+## AI search and discoverability (check on every content change)
+
+A growing share of enquiries arrives through AI answer engines rather than blue links —
+one customer in Oct 2026 rang because Heritage Joiners came top of Google's AI results.
+Treat AI crawlers as a first-class audience, not an afterthought.
+
+**`public/llms.txt` is the guided tour for AI crawlers and it goes stale silently.**
+It is a hand-maintained Markdown index of the whole site. Nothing regenerates it, so it
+only stays correct if you update it.
+
+**Whenever you add, rename, retarget or materially rewrite a page, update `llms.txt` in
+the same change.** Add the new URL to the right section with a one-line description of
+what the page actually answers, and fix any "Key facts" line the change has falsified.
+
+Sections in the file: Services · Reference Guides · Advice Articles · Real Jobs ·
+Case Studies · Proof & Background · Contact & Areas · Optional.
+
+**Audit it periodically** — every URL in `dist/sitemap-0.xml` should appear in
+`llms.txt`, except the three deliberately noindexed pages:
+
+```bash
+python3 - <<'EOF'
+import re
+llm=set(re.findall(r'https://heritagejoiners\.co\.uk(/[a-z0-9\-/]*)', open('dist/llms.txt').read()))
+sm=set(re.findall(r'<loc>https://heritagejoiners\.co\.uk(/[^<]*)</loc>', open('dist/sitemap-0.xml').read()))
+norm=lambda s:{u.rstrip('/') or '/' for u in s}
+print(sorted(norm(sm)-norm(llm)) or 'llms.txt is up to date')
+EOF
+```
+
+Also check on the same pass:
+
+- **Key facts block** at the top of `llms.txt` — phone, hours, service area, credentials,
+  award wording and the pricing line. The pricing line changed in Nov 2026 when loft
+  conversion guide ranges were published; facts like that go out of date quietly.
+- **`public/robots.txt`** still allows all user agents and declares the sitemap. Never
+  block AI user agents — the file says so explicitly and that is deliberate.
+- **New pages reach the XML sitemap and the `/sitemap` page.** Both are automatic, but
+  confirm rather than assume.
+- **Schema is present and correct for the page type** — Service pages get Service, guides
+  get Article and must NOT get Service, blog posts get BlogPosting. AI answer engines read
+  this.
+- **Internal links both ways.** A page nothing links to is a page an AI crawler may never
+  reach. When adding a cluster of related pages, link every page to every other one.
+
+Answer-engine content rules: lead with the direct answer, keep FAQs genuinely
+question-shaped, cite real sources with links, and never state a regulation or figure you
+have not verified. Being quotable and correct is what gets cited.
+
 ## Verify before finishing (all must pass)
 
 ```bash
 npm run build                        # must complete with no errors
 grep -ri "pine" dist/<new-page>.html # 0 matches
 # every image path referenced by the new page resolves in dist/
+# the new URL appears in public/llms.txt (see AI search section above)
 ```
 Also confirm: no plaintext `rob@` email anywhere, exactly one `<h1>`, heading classes match the scale above.

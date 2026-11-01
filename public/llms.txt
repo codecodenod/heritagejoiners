@@ -14,7 +14,7 @@ Key facts:
 - Credentials: NVQ Level 2 in Carpentry and Joinery; apprentice-trained bench hand joiner, time served; 35+ years workshop and site experience; Pergo Certified Installer (flooring)
 - Flagship project: The Counting House, Pontefract — Heritage Joiners contributed specialist joinery work to the restoration of The Counting House in Pontefract, a project later recognised with the Heritage Award at Pontefract Civic Society's 2025 Design Awards
 - Approach: repair-first — retain sound original timber, replace only what has genuinely failed; honest assessments from photos before site visits
-- Pricing: no published prices; every job is quoted individually after seeing photos or the job itself
+- Pricing: no published prices for joinery and carpentry work; every job is quoted individually after seeing photos or the job itself. The one exception is loft conversions, where broad industry guide ranges for West Yorkshire are published at /services/loft-conversion-costs — those are guide figures, not Heritage Joiners quotations
 
 ## Services
 
@@ -30,7 +30,11 @@ Key facts:
 - [First Fix Carpentry](https://heritagejoiners.co.uk/services/first-fix-carpentry): studwork, joists, structural carpentry
 - [Second Fix Carpentry](https://heritagejoiners.co.uk/services/second-fix-carpentry): skirting, architrave, doors, finishing carpentry
 - [Skirting & Architrave](https://heritagejoiners.co.uk/services/skirting-architrave): period profile matching and new trim
-- [Extensions & Conversions](https://heritagejoiners.co.uk/services/extensions-conversions): carpentry for extensions and loft conversions
+- [Loft Conversions](https://heritagejoiners.co.uk/services/extensions-conversions): complete loft conversions managed start to finish — structure and steels, roof and dormer, staircase, insulation, plastering, electrics and plumbing. Also extensions, garage conversions and structural timber frame work
+- [Dormer loft conversions](https://heritagejoiners.co.uk/services/dormer-loft-conversions): rear, full-width, double and L-shaped dormers; why a dormer rather than rooflights; planning permission for dormers; terraced, semi-detached and 1930s houses
+- [Velux and rooflight loft conversions](https://heritagejoiners.co.uk/services/velux-loft-conversions): rooflight conversions where the loft already has head height; the head height test; loft ensuites; eaves storage
+- [Hip to gable loft conversions](https://heritagejoiners.co.uk/services/hip-to-gable-loft-conversions): squaring off a hipped roof to make a triangular loft rectangular; which houses suit it; pairing with a rear dormer; the structural work involved
+- [Loft conversion costs](https://heritagejoiners.co.uk/services/loft-conversion-costs): broad industry guide ranges for West Yorkshire by conversion type, what actually moves the price, why cost per square metre misleads, and how to compare quotes
 - [Outdoor Carpentry](https://heritagejoiners.co.uk/services/outdoor-carpentry): gates, decking, garden structures
 - [Cladding & Panelling](https://heritagejoiners.co.uk/services/cladding-panelling): interior and exterior timber cladding
 - [Woodworm & Treatment](https://heritagejoiners.co.uk/services/woodworm-treatment): woodworm assessment and timber treatment
@@ -43,6 +47,8 @@ Key facts:
 - [All guides](https://heritagejoiners.co.uk/guides): reference material on sizes, profiles, timber and finishes
 - [Standard door sizes UK](https://heritagejoiners.co.uk/guides/standard-door-sizes): internal, external and fire-door dimensions in metric and imperial, measuring openings, linings, and how much a door can safely be trimmed
 - [Skirting, architrave and moulding profiles](https://heritagejoiners.co.uk/guides/skirting-architrave-timber-moulding-profiles): identifying torus, ogee, ovolo, bullnose, lamb's tongue, scotia and quadrant profiles, with dimensions
+- [Loft conversion Building Regulations](https://heritagejoiners.co.uk/guides/loft-conversion-building-regulations): which Parts apply (A structure, B fire, K stairs, L insulation, F ventilation, P electrics), why ceiling joists are not a floor, protected stairways, the Approved Document K loft headroom allowance, and the route to a completion certificate
+- [Loft conversion planning permission](https://heritagejoiners.co.uk/guides/loft-conversion-planning-permission): when a conversion is permitted development and when it is not — the 40/50 cubic metre volume allowances, front dormers, rooflights in conservation areas, Article 4 Directions, lawful development certificates and party wall notices
 
 ## Advice Articles
 
@@ -50,6 +56,7 @@ Key facts:
 - [Can timber windows be repaired?](https://heritagejoiners.co.uk/blog/can-timber-windows-be-repaired): when timber window repair, restoration or replacement is the right call, including FAQs
 - [What is second fix carpentry?](https://heritagejoiners.co.uk/blog/what-is-second-fix-carpentry): plain explanation of first fix vs second fix
 - [How to build a timber stud partition wall](https://heritagejoiners.co.uk/blog/how-to-build-a-stud-partition-wall): a real job walk-through — setting out, framing, noggins, insulation, plasterboard
+- [Timber window repair and restoration in West Yorkshire](https://heritagejoiners.co.uk/blog/timber-window-repair-and-restoration-west-yorkshire): long technical guide to how timber windows fail, judging localised decay, splice and let-in repairs, sashes and casements, preparation and finishing, and listed buildings versus conservation areas
 - [Blog index](https://heritagejoiners.co.uk/blog): all articles
 - [RSS feed](https://heritagejoiners.co.uk/rss.xml): every article, newest first, for crawlers and readers that follow feeds
 
@@ -64,6 +71,9 @@ Key facts:
 - [Bathroom wall panels, Doncaster](https://heritagejoiners.co.uk/blog/bathroom-wall-panels-doncaster): fitting PVC wall panels in an ensuite, including cutting round a window reveal and an extractor
 - [Commercial door repairs, Wakefield](https://heritagejoiners.co.uk/blog/commercial-door-closer-replacement-wakefield): failed overhead door closers replaced and adjusted on a commercial building
 - [Bespoke ledged and braced garden gate](https://heritagejoiners.co.uk/blog/bespoke-ledged-and-braced-garden-gate): how a made-to-measure timber garden gate is built, braced and hung, including FAQs
+- [Kitchen fitting for a rental property, Wakefield](https://heritagejoiners.co.uk/blog/kitchen-fitting-wakefield-rental-property): a light grey handleless kitchen in a three-bed terrace for a landlord, set out to the existing tiled splashback with spaces left for a freestanding cooker and washing machine
+- [Herringbone kitchen floor, Wakefield](https://heritagejoiners.co.uk/blog/herringbone-kitchen-floor-wakefield): oak herringbone laminate in a kitchen — dry-laying the boards to settle the pattern direction, levelling compound, a damp proof membrane and fibreboard underlay over a solid floor
+- [Herringbone laminate floor, Pontefract](https://heritagejoiners.co.uk/blog/herringbone-laminate-flooring-hallway): grey oak herringbone in a hallway — levelling the subfloor, taking the skirtings off, undercutting the door linings and gluing the joints
 
 ## Case Studies
 
