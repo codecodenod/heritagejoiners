@@ -1,0 +1,264 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Dormer Loft Conversions', url: `${url}/services/dormer-loft-conversions` }];
+const schemaProps = {
+  description: 'Dormer loft conversions across Pontefract, Wakefield and West Yorkshire — rear, full-width and double dormers built and finished as a complete project.',
+  url: `${url}/services/dormer-loft-conversions`,
+  priceRange: '£££',
+};
+
+const faqItems = [
+  {
+    question: 'What is a dormer loft conversion?',
+    answer:
+      'A box built out from the existing roof slope, with a flat or pitched roof of its own and a vertical face carrying the window. It replaces part of the sloping ceiling with a full-height wall, which is what turns a loft you can only stand up in the middle of into a room you can use all of. It is the most common type of loft conversion in this part of Yorkshire because it suits terraced and semi-detached houses, and it adds more usable floor area than any other option short of a mansard.',
+  },
+  {
+    question: 'Does a dormer loft conversion need planning permission?',
+    answer:
+      'A rear dormer is often permitted development; a front one usually is not. The Planning Portal is clear that an extension beyond the plane of the existing roof slope on the principal elevation fronting a highway is not permitted development, which is why front-facing dormers normally need an application. A rear dormer can fall within permitted development if it stays inside the volume allowance — 40 cubic metres on a terraced house, 50 on a semi or detached — sits no higher than the existing ridge, is set back at least 20cm from the original eaves, and does not overhang the wall below. None of it applies on designated land such as a conservation area, and an Article 4 Direction can remove the rights entirely. We confirm the position for your specific house before any design work.',
+  },
+  {
+    question: 'How much head height do you need for a dormer conversion?',
+    answer:
+      'Enough to end up with a habitable room once the new floor structure and the insulated roof build-up have taken their share, which is always less than what you can measure today. The point of a dormer is that it creates head height where there was none, so a loft that is too low across most of its width can still work if the dormer is sized properly. What a dormer cannot fix is a ridge height that is too low to begin with, so the ridge is the first thing measured on a survey.',
+  },
+  {
+    question: 'What is the difference between a dormer and a rooflight conversion?',
+    answer:
+      'A rooflight or Velux conversion leaves the roof shape exactly as it is and puts windows into the existing slope, so all the work happens inside. A dormer changes the shape of the roof to create new space. A rooflight conversion is quicker, less disruptive and less likely to need planning permission, but it only works where the loft already has the head height. A dormer is the answer when it does not — and on most terraced and semi-detached houses, it does not.',
+  },
+  {
+    question: 'Can you put a dormer on a terraced house?',
+    answer:
+      'Yes, and a rear dormer on a terrace is one of the most common conversions there is. The volume allowance on a terraced house is lower than on a semi or detached — 40 cubic metres rather than 50 — so the sizing matters more, and neighbouring properties and party walls need thinking about early. Victorian terraces often suit an L-shaped dormer that takes in the back addition as well as the main roof, which gives considerably more space than a straight rear dormer on its own.',
+  },
+  {
+    question: 'Do you build the dormer as well as the conversion?',
+    answer:
+      'We build everything. The structural work and steels, the opening formed in the roof, the dormer itself, its roof covering and external finishes, the windows, insulation, plasterboarding and plastering, electrics, plumbing for an ensuite, the staircase, and all of the joinery and finishing. It is one team and one point of contact from the first survey to the completion certificate, rather than you coordinating a roofer, a joiner, a sparky and a plasterer yourself.',
+  },
+];
+
+const dormerTypes = [
+  'Rear dormer loft conversions',
+  'Full-width rear dormers',
+  'Double dormers and twin dormers',
+  'L-shaped dormers on Victorian terraces',
+  'Side and front dormers where permission allows',
+  'Dormers combined with hip-to-gable conversions',
+  'Dormer windows added to existing conversions',
+  'Flat-roof and pitched-roof dormers',
+];
+---
+
+<ServiceLayout
+  title="Dormer Loft Conversions in Pontefract & Wakefield"
+  description="Dormer loft conversions across Pontefract, Wakefield and West Yorkshire. Rear, full-width and double dormers, built and finished as one complete project."
+  serviceName="Dormer Loft Conversions"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+  ogImage="/images/services/extensions-conversions/loft-conversion-large-dormer-window-interior.webp"
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <!-- Hero: same pattern as the doors page. -->
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/services/extensions-conversions/loft-conversion-large-dormer-window-interior.webp"
+      alt="Inside a finished dormer loft conversion with a large dormer window and full head height across the room"
+      width="1672"
+      height="941"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+          <p class="text-oak uppercase tracking-wide mb-4">Loft conversions</p>
+          <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Dormer Loft Conversions in Pontefract, Wakefield &amp; West Yorkshire</h1>
+          <p class="text-lg text-ink/80 mb-8">
+            A dormer is what turns a loft you can only stand up in the middle of into a room you can use all of. Heritage Joiners builds complete dormer loft conversions &mdash; the structure, the dormer, the roof, the staircase, the plastering, the electrics and the finish &mdash; as one job with one point of contact.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a dormer loft conversion" />
+            <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Types of dormer we build</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {dormerTypes.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Why a dormer rather than rooflights</h2>
+        <p class="text-ink/70 mb-3">
+          It comes down to head height, and head height decides floor area.
+        </p>
+        <p class="text-ink/70 mb-3">
+          In an unconverted loft the only place you can stand upright is a strip down the middle under the ridge. Everything either side slopes away, and once the insulated roof build-up has taken its thickness there is less of that strip than you think. A rooflight conversion keeps that shape. It puts windows in the slope and leaves the roof alone, which is quick and tidy, but you end up with the same floor area you started with.
+        </p>
+        <p class="text-ink/70 mb-3">
+          A dormer removes part of the slope and replaces it with a vertical wall and a flat ceiling. The usable floor area &mdash; the part where you can actually stand, put a wardrobe, or fit a bed against a wall &mdash; goes up substantially. On most terraced and semi-detached houses in this area it is the difference between a loft room and a proper bedroom.
+        </p>
+        <p class="text-ink/70">
+          If your loft already has generous head height, a <a href="/services/extensions-conversions" class="text-oak underline">rooflight conversion may be all you need</a>, and we will say so rather than sell you a dormer you do not need.
+        </p>
+      </div>
+      <div>
+        <img
+          src="/images/services/extensions-conversions/loft-conversion-large-dormer-window-exterior.webp"
+          alt="Large rear dormer loft conversion seen from outside, tiled and finished into the existing roof slope"
+          width="1672"
+          height="941"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+        <p class="text-ink/60 text-sm mt-3">
+          The same conversion from outside. The dormer takes a large part of the rear slope, which is what creates the full-height room behind it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Rear, full-width, double and L-shaped dormers</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <p class="text-ink/70 mb-3">
+            <strong class="text-ink">Rear dormer.</strong> The standard option and usually the most straightforward, because it sits on the back of the house away from the road. A rear dormer is the one most likely to fall within permitted development.
+          </p>
+          <p class="text-ink/70 mb-3">
+            <strong class="text-ink">Full-width rear dormer.</strong> Runs the whole width of the rear slope rather than sitting as a box in the middle of it. It gives the most space of any dormer, though it needs careful handling so it does not read as a flat box stuck on the back &mdash; the setback from the eaves and the proportions of the window openings do most of that work.
+          </p>
+          <p class="text-ink/70 mb-3">
+            <strong class="text-ink">Double dormers.</strong> Two separate boxes rather than one continuous run. Usually the better-looking option where the house is seen from the rear, and sometimes the only option where a party wall or a chimney breast sits in the middle of the roof.
+          </p>
+          <p class="text-ink/70">
+            <strong class="text-ink">L-shaped dormers.</strong> On a Victorian terrace with a back addition, an L-shaped dormer takes in the outrigger roof as well as the main rear slope. It is more work and it gives considerably more room, and on the right house it is the conversion that makes the whole floor worth having.
+          </p>
+        </div>
+        <div>
+          <img
+            src="/images/services/extensions-conversions/loft-conversion-timber-balustrade-and-eaves-storage.webp"
+            alt="Timber balustrade and built-in eaves storage in a finished dormer loft conversion"
+            width="1672"
+            height="941"
+            loading="lazy"
+            class="w-full h-auto rounded-xl shadow-lg mb-3"
+          />
+          <p class="text-ink/60 text-sm">
+            A dormer leaves low space at the eaves where the original slope still runs down to the wall. That space is worth building into rather than boarding over &mdash; here it has been made into eaves storage behind the balustrade.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Planning permission for a dormer</h2>
+        <p class="text-ink/70 mb-3">
+          This is where dormers differ from the rest of a loft conversion, because a dormer changes the outside of the house.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Front-facing dormers usually need permission.</strong> The Planning Portal is explicit that an extension beyond the plane of the existing roof slope on the principal elevation fronting a highway is not permitted development. If the dormer faces the road, assume an application.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Rear dormers often do not</strong>, provided they stay inside the conditions: within the volume allowance of 40 cubic metres on a terraced house or 50 on a semi or detached, counting any previous roof additions; no higher than the existing ridge; set back at least 20cm from the original eaves, which the government technical guidance allows to be relaxed where that is not practicable; no overhang of the wall below; and materials similar in appearance to the existing house. Side-facing windows must be obscure-glazed and non-opening below 1.7m from the floor.
+        </p>
+        <p class="text-ink/70">
+          None of it applies on designated land &mdash; conservation areas, national parks, AONBs and World Heritage Sites &mdash; and an Article 4 Direction can remove permitted development rights anywhere. Rules change and every property is different, so we check the position for your house and handle the application where one is needed, rather than leaving you to interpret the guidance yourself. <strong class="text-ink">Building Regulations approval is required either way.</strong>
+        </p>
+      </div>
+      <div>
+        <img
+          src="/images/services/extensions-conversions/loft-conversion-shaped-doorway-and-landing.webp"
+          alt="Shaped doorway and landing at the head of the staircase in a finished dormer loft conversion"
+          width="1672"
+          height="941"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+        <p class="text-ink/60 text-sm mt-3">
+          The head of the stairs in the same conversion, with the doorway shaped to the roofline.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Dormer conversions on terraced, semi-detached and 1930s houses</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">Terraced houses</h3>
+          <p class="text-ink/70">The lower 40 cubic metre allowance makes sizing tighter, and party walls need thinking about from the start. Victorian terraces with a back addition often suit an L-shaped dormer, which takes in the outrigger as well as the main roof.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">Semi-detached houses</h3>
+          <p class="text-ink/70">A 50 cubic metre allowance and usually a straightforward rear slope. Where the roof is hipped, a dormer is often paired with a hip-to-gable so the loft becomes a rectangle before the dormer goes on it.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">1930s houses</h3>
+          <p class="text-ink/70">Generally good ridge heights and generous roof volumes, which makes them some of the best houses in the area to convert. Hipped roofs are common, so the hip-to-gable and dormer combination comes up a lot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Dormer loft conversion questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Dormer loft conversion builders across West Yorkshire</h2>
+      <p class="text-ink/70 mb-3">
+        Dormer loft conversions are available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a> and <a href="/areas/leeds" class="text-oak underline">Leeds</a>, with selected larger projects across wider <a href="/areas/yorkshire" class="text-oak underline">Yorkshire</a>.
+      </p>
+      <p class="text-ink/70">
+        A dormer is one type of conversion &mdash; see <a href="/services/extensions-conversions" class="text-oak underline">complete loft conversions</a> for the whole service, including rooflight, hip-to-gable, mansard and bungalow conversions. The <a href="/services/staircases" class="text-oak underline">staircase</a>, the <a href="/services/roofing-carpentry" class="text-oak underline">roof carpentry</a> behind the dormer structure and the <a href="/services/first-fix-carpentry" class="text-oak underline">new floor structure</a> are each covered in more detail on their own pages.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Wondering if your roof will take a dormer?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the loft, the landing below it and the back of the house, and Rob will give you an honest first view on whether it converts and what sort of dormer would suit it.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a dormer loft conversion" />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
