@@ -1,0 +1,276 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [{ name: 'Hip to Gable Loft Conversions', url: `${url}/services/hip-to-gable-loft-conversions` }];
+const schemaProps = {
+  description: 'Hip to gable loft conversions across Pontefract, Wakefield and West Yorkshire — squaring off a hipped roof to turn a cramped triangular loft into a usable room.',
+  url: `${url}/services/hip-to-gable-loft-conversions`,
+  priceRange: '£££',
+};
+
+const faqItems = [
+  {
+    question: 'What is a hip to gable loft conversion?',
+    answer:
+      'On a house with a hipped roof, the end slopes inwards from three sides and meets at a point, so the loft narrows to nothing before it reaches the end wall. A hip to gable conversion builds that sloping end up vertically to form a flat gable wall, and extends the roof structure out to meet it. The triangular loft becomes a rectangular one. It is the conversion that creates usable floor area on a house where there was not enough to start with, and on a hipped semi it is often the difference between a conversion being worth doing and not.',
+  },
+  {
+    question: 'Which houses can have a hip to gable conversion?',
+    answer:
+      'Only a house that has a hip — a roof end that slopes inwards rather than finishing at a vertical gable wall. That means semi-detached houses, end-terraces, detached houses and bungalows. A mid-terrace has gable walls on both sides already, so there is no hip to convert and the answer there is usually a dormer. 1930s semis are the classic candidate in this area: hipped roofs, generous ridge heights and roof volumes that suit the work.',
+  },
+  {
+    question: 'Is a hip to gable conversion done on its own or with a dormer?',
+    answer:
+      'Most often with a rear dormer, and the two together are a very common pairing. The hip to gable squares the loft off and gives you the floor area and the full-height end wall. The dormer then adds head height across the back. Done on its own, a hip to gable gives you a bigger loft but still a sloping ceiling on the rear slope. Which combination suits depends on the roof and what the room is for, and it is worth settling at survey rather than later.',
+  },
+  {
+    question: 'Does a hip to gable conversion need planning permission?',
+    answer:
+      'Often not, though it uses up more of the volume allowance than other conversions because it adds a substantial amount of roof space. The Planning Portal allowance is 40 cubic metres of additional roof space on a terraced house and 50 on a semi-detached or detached, counting any previous additions, with the new roof no higher than the existing ridge. One useful quirk: the government technical guidance requires roof extensions to be set back at least 20cm from the original eaves, and hip to gable conversions are specifically excepted from that. Permitted development does not apply on designated land such as conservation areas, and an Article 4 Direction can remove the rights, so we check the position for your property.',
+  },
+  {
+    question: 'Is a hip to gable conversion structural work?',
+    answer:
+      'Substantially, yes — more so than a dormer or a rooflight conversion. The existing hip rafters come out, a new gable wall is built up off the structure below, and the roof is extended over it with new rafters, purlin support and a new ridge section. The new floor has to carry a room rather than a ceiling, and where load is taken off the existing structure it usually means steels. All of that is calculated and signed off by a structural engineer, which we arrange as part of the project.',
+  },
+  {
+    question: 'Can a bungalow have a hip to gable conversion?',
+    answer:
+      'Yes, and bungalows often suit it well because hipped roofs are common on them and the roof volume is large relative to the footprint. The thing to know is that converting a bungalow loft turns it into a two-storey house, and the fire and escape requirements change accordingly — the approach is different from converting the loft of a house that is already two storeys. That gets designed in from the start rather than discovered at the Building Control inspection.',
+  },
+];
+
+const hipToGableServices = [
+  'Hip to gable loft conversions, managed start to finish',
+  'Double hip to gable on detached houses',
+  'Hip to gable combined with a rear dormer',
+  'Bungalow hip to gable conversions',
+  'New gable wall construction and roof extension',
+  'Structural engineer calculations and steels',
+  'New floor structures, staircases and landings',
+  'Insulation, plastering, electrics and plumbing',
+  'External finishes, rendering and matching brickwork',
+  'Building Regulations applications and Building Control sign-off',
+];
+---
+
+<ServiceLayout
+  title="Hip to Gable Loft Conversions in West Yorkshire"
+  description="Hip to gable loft conversions across Pontefract, Wakefield and West Yorkshire. Squaring off a hipped roof to turn a cramped triangular loft into a usable room."
+  serviceName="Hip to Gable Loft Conversions"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+  ogImage="/images/services/extensions-conversions/loft-conversion-shaped-doorway-and-landing.webp"
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <!-- Hero: same pattern as the doors page. -->
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/services/extensions-conversions/loft-conversion-shaped-doorway-and-landing.webp"
+      alt="Shaped doorway and landing at the head of the staircase in a finished loft conversion"
+      width="1672"
+      height="941"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+          <p class="text-oak uppercase tracking-wide mb-4">Loft conversions</p>
+          <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Hip to Gable Loft Conversions in Pontefract, Wakefield &amp; West Yorkshire</h1>
+          <p class="text-lg text-ink/80 mb-8">
+            If your roof slopes inwards at the end, the loft narrows to nothing before it gets there. A hip to gable conversion builds that end up square, so the triangular loft becomes a rectangular room. Heritage Joiners builds the whole thing &mdash; gable wall, roof structure, steels, staircase, plastering, electrics and finish.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a hip to gable loft conversion" />
+            <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">What a hip to gable conversion includes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {hipToGableServices.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">What a hipped roof costs you in floor space</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          A gable roof finishes at a flat vertical wall. A hipped roof does not &mdash; it slopes inwards from the end as well as from the front and back, so three slopes meet at a point.
+        </p>
+        <p class="text-ink/70 mb-3">
+          From outside it looks tidier. From inside the loft it is a problem, because the space narrows from both sides as it runs towards the end wall and then stops. You lose the end of the loft entirely, and you lose a wedge either side of it. On a semi-detached house the hipped end is often where the room would most naturally go.
+        </p>
+        <p class="text-ink/70 mb-3">
+          A hip to gable conversion takes the hip rafters out and builds that end up vertically to form a proper gable wall, then extends the roof structure over it. What was a triangle becomes a rectangle. You gain floor area, you gain a full-height wall at the end to put a bed or a wardrobe against, and you gain somewhere sensible to land the staircase &mdash; which on a cramped loft is often the thing that decides whether a conversion works at all.
+        </p>
+        <p class="text-ink/70">
+          It is also the conversion that most changes how the house looks from the street, which is worth knowing before you start rather than after.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Which houses suit it</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <p class="text-ink/70 mb-3">
+            <strong class="text-ink">1930s semi-detached houses.</strong> The classic candidate around Pontefract, Wakefield and Castleford. Hipped roofs are standard on them, the ridge heights are generally good and the roof volumes are generous. A hip to gable with a rear dormer is the conversion these houses were practically designed for.
+          </p>
+          <p class="text-ink/70 mb-3">
+            <strong class="text-ink">End-terraces.</strong> Often have a hip on the exposed end, and squaring it off gains the full width of the loft. The volume allowance is lower on a terraced house, so the sizing needs more care.
+          </p>
+          <p class="text-ink/70 mb-3">
+            <strong class="text-ink">Detached houses.</strong> Can have hips at both ends, which means a double hip to gable is possible. More work, and it transforms the loft completely.
+          </p>
+          <p class="text-ink/70 mb-3">
+            <strong class="text-ink">Bungalows.</strong> Hipped roofs are common and the roof volume is large relative to the footprint. Worth knowing that converting a bungalow loft makes it a two-storey house, and the fire and escape requirements change with that.
+          </p>
+          <p class="text-ink/70">
+            <strong class="text-ink">Mid-terraced houses cannot have one.</strong> There is no hip to convert &mdash; both ends are already party walls. A <a href="/services/dormer-loft-conversions" class="text-oak underline">dormer conversion</a> is the answer there, and we will tell you that rather than quote for something your house cannot have.
+          </p>
+        </div>
+        <div>
+          <img
+            src="/images/services/extensions-conversions/loft-conversion-timber-balustrade-and-eaves-storage.webp"
+            alt="Timber balustrade and built-in eaves storage in a finished loft conversion"
+            width="1672"
+            height="941"
+            loading="lazy"
+            class="w-full h-auto rounded-xl shadow-lg mb-3"
+          />
+          <p class="text-ink/60 text-sm">
+            A finished loft conversion. Squaring off a hip gives you a full-height wall at the end of the room, rather than the slope running down to nothing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Hip to gable with a rear dormer</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          The two are usually done together, and it is worth understanding what each one actually gives you, because they solve different problems.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">The hip to gable gives you floor area and the end wall.</strong> It squares the loft off so the plan is a rectangle rather than a wedge. What it does not do is change the pitch of the front and rear slopes &mdash; those still come down to the eaves as they always did.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">The dormer gives you head height across the back.</strong> It replaces part of the rear slope with a vertical wall and a flat ceiling, so the area where you can stand upright grows.
+        </p>
+        <p class="text-ink/70">
+          Together you get a square room with full height over most of it, which is why the combination is so common on a hipped semi. Either on its own gives you a usable room; which one you need depends on whether your constraint is floor area or head height, and that is settled with a tape measure at the survey, not from a brochure. See <a href="/services/extensions-conversions" class="text-oak underline">complete loft conversions</a> for how the types compare.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Planning permission and the volume allowance</h2>
+        <p class="text-ink/70 mb-3">
+          A hip to gable is often permitted development, but it eats into the allowance faster than other conversions because it adds a genuinely large amount of roof space.
+        </p>
+        <p class="text-ink/70 mb-3">
+          The Planning Portal sets the allowance at <strong class="text-ink">40 cubic metres of additional roof space on a terraced house and 50 on a semi-detached or detached</strong>, including anything a previous owner added, with the new roof no higher than the existing ridge. On a double hip to gable, or a hip to gable plus a dormer, the combined volume is what counts &mdash; which is why the two are designed together rather than one at a time.
+        </p>
+        <p class="text-ink/70 mb-3">
+          One useful quirk in the government technical guidance: roof extensions generally have to be set back at least 20cm from the original eaves, and <strong class="text-ink">hip to gable conversions are specifically excepted</strong> from that requirement.
+        </p>
+        <p class="text-ink/70">
+          Permitted development does not apply on designated land &mdash; conservation areas, national parks, AONBs and World Heritage Sites &mdash; and an Article 4 Direction can remove the rights anywhere. Rules change and every property is different, so we confirm the position for your house and handle any application. <strong class="text-ink">Building Regulations approval is always required</strong> regardless.
+        </p>
+      </div>
+      <div>
+        <img
+          src="/images/services/extensions-conversions/loft-conversion-staircase-and-landing-balustrade.webp"
+          alt="Timber staircase and landing balustrade fitted in a finished loft conversion"
+          width="1672"
+          height="941"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+        <p class="text-ink/60 text-sm mt-3">
+          Squaring off the hip often creates the space to land a staircase properly, which on a cramped loft is frequently the thing that makes the conversion possible.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">The structural side</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          Of the common conversion types, a hip to gable involves the most structural work, and it is worth being straight about that.
+        </p>
+        <p class="text-ink/70 mb-3">
+          The existing hip rafters come out. A new gable wall is built up off sound structure below &mdash; which means establishing what is below it before anything is removed. The roof is then extended out over the new wall with new rafters, purlin support and a new section of ridge, tied properly into the existing roof rather than butted against it. On top of that the new floor has to carry a room rather than a ceiling, and where roof load is transferred it generally means steels.
+        </p>
+        <p class="text-ink/70 mb-3">
+          All of that is calculated by a structural engineer and inspected by Building Control at stages. We arrange the design and the engineering as part of the project, so it is not something you go and organise yourself before anyone will quote.
+        </p>
+        <p class="text-ink/70">
+          Rob's own trade is the joinery &mdash; a fully qualified apprentice trained bench hand joiner, time served, with over 35 years in workshops and on site, much of it on older buildings where the structure is rarely what the drawing says it is. That experience matters most on exactly this kind of job, where you are cutting into an existing roof and have to deal with what you find.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Hip to gable loft conversion questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Hip to gable conversions across West Yorkshire</h2>
+      <p class="text-ink/70 mb-3">
+        Hip to gable loft conversions are available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a> and <a href="/areas/leeds" class="text-oak underline">Leeds</a>, with selected projects across wider <a href="/areas/yorkshire" class="text-oak underline">Yorkshire</a>.
+      </p>
+      <p class="text-ink/70">
+        See <a href="/services/extensions-conversions" class="text-oak underline">complete loft conversions</a> for the full service, <a href="/services/dormer-loft-conversions" class="text-oak underline">dormer conversions</a> for the type usually paired with this one, and <a href="/services/velux-loft-conversions" class="text-oak underline">rooflight conversions</a> where the loft already has the head height. The <a href="/services/roofing-carpentry" class="text-oak underline">roof carpentry</a> and the <a href="/services/first-fix-carpentry" class="text-oak underline">new floor structure</a> are covered in more detail on their own pages.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Got a hipped roof?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send a photo of the end of the house and one of the loft inside, and Rob will tell you whether squaring the hip off would give you the room you are after, or whether a dormer on its own would do it.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a hip to gable loft conversion" />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
