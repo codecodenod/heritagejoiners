@@ -201,6 +201,56 @@ const homepageFaqItems = [
       outline: 2px solid #b46e38;
       outline-offset: 3px;
     }
+    /* Ken Burns: a slow zoom on whichever slide is showing. Homepage only.
+       Scale is kept small (6%) because the images are already object-cover
+       cropped, and on some of them the subject sits off-centre. The transform
+       transition lets an outgoing slide ease back to 1.0 across the same 1.2s
+       as its fade, instead of snapping as the animation is removed. */
+    /* Ken Burns: six variants — zoom in or out, drifting left, right or not
+       at all, over 5s to 10s. The carousel script picks one at random each
+       time a slide becomes active, so the loop never repeats itself exactly.
+       Scale never drops below 1.04 and drift never exceeds 0.8%, which keeps
+       the panned image covering the frame — the slides are already
+       object-cover cropped and some subjects sit off-centre. */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-slide img {
+        transition: transform 1.2s ease-in-out;
+        will-change: transform;
+      }
+      .hero-slide.is-active img { animation-fill-mode: forwards; animation-timing-function: linear; }
+
+      .hero-slide.is-active img.kb-1 { animation-name: kb-in-left;   animation-duration: 7s;  }
+      .hero-slide.is-active img.kb-2 { animation-name: kb-in-right;  animation-duration: 9s; }
+      .hero-slide.is-active img.kb-3 { animation-name: kb-out-left;  animation-duration: 8s; }
+      .hero-slide.is-active img.kb-4 { animation-name: kb-out-right; animation-duration: 10s; }
+      .hero-slide.is-active img.kb-5 { animation-name: kb-in-still;  animation-duration: 5s;  }
+      .hero-slide.is-active img.kb-6 { animation-name: kb-out-still; animation-duration: 6s; }
+
+      @keyframes kb-in-left {
+        from { transform: scale(1.04) translateX(0.8%); }
+        to   { transform: scale(1.10) translateX(-0.8%); }
+      }
+      @keyframes kb-in-right {
+        from { transform: scale(1.04) translateX(-0.8%); }
+        to   { transform: scale(1.10) translateX(0.8%); }
+      }
+      @keyframes kb-out-left {
+        from { transform: scale(1.10) translateX(0.8%); }
+        to   { transform: scale(1.04) translateX(-0.8%); }
+      }
+      @keyframes kb-out-right {
+        from { transform: scale(1.10) translateX(-0.8%); }
+        to   { transform: scale(1.04) translateX(0.8%); }
+      }
+      @keyframes kb-in-still {
+        from { transform: scale(1.04); }
+        to   { transform: scale(1.10); }
+      }
+      @keyframes kb-out-still {
+        from { transform: scale(1.10); }
+        to   { transform: scale(1.04); }
+      }
+    }
     @media (prefers-reduced-motion: reduce) {
       .hero-slide {
         transition: none;
@@ -237,6 +287,22 @@ const homepageFaqItems = [
       let userPaused = reducedMotion;
       const INTERVAL_MS = 6000;
 
+      // Give the slide's image a random Ken Burns variant, never the same one
+      // twice running. Removing the class first restarts the animation.
+      const KB_COUNT = 6;
+      let lastKb = 0;
+      function kenBurns(slide) {
+        if (reducedMotion) return;
+        const img = slide.querySelector('img');
+        if (!img) return;
+        let n = lastKb;
+        while (n === lastKb) n = 1 + Math.floor(Math.random() * KB_COUNT);
+        lastKb = n;
+        for (let i = 1; i <= KB_COUNT; i++) img.classList.remove('kb-' + i);
+        void img.offsetWidth;
+        img.classList.add('kb-' + n);
+      }
+
       function show(index) {
         slides[current].classList.remove('is-active');
         if (dots[current]) {
@@ -246,6 +312,7 @@ const homepageFaqItems = [
 
         current = index;
 
+        kenBurns(slides[current]);
         slides[current].classList.add('is-active');
         if (dots[current]) {
           dots[current].classList.add('is-active');
@@ -256,6 +323,8 @@ const homepageFaqItems = [
       function next() {
         show((current + 1) % slides.length);
       }
+
+      kenBurns(slides[current]);
 
       function start() {
         if (userPaused) return;
