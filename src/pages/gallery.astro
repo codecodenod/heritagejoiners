@@ -17,6 +17,7 @@ const categories = [
   'Gates & Outdoor Carpentry',
   'Roofing Carpentry',
   'Stud Partitions & First Fix',
+  'Loft Conversions',
   'Lofts & Storage',
   'Flooring',
   'Workshop & Bench Joinery',
@@ -103,6 +104,18 @@ const galleryItems: { category: (typeof categories)[number]; title: string; imag
   { category: 'Lofts & Storage', title: 'Timber Loft Ladder', image: '/images/blog/loft-boarding-south-kirkby/timber-loft-ladder-installed-south-kirkby.webp', alt: 'Timber loft ladder installed to a newly formed loft hatch in South Kirkby', width: 1080, height: 1920 },
   { category: 'Flooring', title: 'Finished Herringbone Hallway', image: '/images/blog/herringbone-laminate-flooring-hallway/grey-oak-herringbone-laminate-floor-finished-hallway.webp', alt: 'Finished grey oak herringbone laminate floor in a Pontefract hallway with the skirtings refitted', width: 1080, height: 1920 },
   { category: 'Flooring', title: 'Flooring Under Door Linings', image: '/images/blog/herringbone-laminate-flooring-hallway/herringbone-laminate-flooring-at-door-linings.webp', alt: 'Herringbone laminate flooring running beneath undercut door linings with no trim or beading', width: 1080, height: 1920 },
+  { category: 'Loft Conversions', title: 'Hip to Gable Conversion', image: '/images/services/extensions-conversions/hip-to-gable-loft-conversion-squared-gable-exterior.webp', alt: 'Hip to gable loft conversion on a semi-detached house, the hipped end squared off into a clad gable beside a neighbouring house with its original hip', width: 1440, height: 1080 },
+  { category: 'Loft Conversions', title: 'Velux Loft Bedroom', image: '/images/services/extensions-conversions/velux-loft-conversion-bedroom-roof-windows.webp', alt: 'Finished loft conversion bedroom with two roof windows in the sloping ceiling and built-in eaves cupboards', width: 1440, height: 1080 },
+  { category: 'Loft Conversions', title: 'Rear Dormer, Outside', image: '/images/services/extensions-conversions/loft-conversion-large-dormer-window-exterior.webp', alt: 'Large rear dormer loft conversion seen from outside, tiled and finished into the existing roof slope', width: 1672, height: 941 },
+  { category: 'Loft Conversions', title: 'Rear Dormer, Inside', image: '/images/services/extensions-conversions/loft-conversion-large-dormer-window-interior.webp', alt: 'Inside a finished dormer loft conversion with a large dormer window and full head height across the room', width: 1672, height: 941 },
+  { category: 'Loft Conversions', title: 'Loft Staircase & Landing', image: '/images/services/extensions-conversions/loft-conversion-staircase-and-landing-balustrade.webp', alt: 'Timber staircase and landing balustrade fitted in a finished loft conversion', width: 1672, height: 941 },
+  { category: 'Loft Conversions', title: 'Eaves Storage', image: '/images/services/extensions-conversions/loft-conversion-timber-balustrade-and-eaves-storage.webp', alt: 'Timber balustrade and built-in eaves storage in a completed loft conversion', width: 1672, height: 941 },
+  { category: 'Gates & Outdoor Carpentry', title: 'Made-to-Measure Side Gate', image: '/images/blog/made-to-measure-side-gate-knottingley/made-to-measure-side-gate-boarded-face-knottingley.webp', alt: 'Made-to-measure timber side gate in Brotherton, Knottingley, with vertical boarding and a straight top', width: 1080, height: 1920 },
+  { category: 'Gates & Outdoor Carpentry', title: 'Gate Frame, Ledges & Brace', image: '/images/blog/made-to-measure-side-gate-knottingley/side-gate-frame-ledges-and-brace-knottingley.webp', alt: 'Back of a bespoke timber side gate showing the frame, three ledges, diagonal brace, T-hinges and bolt', width: 1080, height: 1920 },
+  { category: 'Gates & Outdoor Carpentry', title: 'Side Gate Hung Off A Wall', image: '/images/blog/made-to-measure-side-gate-knottingley/side-gate-t-hinges-hung-off-house-wall-knottingley.webp', alt: 'Timber side gate open on black T-hinges, hung off a stile fixed to the brick house wall', width: 1080, height: 1920 },
+  { category: 'Flooring', title: 'Herringbone Kitchen Floor', image: '/images/blog/herringbone-kitchen-floor-wakefield/herringbone-oak-laminate-kitchen-floor-wakefield.webp', alt: 'Oak herringbone laminate floor fitted in a galley kitchen in Wakefield, running the length of the room', width: 1080, height: 1920 },
+  { category: 'Flooring', title: 'Herringbone From The Doorway', image: '/images/blog/herringbone-kitchen-floor-wakefield/finished-herringbone-kitchen-floor-from-doorway-wakefield.webp', alt: 'Finished oak herringbone laminate kitchen floor seen from the doorway in a Wakefield house', width: 1080, height: 1920 },
+  { category: 'Flooring', title: 'Herringbone Pattern Up Close', image: '/images/blog/herringbone-kitchen-floor-wakefield/herringbone-laminate-pattern-detail-kitchen-floor-wakefield.webp', alt: 'Close view of oak herringbone laminate showing the blocks meeting cleanly at the joints', width: 1080, height: 1920 },
 ];
 // A line of context per section, and the page the work belongs to. Keeps the
 // gallery linked into the rest of the site instead of being a dead end.
@@ -146,6 +159,10 @@ const categoryMeta: Record<(typeof categories)[number], { blurb: string; href: s
   'Stud Partitions & First Fix': {
     blurb: 'Timber stud partition walls set out at proper centres, with noggins, insulation and door openings formed before boarding.',
     href: '/services/first-fix-carpentry', linkText: 'First fix carpentry',
+  },
+  'Loft Conversions': {
+    blurb: 'Complete loft conversions run start to finish — dormers, rooflights and hip-to-gable, with the structure, staircase, plastering, electrics and finishing all part of the same job.',
+    href: '/services/extensions-conversions', linkText: 'Complete loft conversions',
   },
   'Lofts & Storage': {
     blurb: 'Loft boarding on a new timber floor structure over the ceiling joists, with insulation kept at full depth and a ladder and hatch fitted.',
