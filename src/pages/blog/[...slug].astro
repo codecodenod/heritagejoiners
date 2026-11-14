@@ -36,11 +36,13 @@ const fmt = (d: Date) =>
 
   <article class="py-16 lg:py-24 bg-paper">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <a href="/blog" class="text-oak font-display text-sm">&larr; All posts</a>
-      <p class="text-xs text-ink/40 mt-6 mb-3">{fmt(post.data.pubDate)}</p>
-      <p class="text-sm text-ink/70 mb-3">By <a href="/about" class="text-oak underline">Rob</a> — bench hand joiner, time served</p>
-      <h1 class="font-display text-3xl lg:text-5xl text-ink mb-8">{post.data.title}</h1>
-      <div class="prose max-w-none text-ink/80">
+      <div class="post-measure">
+        <a href="/blog" class="text-oak font-display text-sm">&larr; All posts</a>
+        <p class="text-xs text-ink/40 mt-6 mb-3">{fmt(post.data.pubDate)}</p>
+        <p class="text-sm text-ink/70 mb-3">By <a href="/about" class="text-oak underline">Rob</a> — bench hand joiner, time served</p>
+        <h1 class="font-display text-3xl lg:text-5xl text-ink mb-8">{post.data.title}</h1>
+      </div>
+      <div class="prose post-measure max-w-none text-ink/80">
         <Content />
       </div>
     </div>
@@ -49,6 +51,7 @@ const fmt = (d: Date) =>
   {post.data.faqs && (
     <section class="py-16 bg-white">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="post-measure">
         <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Common questions</h2>
         <div class="space-y-6">
           {post.data.faqs.map((faq) => (
@@ -61,6 +64,7 @@ const fmt = (d: Date) =>
             </details>
           ))}
         </div>
+       </div>
       </div>
     </section>
   )}
@@ -78,10 +82,119 @@ const fmt = (d: Date) =>
 </BaseLayout>
 
 <style is:global>
-  /* Blog body links. @tailwindcss/typography is not installed, so the prose-a:*
-     variants never applied and markdown links inherited body colour with no
-     underline. Scoped to .prose so it only touches post bodies, and matched to
-     the text-oak underline used on every other page. */
+  /* Blog post body styling.
+
+     @tailwindcss/typography is NOT installed, so `class="prose"` applies
+     nothing at all — no paragraph spacing, no heading margins, no list or
+     figure styling. Everything a post needs is therefore defined here, by
+     hand, scoped to .prose so it only touches post bodies.
+
+     Sizes and colours follow the site scale in CLAUDE.md: h2 is text-2xl /
+     lg:text-3xl, h3 is text-xl, body is text-ink/80, links are text-oak. Do
+     not introduce new sizes here. */
+
+  /* Also from typography.css: `.prose { max-width: 55ch }`, which ties with
+     Tailwind's `max-w-none` on the wrapper and wins on source order, pinning
+     the body to a 550px column and leaving the breakout figures off-centre.
+     `article .prose` outranks it. */
+  /* One column width for the whole post — back link, date, byline, h1, the
+     body and the FAQ list all share this left edge. Photos are the only
+     thing allowed to break out of it. */
+  .post-measure {
+    max-width: 34rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .prose {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+  .prose > * + * {
+    margin-top: 1.25em;
+  }
+
+  /* src/styles/typography.css (which must not be edited) carries
+       `.prose, article p { font-size: 1rem; max-width: 55ch; }`
+     That `max-width: 55ch` is what squashed post bodies into a narrow
+     left-aligned strip, and because the rule sets font-size on the <p>
+     itself it also beat anything inherited from .prose. `.prose p` is more
+     specific than `article p`, so these two lines undo both for post
+     bodies only, without touching the shared stylesheet. */
+  .prose p,
+  .prose li,
+  .prose blockquote {
+    max-width: none;
+    font-size: inherit;
+  }
+
+  .prose p {
+    margin-bottom: 0;
+  }
+
+  .prose h2 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    color: var(--color-ink);
+    margin-top: 2.5em;
+    margin-bottom: 0;
+  }
+  .prose h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    color: var(--color-ink);
+    margin-top: 2em;
+    margin-bottom: 0;
+  }
+  .prose h2 + *,
+  .prose h3 + * {
+    margin-top: 0.75em;
+  }
+
+  .prose strong {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+
+  .prose ul,
+  .prose ol {
+    padding-left: 1.5em;
+  }
+  .prose ul { list-style: disc; }
+  .prose ol { list-style: decimal; }
+  .prose li { margin-top: 0.5em; }
+  .prose li::marker { color: var(--color-oak); }
+
+  .prose blockquote {
+    border-left: 3px solid var(--color-oak);
+    padding-left: 1.25em;
+    font-style: italic;
+    color: var(--color-ink);
+  }
+
+  .prose figure {
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+  }
+  .prose figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  .prose figcaption {
+    margin-top: 0.75em;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: color-mix(in srgb, var(--color-ink) 60%, transparent);
+  }
+
   .prose a {
     color: var(--color-oak);
     text-decoration: underline;
@@ -89,5 +202,38 @@ const fmt = (d: Date) =>
   }
   .prose a:hover {
     text-decoration-thickness: 2px;
+  }
+
+  /* Desktop only. The text column stays at a readable measure, but photos
+     break out wider than it so they are not stranded in a narrow strip on a
+     big screen. Breakout is sized so it never exceeds the viewport: the
+     column is max-w-3xl (48rem), so +8rem at lg still leaves a margin at
+     1024px, and +14rem leaves a generous one at 1280px. */
+  @media (min-width: 1024px) {
+    /* A readable measure, ~70 characters a line. The wrapper is max-w-3xl
+       (704px of content), which at 18px runs to 80+ characters — too long to
+       track comfortably. The text sits narrower than the wrapper and the
+       photos below break out past it. */
+    .post-measure {
+      max-width: 38rem;
+    }
+    .prose {
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+    .prose h2 { font-size: 1.875rem; }
+    .prose h3 { font-size: 1.5rem; }
+    .prose figure {
+      width: calc(100% + 8rem);
+      margin-left: -4rem;
+      margin-right: -4rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .prose figure {
+      width: calc(100% + 14rem);
+      margin-left: -7rem;
+      margin-right: -7rem;
+    }
   }
 </style>
