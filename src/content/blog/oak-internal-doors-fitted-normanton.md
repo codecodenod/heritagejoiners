@@ -3,7 +3,7 @@ title: "Oak Internal Doors Fitted in Normanton"
 description: "A houseful of oak internal doors hung in Normanton. The openings were nowhere near square, so each door was fitted to the hole it was actually going into."
 pubDate: 2026-11-23
 draft: false
-ogImage: "/images/blog/oak-doors-normanton/oak-internal-doors-fitted-landing.webp"
+ogImage: "/images/blog/oak-doors-normanton/oak-internal-doors-fitted-landing-normanton.webp"
 areas: ["Normanton"]
 faqs:
   - question: "How long does it take to hang an internal door?"
@@ -21,7 +21,7 @@ faqs:
 ---
 
 <figure>
-  <img src="/images/blog/oak-doors-normanton/oak-internal-doors-fitted-landing.webp" alt="Three oak internal doors hung off a landing with white painted architraves and a white spindle balustrade" width="1080" height="1920" fetchpriority="high" />
+  <img src="/images/blog/oak-doors-normanton/oak-internal-doors-fitted-landing-normanton.webp" alt="Two oak internal doors hung off a landing with white moulded architraves and a chrome lever handle" width="2160" height="3840" fetchpriority="high" />
   <figcaption>Three off one landing. The architraves are what tie them together.</figcaption>
 </figure>
 
