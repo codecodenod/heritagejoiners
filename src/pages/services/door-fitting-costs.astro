@@ -1,0 +1,254 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [
+  { name: 'Doors', url: `${url}/services/doors` },
+  { name: 'Door Fitting Costs', url: `${url}/services/door-fitting-costs` },
+];
+const schemaProps = {
+  description:
+    'What it costs to have a door fitted in Pontefract, Wakefield and West Yorkshire — internal door fitting, fire doors and external doors, and what moves the price.',
+  url: `${url}/services/door-fitting-costs`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How much does it cost to hang a door?',
+    answer:
+      'Fitting a basic internal door onto a sound existing lining starts at around £60 a door when several are being done at once, which is the usual way this work comes. A single door on its own costs more per door, because the travel and setting up are the same whether it is one door or eight. That figure is for fitting only — the door itself is on top, whether you buy it or Rob supplies it.',
+  },
+  {
+    question: 'Does the condition of the frame affect the cost?',
+    answer:
+      'More than anything else on this page. Every figure quoted here assumes the door is going into a sound, square, firmly fixed lining. Where it is not, that has to be put right first — a lining can be packed and refixed, but a twisted or dropped one takes time, and on a bad frame that work takes longer than hanging the door itself, so it can double what the door costs to fit. A frame that is rotten or has moved out of square with the opening is past packing and needs replacing, which is a separate job and gets quoted as one. It is also why a price given over the phone without anyone seeing the openings is a guess rather than a quote.',
+  },
+  {
+    question: 'Why is fitting one door more expensive per door than fitting eight?',
+    answer:
+      'Because a large part of the cost of any job is getting there and setting up, and that is the same for one door as for a houseful. Once the tools are out and the first door is done, each one after it is quicker — the method is established, the measurements are consistent and the waste from one sets up the next. That is why a set of doors through a house is much better value per door than calling someone out for a single one, and why it is worth doing them all at once if you are going to do them eventually.',
+  },
+  {
+    question: 'How much does it cost to fit a fire door?',
+    answer:
+      'From around £150 a door, and more depending on the ironmongery. A fire door is a slower job than an ordinary internal door because the intumescent and smoke seals have to be let into the right edge in the right place, the margins are specified rather than judged by eye, and how much can be trimmed off the leaf is set by the manufacturer. Closers, digital locks and access control all add to it, and on some doors the ironmongery takes longer than hanging the leaf.',
+  },
+  {
+    question: 'How much does it cost to fit a front door?',
+    answer:
+      'Up to around £200 to fit an external door into a sound existing frame, with the figure driven mainly by the ironmongery. A door with a straightforward multipoint lock and a handle sits at the lower end; one with a multipoint, a letterplate, a knocker, a restrictor, a spyhole and a new threshold sits at the top of it. Where the frame also needs replacing, or a rotten jamb needs splicing first, that is quoted separately after a look.',
+  },
+  {
+    question: 'Does the price include the door?',
+    answer:
+      'No. Every figure on this page is for fitting only. Doors vary so widely in price that including them would make the numbers meaningless — a basic moulded internal door and a solid oak one are not in the same bracket. You can buy your own and have Rob hang them, or he can supply them, which tends to work out better where a whole house needs to match.',
+  },
+  {
+    question: 'Will you give me a price over the phone?',
+    answer:
+      'For a straightforward job, often yes, once there are photos to look at. Send pictures of the door, the opening and the frame — and for an external door, the bottom six inches of both jambs — and say how many doors there are. That is usually enough for a sensible figure. Anything involving frame repairs, out-of-square openings or fire doors in rented property is better looked at properly first.',
+  },
+];
+---
+
+<ServiceLayout
+  title="Door Fitting Costs in Pontefract & Wakefield"
+  description="What door fitting costs in Pontefract, Wakefield and West Yorkshire. Internal doors from £60, fire doors from £150, external doors up to £200, and what moves it."
+  serviceName="Door Fitting Costs"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+  ogImage="/images/blog/stud-partition/finished-stud-partition-wall-with-internal-door-doncaster.webp"
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <!-- Hero: same pattern as the doors page, no variation. -->
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/blog/stud-partition/finished-stud-partition-wall-with-internal-door-doncaster.webp"
+      alt="Finished internal door hung in a new stud partition wall with architrave and skirting fitted"
+      width="1500"
+      height="844"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+        <p class="text-oak uppercase tracking-wide mb-4">What door fitting costs</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Door Fitting Costs in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/80 mb-8">
+          Most people want a rough idea of the cost before they pick up the phone, so here it is in plain figures. Read the figures with one thing in mind: <strong class="text-ink">the state of the frame sets the price more than the door does.</strong> The same door into a sound lining and into a twisted one are two different jobs.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA message="Hi Heritage Joiners, I'd like a price for door fitting" />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">What it costs to have a door fitted</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-6">
+          <strong class="text-ink">These are fitting prices. The door itself is not included.</strong> Doors range from a basic moulded internal door to a solid oak one, so putting them in would make the figures meaningless. You can buy your own or Rob can supply them.
+        </p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-ink/20">
+              <th class="py-3 pr-6 font-display text-ink">Type of door</th>
+              <th class="py-3 pr-6 font-display text-ink">Fitting</th>
+              <th class="py-3 font-display text-ink">What moves it within that</th>
+            </tr>
+          </thead>
+          <tbody class="text-ink/70">
+            <tr class="border-b border-ink/10">
+              <td class="py-3 pr-6 font-medium text-ink"><a href="/services/internal-door-fitting" class="text-oak underline">Internal door</a>, several at once</td>
+              <td class="py-3 pr-6 whitespace-nowrap">from £60 per door</td>
+              <td class="py-3"><strong class="text-ink">Assumes a sound lining.</strong> Good access and square openings sit at the bottom. A twisted or dropped lining has to be put right first and can double it; carrying every door up and down stairs pushes it up again.</td>
+            </tr>
+            <tr class="border-b border-ink/10">
+              <td class="py-3 pr-6 font-medium text-ink">Internal door, one on its own</td>
+              <td class="py-3 pr-6 whitespace-nowrap">more per door</td>
+              <td class="py-3">Travel and setting up are the same for one door as for eight, so a single door never costs the same per door as a set. Worth doing them together if you are going to do them eventually.</td>
+            </tr>
+            <tr class="border-b border-ink/10">
+              <td class="py-3 pr-6 font-medium text-ink">Fire door</td>
+              <td class="py-3 pr-6 whitespace-nowrap">from £150 per door</td>
+              <td class="py-3">Intumescent and smoke seals, specified margins and manufacturer limits on trimming. Closers, digital locks and access control add to it, sometimes by more than the hanging.</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-6 font-medium text-ink"><a href="/services/external-door-fitting" class="text-oak underline">External door</a>, existing frame</td>
+              <td class="py-3 pr-6 whitespace-nowrap">up to £200</td>
+              <td class="py-3">Driven mainly by ironmongery. A multipoint and a handle sits low; a multipoint plus letterplate, knocker, restrictor, spyhole and new threshold sits at the top. A new frame or a rotten jamb is quoted separately.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="max-w-4xl mt-6">
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">These figures assume the frame is sound.</strong> That is the condition attached to every number above, and it is the one that moves them most. A lining that is twisted, loose, out of plumb or has dropped with the floor has to be put right before a door can be hung in it &mdash; and on a bad one that takes longer than hanging the door, so it can comfortably double what that door costs to fit. A frame that is past saving is a different job again and gets quoted as one. This is the single biggest reason two doors in the same house are not the same price.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">What these cover.</strong> Fitting the door &mdash; checking and packing the lining, trimming the leaf, cutting the hinge recesses, fitting the latch, lock and handles, hanging it and easing it until the margin is right. New linings, architraves, frame repairs and flooring thresholds are extra and get priced with the job.
+        </p>
+        <p class="text-ink/70">
+          <strong class="text-ink">An accurate figure needs photos at least.</strong> These are honest starting points, not a quotation. Send pictures and a door count and Rob will give you a real number for your house.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">The things that actually move the price</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">The state of the frame</h3>
+          <p class="text-ink/70">The single biggest variable, by some distance. A sound, square, firmly fixed lining and the door goes straight in. One that is twisted, loose, out of plumb or has dropped with the floor has to be put right first, and that can take longer than hanging the door &mdash; which can double the cost of that door. A frame past saving is a replacement and a separate price.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">How many doors</h3>
+          <p class="text-ink/70">Travel and setting up are the same for one door as for a houseful. Doing a set at once is substantially better value per door, which is why the rate above is quoted that way round.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">Access, and where the work can happen</h3>
+          <p class="text-ink/70">Whether a door can be worked on next to its own opening, or has to be carried down to the garden and back up for every adjustment, makes a real difference across a houseful. Narrow stairs, tight landings and no outside space all add time.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">Ironmongery</h3>
+          <p class="text-ink/70">On an external or fire door this is often where the time goes. Multipoint locks, closers, digital locks, letterplates, restrictors and thresholds all have to be set out accurately, and a multipoint a couple of millimetres out will not throw cleanly.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">The door itself</h3>
+          <p class="text-ink/70">A lightweight moulded door and a solid hardwood one are not the same job. Heavier doors need more hinges, more careful setting out and often two people. Glazed and lipped doors limit how much can be trimmed off.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-ink mb-2">What else is happening</h3>
+          <p class="text-ink/70">Doors fitted as part of wider <a href="/services/second-fix-carpentry" class="text-oak underline">second fix carpentry</a> &mdash; alongside skirting, architrave and ironmongery &mdash; are more efficient than the same doors done as a separate visit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">How that compares nationally</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          Published UK cost guides for 2026 put labour for hanging a standard internal door onto an existing lining at roughly £80 to £150 a door, with batch rates of about £60 to £100 a door where six or eight are being done at once. Fire doors are generally quoted at £130 to £200 of labour, and external doors between £150 and £450 depending on the source and the region.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Those are national figures and several of the higher ones are London-weighted. West Yorkshire sits below the national average, and a one-man business carries less overhead than a firm with an office &mdash; which is why the figures at the top of this page start where they do.
+        </p>
+        <p class="text-ink/70">
+          Sources used: <a href="https://www.pricingpenguin.co.uk/cost-guides/carpentry" rel="nofollow" class="text-oak underline">Pricing Penguin carpentry cost guide</a>, <a href="https://housekeep.com/cost-guide/handyman/door-fitting/" rel="nofollow" class="text-oak underline">Housekeep door fitting costs</a> and <a href="https://www.checkatrade.com/blog/cost-guides/door-installation-costs/" rel="nofollow" class="text-oak underline">Checkatrade door installation costs</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">How to compare door fitting quotes</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Check whether the door is in the price.</strong> This is where most of the confusion comes from. A figure that looks far higher than another often includes supplying the doors, and one that looks cheap often does not. Ask which it is before comparing anything.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Ask what happens if the lining is twisted.</strong> A price given without anyone looking at the openings is a guess. What you want to know is whether sorting a bad lining is included or whether it becomes an extra on the day.
+        </p>
+        <p class="text-ink/70 mb-3">
+          <strong class="text-ink">Ask who supplies the ironmongery.</strong> On external and fire doors this is a significant part of both the cost and the time, and it is the item most often left out of a quote.
+        </p>
+        <p class="text-ink/70">
+          <strong class="text-ink">Be careful with a price that is well below everyone else.</strong> Hanging a door quickly is easy. Hanging it so the margin is even, the hinges are let in to the right depth and it still shuts properly in eighteen months takes as long as it takes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Door fitting cost questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Door fitting prices across West Yorkshire</h2>
+      <p class="text-ink/70 mb-3">
+        The same rates apply across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a> and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+      <p class="text-ink/70">
+        For the work itself, see <a href="/services/internal-door-fitting" class="text-oak underline">internal door fitting</a>, <a href="/services/external-door-fitting" class="text-oak underline">external door fitting</a> and <a href="/services/doors" class="text-oak underline">doors</a>. A recent set is written up as <a href="/blog/oak-internal-doors-fitted-normanton" class="text-oak underline">oak internal doors fitted in Normanton</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Want a real figure for your doors?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the doors, the openings and the frames, and say how many there are. Rob will give you an honest number rather than an average.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA message="Hi Heritage Joiners, I'd like a price for door fitting" />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

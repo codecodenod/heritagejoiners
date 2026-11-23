@@ -17,6 +17,7 @@ const breadcrumbs = [
 // sections the way index slices did.
 const serviceGroups = [
   'Core Joinery & Carpentry',
+  'Doors',
   'Interiors',
   'Loft Conversions',
   'Structural, Roofing & Exterior',
@@ -32,7 +33,10 @@ const serviceCards: {
   image?: string;
   alt?: string;
 }[] = [
-  { href: '/services/doors', title: 'Doors', group: 'Core Joinery & Carpentry', description: 'Door hanging, internal and external door fitting, fire doors and door frame repair. Old openings are rarely square, so doors get hung to the opening they are going in.', image: '/images/homepage/oak-ledged-and-braced-front-door.webp', alt: 'Oak front door with a small glazed panel in a stone opening' },
+  { href: '/services/doors', title: 'Doors', group: 'Doors', description: 'Door hanging, internal and external door fitting, fire doors and door frame repair. Old openings are rarely square, so doors get hung to the opening they are going in.', image: '/images/homepage/oak-ledged-and-braced-front-door.webp', alt: 'Oak front door with a small glazed panel in a stone opening' },
+  { href: '/services/internal-door-fitting', title: 'Internal Door Fitting', group: 'Doors', description: 'Door hanging inside the house — one sticking door or a full set, hung onto existing linings. A lining gets checked for winding before anything is cut.', image: '/images/blog/oak-doors-normanton/oak-internal-doors-fitted-landing.webp', alt: 'Three oak internal doors hung off a landing with white painted architraves' },
+  { href: '/services/external-door-fitting', title: 'External Door Fitting', group: 'Doors', description: 'Front and back doors supplied and fitted, timber and composite, plus splice repairs to rotten jambs. The threshold and the ironmongery are most of the job.', image: '/images/case-studies/counting-house/the-counting-house-oak-front-door-in-situ.webp', alt: 'Finished solid oak front door in place at the entrance of The Counting House, Pontefract' },
+  { href: '/services/door-fitting-costs', title: 'Door Fitting Costs', group: 'Doors', description: 'What it costs to have a door fitted, what pushes the price up — frame condition, door count, access and ironmongery — and how to compare quotes properly.', image: '/images/blog/stud-partition/finished-stud-partition-wall-with-internal-door-doncaster.webp', alt: 'Finished internal door hung in a new stud partition wall with architrave and skirting' },
   { href: '/services/windows', title: 'Windows', group: 'Core Joinery & Carpentry', description: 'Sash window repair, timber window repairs, draught-proofing and new timber windows. Rot gets cut back to sound timber and spliced, not filled over.', image: '/images/homepage/timber-sash-window-stone-surround.webp', alt: 'White-painted timber sash window set in a stone surround' },
   { href: '/services/first-fix-carpentry', title: 'First Fix Carpentry', group: 'Core Joinery & Carpentry', description: 'First fix joiner work: floor joists, stud partition walls, door linings and structural timber. Extra noggins go in to stiffen the frame before it is boarded.', image: '/images/blog/stud-partition/stud-partition-wall-frame-with-double-door-studs-doncaster.webp', alt: 'Timber stud partition frame with door studs and noggins in a stripped-back room' },
   { href: '/services/second-fix-carpentry', title: 'Second Fix Carpentry', group: 'Core Joinery & Carpentry', description: 'Second fix carpenter work: hanging doors, skirting, architrave, window boards, boxing-in and ironmongery. The stage where margins and scribes show.', image: '/images/blog/stud-partition/finished-internal-door-in-stud-partition-wall-doncaster.webp', alt: 'Timber door lining fitted in a plasterboarded stud partition wall' },

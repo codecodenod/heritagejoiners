@@ -9,7 +9,7 @@ const { phone, url } = siteConfig;
 
 const breadcrumbs = [{ name: 'Doors', url: `${url}/services/doors` }];
 const schemaProps = {
-  description: 'Door hanging, internal door fitting, external door fitting, and door frame repair across Pontefract, Wakefield, and West Yorkshire.',
+  description: 'Door hanging, internal door fitting, external door fitting, fire doors, door frame repair and door fitting costs across Pontefract, Wakefield, and West Yorkshire.',
   url: `${url}/services/doors`,
   priceRange: '££',
 };
@@ -24,6 +24,24 @@ const faqItems = [
     question: 'Can you tell whether it is a simple fitting job or a repair?',
     answer:
       'Send photos first and Rob can usually tell whether it is a simple fitting job, a door frame repair, or a wider second-fix package.',
+  },
+];
+
+const doorPages = [
+  {
+    href: '/services/internal-door-fitting',
+    title: 'Internal Door Fitting',
+    description: 'Door hanging inside the house — one sticking door or a full set, hung to existing linings. Fire doors too.',
+  },
+  {
+    href: '/services/external-door-fitting',
+    title: 'External Door Fitting',
+    description: 'Front and back doors supplied and fitted, timber and composite, plus repair to rotten frames and jambs.',
+  },
+  {
+    href: '/services/door-fitting-costs',
+    title: 'Door Fitting Costs',
+    description: 'What it costs to have a door fitted, what pushes the price up, and how to compare quotes properly.',
   },
 ];
 
@@ -48,18 +66,18 @@ const doorServices = [
   breadcrumbs={breadcrumbs}
   schemaProps={schemaProps}
 
-  ogImage="/images/case-studies/counting-house/the-counting-house-oak-front-door-in-situ.webp"
+  ogImage="/images/homepage/the-counting-house-solid-oak-door-being-made.webp"
 >
   <FAQPageSchema slot="schema" faqs={faqItems} />
 
-  <!-- Hero: oak front door with fade for text legibility.
+  <!-- Hero: solid oak door being made on the bench, with fade for text legibility.
        Same pattern as the contact and areas pages. -->
   <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
     <img
-      src="/images/case-studies/counting-house/the-counting-house-oak-front-door-in-situ.webp"
-      alt="Finished solid oak front door in place at the entrance of The Counting House, Pontefract"
-      width="1500"
-      height="844"
+      src="/images/homepage/the-counting-house-solid-oak-door-being-made.webp"
+      alt="Solid oak door being made up on the workshop bench, rails and stiles cramped together"
+      width="1920"
+      height="1078"
       fetchpriority="high"
       class="absolute inset-0 w-full h-full object-cover"
     />
@@ -81,6 +99,23 @@ const doorServices = [
 
   <section class="py-16 bg-bone">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Door fitting, room by room and front to back</h2>
+      <p class="text-ink/70 mb-8 max-w-3xl">
+        Door work splits into two quite different jobs, and a third question everybody asks. Each has its own page.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {doorPages.map((page) => (
+          <a href={page.href} class="block p-6 bg-paper rounded-lg border border-ink/10 hover:border-oak transition-colors">
+            <h3 class="font-display text-xl text-ink mb-2">{page.title}</h3>
+            <p class="text-ink/70">{page.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Internal and external door fitting</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {doorServices.map((item) => (
@@ -90,7 +125,7 @@ const doorServices = [
     </div>
   </section>
 
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
       <div>
         <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Door hanging, single doors and second-fix joinery</h2>
@@ -130,7 +165,7 @@ const doorServices = [
     </div>
   </section>
 
-  <section class="py-16 bg-paper">
+  <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Door hanging questions</h2>
       {faqItems.map((faq) => (
@@ -142,16 +177,19 @@ const doorServices = [
     </div>
   </section>
 
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Door fitting across West Yorkshire</h2>
       <p class="text-ink/70">
         Based in Ackworth, covering <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a> for door fitting, repairs, and second-fix joinery.
       </p>
+      <p class="text-ink/70 mt-3">
+        A recent job is written up in full &mdash; a set of <a href="/blog/oak-internal-doors-fitted-normanton" class="text-oak underline">oak internal doors fitted in Normanton</a>, hung onto the existing linings.
+      </p>
     </div>
   </section>
 
-  <section class="py-16 bg-paper">
+  <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-display text-3xl text-ink mb-4">Need a door fitted or repaired?</h2>
       <p class="text-ink/70 mb-8 mx-auto">Send a photo of the opening, the door, and any frame issue and Rob will point you in the right direction.</p>

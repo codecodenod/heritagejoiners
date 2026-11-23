@@ -1,0 +1,239 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [
+  { name: 'Doors', url: `${url}/services/doors` },
+  { name: 'Internal Door Fitting', url: `${url}/services/internal-door-fitting` },
+];
+const schemaProps = {
+  description:
+    'Internal door fitting and door hanging across Pontefract, Wakefield and West Yorkshire — single doors, full sets, fire doors and doors hung to existing linings.',
+  url: `${url}/services/internal-door-fitting`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How long does it take to fit an internal door?',
+    answer:
+      'A straightforward door into a sound, square lining is an hour to an hour and a half. Most are not that. Allow around two hours a door once the leaf has been trimmed on both stiles, the hinge recesses cut, the latch and striker set out and the margin eased until it is even all the way round. A door going into a twisted lining, or an opening that has dropped, can take longer than that on its own.',
+  },
+  {
+    question: 'Can new internal doors be hung on the existing frames?',
+    answer:
+      'Usually, and it is normally the sensible thing to do. Where the lining is sound, square enough and firmly fixed there is no reason to take it out — new doors on existing linings is a far smaller job than replacing both. The lining is checked for plumb and for winding first. A lining that has twisted can often be packed and refixed rather than replaced.',
+  },
+  {
+    question: 'Do you fit fire doors?',
+    answer:
+      'Yes. A fire door is a different job from an ordinary internal door and it is not interchangeable with one. The leaf, the lining, the intumescent and smoke seals, the hinges and the closer are all part of one tested assembly, the margins are tighter and specified rather than a matter of judgement, and how much can be trimmed off the leaf is set by the manufacturer rather than by eye. Fire doors in rented and multi-occupancy property carry legal duties, so the specification for your building should be confirmed before anything is ordered.',
+  },
+  {
+    question: 'Do I need to buy the doors first?',
+    answer:
+      'Either way works. Plenty of people buy their own doors and want a joiner to hang them. If you are doing that, buy them early and stand them in the house for a few days before fitting so the timber settles to the conditions it will live in. Rob can also supply them, which tends to work out better where a whole house needs to match.',
+  },
+  {
+    question: 'Why has my new door started to stick?',
+    answer:
+      'Usually one of two things. Moisture — a door stored somewhere damp, or hung in a house still drying out after plastering, takes up water and grows across its width. Or the hinges were not let in deep enough, so the door stands proud on the hinge side and binds against the stop on the latch side. The first settles or gets eased once the house has dried; the second should not have happened and is a matter of cutting the recesses to the thickness of the hinge leaf.',
+  },
+];
+
+const internalDoorWork = [
+  'Internal door fitting and door hanging, single doors or a full house',
+  'Hanging new doors onto existing linings',
+  'New door linings, stops, architraves and thresholds',
+  'Fire door installation, intumescent and smoke seals',
+  'Oak, hardwood, moulded panel and flush internal doors',
+  'Internal bifold, sliding and folding doors',
+  'Locks, latches, lever handles, hinges and other ironmongery',
+  'Easing and adjusting doors that stick, drop or catch',
+  'Rehanging doors to swing the other way',
+  'Undercutting doors for new flooring and threshold strips',
+];
+---
+
+<ServiceLayout
+  title="Internal Door Fitting in Pontefract & Wakefield"
+  description="Internal door fitting and door hanging across Pontefract, Wakefield and West Yorkshire. Single doors, full sets and fire doors, hung to the opening they go in."
+  serviceName="Internal Door Fitting"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+  ogImage="/images/blog/stud-partition/finished-internal-door-in-stud-partition-wall-doncaster.webp"
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <!-- Hero: same pattern as the doors page, no variation. -->
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/blog/stud-partition/finished-internal-door-in-stud-partition-wall-doncaster.webp"
+      alt="Finished internal door hung in a new timber lining with architrave, in a freshly plasterboarded partition wall"
+      width="1920"
+      height="1080"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Door hanging and internal doors</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Internal Door Fitting in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/80 mb-8">
+          Internal door fitting by a fully qualified apprentice trained bench hand joiner, time served &mdash; one sticking door or a full set through the house. Openings in a lived-in house are rarely square, so a door gets fitted to the opening it is actually going into rather than to a tape measure.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss internal door fitting" />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Door hanging and internal door installation</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {internalDoorWork.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Hanging doors to existing linings</h2>
+        <p class="text-ink/70 mb-3">
+          Most internal doors Rob fits go onto linings that are already there. Where a lining is sound and firmly fixed, replacing it achieves nothing &mdash; so it gets checked rather than ripped out: plumb on both legs, level across the head, and checked for winding, which is the one that gets missed.
+        </p>
+        <p class="text-ink/70 mb-3">
+          A lining can be dead plumb on both sides and still be twisted, so the two legs are not in the same plane. Hang a flat door in it and the door touches the stop at one corner and stands off it at the opposite one, however well the leaf has been fitted. Finding that at the start costs twenty minutes with packers; finding it after the hinges are cut means doing the job twice.
+        </p>
+        <p class="text-ink/70">
+          That is the problem-solving end of the work rather than the carpentry, and it is why two doors in the same house can take very different amounts of time.
+        </p>
+
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4 mt-10">Fitting the leaf, and where the material comes off</h2>
+        <p class="text-ink/70 mb-3">
+          Doors are supplied oversize because they are meant to be cut down. The width comes off both stiles rather than all from one, because your eye reads the frame of the door rather than the gap &mdash; a door with two visibly different stile widths looks wrong even when it shuts perfectly.
+        </p>
+        <p class="text-ink/70">
+          There is a limit to all of it. On a door with a lock block only so much can come off the latch stile before you are into the block the latch has to land in, and on a lipped door you can go through the lipping and expose the core. Knowing where that limit sits on the door in front of you is most of the skill in fitting one. Sizes and the standard range are set out in the <a href="/guides/standard-door-sizes" class="text-oak underline">standard door sizes guide</a>.
+        </p>
+      </div>
+      <div>
+        <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+          <img
+            src="/images/blog/oak-doors-normanton/oak-internal-door-hung-white-architrave.webp"
+            alt="Oak internal door hung in a white painted lining and architrave, with an even margin down the latch side"
+            width="1080"
+            height="1920"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+          <img
+            src="/images/blog/oak-doors-normanton/oak-internal-doors-fitted-landing.webp"
+            alt="Three oak internal doors hung off a landing with white painted architraves and a white spindle balustrade"
+            width="1080"
+            height="1920"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Internal doors supplied and fitted across a whole house</h2>
+        <p class="text-ink/70 mb-3">
+          A full set of doors is not just a lot of single doors. Once you can see several at once from a landing or a hall, they have to read as a set: handles at a consistent height, hinges the same way up, and the leaves sorted for grain and colour before anything is cut.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Oak varies. Doors out of the same pack can be noticeably different in tone, and hanging them in the order they came off the van is how a pale one ends up next to a dark one on the same landing. Standing them up and sorting them first takes five minutes and costs nothing.
+        </p>
+        <p class="text-ink/70">
+          A recent example is written up in full &mdash; a set of <a href="/blog/oak-internal-doors-fitted-normanton" class="text-oak underline">oak internal doors fitted in Normanton</a>, hung onto the existing linings with the bottom clearance set for the flooring going down afterwards.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Fire door installation</h2>
+        <p class="text-ink/70 mb-3">
+          A fire door is not an ordinary door that happens to be heavier. The leaf, lining, intumescent and smoke seals, hinges and closer form one tested assembly, and swapping any part of it for something else undoes the rating.
+        </p>
+        <p class="text-ink/70 mb-3">
+          The margins are specified rather than judged by eye, how much can be trimmed off the leaf is set by the manufacturer, and the seals have to be let into the right edge in the right place. Fire doors in rented and multi-occupancy property carry legal duties, so the specification for your building needs confirming before anything is ordered.
+        </p>
+        <p class="text-ink/70">
+          Fire doors also sit alongside the rest of the <a href="/services/second-fix-carpentry" class="text-oak underline">second fix carpentry</a> on a refurbishment, and the ironmongery is usually where the time goes.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Doors that stick, drop or catch</h2>
+        <p class="text-ink/70 mb-3">
+          Not every door job is a new door. A door that has started catching has usually either taken up moisture, dropped on its hinges because the screws have worked loose in a soft lining, or was never let in properly to begin with.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Each has a different answer, and planing the bottom off is rarely the right one &mdash; a door that has dropped will keep dropping, and a door that has swollen will shrink back in summer and leave you with a gap.
+        </p>
+        <p class="text-ink/70">
+          Smaller door jobs of this kind sit under <a href="/services/maintenance-repairs" class="text-oak underline">maintenance and repairs</a>, and where a period door or frame is worth saving, <a href="/services/timber-repair" class="text-oak underline">timber repair</a> is often the better route than replacement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Internal door fitting questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Internal door fitters across West Yorkshire</h2>
+      <p class="text-ink/70 mb-3">
+        Based in Ackworth, covering <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a> and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+      <p class="text-ink/70">
+        Also see <a href="/services/external-door-fitting" class="text-oak underline">external door fitting</a> for front and back doors, <a href="/services/door-fitting-costs" class="text-oak underline">door fitting costs</a> for what moves the price, and <a href="/services/doors" class="text-oak underline">doors</a> for everything together.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need doors hanging?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send a photo of the door, the opening and the frame, and say how many. Rob will tell you whether it is an hour's work or a morning's.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss internal door fitting" />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

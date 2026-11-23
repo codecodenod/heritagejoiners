@@ -24,13 +24,24 @@ The whole site is one theme. Same layouts, same heading scale, same fonts, same 
 - **"Pine" is a keyword-only word.** In ordinary prose never write it — say "original timber", "original exterior frame", "original Victorian door", "softwood" or "redwood". The single exception is where it is genuinely the search term people use for a product (e.g. "pine skirting" on the mouldings guide). Even then, use it sparingly and in a materials context, never as general description. If in doubt, write softwood.
 - Award wording, exactly: **"Heritage Award at Pontefract Civic Society's 2025 Design Awards"** — never "restoration award". The **project** won the award, not Rob — never "award-winning joiner".
 - **No testimonials, reviews, star ratings or review schema** until real ones exist and are approved. Never invent quotes, prices, or claims.
-- **No prices anywhere on the site**, with one exception. No £ figures, price bands or
+- **No prices anywhere on the site**, with two exceptions. No £ figures, price bands or
   estimates on any page — steer to "send photos for an honest first view" instead.
-  **The single exception is `/services/loft-conversion-costs`**, which carries broad
-  industry guide ranges by conversion type. That is a deliberate, Rob-approved exception
-  for loft conversions only; never extend it to another page. Verification:
-  `grep -rE "£[0-9]" dist` should match only `dist/services/loft-conversion-costs.html`.
-  The `priceRange` schema value is not a figure and is expected site-wide.
+  **The only two exceptions are `/services/loft-conversion-costs` and
+  `/services/door-fitting-costs`.** Both are deliberate, Rob-approved exceptions, and
+  they are not the same kind of figure:
+  - `/services/loft-conversion-costs` carries **broad industry guide ranges** by
+    conversion type. Not Heritage Joiners quotations, and the page says so.
+  - `/services/door-fitting-costs` carries **Rob's own fitting rates** (approved
+    23/11/2026): internal doors from £60 a door when several are done together, fire
+    doors from £150, external doors up to £200. **Fitting only — the door itself is
+    never included**, and the page must keep saying so prominently or the figures
+    mislead. If Rob changes his rates, this page is the one to update.
+
+  Never extend pricing to a third page without asking. Verification:
+  `grep -rlE "£[0-9]" dist --include=*.html` should match only those two pages.
+  `dist/llms.txt` also carries figures, deliberately — the key facts block quotes the
+  door fitting rates so AI crawlers get them right. The `priceRange` schema value is
+  not a figure and is expected site-wide.
 - Never name competitors.
 - Voice: plain, proud, traditional Yorkshire trade voice. Concrete and physical (timber, oak, setting out, fitting). No marketing hype, no "best in", no "master craftsman".
 

@@ -1,0 +1,212 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [
+  { name: 'Doors', url: `${url}/services/doors` },
+  { name: 'External Door Fitting', url: `${url}/services/external-door-fitting` },
+];
+const schemaProps = {
+  description:
+    'External door fitting across Pontefract, Wakefield and West Yorkshire — front doors, back doors, timber and composite doors supplied and fitted, and door frame repair.',
+  url: `${url}/services/external-door-fitting`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'How long does it take to fit an external door?',
+    answer:
+      'Most of a day for a like-for-like replacement into a sound existing frame, and longer where the frame is going too. An external door is a slower job than an internal one because more has to be right: the frame has to be plumb, square and properly fixed back to the structure, the threshold has to shed water, the multipoint lock and keep have to line up along the full height of the door, and the whole thing has to be sealed and weathered afterwards. Rushing any of that is how you end up with a door that drags in winter or lets water in at the bottom.',
+  },
+  {
+    question: 'Can a new front door go into the existing frame?',
+    answer:
+      'Sometimes, and it is worth checking before you assume otherwise. If the frame is sound, square and properly fixed, a new leaf into the existing frame is a much smaller job. The things that rule it out are rot at the bottom of the jambs — which is where it nearly always starts, because that is where water sits — a frame that has moved out of square, or a new door whose lock and hinge positions do not match what is already cut. Send a photo of the frame, particularly the bottom six inches of each leg, and that question can usually be answered straight away.',
+  },
+  {
+    question: 'Timber or composite for a front door?',
+    answer:
+      'It depends on the house and on what you want from it. Composite needs less looking after and performs well, and on a modern house it is often the sensible choice. On a period property a timber door is usually the right answer — it suits the building, it can be made to fit an opening that is not a standard size, and it can be repaired in a hundred years rather than replaced. Timber does need painting or oiling on a cycle. Rob will tell you honestly which he thinks suits your house rather than which he would rather make.',
+  },
+  {
+    question: 'Can a rotten door frame be repaired instead of replaced?',
+    answer:
+      'Often, yes. Rot in an external frame almost always starts at the foot of the jambs and works upward, which means the top two thirds of the frame can be perfectly sound. Where that is the case the decayed section is cut back to sound timber and a new piece spliced in and matched, rather than taking out a whole frame that is mostly fine. On a period or listed building that is usually the better answer in any case, because the original frame is part of the building.',
+  },
+  {
+    question: 'Do you fit the locks and handles as well?',
+    answer:
+      'Yes, and on an external door the ironmongery is a large part of the job rather than an afterthought. Multipoint locks, cylinders, letterplates, knockers, hinges, restrictors and thresholds all have to be set out and fitted accurately, because a multipoint lock that is a couple of millimetres out will not throw cleanly and will get worse as the door settles. What you choose makes a real difference to how long the fitting takes.',
+  },
+];
+
+const externalDoorWork = [
+  'External door fitting and front door installation',
+  'Front doors and back doors supplied and fitted',
+  'Wooden front door replacement and timber doors made to measure',
+  'Composite and hardwood external doors fitted',
+  'External door frames, cills, thresholds and weatherbars',
+  'External door frame repair and splice repairs to rotten jambs',
+  'Multipoint locks, cylinders, letterplates and door furniture',
+  'Stable doors, garage side doors and outbuilding doors',
+  'French doors and external double doors',
+  'Draught-proofing and weather-sealing existing external doors',
+];
+---
+
+<ServiceLayout
+  title="External Door Fitting in Pontefract & Wakefield"
+  description="External door fitting across Pontefract, Wakefield and West Yorkshire. Front and back doors supplied and fitted, timber and composite, plus door frame repair."
+  serviceName="External Door Fitting"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+  ogImage="/images/case-studies/counting-house/the-counting-house-oak-front-door-in-situ.webp"
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <!-- Hero: same pattern as the doors page, no variation. -->
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/case-studies/counting-house/the-counting-house-oak-front-door-in-situ.webp"
+      alt="Finished solid oak front door in place at the entrance of The Counting House, Pontefract"
+      width="1500"
+      height="844"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Front doors and back doors</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">External Door Fitting in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/80 mb-8">
+          External door fitting by a fully qualified apprentice trained bench hand joiner, time served. A front door has to do more than shut &mdash; it has to seal, shed water, lock properly and still work in February. That is settled by the frame, the threshold and the ironmongery, not by the door on its own.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss an external door" />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Front doors and back doors supplied and fitted</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {externalDoorWork.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Why an external door is a slower job than an internal one</h2>
+        <p class="text-ink/70 mb-3">
+          An internal door has to look right and shut cleanly. An external door has to do that and then keep weather, draughts and people out for twenty years, which means several things have to be right at once rather than one.
+        </p>
+        <p class="text-ink/70 mb-3">
+          The frame has to be plumb, square and fixed back to something solid rather than to plaster. The threshold has to throw water away from the opening instead of letting it sit. A multipoint lock has to line up along the full height of the door, because a keep that is a couple of millimetres out will not throw cleanly and only gets worse as the door settles. Then the whole thing has to be sealed and weathered properly on the outside.
+        </p>
+        <p class="text-ink/70">
+          None of that is difficult on its own. It is the fact that they all have to be right together that makes it a day rather than an hour.
+        </p>
+
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4 mt-10">Timber, hardwood and composite</h2>
+        <p class="text-ink/70 mb-3">
+          On a modern house a composite door is often the sensible choice and Rob will say so. On a period property a timber door usually suits the building better, can be made to an opening that is not a standard size, and can be repaired in fifty years rather than skipped.
+        </p>
+        <p class="text-ink/70">
+          Where a hardwood door is the right answer, the timber matters as much as the joinery &mdash; see <a href="/services/timber-hardwoods" class="text-oak underline">timber and hardwoods</a> for what actually suits an exposed Yorkshire elevation.
+        </p>
+      </div>
+      <div>
+        <div class="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+          <img
+            src="/images/services/doors/the-counting-house-bespoke-oak-ledged-and-braced-door.webp"
+            alt="Bespoke solid oak ledged and braced front door with a small leaded glazed panel, hung in a stone opening at The Counting House"
+            width="563"
+            height="1000"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">External door frame repair</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          Rot in an external frame almost always starts at the foot of the jambs, because that is where water sits and where the end grain is. By the time anyone notices it, the bottom six inches can be soft while the top two thirds of the frame is perfectly sound.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Where that is the case the decayed section gets cut back to sound timber and a new piece spliced in and matched, rather than taking out a frame that is mostly fine. It is a smaller job than a replacement and on a period or listed building it is usually the right answer anyway, because the original frame is part of the building. The same approach is set out in more detail under <a href="/services/timber-repair" class="text-oak underline">timber repair and restoration</a>.
+        </p>
+        <p class="text-ink/70">
+          Rob will tell you when a frame is past saving. A jamb that has gone at the hinge fixings, or a frame that has moved out of square with the opening, is a replacement rather than a repair &mdash; patching that is throwing good work after bad.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Bespoke and period front doors</h2>
+      <div class="max-w-4xl">
+        <p class="text-ink/70 mb-3">
+          Where an opening is not a standard size, or the house deserves better than what is available off a shelf, a door can be made for it. Rob trained as a bench hand joiner making doors, windows and stairs, so this is the work he came up through rather than something added on.
+        </p>
+        <p class="text-ink/70">
+          The solid oak front door and frame at The Counting House, one of Pontefract's oldest buildings, shows the approach on a building where nothing was square and nothing was standard. <a href="/case-studies/counting-house/oak-front-door" class="text-oak underline">See the oak front door case study</a>, or <a href="/services/bespoke-joinery" class="text-oak underline">bespoke joinery</a> for made-to-measure work generally.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">External door fitting questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">External door fitters across West Yorkshire</h2>
+      <p class="text-ink/70 mb-3">
+        Based in Ackworth, covering <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a> and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+      <p class="text-ink/70">
+        Also see <a href="/services/internal-door-fitting" class="text-oak underline">internal door fitting</a>, <a href="/services/door-fitting-costs" class="text-oak underline">door fitting costs</a> for what moves the price, and <a href="/services/doors" class="text-oak underline">doors</a> for everything together.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Need a front or back door fitted?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the door, the frame and the bottom of both jambs. That is usually enough for Rob to say whether the frame can stay.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss an external door" />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
