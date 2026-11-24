@@ -1,0 +1,285 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import PhoneLink from '../../components/ui/PhoneLink.astro';
+import WhatsAppCTA from '../../components/ui/WhatsAppCTA.astro';
+import FAQPageSchema from '../../components/schema/FAQPage.astro';
+import { siteConfig } from '../../config/site';
+
+const { phone, url } = siteConfig;
+
+const breadcrumbs = [
+  { name: 'Staircases', url: `${url}/services/staircases` },
+  { name: 'Banister Replacement', url: `${url}/services/banister-replacement` },
+];
+const schemaProps = {
+  description:
+    'Banister replacement across Pontefract, Wakefield and West Yorkshire — oak handrails, black metal and oak stair spindles, oak newel posts and oak newel post cladding, fitted to the existing staircase.',
+  url: `${url}/services/banister-replacement`,
+  priceRange: '££',
+};
+
+const faqItems = [
+  {
+    question: 'Can the banister be replaced without replacing the staircase?',
+    answer:
+      'Yes, and that is how most banister replacement is done. The handrail, spindles, baserail and newel caps come off; the strings, treads and risers stay. As long as the newel posts are sound and firmly fixed, the new balustrade goes onto the stair you already have.',
+  },
+  {
+    question: 'Can you put black metal spindles on an oak handrail?',
+    answer:
+      'Yes. Oak handrail and baserail with black metal spindles is the most asked-for combination at the moment. Plain square, rectangular and decorative twisted spindles are all available. Each one is cut to the rake of the stair and fixed top and bottom, and the spacing is worked out so the gaps are even along the whole flight.',
+  },
+  {
+    question: 'What is newel post cladding?',
+    answer:
+      'An oak sleeve fitted over an existing newel post. The original post stays in place and keeps doing its structural job, and the cladding gives it the look of a solid oak newel. It is only worth doing on a newel that is tight at the base. A loose newel gets fixed first, or it will carry on moving inside the new oak.',
+  },
+  {
+    question: 'How far apart should stair spindles be?',
+    answer:
+      'In a house, the usual rule is that no gap in the balustrade should let a 100mm sphere pass through, which stops a small child getting their head through. That rule comes from Approved Document K of the Building Regulations. In practice the spacing is worked out from the length of each run so every gap is the same, rather than starting at one end and ending with an odd gap at the other. The requirement for your own staircase should be confirmed before the job is specified.',
+  },
+  {
+    question: 'Can I keep my newel posts and just change the spindles?',
+    answer:
+      'Often, yes. If the newels are sound and you like them, the handrail and spindles can be changed on their own, or the newels can be clad in oak to match the new handrail. Send a photo of the newel at the bottom of the stairs and of the landing, and Rob can usually tell which makes more sense.',
+  },
+];
+
+const banisterWork = [
+  'Banister replacement and staircase handrail replacement',
+  'Oak handrails and baserails, straight flights and landings',
+  'Black metal stair spindles — square, rectangular and decorative',
+  'Oak stair spindles, plain square and turned',
+  'Oak newel posts and newel caps',
+  'Oak newel post cladding over existing newels',
+  'Landing balustrades and stairwell guarding',
+  'Loose newels and handrails tightened and refixed',
+  'Wall-mounted handrails on brackets',
+  'Oak tread and riser cladding to match the new balustrade',
+];
+---
+
+<ServiceLayout
+  title="Banister Replacement in Pontefract & Wakefield"
+  description="Banister replacement across Pontefract, Wakefield and West Yorkshire. Oak handrails, black metal and oak spindles, and oak newel post cladding fitted to your stair."
+  serviceName="Banister Replacement"
+  breadcrumbs={breadcrumbs}
+  schemaProps={schemaProps}
+  ogImage="/images/case-studies/counting-house/the-counting-house-rear-oak-staircase-finished.webp"
+>
+  <FAQPageSchema slot="schema" faqs={faqItems} />
+
+  <!-- Hero: same pattern as the doors page, no variation. -->
+  <section class="relative overflow-hidden bg-bone min-h-[380px] lg:min-h-[480px] flex items-center">
+    <img
+      src="/images/case-studies/counting-house/the-counting-house-rear-oak-staircase-finished.webp"
+      alt="Finished external oak staircase with oak newel posts, handrail and boarded balustrade at The Counting House, Pontefract"
+      width="1500"
+      height="844"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="max-w-2xl">
+        <p class="text-oak uppercase tracking-wide mb-4">Handrails, spindles and newels</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Banister Replacement in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/80 mb-8">
+          Banister replacement by a fully qualified apprentice trained bench hand joiner, time served. The old handrail and spindles come out, and a new oak handrail with black metal or oak spindles goes in, set out to your stair. The staircase underneath stays where it is.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss banister replacement" />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-bone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Staircase banister replacement and handrail work</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {banisterWork.map((item) => (
+          <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Oak handrails and oak banisters</h2>
+        <p class="text-ink/70 mb-3">
+          The handrail is the part of a staircase people actually touch, every time they go up or down. An oak handrail is hard-wearing and warm in the hand, and it takes an oil or lacquer finish that keeps the grain showing.
+        </p>
+        <p class="text-ink/70 mb-3">
+          On the rake, the handrail runs parallel to the pitch of the stair, and the joint into the newel is cut to that same angle. Get the pitch slightly wrong and the rail either stands proud of the newel at the top or leaves a gap at the bottom. The baserail on the string has to follow the same line, or the spindles between them will not stand plumb.
+        </p>
+        <p class="text-ink/70">
+          Landings are where the time goes. A landing balustrade has to meet the stair rail at the newel at the right height and line, and on an older house the landing is rarely level with anything else.
+        </p>
+      </div>
+      <div>
+        <img
+          src="/images/services/staircases/oak-banister-rectangular-black-metal-spindles.webp"
+          alt="Oak handrail, baserail and square oak newel post with rectangular black metal spindles on a carpeted staircase"
+          width="600"
+          height="600"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <img
+          src="/images/services/staircases/oak-handrail-decorative-black-metal-spindles.webp"
+          alt="Oak handrail and string with black metal spindles, alternating plain spindles with twisted basket spindles"
+          width="600"
+          height="600"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Black metal stair spindles on an oak staircase</h2>
+        <p class="text-ink/70 mb-3">
+          An oak staircase with black metal spindles is the change most people ask about. The spindles come plain square, rectangular, or decorative with twists and baskets, and the plain and decorative ones are often mixed along a run.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Metal spindles are less forgiving than timber ones. A timber spindle can be trimmed and eased on site; a metal one is cut to length and either fits or it does not. Each spindle is cut to the rake of the stair and fixed into the underside of the handrail and into the baserail, so the run reads as a straight, even line from the bottom newel to the top.
+        </p>
+        <p class="text-ink/70">
+          The spacing is worked out from the length of each run before the first hole is drilled, so the gap at each newel matches the gaps in between. Start at one end and work along, and you finish with an odd gap at the other end that nobody can unsee.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Oak newel posts and oak newel post cladding</h2>
+        <p class="text-ink/70 mb-3">
+          The newel posts carry the whole balustrade. Every push on the handrail ends up at the newel, so it has to be solid at the base before anything else is fitted to it.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Where a newel is sound, it does not need to come out. Oak newel post cladding fits over the existing post like a sleeve, so the original newel keeps doing its structural job and the hall gets the look of a solid oak newel. It is quicker, it leaves the stair undisturbed, and it is often the better choice on a newel that is built into the stair.
+        </p>
+        <p class="text-ink/70">
+          Where a newel has worked loose, it gets fixed properly first &mdash; glued, bolted or blocked from underneath, depending on how it was built. Cladding a loose newel just hides the movement until it shows again.
+        </p>
+      </div>
+      <div>
+        <img
+          src="/images/services/staircases/oak-newel-post-cladding-rectangular-metal-spindles.webp"
+          alt="Oak-clad newel post and oak string with rectangular black metal spindles and an oak handrail"
+          width="600"
+          height="600"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <img
+          src="/images/services/staircases/oak-newel-posts-landing-black-metal-spindles.webp"
+          alt="Landing balustrade with oak newel posts, oak handrails and black metal spindles, seen from above the stairwell"
+          width="600"
+          height="600"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Landing balustrades and metal balustrade panels</h2>
+        <p class="text-ink/70 mb-3">
+          The landing balustrade is the one you see from the hall and from every bedroom door, so it has to match the stair. The same handrail, the same spindles and the same spacing carry on round the stairwell.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Metal balustrade panels are another option on a landing &mdash; a single panel with a geometric pattern fixed between the newels instead of a row of individual spindles.
+        </p>
+        <p class="text-ink/70">
+          Whatever goes in, the guarding has to do its job. A landing balustrade stops a fall into the stairwell, so the height and the gaps matter as much as the look. Those are confirmed for your stair before anything is ordered.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Changing spindles on a staircase</h2>
+        <p class="text-ink/70 mb-3">
+          Not every job is a full banister replacement. If the handrail and newels are good, the spindles can be changed on their own &mdash; old turned or painted spindles out, black metal or plain square oak in.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Whether that works depends on how the old spindles were fixed. Some sit in a groove in the handrail and baserail with fillets between them, which makes changing them straightforward. Others are let into holes drilled in the handrail and string, which can leave marks that need dealing with. A photo of where a spindle meets the handrail usually tells you which.
+        </p>
+        <p class="text-ink/70">
+          If you want the stair itself to match, oak tread and riser cladding is covered on the <a href="/services/staircases" class="text-oak underline">staircase renovation</a> page.
+        </p>
+      </div>
+      <div>
+        <img
+          src="/images/services/staircases/oak-landing-balustrade-geometric-metal-panels.webp"
+          alt="Landing balustrade with a dark-stained handrail and newel, and black metal panels in a geometric pattern"
+          width="600"
+          height="600"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Banister replacement questions</h2>
+      {faqItems.map((faq) => (
+        <div class="mb-6 last:mb-0">
+          <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
+          <p class="text-ink/70">{faq.answer}</p>
+        </div>
+      ))}
+      <p class="text-ink/70 mt-6">
+        Guarding and handrail requirements are set out in <a href="https://www.gov.uk/government/publications/protection-from-falling-collision-and-impact-approved-document-k" target="_blank" rel="noopener" class="text-oak underline">Approved Document K</a> on GOV.UK.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Banister replacement across West Yorkshire</h2>
+      <p class="text-ink/70 mb-3">
+        Based in Ackworth, covering <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a> and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
+      <p class="text-ink/70 mb-3">
+        Also see <a href="/services/staircases" class="text-oak underline">staircase renovation</a> for oak tread cladding and stair repair, <a href="/services/timber-hardwoods" class="text-oak underline">hardwood joinery</a> for oak work generally, and the <a href="/case-studies/counting-house/oak-staircases" class="text-oak underline">oak staircases at The Counting House</a>.
+      </p>
+      <p class="text-ink/70">
+        Photographs of handrails, spindles and newels on this page, apart from The Counting House, are courtesy of <a href="https://fiximer.co.uk/" target="_blank" rel="noopener" class="text-oak underline">Fiximer</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl text-ink mb-4">Want your banister replaced?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the bottom newel, the landing and the whole flight, and say what you would like. Rob will tell you whether the newels can stay.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss banister replacement" />
+        <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

@@ -9,45 +9,73 @@ const { phone, url } = siteConfig;
 
 const breadcrumbs = [{ name: 'Staircases', url: `${url}/services/staircases` }];
 const schemaProps = {
-  description: 'Staircase fitter services across Pontefract, Wakefield, and West Yorkshire, including bespoke staircase work, staircase repair, and staircase renovation.',
+  description:
+    'Staircase renovation and staircase refurbishment across Pontefract, Wakefield and West Yorkshire — oak handrails, metal and oak spindles, newel posts, oak tread cladding, stair repair and new staircases.',
   url: `${url}/services/staircases`,
   priceRange: '££',
 };
 
 const faqItems = [
   {
-    question: 'How much does staircase renovation cost?',
+    question: 'Can my existing staircase be renovated instead of replaced?',
     answer:
-      'Staircase renovation, stair repair, and stairs made to measure can all mean different things on site. The right answer depends on whether the structure needs changing or whether the existing stair can be made sound and improved.',
+      'Usually, yes. Most staircases in ordinary houses have a sound structure — strings, treads and risers that are doing their job — and an old-fashioned or tired balustrade on top. Replacing the handrail, spindles and newels, and cladding the treads in oak if you want the timber look, changes the whole hall without taking the stair out. A new staircase only makes sense when the structure itself has failed or the layout has to change.',
   },
   {
-    question: 'Can Rob tell whether it needs bespoke manufacture or renovation?',
+    question: 'How much does staircase renovation cost?',
     answer:
-      'Rob can usually tell from photos whether the job looks like bespoke manufacture, second-fix joinery, or a renovation-led approach.',
+      'It depends far more on the staircase than on the parts. A straight flight with a sound newel at each end is a very different job from a winder stair with a landing balustrade and newels that have worked loose. Send photos of the whole stair, top and bottom, and Rob will give you an honest first view of what is involved.',
+  },
+  {
+    question: 'Can you fit black metal spindles to an oak staircase?',
+    answer:
+      'Yes, and it is one of the most asked-for changes. Oak handrail and baserail with black metal spindles, or oak newels with rectangular or decorative metal spindles. The spindles are cut to the rake of the stair and set out so the gaps are even along the whole flight. See banister replacement for the detail.',
+  },
+  {
+    question: 'Can stairs be clad in oak?',
+    answer:
+      'Yes. Oak tread and riser cladding goes over the existing treads and risers, so the stair underneath stays where it is. The thing to watch is the step heights. Adding thickness to every tread keeps the middle steps equal, but it makes the bottom step taller and the top step shorter unless that is allowed for at the landing. It has to be worked out before anything is cut.',
+  },
+];
+
+const stairPages = [
+  {
+    href: '/services/banister-replacement',
+    title: 'Banister Replacement',
+    description: 'Oak handrails, black metal and oak spindles, newel posts and oak newel cladding — the balustrade replaced, the staircase kept.',
+  },
+  {
+    href: '/case-studies/counting-house/oak-staircases',
+    title: 'Oak Staircases at The Counting House',
+    description: 'A pair of solid oak staircases and landings made in the workshop for one of Pontefract’s oldest buildings.',
+  },
+  {
+    href: '/services/extensions-conversions',
+    title: 'Loft Conversion Staircases',
+    description: 'Where the new stair lands decides a lot about a loft conversion. It is planned with the rest of the conversion.',
   },
 ];
 
 const staircaseServices = [
-  'New staircase installation and staircase replacement',
-  'Bespoke staircase and made-to-measure stair work',
-  'Loft staircase and attic staircase fitting',
-  'Open-plan and cut-string stairs',
-  'Newel posts, handrails, and spindles',
-  'Stair treads, risers, and landing details',
-  'Staircase repair and staircase restoration',
-  'Staircase renovation and stair refurbishment',
-  'Stair cladding and renovation kits',
+  'Staircase renovation and staircase refurbishment',
+  'Oak handrail and banister replacement',
+  'Metal stair spindles, black spindles and oak spindles',
+  'Oak newel posts and oak newel post cladding',
+  'Oak tread and riser cladding over existing stairs',
+  'Landing balustrades and stairwell guarding',
+  'Staircase repair — loose newels, creaking treads, split nosings',
+  'Bespoke staircases and new staircase installation',
+  'Loft staircases and attic stairs',
   'Under-stair storage and cupboards',
 ];
 ---
 
 <ServiceLayout
-  title="Staircase Fitter in Pontefract & Wakefield"
-  description="Staircase fitter services across Pontefract, Wakefield and West Yorkshire, including bespoke staircases, staircase repair, staircase renovation, and loft staircases."
-  serviceName="Stairs & Staircases"
+  title="Staircase Renovation in Pontefract & Wakefield"
+  description="Staircase renovation and refurbishment across Pontefract, Wakefield and West Yorkshire. Oak handrails, metal spindles, newel cladding and stair repair."
+  serviceName="Staircase Renovation"
   breadcrumbs={breadcrumbs}
   schemaProps={schemaProps}
-
   ogImage="/images/services/staircases/oak-staircase-fitted-pontefract.webp"
 >
   <FAQPageSchema slot="schema" faqs={faqItems} />
@@ -65,22 +93,39 @@ const staircaseServices = [
     <div class="absolute inset-0 bg-gradient-to-r from-bone/95 via-bone/75 to-transparent pointer-events-none"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
       <div class="max-w-2xl">
-          <p class="text-oak uppercase tracking-wide mb-4">Stairs and staircases</p>
-          <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Staircase Fitter in Pontefract, Wakefield &amp; West Yorkshire</h1>
-          <p class="text-lg text-ink/80 mb-8">
-            Rob fits, repairs, and improves staircases across West Yorkshire, from bespoke staircase work and loft staircases to staircase repair, staircase renovation, and newel post replacement. A staircase has to be set out properly before it can look right, feel right, and work safely in the building.
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a staircase" />
-            <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
-          </div>
+        <p class="text-oak uppercase tracking-wide mb-4">Stairs and staircases</p>
+        <h1 class="font-display text-4xl lg:text-5xl text-ink mb-4">Staircase Renovation in Pontefract, Wakefield &amp; West Yorkshire</h1>
+        <p class="text-lg text-ink/80 mb-8">
+          Staircase renovation by a fully qualified apprentice trained bench hand joiner, time served. Most staircases do not need replacing &mdash; the structure is sound and the balustrade is what has dated. New oak handrails, metal or oak spindles, newel cladding and oak treads change the whole hall while the stair stays where it is.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a staircase" />
+          <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
+        </div>
       </div>
     </div>
   </section>
 
   <section class="py-16 bg-bone">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Bespoke staircase, repair and renovation work</h2>
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Staircase refurbishment, banisters and new stairs</h2>
+      <p class="text-ink/70 mb-8 max-w-3xl">
+        Most stair enquiries are about the balustrade, so that has its own page. New staircases and loft stairs are covered below.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {stairPages.map((page) => (
+          <a href={page.href} class="block p-6 bg-paper rounded-lg border border-ink/10 hover:border-oak transition-colors">
+            <h3 class="font-display text-xl text-ink mb-2">{page.title}</h3>
+            <p class="text-ink/70">{page.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-8">Staircase renovation and stair repair work</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {staircaseServices.map((item) => (
           <div class="p-4 bg-paper rounded-lg border border-ink/10 text-ink/80">{item}</div>
@@ -89,33 +134,102 @@ const staircaseServices = [
     </div>
   </section>
 
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Handrails, spindles and safe installation</h2>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Renovating the staircase you already have</h2>
         <p class="text-ink/70 mb-3">
-          Stair work brings together setting out, fixing, and visible finish. Rise, going, pitch, landings, treads, risers, newels, handrails, and spindles all have to work as one, whether the job is a full replacement staircase or a careful upgrade.
+          A staircase is two things: the structure you walk on, and the balustrade that stops you falling off it. In most houses the structure is fine. The strings are sound, the treads are solid, and what has dated is the handrail, the spindles and the newels &mdash; often a 1970s or 1980s balustrade, or one that has been boxed in and painted over.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Before anything is ordered the stair gets checked properly. Newels that move when you lean on them, treads that creak, and nosings that have split all get put right first, because there is no point fitting a new oak handrail to a newel that is loose at the base.
         </p>
         <p class="text-ink/70">
-          In older houses, Rob also looks at out-of-square walls, worn strings, loose newels, and moulding details so original character is kept where the existing staircase is worth retaining.
+          Then the balustrade comes out and the new one goes in, set out to your stair rather than to a kit. Handrails, spindles and newel posts are covered in detail on the <a href="/services/banister-replacement" class="text-oak underline">banister replacement</a> page.
         </p>
       </div>
       <div>
-        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Staircase renovation instead of full replacement</h2>
+        <img
+          src="/images/services/staircases/oak-staircase-renovation-black-metal-spindles.webp"
+          alt="Renovated staircase with oak treads, an oak handrail and newel, and black metal spindles with twisted basket details"
+          width="600"
+          height="600"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <img
+          src="/images/services/staircases/oak-clad-winder-treads-staircase-renovation.webp"
+          alt="Winder staircase clad in oak treads and risers, with a rounded bottom step"
+          width="600"
+          height="600"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+      </div>
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Oak tread and riser cladding</h2>
         <p class="text-ink/70 mb-3">
-          Not every enquiry needs a completely new staircase. Stair refurbishment, tread repairs, newel post replacement, and stair cladding can often solve the problem without rebuilding the whole flight, and <a href="/services/cladding-panelling" class="text-oak underline">stair wall panelling</a> can sit with the same work when the hall needs finishing.
+          If you want the look of an oak staircase without replacing the stair, the treads and risers can be clad in oak. The cladding goes over the existing steps, so the structure underneath is not disturbed.
+        </p>
+        <p class="text-ink/70 mb-3">
+          The detail that matters is the step height. Every step on a stair should rise the same amount &mdash; your feet learn the rhythm in the first two steps and trip on any step that breaks it. Add a layer of oak to every tread and the middle steps all stay equal, but the bottom step gets taller and the top step onto the landing gets shorter by the same amount. That has to be allowed for at the landing before the first piece is cut.
         </p>
         <p class="text-ink/70">
-          If you are weighing up staircase renovation cost or new staircase cost, photos, floor-to-floor height, and a few basic dimensions help Rob narrow down the honest route early.
-         The pair of solid oak staircases at <a href="/case-studies/counting-house/oak-staircases" class="text-oak underline">The Counting House</a> shows the workshop-made end of that.
+          Winders take the most care. Each tapered tread is scribed to the wall and the string, and the nosings have to line through around the turn.
         </p>
       </div>
     </div>
   </section>
 
   <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Staircase refurbishment in older houses</h2>
+        <p class="text-ink/70 mb-3">
+          Older staircases are rarely straight or square. Walls lean, strings have dropped, and floors have settled out of level. A balustrade fitted to a tape measure will show every one of those faults. One fitted by eye and by scribing will hide them.
+        </p>
+        <p class="text-ink/70 mb-3">
+          Where an original staircase is worth keeping, it is repaired rather than replaced &mdash; split treads let in, worn nosings renewed, loose joints glued and wedged. That sits with <a href="/services/timber-repair" class="text-oak underline">timber repair</a>.
+        </p>
+        <p class="text-ink/70">
+          Where the hall needs finishing as well, <a href="/services/cladding-panelling" class="text-oak underline">stair wall panelling</a> can go in at the same time.
+        </p>
+      </div>
+      <div>
+        <img
+          src="/images/services/staircases/oak-staircase-refurbishment-square-oak-spindles.webp"
+          alt="Refurbished staircase with an oak handrail, square oak spindles and oak newel posts over a carpeted flight"
+          width="600"
+          height="600"
+          loading="lazy"
+          class="w-full h-auto rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Staircase repair questions</h2>
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Bespoke staircases and new staircase installation</h2>
+      <p class="text-ink/70 mb-3 max-w-3xl">
+        Sometimes a new staircase is the right answer &mdash; the old one has failed, the layout is changing, or a loft conversion needs a stair where there was none. A new stair has to be set out properly first: floor-to-floor height, going, pitch and headroom all have to work together before it can look right and feel right underfoot.
+      </p>
+      <p class="text-ink/70 max-w-3xl">
+        Rob trained as a bench hand joiner making stairs in the workshop. The pair of solid oak staircases at <a href="/case-studies/counting-house/oak-staircases" class="text-oak underline">The Counting House</a> shows that end of the work, and <a href="/services/extensions-conversions" class="text-oak underline">loft conversions</a> cover stairs into a new loft room.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Staircase renovation questions</h2>
       {faqItems.map((faq) => (
         <div class="mb-6 last:mb-0">
           <h3 class="font-display text-xl lg:text-2xl text-ink mb-2">{faq.question}</h3>
@@ -127,17 +241,20 @@ const staircaseServices = [
 
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Staircase fitting across West Yorkshire</h2>
+      <h2 class="font-display text-2xl lg:text-3xl text-ink mb-4">Staircase renovation across West Yorkshire</h2>
+      <p class="text-ink/70 mb-3">
+        Based in Ackworth, covering <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a> and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+      </p>
       <p class="text-ink/70">
-        Staircase work is available across <a href="/areas/pontefract" class="text-oak underline">Pontefract</a>, <a href="/areas/wakefield" class="text-oak underline">Wakefield</a>, <a href="/areas/castleford" class="text-oak underline">Castleford</a>, <a href="/areas/featherstone" class="text-oak underline">Featherstone</a>, <a href="/areas/knottingley" class="text-oak underline">Knottingley</a>, <a href="/areas/normanton" class="text-oak underline">Normanton</a>, and <a href="/areas/leeds" class="text-oak underline">Leeds</a>.
+        Photographs of staircase renovations on this page, apart from The Counting House, are courtesy of <a href="https://fiximer.co.uk/" target="_blank" rel="noopener" class="text-oak underline">Fiximer</a>.
       </p>
     </div>
   </section>
 
   <section class="py-16 bg-paper">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-display text-3xl text-ink mb-4">Need a staircase fitted or repaired?</h2>
-      <p class="text-ink/70 mb-8 mx-auto">Send a few photos, the floor-to-floor height if you know it, and what you want to improve. Rob will tell you what looks practical.</p>
+      <h2 class="font-display text-3xl text-ink mb-4">Thinking of renovating your staircase?</h2>
+      <p class="text-ink/70 mb-8 mx-auto">Send photos of the whole stair, top and bottom, and say what you would like it to look like. Rob will tell you what is practical.</p>
       <div class="flex flex-wrap justify-center gap-4">
         <WhatsAppCTA message="Hi Heritage Joiners, I'd like to discuss a staircase" />
         <PhoneLink phone={phone.tel} display={phone.display} variant="secondary" />
