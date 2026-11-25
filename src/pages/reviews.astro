@@ -16,6 +16,25 @@ const facebookReviewUrl = `${social.facebook}reviews`;
 // Genuine Google reviews, reproduced verbatim. Add new ones here as they arrive.
 const reviews = [
   {
+    name: 'Louise Brooke',
+    rating: 5,
+    source: 'Google',
+    job: 'Staircase renovation over three floors',
+    text: 'What can I say other than excellent! Our staircase is large and over 3 floors and was needing some tlc and what we ended up with was more than we could have wished for❤️ the quality and finish is gorgeous and everything from start to finish with this company was how it should be including great communication and great quote setup . Highly recommend if you want anything doing in your home would def use again for any future jobs we need! Everyone that visits is in love with the staircase and says it’s true part that’s changed the whole house to next level . Thanks again',
+  },
+  {
+    name: 'Jeremy Betts',
+    rating: 5,
+    source: 'Google',
+    job: 'Oak doors',
+    // Line breaks are the reviewer's own; wording is untouched.
+    text: [
+      'We are extremely happy with Robs work and would recommend him to anyone. His attention to detail is second to none; he kept us informed throughout, is very knowledgeable and gave us excellent advice on oiling our oak doors.',
+      'The house was left clean and tidy.',
+      'If you need a quality skilled joiner who cares about his work give Rob a call.',
+    ].join('\n\n'),
+  },
+  {
     name: 'Zuzana Dunster',
     rating: 5,
     source: 'Google',
